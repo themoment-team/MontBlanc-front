@@ -1,11 +1,15 @@
 import React from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import { LeaveComments } from "./Page/index";
+import * as P from "./Page/index";
+import GlobalStyle from "./Styles/GlobalStyles";
 
 const App: React.FC = () => (
   <BrowserRouter>
+    <GlobalStyle />
     <Switch>
-      <Route path="/" component={LeaveComments} />
+      <Route path="/v1/uncomfortable" component={P.Top10} />
+      <Route path="/LeaveComments" component={P.LeaveComments} />
+      <Route path="/" component={P.Start} />
       <Redirect path="*" to="/" />
     </Switch>
   </BrowserRouter>
