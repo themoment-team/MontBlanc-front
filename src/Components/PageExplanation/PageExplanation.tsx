@@ -3,7 +3,6 @@ import * as S from "./styled";
 interface PageExplanationProps {
   heading: string;
   explanation: string[];
-  // link: string;
 }
 
 const PageExplanation: React.FC<PageExplanationProps> = ({
@@ -24,14 +23,6 @@ const PageExplanation: React.FC<PageExplanationProps> = ({
       </S.explanation>
     </S.LeftBox>
   );
-};
-
-const BtnExplannation: React.FC = () => {
-  return <S.linkBtn></S.linkBtn>;
-};
-
-const Btn: React.FC = () => {
-  return <S.linkBtn>의견 남기기</S.linkBtn>;
 };
 
 export default PageExplanation;
