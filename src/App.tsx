@@ -7,8 +7,10 @@ const App: React.FC = () => (
   <BrowserRouter>
     <GlobalStyle />
     <Switch>
+      <Route path="/about" component={P.about} />
+      <Route path="/improvment" component={P.improvment} />
       <Route path="/v1/uncomfortable" component={P.Top10} />
-      <Route path="/LeaveComments" component={P.LeaveComments} />
+      <Route path="/Leave_opinion" component={P.LeaveComments} />
       <Route path="/" component={P.Start} />
       <Redirect path="*" to="/" />
     </Switch>

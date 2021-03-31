@@ -8,4 +8,4 @@ export {
   default as Btn,
   default as BtnExplannation,
 } from "./PageExplanation/PageExplanation";
-export { default as SolvedPage } from "./SolvedPage/SolvedPage";
+export { default as ImprovmentPage } from "./improvmentPage/improvmentPage";
