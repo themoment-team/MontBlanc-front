@@ -1,4 +1,7 @@
-import PageExplanation from "../PageExplanation/PageExplanation";
+import { PageExplanation } from "../PageExplanation";
+import { Link } from "react-router-dom";
+import { LeftBox } from "../../Styles/LeftBox";
+import styled from "styled-components";
 
 const heading: string = "학교가 불편한 순간 TOP 10";
 const explanation: string[] = [
@@ -8,11 +11,21 @@ const explanation: string[] = [
 
 const Top10Page: React.FC = () => {
   return (
-    <>
+    <LeftBox>
       <PageExplanation heading={heading} explanation={explanation} />
-      {/* <Btn /> */}
-    </>
+      <Btn>
+        <Link to="/Leave_opinion">의견 남기기</Link>
+      </Btn>
+    </LeftBox>
   );
 };
+
+const Btn = styled.button`
+  margin-top: 50px;
+  background-color: #434c9c;
+  a {
+    color: white;
+  }
+`;
 
 export default Top10Page;
