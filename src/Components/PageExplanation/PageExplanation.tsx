@@ -10,7 +10,7 @@ const PageExplanation: React.FC<PageExplanationProps> = ({
   explanation,
 }) => {
   return (
-    <S.LeftBox>
+    <>
       <S.heading>{heading}</S.heading>
       <S.explanation>
         {explanation.map((explanation) => {
@@ -21,7 +21,7 @@ const PageExplanation: React.FC<PageExplanationProps> = ({
           );
         })}
       </S.explanation>
-    </S.LeftBox>
+    </>
   );
 };
 
