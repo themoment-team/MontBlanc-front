@@ -21,7 +21,7 @@ const StartPage: React.FC = () => {
           </S.H2>
         </S.StartHeader>
         <S.ButtonBox>
-          <Link to="/LeaveComments">
+          <Link to="/Leave_opinion">
             <button>Student</button>
           </Link>
           <button>Admin</button>

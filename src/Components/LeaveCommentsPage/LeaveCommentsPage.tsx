@@ -5,7 +5,7 @@ import * as S from "./styles";
 
 const LeaveCommentsPage: React.FC = () => {
   return (
-    <S.LeaveComment>
+    <>
       <S.LeftBox>
         <S.H1>
           학교가 불편할 때는,
@@ -27,7 +27,7 @@ const LeaveCommentsPage: React.FC = () => {
           </Link>
         </S.Top10Btn>
       </S.LeftBox>
-    </S.LeaveComment>
+    </>
   );
 };
 

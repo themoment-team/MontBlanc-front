@@ -1,4 +1,4 @@
-import { Header, Footer, LeaveCommentsPage } from "../Components/index";
+import { Header, LeaveCommentsPage } from "../Components/index";
 
 const LeaveComments: React.FC = () => {
   return (

@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-export const LeaveComment = styled.div``;
-
 export const LeftBox = styled.div`
-  margin: 70px 0 0 200px;
+  margin: 70px 0 0 9.5%;
 `;
 
 export const H1 = styled.div`
