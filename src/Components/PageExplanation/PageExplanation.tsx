@@ -1,7 +1,7 @@
 import * as S from "./styled";
 
 interface PageExplanationProps {
-  heading: string;
+  heading: string[];
   explanation: string[];
 }
 
@@ -11,7 +11,15 @@ const PageExplanation: React.FC<PageExplanationProps> = ({
 }) => {
   return (
     <>
-      <S.heading>{heading}</S.heading>
+      <S.heading>
+        {heading.map((heading) => {
+          return (
+            <>
+              <span>{heading}</span> <br />
+            </>
+          );
+        })}
+      </S.heading>
       <S.explanation>
         {explanation.map((explanation) => {
           return (
