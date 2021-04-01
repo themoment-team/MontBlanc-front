@@ -28,7 +28,11 @@ const StartPage: React.FC = () => {
         </S.ButtonBox>
       </S.LeftBox>
       <S.RightBox>
-        <I.StartImg />
+        <S.ImgBox>
+          <I.Start_img1 />
+          <I.Start_img2 />
+          <I.Start_img3 />
+        </S.ImgBox>
       </S.RightBox>
     </S.StartPage>
   );

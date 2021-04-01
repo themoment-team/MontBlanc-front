@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const StartPage = styled.div`
   display: flex;
@@ -48,9 +48,35 @@ export const ButtonBox = styled.div`
 `;
 
 export const RightBox = styled.div`
+  overflow: hidden;
+  height: 100vh;
+`;
+
+const slide = keyframes`
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -800px;
+  }
+`;
+
+export const ImgBox = styled.div`
+  height: 100%;
+  & svg:nth-child(1) {
+    animation: ${slide} 10s infinite linear alternate;
+  }
+  & svg:nth-child(2) {
+    animation: ${slide} 10s infinite linear alternate-reverse;
+  }
+  & svg:nth-child(3) {
+    animation: ${slide} 10s infinite linear alternate;
+  }
   svg {
+    display: block;
+    float: right;
     position: relative;
     top: -10px;
-    height: 100vh;
+    margin-left: 30px;
   }
 `;
