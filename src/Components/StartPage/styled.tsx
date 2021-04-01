@@ -62,7 +62,9 @@ const slide = keyframes`
 `;
 
 export const ImgBox = styled.div`
-  height: 100%;
+  @media only screen and (max-width: 1200px) {
+    display: none;
+  }
   & svg:nth-child(1) {
     animation: ${slide} 10s infinite linear alternate;
   }
@@ -75,8 +77,5 @@ export const ImgBox = styled.div`
   svg {
     display: block;
     float: right;
-    position: relative;
-    top: -10px;
-    margin-left: 30px;
   }
 `;
