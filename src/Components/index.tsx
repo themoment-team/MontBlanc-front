@@ -9,3 +9,4 @@ export {
   default as BtnExplannation,
 } from "./PageExplanation/PageExplanation";
 export { default as ImprovmentPage } from "./improvmentPage/improvmentPage";
+export { default as AboutPage } from "./aboutPage/aboutPage";
