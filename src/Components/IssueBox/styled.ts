@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 interface IssueBoxProps {
   color: string;
@@ -7,7 +7,7 @@ interface IssueBoxProps {
 export const IssueBoxStyle = styled.div<IssueBoxProps>`
   background-color: ${(props) => props.color};
   border-radius: 15px;
-  width: 300px;
+  max-width: 246px;
   padding: 18px 27px;
   margin-bottom: 29px;
 `;
