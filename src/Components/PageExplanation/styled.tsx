@@ -12,10 +12,3 @@ export const explanation = styled.div`
   font-size: 15px;
   color: #434c9c;
 `;
-
-export const linkBtn = styled.button`
-  background-color: #434c9c;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-`;
