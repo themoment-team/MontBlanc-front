@@ -7,21 +7,23 @@ interface GoodBtnProps {
 }
 
 const GoodBtn: React.FC = () => {
-  let [like_cnt, set_like_cnt] = useState(3);
-  let [liked, set_liked] = useState(false);
+  let [likeCnt, setLikeCnt] = useState(324);
+  let [isLiked, setLiked] = useState(false);
+
   const onClickBtn = () => {
-    if (!liked) {
-      set_like_cnt(like_cnt + 1);
-      set_liked((liked = true));
+    if (!isLiked) {
+      setLikeCnt(likeCnt + 1);
+      setLiked((isLiked = true));
     } else {
-      set_liked((liked = false));
-      set_like_cnt(like_cnt - 1);
+      setLiked((isLiked = false));
+      setLikeCnt(likeCnt - 1);
     }
   };
+
   return (
-    <GoodBtnStyle Liked={liked} onClick={onClickBtn}>
-      <I.GoodBtnSvg color={!liked ? "#6B7187" : "#fff"} />
-      <LikeCnt Liked={liked}>{like_cnt}</LikeCnt>
+    <GoodBtnStyle Liked={isLiked} onClick={onClickBtn}>
+      <I.GoodBtnSvg color={!isLiked ? "#6B7187" : "#fff"} />
+      <LikeCnt Liked={isLiked}>{likeCnt}</LikeCnt>
     </GoodBtnStyle>
   );
 };
