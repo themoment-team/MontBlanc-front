@@ -30,7 +30,7 @@ const issueBox: React.FC = () => {
         <S.IssueNumber>{issue.number}번째 불편함</S.IssueNumber>
       </S.IssueBoxHeading>
       <S.Issue>{issue.issue}</S.Issue>
-      <GoodBtn />
+      <GoodBtn Background/>
     </S.IssueBoxStyle>
   );
 };
