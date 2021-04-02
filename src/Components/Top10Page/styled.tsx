@@ -4,7 +4,7 @@ export const TopTenWrapper = styled.section`
     display: flex;
     width: 80%;
     margin: 0 auto;
-    margin-top: 71px;
+    margin-top: 215px;
     height: fit-content;
 ` // left박스와 right박스 전체를 감싸는 wrapper입니다.
 
@@ -29,18 +29,24 @@ export const TenIssues = styled.div`
     & + & {
         margin-top: 20px;
     } // 이 컴포넌트와 이웃해있을때 margin으로 띄어주는 코드입니다.
-    & > span > span {
+    & > span:nth-child(1) > span {
         margin-right: 20px;
         color: #6B7187;
         font-weight: 700;
     }
-    & > span > article {
-        display: inline;
-        width: 400px;
+    & > span:nth-child(1) > article {
+        float: right;
+        width: calc(100% - 42px);
+        height: fit-content;
         color: #3B3E57;
         font-weight: 700;
     }
-    & > span > button {
+    & > span:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    & > span:nth-child(2) > button:nth-child(1) {
         padding: 0;
         display: flex;
         justify-content: center;
@@ -48,12 +54,19 @@ export const TenIssues = styled.div`
         background-color: #92929223;
         width: 81px;
         height: 30px;
+        margin-left: 22px;
         color: white;
         font-size: 14px;
         font-weight: 700;
         line-height: 17px;
         letter-spacing: -1px;
         text-align: left;
+        & + button {
+            margin-left: 54px;
+        } 
+    }
+    & > span > button:nth-child(2) {
+        background: none;
     }
 `
 
