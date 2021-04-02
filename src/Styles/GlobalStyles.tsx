@@ -1,7 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-button{
+
+button {
   border-radius: 10px;
   padding: 10px 32px;
   border: 0;
