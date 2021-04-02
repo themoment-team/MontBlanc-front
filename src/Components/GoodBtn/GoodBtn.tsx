@@ -29,10 +29,15 @@ const GoodBtn: React.FC = () => {
 const GoodBtnStyle = styled.button<GoodBtnProps>`
   margin-top: 22px;
   background-color: ${(props) => (props.Liked ? "#434C9C" : "#fff")};
+  svg {
+    position: relative;
+    top: 3px;
+  }
 `;
 
 const LikeCnt = styled.span<GoodBtnProps>`
   color: ${(props) => (props.Liked ? "#fff" : "#6B7187")};
+  padding-left: 5px;
 `;
 
 export default GoodBtn;
