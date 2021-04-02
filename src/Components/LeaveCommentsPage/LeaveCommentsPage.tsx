@@ -22,7 +22,7 @@ const LeaveCommentsPage: React.FC = () => {
             많은 학생들이 공감한
             <br /> 불편함은 무엇일까요?
           </span>
-          <Link to="/v1/uncomfortable">
+          <Link to="/topten">
             <span>Top 10 보러가기</span>
             <I.RightArrow />
           </Link>
