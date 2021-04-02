@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import * as I from "../../Asset/SVG/index";
 import * as S from "./styles";
+import IssueBox from "../IssueBox/IssueBox";
 
 const LeaveCommentsPage: React.FC = () => {
   return (
-    <>
+    <S.LeaveCommentsBox>
       <S.LeftBox>
         <S.H1>
           학교가 불편할 때는,
@@ -27,7 +28,27 @@ const LeaveCommentsPage: React.FC = () => {
           </Link>
         </S.Top10Btn>
       </S.LeftBox>
-    </>
+      <S.RightBox>
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+        <IssueBox />
+      </S.RightBox>
+    </S.LeaveCommentsBox>
   );
 };
 
