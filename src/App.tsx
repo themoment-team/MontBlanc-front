@@ -9,7 +9,7 @@ const App: React.FC = () => (
     <Switch>
       <Route path="/about" component={P.about} />
       <Route path="/improvment" component={P.improvment} />
-      <Route path="/v1/uncomfortable" component={P.Top10} />
+      <Route path="/topten" component={P.Top10} />
       <Route path="/Leave_opinion" component={P.LeaveComments} />
       <Route path="/" component={P.Start} />
       <Redirect path="*" to="/" />
