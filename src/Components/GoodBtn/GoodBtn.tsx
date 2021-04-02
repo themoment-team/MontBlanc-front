@@ -59,6 +59,7 @@ const LikeCnt = styled.span<GoodBtnStyleElemProps>`
   display: block;
   margin-left: 4px;
   color: ${(props) => (props.Liked ? "#fff" : "#6B7187")};
+  padding-left: 5px;
 `;
 
 export default GoodBtn;
