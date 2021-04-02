@@ -27,11 +27,17 @@ const GoodBtn: React.FC = () => {
 };
 
 const GoodBtnStyle = styled.button<GoodBtnProps>`
-  margin-top: 22px;
+  padding: 7px 15px;
+  min-width: 67px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
   background-color: ${(props) => (props.Liked ? "#434C9C" : "#fff")};
 `;
 
 const LikeCnt = styled.span<GoodBtnProps>`
+  display: block;
+  margin-left: 4px;
   color: ${(props) => (props.Liked ? "#fff" : "#6B7187")};
 `;
 
