@@ -1,13 +1,17 @@
 import styled from "styled-components";
-import { flattenDiagnosticMessageText } from "typescript";
 
-export const LeaveCommentsBox = styled.div`
+export const LeaveCommentsBox = styled.main`
   display: flex;
   justify-content: space-around;
+  margin: 230px 9.5%;
+  width: 83%;
 `;
 
 export const LeftBox = styled.div`
-  margin: 70px 0 0 9.5%;
+  position: sticky;
+  top: 230px;
+  left: 0;
+  height: 380px;
 `;
 
 export const H1 = styled.div`
@@ -74,8 +78,8 @@ export const Top10Btn = styled.button`
 `;
 
 export const RightBox = styled.div`
-  margin-top: 70px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-left: 3vw;
 `;

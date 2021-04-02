@@ -1,36 +1,34 @@
 import styled from "styled-components";
 
-export const Header = styled.div`
-  margin: 0 10%;
-  border-top: 1px solid #434c9c;
+export const Header = styled.header`
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
-  div {
-    margin-top: 50px;
-    /* width: 70%; */
-    span {
-      color: #434c9c;
-      font-weight: 600;
-      font-size: 22px;
-      margin-left: 21px;
-      position: relative;
-      top: -13px;
-    }
-  }
-  svg {
-    border-right: 1px solid #434c9c;
-    padding-right: 21px;
-  }
-  ul {
-    margin: 61px 0 0 200px;
-    width: 30%;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    li {
-      color: #434c9c;
-      font-weight: 600;
-      font-size: 16px;
-    }
-  }
+  padding: 23px 9.5%;
+  width: 80vw;
+  background: white;
+`;
+
+export const LogoText = styled.span`
+  color: #434c9c;
+  font-weight: 600;
+  font-size: 22px;
+  margin-left: 21px;
+  position: relative;
+  top: -13px;
+`;
+
+export const Logo = styled.h1`
+  display: inline-block;
+  border-right: 1px solid #434c9c;
+  padding-right: 21px;
+`;
+
+export const HeaderNav = styled.nav`
+  margin-top: 30px;
+  width: 50%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
 `;
