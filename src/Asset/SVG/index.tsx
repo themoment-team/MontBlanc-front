@@ -5,3 +5,4 @@ export { default as Start_img3 } from "./Start_img3";
 export { default as RightArrow } from "./RightArrow";
 export { default as GoodBtnSvg } from "./GoodBtnSvg";
 export { default as IssueSvg } from "./IssueSvg";
+export { default as DoubleQuotes } from "./DoubleQuotes";
