@@ -9,7 +9,7 @@ import styled, { css } from "styled-components";
 
 interface GoodBtnStyleElemProps {
   Liked: boolean;
-  hasBackground?: boolean; // Likecnt는 Background를 가질 필요가 없기 때문에 ? 붙였습니다.
+  hasBackground: boolean; // Likecnt는 Background를 가질 필요가 없기 때문에 ? 붙였습니다.
 }
 
 interface GoodBtnProps {
@@ -33,8 +33,8 @@ const GoodBtn: React.FC<GoodBtnProps> = ({ Background = true }) => { // 기본�
 
   return (
     <GoodBtnStyle Liked={isLiked} onClick={onClickBtn} hasBackground={Background}>
-      <I.GoodBtnSvg color={!isLiked ? "#6B7187" : "#fff"} />
-      <LikeCnt Liked={isLiked}>{likeCnt}</LikeCnt>
+      <I.GoodBtnSvg color={isLiked && Background ? "#fff" : "#6B7187"} />
+      <LikeCnt Liked={isLiked} hasBackground={Background}>{likeCnt}</LikeCnt>
     </GoodBtnStyle>
   );
 };
@@ -52,13 +52,13 @@ const GoodBtnStyle = styled.button<GoodBtnStyleElemProps>`
   display: flex;
   justify-content: space-between;
   border-radius: 20px;
-  background: ${(props) => (props.Liked ? "#434C9C" : (props.hasBackground ? "#fff" : "none"))}; // 좋아요 제어후에 배경을 가졌는지 추가로 제어
+  background: ${(props) => (props.Liked && props.hasBackground ? "#434C9C" : (props.hasBackground ? "#fff" : "none"))}; // 좋아요 제어후에 배경을 가졌는지 추가로 제어
 `;
 
 const LikeCnt = styled.span<GoodBtnStyleElemProps>`
   display: block;
   margin-left: 4px;
-  color: ${(props) => (props.Liked ? "#fff" : "#6B7187")};
+  color: ${(props) => (props.Liked && props.hasBackground ? "#fff" : "#6B7187")};
   padding-left: 5px;
 `;
 
