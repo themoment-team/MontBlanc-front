@@ -9,7 +9,7 @@ import styled, { css } from "styled-components";
 
 interface GoodBtnStyleElemProps {
   Liked: boolean;
-  hasBackground: boolean; // Likecnt는 Background를 가질 필요가 없기 때문에 ? 붙였습니다.
+  hasBackground: boolean;
 }
 
 interface GoodBtnProps {
