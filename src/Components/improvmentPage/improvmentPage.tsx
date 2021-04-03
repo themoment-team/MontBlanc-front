@@ -1,6 +1,6 @@
 import { PageExplanation } from "../PageExplanation";
 import { Link } from "react-router-dom";
-import { LeftBox } from "../../Styles/LeftBox";
+import Improvment from "./improvmentItem/improvment";
 import * as S from "./styled";
 import * as I from "../../Asset/SVG";
 
@@ -20,7 +20,7 @@ const ImprovmentPage: React.FC<ImprovmentPageProps> = (
 ) => {
   return (
     <S.ImprovmentPageBox>
-      <LeftBox>
+      <S.LeftBox>
         <PageExplanation heading={heading} explanation={explanation} />
         <S.Btn>
           학교가 불편한 순간을
@@ -30,8 +30,12 @@ const ImprovmentPage: React.FC<ImprovmentPageProps> = (
             <I.RightArrow />
           </Link>
         </S.Btn>
-      </LeftBox>
-      <S.RightBox></S.RightBox>
+      </S.LeftBox>
+      <div>
+        <Improvment color="#C3D7DE" />
+        <Improvment color="#C0C9D6" />
+        <Improvment color="#A7C5EB" />
+      </div>
     </S.ImprovmentPageBox>
   );
 };

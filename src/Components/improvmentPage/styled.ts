@@ -3,8 +3,15 @@ import styled from "styled-components";
 export const ImprovmentPageBox = styled.div`
   display: flex;
   justify-content: space-around;
-  margin: 230px 9.5%;
-  width: 83%;
+  margin: 230px 30px 0 30px;
+  width: 100%;
+  height: 100%;
+`;
+
+export const LeftBox = styled.div`
+  height: 23vh;
+  position: sticky;
+  top: 230px;
 `;
 
 export const Btn = styled.button`
@@ -28,5 +35,3 @@ export const Btn = styled.button`
     padding-left: 5px;
   }
 `;
-
-export const RightBox = styled.div``;
