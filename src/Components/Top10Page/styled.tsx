@@ -63,10 +63,7 @@ export const TenIssues = styled.div`
         text-align: left;
         & + button {
             margin-left: 54px;
-        } 
-    }
-    & > span > button:nth-child(2) {
-        background: none;
+        }
     }
 `
 
