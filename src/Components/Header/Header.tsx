@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = (p: HeaderProps) => {
         </div>
         <S.HeaderNav>
           <Link to="/Leave_opinion">의견 남기기</Link>
-          <Link to="/v1/uncomfortable">Top 10</Link>
+          <Link to="/topten">Top 10</Link>
           <Link to="/improvment">실제 개선 사례</Link>
           <Link to="/about">캠페인 자세히 보기</Link>
         </S.HeaderNav>
