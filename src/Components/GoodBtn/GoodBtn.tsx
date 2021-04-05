@@ -1,34 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import * as I from "../../Asset/SVG";
 import styled, { css } from "styled-components";
-
-/*
- * back을 주고 싶은 경우에는 Background를 적어야 함
- * Default Prop은 true임
-*/
 
 interface GoodBtnStyleElemProps {
   Liked: boolean;
   hasBackground: boolean;
 }
-
 interface GoodBtnProps {
   Background: boolean;
 }
 
-const GoodBtn: React.FC<GoodBtnProps> = ({ Background = true }) => { // 기본값으로 배경색을 가지고 있게 설정
-  let [likeCnt, setLikeCnt] = useState(324); // 좋아요 수 useState
-  let [isLiked, setLiked] = useState(false); // 좋아요가 눌렸는지 알려주는 useState
-  
-  // 좋아요 버튼 클릭 이벤트
+const GoodBtn: React.FC<GoodBtnProps> = ({ Background = true }) => {
+  const [likeCnt, setLikeCnt] = useState<number>(324);
+  const [isLiked, setLiked] = useState<boolean>(false);
+  const onIncrease = () => {
+    setLikeCnt(likeCnt => likeCnt + 1);
+    setLiked(true);
+  }
+  const onDecrease = () => {
+    setLikeCnt(likeCnt => likeCnt - 1);
+    setLiked(false);
+  }
   const onClickBtn = () => {
-    if (!isLiked) {
-      setLikeCnt(likeCnt + 1);
-      setLiked((isLiked = true));
-    } else {
-      setLiked((isLiked = false));
-      setLikeCnt(likeCnt - 1);
-    }
+    !isLiked ? onIncrease() : onDecrease();
   };
 
   return (
@@ -47,8 +41,9 @@ const GoodBtnStyle = styled.button<GoodBtnStyleElemProps>`
       padding: 7px 15px;
       min-width: 67px;
     ` : css`
-    padding: 0;
-  `)}
+      padding: 0;
+    `
+    )}
   display: flex;
   justify-content: space-between;
   border-radius: 20px;
