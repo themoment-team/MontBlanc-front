@@ -1,7 +1,8 @@
 import { PageExplanation } from "../PageExplanation";
 import { Link } from "react-router-dom";
-import { LeftBox } from "../../Styles/LeftBox";
-import styled from "styled-components";
+import Improvment from "./improvmentItem/improvment";
+import * as S from "./styled";
+import * as I from "../../Asset/SVG";
 
 const heading: string[] = ["실제 개선 사례"];
 const explanation: string[] = [
@@ -10,35 +11,33 @@ const explanation: string[] = [
   "앞으로도 학교가 불편한 순간이 있다면 자유롭게 의견을 남겨주세요.",
 ];
 
-const ImprovmentPage: React.FC = () => {
+interface ImprovmentPageProps {
+  state: string;
+}
+
+const ImprovmentPage: React.FC<ImprovmentPageProps> = (
+  p: ImprovmentPageProps
+) => {
   return (
-    <LeftBox>
-      <PageExplanation heading={heading} explanation={explanation} />
-      <Btn>
-        학교가 불편한 순간을
-        <br /> 자유롭게 남겨주세요.
-        <Link to="/Leave_opinion">의견 남기기</Link>
-      </Btn>
-    </LeftBox>
+    <S.ImprovmentPageBox>
+      <S.LeftBox>
+        <PageExplanation heading={heading} explanation={explanation} />
+        <S.Btn>
+          학교가 불편한 순간을
+          <br /> 자유롭게 남겨주세요.
+          <Link to="/Leave_opinion">
+            의견 남기기
+            <I.RightArrow />
+          </Link>
+        </S.Btn>
+      </S.LeftBox>
+      <div>
+        <Improvment color="#C3D7DE" />
+        <Improvment color="#C0C9D6" />
+        <Improvment color="#A7C5EB" />
+      </div>
+    </S.ImprovmentPageBox>
   );
 };
-
-const Btn = styled.button`
-  display: flex;
-  width: 440px;
-  justify-content: space-between;
-  margin-top: 50px;
-  padding: 26px 31px;
-  color: white;
-  font-weight: 700;
-  font-size: 20px;
-  background-color: #434c9c;
-  a {
-    align-self: center;
-    font-size: 16px;
-    font-weight: 500;
-    color: white;
-  }
-`;
 
 export default ImprovmentPage;
