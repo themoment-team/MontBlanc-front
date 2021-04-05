@@ -1,5 +1,5 @@
 import { PageExplanation } from "../PageExplanation";
-import { LeftBox } from "../../Styles/LeftBox";
+import styled from "styled-components";
 
 const day: number = 100;
 const cnt_comment: number = 120;
@@ -13,10 +13,16 @@ const explanation: string[] = ["학교가 불편한 순간"];
 
 const AboutPage: React.FC = () => {
   return (
-    <LeftBox>
+    <AboutBox>
       <PageExplanation heading={heading} explanation={explanation} />
-    </LeftBox>
+    </AboutBox>
   );
 };
+
+const AboutBox = styled.div`
+  margin: 230px 30px 0 9.5%;
+  width: 100%;
+  height: 100%;
+`;
 
 export default AboutPage;
