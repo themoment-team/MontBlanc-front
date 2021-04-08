@@ -1,8 +1,7 @@
 import { PageExplanation } from "../PageExplanation";
 import { Link } from "react-router-dom";
-import { LeftBox } from "../../Styles/LeftBox";
-import GoodBtn from "../GoodBtn/GoodBtn";
-import styled from "styled-components";
+import { LeftBox } from "../../GlobalStyle/LeftBox";
+import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
 
 const heading: string[] = ["학교가 불편한 순간", "TOP 10"];
@@ -16,38 +15,27 @@ const Top10Page: React.FC = () => {
     <S.TopTenWrapper>
       <LeftBox>
         <PageExplanation heading={heading} explanation={explanation} />
-        <Btn>
+        <S.Btn>
           <Link to="/Leave_opinion">의견 남기기</Link>
-        </Btn>
+        </S.Btn>
       </LeftBox>
       <S.RightBox>
         <S.TenIssues>
           <span>
-            <span>
-              {1}위
-            </span>
+            <span>{1}위</span>
             <article>
-              {}전공 동아리 시간을 늘려주세요요오옷ㅇㅅ오ㅗ서어소요성섯용서엿ㅅㅇㅅ옷욧ㅇ소dkfjadslkjflsjdkfjldsjflksjdklflkdfksjlk
+              {}전공 동아리 시간을
+              늘려주세요요오옷ㅇㅅ오ㅗ서어소요성섯용서엿ㅅㅇㅅ옷욧ㅇ소dkfjadslkjflsjdkfjldsjflksjdklflkdfksjlk
             </article>
           </span>
           <span>
-            <button>
-              답변{"보기"}
-            </button>
-            <GoodBtn Background={false}/>
+            <button>답변{"보기"}</button>
+            <GoodBtn Background={false} />
           </span>
         </S.TenIssues>
       </S.RightBox>
     </S.TopTenWrapper>
   );
 };
-
-const Btn = styled.button`
-  margin-top: 50px;
-  background-color: #434c9c;
-  a {
-    color: white;
-  }
-`;
 
 export default Top10Page;
