@@ -1,10 +1,10 @@
 export { default as Header } from "./Common/Header/Header";
 export { default as Footer } from "./Common/Footer/Footer";
-export { default as StartPage } from "./StartPage/StartPage";
-export { default as LeaveCommentsPage } from "./LeaveCommentsPage/LeaveCommentsPage";
+export { default as StartPage } from "./StartPage/StartPresenter";
+export { default as LeaveCommentsPage } from "./LeaveComments/LeaveCommentPresenter";
 export { default as Top10Page } from "./Top10Page/Top10Page";
-export { default as PageExplanation } from "./PageExplanation/PageExplanation";
-export { default as ImprovmentPage } from "./improvmentPage/improvmentPage";
+export { default as PageExplanation } from "./PageExplanation/PageExplanationContainer";
+export { default as ImprovmentPage } from "./improvment/improvmentPresenter";
 export { default as AboutPage } from "./about/aboutPresenter";
 export { default as GoodBtn } from "./GoodBtn/GoodBtnPresenter";
-export { default as IssueBox } from "./IssueBox/IssueBox";
+export { default as IssueBox } from "./IssueBox/IssueBoxPresenter";

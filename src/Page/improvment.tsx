@@ -4,7 +4,7 @@ const improvment: React.FC = () => {
   return (
     <>
       <Header state="student" />
-      <ImprovmentPage state="student" />
+      <ImprovmentPage />
       <Footer />
     </>
   );

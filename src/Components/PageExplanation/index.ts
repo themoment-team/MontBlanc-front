@@ -1,1 +1,1 @@
-export { default as PageExplanation } from "./PageExplanation";
+export { default as PageExplanation } from "./PageExplanationContainer";

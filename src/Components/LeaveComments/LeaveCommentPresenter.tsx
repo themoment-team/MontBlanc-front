@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import * as I from "../../Asset/SVG/index";
 import * as S from "./styles";
-import IssueBox from "../IssueBox/IssueBox";
+import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
 
 const LeaveCommentsPage: React.FC = () => {
   return (
@@ -29,24 +29,24 @@ const LeaveCommentsPage: React.FC = () => {
         </S.Top10Btn>
       </S.LeftBox>
       <S.RightBox>
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
-        <IssueBox />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
+        <IssueBoxPresenter />
       </S.RightBox>
     </S.LeaveCommentsBox>
   );
