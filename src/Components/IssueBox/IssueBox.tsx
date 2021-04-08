@@ -1,6 +1,6 @@
 import * as I from "../../Asset/SVG";
 import * as S from "./styled";
-import GoodBtn from "../GoodBtn/GoodBtn";
+import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 
 const issueBox: React.FC = () => {
   const randomColorPicker = () => {
@@ -30,7 +30,7 @@ const issueBox: React.FC = () => {
         <S.IssueNumber>{issue.number}번째 불편함</S.IssueNumber>
       </S.IssueBoxHeading>
       <S.Issue>{issue.issue}</S.Issue>
-      <GoodBtn Background/>
+      <GoodBtn Background />
     </S.IssueBoxStyle>
   );
 };
