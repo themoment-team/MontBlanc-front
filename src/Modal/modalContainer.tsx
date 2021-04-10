@@ -1,6 +1,6 @@
 import React, { createContext, useState, useCallback, useContext } from "react";
 
-import * as modals from "../components/Modals";
+import * as modals from "./Modals";
 
 export type ModalProps = {
   close: () => void;
