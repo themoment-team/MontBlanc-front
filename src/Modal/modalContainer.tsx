@@ -49,6 +49,7 @@ const ModalRenderer: React.FC<ModalProps & { modal: Modal }> = ({
   modal,
 }) => {
   const Modal = modals[modal.name];
+  // 아직 모달 스타일링 안함
   return <Modal close={close} {...(modal.props as any)} />;
 };
 
