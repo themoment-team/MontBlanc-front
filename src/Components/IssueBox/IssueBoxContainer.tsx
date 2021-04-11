@@ -7,7 +7,7 @@ export const randomColorPicker = () => {
     "#699CAC66",
   ];
 
-  const randomNumber: number = Math.floor(Math.random() * 6);
+  const randomNumber: number = Math.floor(Math.random() * 5);
 
   return color[randomNumber];
 };
