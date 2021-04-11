@@ -2,18 +2,18 @@ import React, { createContext, useState, useCallback, useContext } from "react";
 
 import * as modals from "./Modals";
 
-export type ModalProps = {
+export interface ModalProps {
   close: () => void;
 };
 
-type Modal = {
+interface Modal {
   name: keyof typeof modals;
   props: {
     [key in string]: any;
   };
 };
 
-type ModalContextValues = {
+interface ModalContextValues {
   open: <T extends Modal["name"]>(
     name: T,
     props: Omit<
