@@ -49,7 +49,6 @@ const ModalRenderer: React.FC<ModalProps & { modal: Modal }> = ({
   modal,
 }) => {
   const Modal = modals[modal.name];
-  // 아직 모달 스타일링 안함
   return <Modal close={close} {...(modal.props as any)} />;
 };
 
@@ -59,7 +58,7 @@ export const useModal = () => {
   const context = useContext(ModalContext);
 
   if (!context) {
-    throw new Error("context가 제공되어야 합니다.");
+    throw new Error("context must be provided");
   }
 
   return context;
