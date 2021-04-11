@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import * as P from "./Page/index";
 import GlobalStyle from "./GlobalStyle/GlobalStyles";
+import 
 
 const App: React.FC = () => (
   <BrowserRouter>
