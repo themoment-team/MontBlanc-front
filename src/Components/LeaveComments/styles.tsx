@@ -40,6 +40,7 @@ export const Form = styled.div`
   }
   textarea::placeholder {
     color: #a8a8a8;
+    font-size: 18px;
   }
 `;
 
