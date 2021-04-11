@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const LeaveCommentsBox = styled.main`
   display: flex;
-  justify-content: space-around;
-  margin: 230px 9.5%;
-  width: 83%;
+  justify-content: space-between;
+  margin: 215px 9.5%;
+  width: 80.4%;
 `;
 
 export const LeftBox = styled.div`
   position: sticky;
-  top: 230px;
+  top: 215px;
   left: 0;
   height: 380px;
 `;
@@ -48,7 +48,7 @@ export const Btn = styled.button`
   align-self: flex-end;
   justify-self: flex-end;
   color: #fff;
-  background-color: #434c9c;
+  background: rgba(67, 76, 156, 0.56);
   padding: 10px 29px;
   font-size: 17px;
   font-weight: 600;
@@ -79,8 +79,7 @@ export const Top10Btn = styled.button`
 `;
 
 export const RightBox = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-left: 3vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 29px
 `;
