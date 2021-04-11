@@ -1,6 +1,6 @@
 import React, { createContext, useState, useCallback, useContext } from "react";
 
-import * as modals from "../Components/Modals";
+import modals from "../Components/Modals";
 
 /*
  * Context.. 를 써서 만든 모달..
@@ -11,7 +11,7 @@ import * as modals from "../Components/Modals";
  *  형식으로 사용하시면 됩니다.
 */
 
-export interface ModalProps {
+export default interface ModalProps {
   close: () => void;
 };
 
