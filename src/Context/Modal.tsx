@@ -2,6 +2,15 @@ import React, { createContext, useState, useCallback, useContext } from "react";
 
 import * as modals from "../Components/Modals";
 
+/*
+ * Context.. 를 써서 만든 모달..
+ * 각각의 모달을 [../Components/Modals]에서 스타일링하고
+    <button onClick={() => modal.open("{모달컴포넌트이름}", { {props} })}>
+      프로젝트 상세 정보 보기
+    </button>
+ *  형식으로 사용하시면 됩니다.
+*/
+
 export interface ModalProps {
   close: () => void;
 };
