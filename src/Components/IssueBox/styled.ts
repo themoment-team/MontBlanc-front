@@ -22,6 +22,7 @@ export const IssueNumber = styled.div`
   margin-left: 13px;
 `;
 
-export const Issue = styled.span`
+export const Issue = styled.div`
   font-size: 15px;
+  margin-bottom: 22px;
 `;
