@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TopTenWrapper = styled.section`
   display: flex;
-  width: 80%;
+  width: 80.4%;
   margin: 0 auto;
   margin-top: 215px;
   height: fit-content;
