@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const AboutBox = styled.div`
-  margin: 230px 30px 0 9.5%;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 215px;
+  width: 81%;
 `;
