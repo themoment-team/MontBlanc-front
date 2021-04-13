@@ -8,7 +8,7 @@ export type ModalProps = {
 
 type Modal = {
   name: keyof typeof modals;
-  props: {
+  props?: {
     [key in string]: any;
   };
 };
@@ -16,7 +16,7 @@ type Modal = {
 type ModalContextValues = {
   open: <T extends Modal["name"]>(
     name: T,
-    props: Omit<
+    prop?: Omit<
       React.ComponentProps<typeof modals[T]>,
       keyof ModalProps | "children"
     >
