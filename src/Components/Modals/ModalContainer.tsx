@@ -15,7 +15,7 @@ export const ModalContainer: React.FC<ModalProps> = ({ close, children }) => {
       return () => {
         window.removeEventListener("keydown", closeModal);
       };
-    }, []);
+    }, [close]);
   
     return (
       <Container
