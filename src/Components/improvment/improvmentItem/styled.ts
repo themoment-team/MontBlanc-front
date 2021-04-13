@@ -7,7 +7,7 @@ interface ImprovmentProps {
 export const ImprovmentBox = styled.div<ImprovmentProps>`
   background-color: ${(props) => props.color};
   width: 40vw;
-  height: 30vh;
+  height: 340px;
   border-radius: 12px;
   padding: 3em 3em 2em 3em;
   margin-bottom: 33px;

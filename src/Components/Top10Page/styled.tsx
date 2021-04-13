@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const TopTenWrapper = styled.section`
   display: flex;
-  width: 80%;
+  width: 81%;
   margin: 0 auto;
   margin-top: 215px;
   height: fit-content;
 `; // left박스와 right박스 전체를 감싸는 wrapper입니다.
 
 export const RightBox = styled.section`
-  width: 55%;
+  width: 54.2%;
   height: fit-content;
 `;
 // topten 리스트가 적히는 오른쪽 박스입니다.

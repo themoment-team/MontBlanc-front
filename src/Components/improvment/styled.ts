@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export const ImprovmentPageBox = styled.div`
   display: flex;
-  justify-content: space-around;
-  margin: 230px 30px 0 30px;
-  width: 100%;
-  height: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 215px;
+  width: 80%;
 `;
 
 export const LeftBox = styled.div`
-  height: 23vh;
+  height: fit-content;
   position: sticky;
-  top: 230px;
+  top: 215px;
 `;
 
 export const Btn = styled.button`
