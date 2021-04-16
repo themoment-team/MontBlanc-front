@@ -3,7 +3,7 @@ import { ModalProps } from "../../../../Context/Modal";
 import * as S from "./style";
 import * as I from "../../../../Asset/SVG";
 
-const ImprovmentModal: React.FC<ModalProps> = ({ close }) => {
+const ImprovmentModalPresenter: React.FC<ModalProps> = ({ close }) => {
   return (
     <ModalContainer close={close} width={1000} height={600}>
       <S.ModalWrapper>
@@ -26,4 +26,4 @@ const ImprovmentModal: React.FC<ModalProps> = ({ close }) => {
   );
 };
 
-export default ImprovmentModal;
+export default ImprovmentModalPresenter;

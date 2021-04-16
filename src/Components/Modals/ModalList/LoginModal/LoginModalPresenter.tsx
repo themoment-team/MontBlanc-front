@@ -3,7 +3,7 @@ import { ModalProps } from "../../../../Context/Modal";
 import * as S from "./style";
 import { Logo } from "../../../../Asset/SVG";
 
-export const LoginModal: React.FC<ModalProps> = ({ close }) => {
+export const LoginModalPresenter: React.FC<ModalProps> = ({ close }) => {
   return (
     <ModalContainer close={close} width={623} height={628}>
       <S.ModalWrapper>
@@ -17,4 +17,4 @@ export const LoginModal: React.FC<ModalProps> = ({ close }) => {
   );
 };
 
-export default LoginModal;
+export default LoginModalPresenter;
