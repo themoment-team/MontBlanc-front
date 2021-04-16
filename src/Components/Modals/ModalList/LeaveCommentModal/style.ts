@@ -10,6 +10,7 @@ export const ModalWrapper = styled.div`
   button {
     align-self: flex-end;
   }
+  position: relative;
 `;
 
 export const H1 = styled.h1`
@@ -18,6 +19,13 @@ export const H1 = styled.h1`
   color: #5b5b5b;
   margin-bottom: 35px;
   margin-top: 14px;
+`;
+
+export const ModalImg = styled.button`
+  background: none;
+  padding: 0;
+  position: absolute;
+  top: 30px;
 `;
 
 export const Input = styled.input`
