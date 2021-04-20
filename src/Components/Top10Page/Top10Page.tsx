@@ -6,16 +6,22 @@ import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
 import { useEffect, useState } from "react";
 
+// list 인터페이스
+interface list {
+  map(arg0: (top10: any) => JSX.Element): import("react").ReactNode;
+  id : number;
+  content : string;
+  option : string;
+}
+
 const heading: string[] = ["학교가 불편한 순간", "TOP 10"];
 const explanation: string[] = [
   "공감이 되는 의견이 있다면 좋아요를 눌러주세요.",
   "좀 더 적극적으로 개선할 수 있도록 노력하겠습니다.",
 ];
 
-const link = 'httpdasfdsfdasf';
-
 const Top10Page: React.FC = () => {
-  const [list, setList] = useState(null);
+  const [list, setList] = useState<list | null>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -24,9 +30,10 @@ const Top10Page: React.FC = () => {
       setList(null);
       setLoading(true);
       setError(null);
-      const response = await axios.get(link);
+      const response = await axios.get('https://jsonplaceholder.typicode.com/users');
       setList(response.data)
     } catch(e) {
+      console.log(e.response.status);
       setError(e);
     }
     setLoading(false);
