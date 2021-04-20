@@ -1,9 +1,10 @@
 import { PageExplanation } from "../PageExplanation";
 import { Link } from "react-router-dom";
 import { LeftBox } from "../../GlobalStyle/LeftBox";
+import axios from "axios";
 import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
-import * as C from "./Top10Container";
+import { useEffect, useState } from "react";
 
 const heading: string[] = ["학교가 불편한 순간", "TOP 10"];
 const explanation: string[] = [
@@ -11,7 +12,36 @@ const explanation: string[] = [
   "좀 더 적극적으로 개선할 수 있도록 노력하겠습니다.",
 ];
 
+const link = 'httpdasfdsfdasf';
+
 const Top10Page: React.FC = () => {
+  const [list, setList] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const fetchList = async () => {
+    try {
+      setList(null);
+      setLoading(true);
+      setError(null);
+      const response = await axios.get(link);
+      setList(response.data)
+    } catch(e) {
+      setError(e);
+    }
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    fetchList();
+  }, []);
+
+  // return
+
+  if (loading) return <div>로딩중..</div>;
+  if (error) return <div>에러가 발생했습니다.</div>
+  if (!list) return null;
+
   return (
     <S.TopTenWrapper>
       <LeftBox>
@@ -21,7 +51,7 @@ const Top10Page: React.FC = () => {
         </S.Btn>
       </LeftBox>
       <S.RightBox>
-        {C.Top10List.map(top10 => (
+        {list.map(top10 => (
           <S.TenIssues>
             <span>
               <span>{top10.id}위</span>
