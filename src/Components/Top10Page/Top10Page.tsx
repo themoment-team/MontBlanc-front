@@ -9,9 +9,9 @@ import { useEffect, useState } from "react";
 // list 인터페이스
 interface list {
   map(arg0: (top10: any) => JSX.Element): import("react").ReactNode;
-  id : number;
+  boardIdx : number;
   content : string;
-  option : string;
+  goods : number;
 }
 
 const heading: string[] = ["학교가 불편한 순간", "TOP 10"];
@@ -61,14 +61,14 @@ const Top10Page: React.FC = () => {
         {list.map(top10 => (
           <S.TenIssues>
             <span>
-              <span>{top10.id}위</span>
+              <span>{top10.boardIdx}위</span>
               <article>
                 {top10.content}
               </article>
             </span>
             <span>
-              <button>답변{top10.option}</button>
-              <GoodBtn Background={false} />
+              <button>답변보기</button>
+              <GoodBtn Background={false} Goods={top10.goods}/>
             </span>
           </S.TenIssues>
         ))}
