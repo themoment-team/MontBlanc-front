@@ -27,7 +27,7 @@ export const Text = styled.span`
   font-weight: 600;
 `;
 
-export const ImprovmentImg = styled.div`
+export const ViewImg = styled.div`
   margin-top: 55px;
   align-self: flex-end;
 `;

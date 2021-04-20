@@ -1,3 +1,3 @@
 export { default as LoginModal } from "./ModalList/LoginModal/LoginModalPresenter";
-export { default as ImprovmentModal } from "./ModalList/ImprovmentModal/ImprovmentModalPresenter";
-export { default as LeaveCommentModal } from "./ModalList/LeaveCommentModal/LeaveCommentModal";
+export { default as ViewModal } from "./ModalList/ViewModal/ViewModalPresenter";
+export { default as EditModal } from "./ModalList/EditModal/EditModal";

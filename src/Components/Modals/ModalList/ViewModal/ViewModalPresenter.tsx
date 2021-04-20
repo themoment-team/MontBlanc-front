@@ -3,7 +3,7 @@ import { ModalProps } from "../../../../Context/Modal";
 import * as S from "./style";
 import * as I from "../../../../Asset/SVG";
 
-const ImprovmentModalPresenter: React.FC<ModalProps> = ({ close }) => {
+const ViewModalPresenter: React.FC<ModalProps> = ({ close }) => {
   return (
     <ModalContainer close={close} width={1000} height={600}>
       <S.ModalWrapper>
@@ -18,12 +18,12 @@ const ImprovmentModalPresenter: React.FC<ModalProps> = ({ close }) => {
             전공동아리전공동아리전공동아리전공동아리전공동아리전공동아리전공동아리
           </S.Text>
         </S.ModalContent>
-        <S.ImprovmentImg>
+        <S.ViewImg>
           <I.ImprovmentSvg1 />
-        </S.ImprovmentImg>
+        </S.ViewImg>
       </S.ModalWrapper>
     </ModalContainer>
   );
 };
 
-export default ImprovmentModalPresenter;
+export default ViewModalPresenter;

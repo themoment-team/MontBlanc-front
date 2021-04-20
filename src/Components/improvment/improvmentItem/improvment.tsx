@@ -17,7 +17,7 @@ const Improvment: React.FC<ImprovmentProps> = (p: ImprovmentProps) => {
           전공동아리 시간이 너무 부족해요.
           <br /> 늘려주세요 ㅠㅠ
         </S.ImprovmentHeading>
-        <S.AboutBtn onClick={() => modal.open("ImprovmentModal")}>
+        <S.AboutBtn onClick={() => modal.open("ViewModal", 0)}>
           자세히 보기
         </S.AboutBtn>
       </S.ImprovmentContent>
