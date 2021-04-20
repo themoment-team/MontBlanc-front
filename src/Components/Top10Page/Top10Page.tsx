@@ -31,7 +31,7 @@ const Top10Page: React.FC = () => {
       setLoading(true);
       setError(null);
       const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-      setList(response.data)
+      setList(response.data.list)
     } catch(e) {
       console.log(e.response.status);
       setError(e);
