@@ -1,6 +1,7 @@
 import { PageExplanation } from "../PageExplanation";
 import { Link } from "react-router-dom";
 import { LeftBox } from "../../Constants/GlobalStyle/LeftBox"
+import { BASE_URL } from "../../Constants/Config.json"
 import axios from "axios";
 import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
@@ -30,7 +31,7 @@ const Top10Page: React.FC = () => {
       setList(null);
       setLoading(true);
       setError(null);
-      const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+      const response = await axios.get(BASE_URL);
       setList(response.data.list)
     } catch(e) {
       console.log(e.response.status);
