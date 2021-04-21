@@ -1,8 +1,11 @@
 import * as S from "./styled";
 import * as I from "../../Asset/SVG/index";
 import { Link } from "react-router-dom";
+import { useModal } from "../../Context/Modal";
 
 const StartPage: React.FC = () => {
+  const modal = useModal();
+  
   return (
     <S.StartPage>
       <S.LeftBox>
@@ -24,7 +27,9 @@ const StartPage: React.FC = () => {
           <Link to="/Leave_opinion">
             <button>Student</button>
           </Link>
-          <button>Admin</button>
+          <button onClick={() => modal.open("LoginModal")}>
+            Admin
+          </button>
         </S.ButtonBox>
       </S.LeftBox>
       <S.RightBox>
