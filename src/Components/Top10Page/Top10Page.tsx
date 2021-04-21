@@ -1,6 +1,6 @@
 import { PageExplanation } from "../PageExplanation";
 import { Link } from "react-router-dom";
-import { LeftBox } from "../../GlobalStyle/LeftBox";
+import { LeftBox } from "../../Constants/GlobalStyle/LeftBox"
 import axios from "axios";
 import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
