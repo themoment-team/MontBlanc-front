@@ -3,11 +3,11 @@ import { ModalProps } from "../../../../Context/Modal";
 import * as S from "./style";
 import { CancleBtn } from "../../../../Asset/SVG";
 
-const EditModal: React.FC<ModalProps> = ({ close }) => {
+const EditModal: React.FC<ModalProps> = ({ close, heading, state }) => {
   return (
     <ModalContainer close={close} width={1000} height={600}>
       <S.ModalWrapper>
-        <S.H1>답변 달기</S.H1>
+        <S.H1>{heading}</S.H1>
         <S.ModalImg>
           <CancleBtn />
         </S.ModalImg>

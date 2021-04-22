@@ -1,14 +1,15 @@
 import React, { createContext, useState, useCallback, useContext } from "react";
-
 import * as modals from "../Components/Modals";
 
 export type ModalProps = {
   close: () => void;
+  state?: number;
+  heading?: string;
 };
 
 type Modal = {
   name: keyof typeof modals;
-  state: {
+  state?: {
     [key in number]: any;
   };
   heading?: {
@@ -19,7 +20,7 @@ type Modal = {
 type ModalContextValues = {
   open: <T extends Modal["name"]>(
     name: T,
-    state: Omit<
+    state?: Omit<
       React.ComponentProps<typeof modals[T]>,
       keyof ModalProps | "children"
     >,
@@ -30,7 +31,7 @@ type ModalContextValues = {
   ) => void;
 };
 
-const ModalContext = createContext<ModalContextValues | null>(null);
+export const ModalContext = createContext<ModalContextValues | null>(null);
 
 export const ModalContextProvider: React.FC = ({ children }) => {
   const [openedModal, setOpenedModal] = useState<Modal | null>(null);
@@ -59,7 +60,14 @@ const ModalRenderer: React.FC<ModalProps & { modal: Modal }> = ({
   modal,
 }) => {
   const Modal = modals[modal.name];
-  return <Modal close={close} {...(modal.heading as any)} />;
+  return (
+    <Modal
+      close={close}
+      heading={modal.heading}
+      state={modal.state}
+      {...(modal.heading as any)}
+    />
+  );
 };
 
 // hook

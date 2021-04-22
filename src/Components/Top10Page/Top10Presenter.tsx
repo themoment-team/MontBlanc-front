@@ -27,7 +27,7 @@ const Top10Page: React.FC = () => {
             </article>
           </span>
           <span>
-            <button onClick={() => modal.open("ViewModal", "답변달기", 2)}>
+            <button onClick={() => modal.open("EditModal", 2, "답변달기")}>
               답변{"보기"}
             </button>
             <GoodBtn Background={false} />
