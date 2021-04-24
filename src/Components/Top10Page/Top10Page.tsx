@@ -31,10 +31,9 @@ const Top10Page: React.FC = () => {
       setList(null);
       setLoading(true);
       setError(null);
-      const response = await axios.get(BASE_URL);
+      const response = await axios.get("http://192.168.0.4:5000/v1/uncomfortable");
       setList(response.data.list)
     } catch(e) {
-      console.log(e.response.status);
       setError(e);
     }
     setLoading(false);
@@ -48,7 +47,7 @@ const Top10Page: React.FC = () => {
 
   if (loading) return <div>로딩중..</div>;
   if (error) return <div>에러가 발생했습니다.</div>
-  if (!list) return null;
+  if (!list) return <div>안녕하셍요</div>;
 
   return (
     <S.TopTenWrapper>
