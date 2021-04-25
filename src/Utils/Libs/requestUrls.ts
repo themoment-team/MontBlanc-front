@@ -21,15 +21,13 @@ export const AdminController = {
 
 //실제개선사례
 export const ImprovementController = {
-  writeSolved: () => {
-    return `/admin/solved`;
-  },
   //put 개선사례수정, delete 개선사례삭제
   detailSolved: (improveIdx: number) => {
     return `/admin/solved/${improveIdx}`;
   },
-  viewSolved: () => {
-    return `solved`;
+  //get 개선사례보기, post 개선사례작성
+  detail2Solved: () => {
+    return `/solved`;
   },
 };
 
