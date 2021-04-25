@@ -1,13 +1,53 @@
 import { PageExplanation } from "../PageExplanation";
 import { Link } from "react-router-dom";
-import { LeftBox } from "../../GlobalStyle/LeftBox";
-import { heading, explanation } from "./Top10Container";
+import { LeftBox } from "../../Constants/GlobalStyle/LeftBox"
+import axios from "axios";
 import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
-import { useModal } from "../../Context/Modal";
+import { useEffect, useState } from "react";
+
+// list 인터페이스
+interface list {
+  map(arg0: (top10: any) => JSX.Element): import("react").ReactNode;
+  boardIdx : number;
+  content : string;
+  goods : number;
+}
+
+const heading: string[] = ["학교가 불편한 순간", "TOP 10"];
+const explanation: string[] = [
+  "공감이 되는 의견이 있다면 좋아요를 눌러주세요.",
+  "좀 더 적극적으로 개선할 수 있도록 노력하겠습니다.",
+];
 
 const Top10Page: React.FC = () => {
-  const modal = useModal();
+  const [list, setList] = useState<list | null>();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const fetchList = async () => {
+    try {
+      setList(null);
+      setLoading(true);
+      setError(null);
+      const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+      setList(response.data.list)
+    } catch(e) {
+      console.log(e.response.status);
+      setError(e);
+    }
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    fetchList();
+  }, []);
+
+  // return
+
+  if (loading) return <div>로딩중..</div>;
+  if (error) return <div>에러가 발생했습니다.</div>
+  if (!list) return null;
 
   return (
     <S.TopTenWrapper>
@@ -18,6 +58,7 @@ const Top10Page: React.FC = () => {
         </S.Btn>
       </LeftBox>
       <S.RightBox>
+<<<<<<< HEAD:src/Components/Top10Page/Top10Presenter.tsx
         <S.TenIssues>
           <span>
             <span>{1}위</span>
@@ -33,6 +74,22 @@ const Top10Page: React.FC = () => {
             <GoodBtn Background={false} />
           </span>
         </S.TenIssues>
+=======
+        {list.map(top10 => (
+          <S.TenIssues>
+            <span>
+              <span>{top10.boardIdx}위</span>
+              <article>
+                {top10.content}
+              </article>
+            </span>
+            <span>
+              <button>답변보기</button>
+              <GoodBtn Background={false} Goods={top10.goods}/>
+            </span>
+          </S.TenIssues>
+        ))}
+>>>>>>> 2526a8cd2cb60a8099942331a3dab843c8fe91f9:src/Components/Top10Page/Top10Page.tsx
       </S.RightBox>
     </S.TopTenWrapper>
   );
