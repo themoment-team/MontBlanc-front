@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { PageExplanation } from "../PageExplanation";
+import { Link } from "react-router-dom";
 import { LeftBox, ApiResult } from "../../Constants/GlobalStyle/Detail";
 import axios from "axios";
 import GoodBtn from "../GoodBtn/GoodBtnPresenter";
