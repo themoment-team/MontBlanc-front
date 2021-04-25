@@ -9,3 +9,5 @@ export { default as DoubleQuotes } from "./DoubleQuotes";
 export { default as ImprovmentSvg1 } from "./ImprovmentSvg1";
 export { default as ImprovmentSvg2 } from "./ImprovmentSvg2";
 export { default as ImprovmentSvg3 } from "./ImprovmentSvg3";
+export { default as CancleBtn } from "./CancleBtn";
+export { default as EditBtn } from "./editBtn";

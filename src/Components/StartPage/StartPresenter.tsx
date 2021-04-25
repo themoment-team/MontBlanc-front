@@ -5,7 +5,7 @@ import { useModal } from "../../Context/Modal";
 
 const StartPage: React.FC = () => {
   const modal = useModal();
-  
+
   return (
     <S.StartPage>
       <S.LeftBox>
@@ -27,9 +27,7 @@ const StartPage: React.FC = () => {
           <Link to="/Leave_opinion">
             <button>Student</button>
           </Link>
-          <button onClick={() => modal.open("LoginModal")}>
-            Admin
-          </button>
+          <button onClick={() => modal.open("LoginModal", 1)}>Admin</button>
         </S.ButtonBox>
       </S.LeftBox>
       <S.RightBox>
