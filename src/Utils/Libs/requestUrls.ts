@@ -13,19 +13,23 @@ export const AdminController = {
   withdrawal: () => {
     return `/withdrawal`;
   },
-  //post 작성, put 수정, delete 삭제, get 게시글+답변보기
-  detailAnswer: (boardIdx: number) => {
-    return `/answer/${boardIdx}`;
+};
+
+//답변
+export const AnswerController = {
+  //put 답변수정, delete 답변삭제, post 답변작성
+  detailAnswer: (answerIdx: number) => {
+    return `/top10/answer/${answerIdx}`;
   },
 };
 
 //실제개선사례
 export const ImprovementController = {
-  //put 개선사례수정, delete 개선사례삭제
+  //get 개선사례보기, post 개선사례작성
   detailSolved: (improveIdx: number) => {
     return `/admin/solved/${improveIdx}`;
   },
-  //get 개선사례보기, post 개선사례작성
+  //put 개선사례수정, delete 개선사례삭제
   detail2Solved: () => {
     return `/solved`;
   },
@@ -37,7 +41,7 @@ export const TableController = {
   detailUncomfortable: () => {
     return `/uncomfortable`;
   },
-  detailGoods: (boardIdx: number) => {
+  AddGoods: (boardIdx: number) => {
     return `/uncomfortable/${boardIdx}`;
   },
   cancelGoods: (boardIdx: number) => {
