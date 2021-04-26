@@ -1,3 +1,9 @@
 {
-  "BASE_URL": "http://192.168.0.4:5000/v1"
+  "BASE_URL": "http://15.164.226.224:8080/v1",
+  "BASE_HEADER": {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type,Authorization",
+    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,OPTIONS",
+    "Access-Control-Allow-Credentials": "true"
+  }
 }
