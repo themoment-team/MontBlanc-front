@@ -1,55 +1,18 @@
-import { useEffect, useState } from "react";
 import { PageExplanation } from "../PageExplanation";
 import { Link } from "react-router-dom";
-import { LeftBox, ApiResult } from "../../Constants/GlobalStyle/Detail";
-import axios from "axios";
+import { LeftBox } from "../../Constants/GlobalStyle/Detail";
 import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
+import { heading, explanation, top10, list } from "./Top10Container";
+import { useEffect, useState } from "react";
 
-// list 인터페이스
-interface list {
-  map(arg0: (top10: any) => JSX.Element): import("react").ReactNode;
-  boardIdx: number;
-  content: string;
-  goods: number;
-}
-
-const heading: string[] = ["학교가 불편한 순간", "TOP 10"];
-const explanation: string[] = [
-  "공감이 되는 의견이 있다면 좋아요를 눌러주세요.",
-  "좀 더 적극적으로 개선할 수 있도록 노력하겠습니다.",
-];
-
-const Top10Page: React.FC = () => {
-  const [list, setList] = useState<list | null>();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const fetchList = async () => {
-    try {
-      setList(null);
-      setLoading(true);
-      setError(null);
-      const response = await axios.get(
-        "http://192.168.0.4:5000/v1/uncomfortable"
-      );
-      setList(response.data.list);
-    } catch (e) {
-      setError(e);
-    }
-    setLoading(false);
-  };
-
+const Top10Page = () => {
+  const [list, setList] = useState<list[]>([
+    { boardIdx: 0, content: "", goods: 0 },
+  ]);
   useEffect(() => {
-    fetchList();
+    top10().then((res) => setList(res.data.list));
   }, []);
-
-  // return
-
-  if (loading) return <ApiResult>로딩중..</ApiResult>;
-  if (error) return <ApiResult>에러가 발생했습니다.</ApiResult>;
-  if (!list) return <ApiResult>리스트가 없슴다.</ApiResult>;
-
   return (
     <S.TopTenWrapper>
       <LeftBox>
@@ -59,15 +22,19 @@ const Top10Page: React.FC = () => {
         </S.Btn>
       </LeftBox>
       <S.RightBox>
-        {list.map((top10) => (
-          <S.TenIssues>
+        {list.map((top10: list, index) => (
+          <S.TenIssues key={top10.boardIdx}>
             <span>
-              <span>{top10.boardIdx}위</span>
+              <span>{index + 1}위</span>
               <article>{top10.content}</article>
             </span>
             <span>
               <button>답변보기</button>
-              <GoodBtn Background={false} Goods={top10.goods} />
+              <GoodBtn
+                Background={false}
+                Goods={top10.goods}
+                Idx={top10.boardIdx}
+              />
             </span>
           </S.TenIssues>
         ))}
