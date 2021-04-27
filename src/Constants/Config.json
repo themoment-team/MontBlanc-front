@@ -1,5 +1,5 @@
 {
-  "BASE_URL": "http://15.164.226.224:8080/v1",
+  "BASE_URL": "http://3.36.221.244:8080/v1",
   "BASE_HEADER": {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type,Authorization",
