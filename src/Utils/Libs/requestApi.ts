@@ -1,6 +1,6 @@
+import { BASE_URL, BASE_HEADER } from "Constants/Config.json";
 import axios, { AxiosRequestConfig } from "axios";
 export const ACCESS_TOKEN_NAME = "Authorization";
-import { BASE_URL, BASE_HEADER } from "Constants/Config.json";
 
 export interface hasPrameterAndToken {
   hasToken?: boolean;
