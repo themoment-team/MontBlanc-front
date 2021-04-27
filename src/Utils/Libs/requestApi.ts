@@ -3,13 +3,13 @@ export const ACCESS_TOKEN_NAME = "Authorization";
 import { BASE_URL, BASE_HEADER } from "Constants/Config.json";
 
 export interface hasPrameterAndToken {
-  hasToken: boolean;
-  hasParameter: boolean;
+  hasToken?: boolean;
+  hasParameter?: boolean;
 }
 
 const RequestApi = async (
   p: AxiosRequestConfig,
-  condition: hasPrameterAndToken = { hasToken: true, hasParameter: true }
+  condition: hasPrameterAndToken = { hasToken: false, hasParameter: false }
 ) => {
   const headers = p.headers;
   const accessToken =
