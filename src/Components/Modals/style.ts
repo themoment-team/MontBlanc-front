@@ -27,6 +27,10 @@ export const Inner = styled.div<InnerProps>`
   flex-direction: column;
   border-radius: 15px;
   z-index: 5;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   button {
     align-items: flex-end;
   }
