@@ -1,22 +1,16 @@
 import RequestApi from "Utils/Libs/requestApi";
 import { ImprovementController } from "Utils/Libs/requestUrls";
-import { Method } from "axios";
 
 class Improvement {
-  async editAndDeleteImprovement(
-    improveIdx: number,
-    content: string,
-    header: string,
-    method: Method
-  ) {
+  async editImprovement(improveIdx: number, content: string, header: string) {
     try {
       const data = {
         content,
         header,
       };
-      const res = await RequestApi(
+      return RequestApi(
         {
-          method: method,
+          method: "PUT",
           url: ImprovementController.detailSolved(improveIdx),
           data: data,
         },
@@ -27,15 +21,39 @@ class Improvement {
     }
   }
 
-  async viewAndSaveImprovment(content: string, header: string, method: Method) {
+  async deleteImprovement(improveIdx: number) {
+    try {
+      return RequestApi(
+        {
+          method: "DELETE",
+          url: ImprovementController.detailSolved(improveIdx),
+        },
+        { hasToken: true }
+      );
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
+  async viewImprovment() {
+    try {
+      return RequestApi({
+        url: ImprovementController.detail2Solved(),
+      });
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
+  async saveImprovment(content: string, header: string) {
     try {
       const data = {
         content,
         header,
       };
-      const res = await RequestApi(
+      return RequestApi(
         {
-          method: method,
+          method: "POST",
           url: ImprovementController.detail2Solved(),
           data: data,
         },
