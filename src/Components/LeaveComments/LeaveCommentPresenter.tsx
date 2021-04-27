@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import * as I from "../../Asset/SVG/index";
 import * as S from "./styles";
-import * as C from "./LeaveCommentContainer";
 import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
 
 const LeaveCommentsPage: React.FC = () => {

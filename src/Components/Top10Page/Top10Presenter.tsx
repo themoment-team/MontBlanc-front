@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { PageExplanation } from "../PageExplanation";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD:src/Components/Top10Page/Top10Page.tsx
 import { LeftBox, ApiResult } from "../../Constants/GlobalStyle/Detail";
+=======
+import { LeftBox } from "../../Constants/GlobalStyle/LeftBox";
+>>>>>>> 400afa8e0cf0cf19892dd54b5463898dff1500e7:src/Components/Top10Page/Top10Presenter.tsx
 import axios from "axios";
 import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
@@ -31,10 +35,18 @@ const Top10Page: React.FC = () => {
       setLoading(true);
       setError(null);
       const response = await axios.get(
+<<<<<<< HEAD:src/Components/Top10Page/Top10Page.tsx
         "http://192.168.0.4:5000/v1/uncomfortable"
       );
       setList(response.data.list);
     } catch (e) {
+=======
+        "https://jsonplaceholder.typicode.com/users"
+      );
+      setList(response.data.list);
+    } catch (e) {
+      console.log(e.response.status);
+>>>>>>> 400afa8e0cf0cf19892dd54b5463898dff1500e7:src/Components/Top10Page/Top10Presenter.tsx
       setError(e);
     }
     setLoading(false);
@@ -46,9 +58,15 @@ const Top10Page: React.FC = () => {
 
   // return
 
+<<<<<<< HEAD:src/Components/Top10Page/Top10Page.tsx
   if (loading) return <ApiResult>로딩중..</ApiResult>;
   if (error) return <ApiResult>에러가 발생했습니다.</ApiResult>;
   if (!list) return <ApiResult>리스트가 없슴다.</ApiResult>;
+=======
+  if (loading) return <div>로딩중..</div>;
+  if (error) return <div>에러가 발생했습니다.</div>;
+  if (!list) return null;
+>>>>>>> 400afa8e0cf0cf19892dd54b5463898dff1500e7:src/Components/Top10Page/Top10Presenter.tsx
 
   return (
     <S.TopTenWrapper>
