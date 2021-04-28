@@ -19,7 +19,6 @@ class Answer {
           data: data,
         },
         {
-          hasParameter: true,
           hasToken: true,
         }
       );

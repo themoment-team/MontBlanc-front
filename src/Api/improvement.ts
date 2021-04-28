@@ -14,7 +14,7 @@ class Improvement {
           url: ImprovementController.detailSolved(improveIdx),
           data: data,
         },
-        { hasParameter: true, hasToken: true }
+        { hasToken: true }
       );
     } catch (e) {
       throw new Error(e);
@@ -58,7 +58,6 @@ class Improvement {
           data: data,
         },
         {
-          hasParameter: true,
           hasToken: true,
         }
       );

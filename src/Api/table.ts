@@ -17,14 +17,11 @@ class Table {
       const data = {
         content,
       };
-      return RequestApi(
-        {
-          method: "POST",
-          url: TableController.detailUncomfortable(),
-          data: data,
-        },
-        { hasParameter: true }
-      );
+      return RequestApi({
+        method: "POST",
+        url: TableController.detailUncomfortable(),
+        data: data,
+      });
     } catch (e) {
       throw new Error(e);
     }
@@ -33,7 +30,7 @@ class Table {
   addGoods(boardIdx: number) {
     try {
       return RequestApi({
-        method: "put",
+        method: "PUT",
         url: TableController.AddGoods(boardIdx),
       });
     } catch (e) {
