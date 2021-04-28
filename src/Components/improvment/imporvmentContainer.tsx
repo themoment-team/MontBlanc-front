@@ -1,3 +1,15 @@
+import Improvement from "Api/improvement";
+
+export interface list {
+  content: string;
+  header: string;
+}
+
+export const improvement = () => {
+  const res = Improvement.viewImprovment();
+  return res;
+};
+
 export const heading: string[] = ["실제 개선 사례"];
 export const explanation: string[] = [
   "다양한 의견을 남겨주셔서 정말 감사합니다.",
