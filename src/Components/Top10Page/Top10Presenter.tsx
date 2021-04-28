@@ -3,16 +3,10 @@ import { Link } from "react-router-dom";
 import { LeftBox } from "../../Constants/GlobalStyle/Detail";
 import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
-import { heading, explanation, top10, list } from "./Top10Container";
-import { useEffect, useState } from "react";
+import { heading, explanation, useTop10, list } from "./Top10Container";
 
 const Top10Page = () => {
-  const [list, setList] = useState<list[]>([
-    { boardIdx: 0, content: "", goods: 0 },
-  ]);
-  useEffect(() => {
-    top10().then((res) => setList(res.data.list));
-  }, []);
+  const list = useTop10();
   return (
     <S.TopTenWrapper>
       <LeftBox>

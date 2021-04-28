@@ -1,4 +1,5 @@
 import Table from "Api/table";
+import { useEffect, useState } from "react";
 
 export interface list {
   boardIdx: number;
@@ -6,9 +7,19 @@ export interface list {
   goods: number;
 }
 
-export const top10 = () => {
-  const res = Table.viewTable();
-  return res;
+export const useTop10 = () => {
+  const [list, setList] = useState<list[]>([
+    { boardIdx: 0, content: "", goods: 0 },
+  ]);
+
+  const tryTop10 = async () => {
+    return await Table.viewTable();
+  };
+
+  useEffect(() => {
+    tryTop10().then((res) => setList(res.data.list));
+  }, []);
+  return list;
 };
 
 export const heading: string[] = ["학교가 불편한 순간", "TOP 10"];
