@@ -5,17 +5,14 @@ class Admin {
   async login(id: string, pass: string) {
     try {
       const data = {
-        id,
-        pass,
+        adminId: id,
+        adminPwd: pass,
       };
-      const res = await RequestApi(
-        {
-          method: "POST",
-          url: AdminController.login(),
-          data: data,
-        },
-        { hasParameter: true }
-      );
+      return await RequestApi({
+        method: "POST",
+        url: AdminController.login(),
+        data: data,
+      });
     } catch (e) {
       throw new Error(e);
     }
@@ -28,16 +25,11 @@ class Admin {
         name,
         pass,
       };
-      const res = await RequestApi(
-        {
-          method: "POST",
-          url: AdminController.signup(),
-          data: data,
-        },
-        {
-          hasParameter: true,
-        }
-      );
+      return await RequestApi({
+        method: "POST",
+        url: AdminController.signup(),
+        data: data,
+      });
     } catch (e) {
       throw new Error(e);
     }
@@ -45,7 +37,7 @@ class Admin {
 
   async logout() {
     try {
-      const res = await RequestApi(
+      return await RequestApi(
         {
           method: "POST",
           url: AdminController.logout(),
@@ -63,13 +55,13 @@ class Admin {
         id,
         pass,
       };
-      const res = await RequestApi(
+      return await RequestApi(
         {
           method: "POST",
           url: AdminController.withdrawal(),
           data: data,
         },
-        { hasToken: true, hasParameter: true }
+        { hasToken: true }
       );
     } catch (e) {
       throw new Error(e);

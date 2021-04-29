@@ -5,10 +5,15 @@ import useLikeCheck from "./GoodBtnContainer";
 interface GoodBtnProps {
   Background: boolean;
   Goods: number;
+  Idx: number;
 }
 
-const GoodBtn: React.FC<GoodBtnProps> = ({ Background = true, Goods }) => {
-  const [likeCnt, isLiked, onClickBtn] = useLikeCheck(Goods);
+const GoodBtn: React.FC<GoodBtnProps> = ({
+  Background = true,
+  Goods,
+  Idx,
+}: GoodBtnProps) => {
+  const [likeCnt, isLiked, onClickBtn] = useLikeCheck(Goods, Idx);
   return (
     <S.GoodBtnStyle
       Liked={isLiked}

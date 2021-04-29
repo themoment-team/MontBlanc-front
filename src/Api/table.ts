@@ -1,30 +1,36 @@
 import { TableController } from "./../Utils/Libs/requestUrls";
 import RequestApi from "Utils/Libs/requestApi";
-import { Method } from "axios";
 
 class Table {
-  async viewAndWriteTable(content: string, method: Method) {
+  viewTable() {
     try {
-      const data = {
-        content,
-      };
-      const res = await RequestApi(
-        {
-          method: method,
-          url: TableController.detailUncomfortable(),
-          data: data,
-        },
-        { hasParameter: true }
-      );
+      return RequestApi({
+        url: TableController.detailUncomfortable(),
+      });
     } catch (e) {
       throw new Error(e);
     }
   }
 
-  async addGoods(boardIdx: number) {
+  writeTable(content: string) {
     try {
-      const res = await RequestApi({
-        method: "put",
+      const data = {
+        content,
+      };
+      return RequestApi({
+        method: "POST",
+        url: TableController.detailUncomfortable(),
+        data: data,
+      });
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
+  addGoods(boardIdx: number) {
+    try {
+      return RequestApi({
+        method: "PUT",
         url: TableController.AddGoods(boardIdx),
       });
     } catch (e) {
@@ -32,9 +38,9 @@ class Table {
     }
   }
 
-  async cancleGoods(boardIdx: number) {
+  cancleGoods(boardIdx: number) {
     try {
-      const res = await RequestApi({
+      return RequestApi({
         method: "PUT",
         url: TableController.cancelGoods(boardIdx),
       });
