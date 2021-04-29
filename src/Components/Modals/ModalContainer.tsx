@@ -28,16 +28,17 @@ export const ModalContainer: React.FC<ModalContainerProps> = ({
   }, [close]);
 
   return (
-    <S.Container
-      onTouchMove={(e) => e.stopPropagation()}
-      onClick={(e) => {
-        e.stopPropagation();
-        close();
-      }}
-    >
+    <>
+      <S.Container
+        onTouchMove={(e) => e.stopPropagation()}
+        onClick={(e) => {
+          e.stopPropagation();
+          close();
+        }}
+      ></S.Container>
       <S.Inner width={width} height={height}>
         {children}
       </S.Inner>
-    </S.Container>
+    </>
   );
 };

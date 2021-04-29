@@ -13,7 +13,7 @@ const issueBox: React.FC = () => {
         <S.IssueNumber>{C.issue.number}번째 불편함</S.IssueNumber>
       </S.IssueBoxHeading>
       <S.Issue>{C.issue.text}</S.Issue>
-      <GoodBtn Background Goods={0}/>
+      <GoodBtn Background Goods={0} Idx={1} />
     </S.IssueBoxStyle>
   );
 };
