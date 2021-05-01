@@ -11,12 +11,15 @@ const Header: React.FC = () => {
     return (
       <S.Header>
         <div>
-          <I.Logo />
-          <span>학교가 불편한 순간</span>
+          <S.Logo>
+            <I.Logo />
+          </S.Logo>
+          <S.LogoText>학교가 불편한 순간</S.LogoText>
         </div>
         <S.HeaderNav>
           <Link to="/Leave_opinion">답변달기</Link>
           <Link to="/improvment">실제 개선 사례 작성</Link>
+          <a>로그아웃</a>
         </S.HeaderNav>
       </S.Header>
     );
