@@ -1,1 +1,1 @@
-export { AdminToken } from "./AtomContainer";
+export { HasAdminToken } from "./AtomContainer";
