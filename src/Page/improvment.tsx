@@ -3,7 +3,7 @@ import { Header, Footer, ImprovmentPage } from "../Components";
 const improvment: React.FC = () => {
   return (
     <>
-      <Header state="student" />
+      <Header />
       <ImprovmentPage />
       <Footer />
     </>
