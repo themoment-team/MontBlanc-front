@@ -15,9 +15,11 @@ const Top10Page = () => {
     <S.TopTenWrapper>
       <LeftBox>
         <PageExplanation heading={logged ? heading : adminHeading} explanation={explanation} />
-        <S.Btn>
-          <Link to="/Leave_opinion">의견 남기기</Link>
-        </S.Btn>
+        {logged === true &&
+          <S.Btn>
+            <Link to="/Leave_opinion">의견 남기기</Link>
+          </S.Btn>
+        }
       </LeftBox>
       <S.RightBox>
         {list.map((top10: list, index) => (
