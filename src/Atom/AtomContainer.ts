@@ -1,11 +1,6 @@
 import { atom } from 'recoil';
 
-export const AccessToken = atom<string | null>({
+export const AdminToken = atom<boolean>({
     key: "AdminToken",
-    default: "",
-})
-
-export const RefreshToken = atom<string | null>({
-    key: "RefreshToken",
-    default: "",
+    default: false,
 })
