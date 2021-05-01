@@ -3,14 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { ModalContextProvider } from "./Context/Modal";
+import { RecoilRoot } from 'recoil';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <ModalContextProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </ModalContextProvider>,
+  <RecoilRoot>
+    <ModalContextProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ModalContextProvider>
+  </RecoilRoot>,
   document.getElementById('root')
 );
 
