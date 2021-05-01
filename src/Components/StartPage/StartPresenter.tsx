@@ -39,7 +39,7 @@ const StartPage: React.FC = () => {
           </Link>
           {
             hasToken === true ?
-            <Link to="/Leave_opinion">
+            <Link to="/topten">
               <button>Admin</button>
             </Link>
             :
