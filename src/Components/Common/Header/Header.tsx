@@ -1,13 +1,13 @@
 import * as S from "./styled";
 import * as I from "../../../Asset/SVG/index";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { HasAdminToken } from "../../../Atom";
 
-interface HeaderProps {
-  state: string;
-}
-
-const Header: React.FC<HeaderProps> = (p: HeaderProps) => {
-  if (p.state !== "student") {
+const Header: React.FC = () => {
+  const logged = useRecoilValue(HasAdminToken);
+  
+  if (logged === true) {
     return (
       <S.Header>
         <div>
