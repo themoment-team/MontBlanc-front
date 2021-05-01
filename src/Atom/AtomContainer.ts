@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-export const AdminToken = atom<boolean>({
+export const HasAdminToken = atom<boolean>({
     key: "AdminToken",
     default: false,
 })
