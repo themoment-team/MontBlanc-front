@@ -29,7 +29,7 @@ const Top10Page = () => {
               <article>{top10.content}</article>
             </span>
             <span>
-              <button>답변보기</button>
+              {logged && <button>답변보기</button>}
               <GoodBtn
                 Background={false}
                 Goods={top10.goods}
