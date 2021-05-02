@@ -22,8 +22,8 @@ const ImprovmentPage: React.FC = () => {
   return (
     <S.ImprovmentPageBox>
       <S.LeftBox>
-        <PageExplanation heading={logged !== true ? C.heading : C.adminHeading} explanation={C.explanation} />
-        {logged === true ?
+        <PageExplanation heading={!logged ? C.heading : C.adminHeading} explanation={C.explanation} />
+        {logged ?
           <S.Btn>
             실제 개선 사례 작성하기
             <span>
@@ -46,7 +46,7 @@ const ImprovmentPage: React.FC = () => {
             color="#C3D7DE"
             header={improvement.header}
             content={improvement.content}
-          />
+          /> // 여기 물어봐야 합니다.
         ))}
         {/* <ImprovmentItemPresenter color="#C3D7DE" />
         <ImprovmentItemPresenter color="#C0C9D6" />

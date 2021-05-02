@@ -15,8 +15,8 @@ const Top10Page = () => {
   return (
     <S.TopTenWrapper>
       <LeftBox>
-        <PageExplanation heading={logged ? heading : adminHeading} explanation={explanation} />
-        {logged === true &&
+        <PageExplanation heading={!logged ? heading : adminHeading} explanation={explanation} />
+        {!logged &&
           <S.Btn>
             <Link to="/Leave_opinion">의견 남기기</Link>
           </S.Btn>
@@ -30,7 +30,7 @@ const Top10Page = () => {
               <article>{top10.content}</article>
             </span>
             <span>
-              <button>{logged ? "답변보기" : commentState }</button>
+              <button>{logged ? "답변달기" : commentState }</button>
               <GoodBtn
                 Background={false}
                 Goods={top10.goods}
