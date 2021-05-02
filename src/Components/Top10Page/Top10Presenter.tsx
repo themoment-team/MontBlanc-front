@@ -9,6 +9,7 @@ import { HasAdminToken } from "Atom";
 
 const Top10Page = () => {
   const list = useTop10();
+  const commentState = "답변없음" // 답변이 달려있는지 또는 안 달려있는지의 대한 상태
   const logged = useRecoilValue(HasAdminToken);
 
   return (
@@ -29,7 +30,7 @@ const Top10Page = () => {
               <article>{top10.content}</article>
             </span>
             <span>
-              {logged && <button>답변보기</button>}
+              <button>{logged ? "답변보기" : commentState }</button>
               <GoodBtn
                 Background={false}
                 Goods={top10.goods}
