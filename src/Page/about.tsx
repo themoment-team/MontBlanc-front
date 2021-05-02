@@ -3,7 +3,7 @@ import { Header, Footer, AboutPage } from "../Components";
 const about: React.FC = () => {
   return (
     <>
-      <Header state="student" />
+      <Header />
       <AboutPage />
       <Footer />
     </>

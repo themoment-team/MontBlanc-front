@@ -1,10 +1,20 @@
+import { useEffect } from "react";
 import * as S from "./styled";
 import * as I from "../../Asset/SVG/index";
 import { Link } from "react-router-dom";
 import { useModal } from "../../Context/Modal";
+import { useRecoilState } from "recoil";
+import { HasAdminToken } from "../../Atom";
 
 const StartPage: React.FC = () => {
   const modal = useModal();
+  const [hasToken, setHasToken] = useRecoilState(HasAdminToken);
+
+  useEffect(() => {
+    if (localStorage.getItem("themoment_token")) {
+      setHasToken(true);
+    }
+  })
 
   return (
     <S.StartPage>
@@ -27,7 +37,14 @@ const StartPage: React.FC = () => {
           <Link to="/Leave_opinion">
             <button>Student</button>
           </Link>
-          <button onClick={() => modal.open("LoginModal", 1)}>Admin</button>
+          {
+            hasToken === true ?
+            <Link to="/topten">
+              <button>Admin</button>
+            </Link>
+            :
+            <button onClick={() => modal.open("LoginModal", 1)}>Admin</button>
+          }
         </S.ButtonBox>
       </S.LeftBox>
       <S.RightBox>
