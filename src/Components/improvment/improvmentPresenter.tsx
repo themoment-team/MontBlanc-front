@@ -23,14 +23,22 @@ const ImprovmentPage: React.FC = () => {
     <S.ImprovmentPageBox>
       <S.LeftBox>
         <PageExplanation heading={logged !== true ? C.heading : C.adminHeading} explanation={C.explanation} />
-        <S.Btn>
-          학교가 불편한 순간을
-          <br /> 자유롭게 남겨주세요.
-          <Link to="/Leave_opinion">
-            의견 남기기
-            <I.RightArrow />
-          </Link>
-        </S.Btn>
+        {logged === true ?
+          <S.Btn>
+            실제 개선 사례 작성하기
+            <span>
+              <I.RightArrow />  
+            </span>
+          </S.Btn> :
+          <S.Btn>
+            학교가 불편한 순간을
+            <br /> 자유롭게 남겨주세요.
+            <Link to="/Leave_opinion">
+              의견 남기기
+              <I.RightArrow />
+            </Link>
+          </S.Btn>
+        }
       </S.LeftBox>
       <div>
         {list.map((improvement: list) => (
