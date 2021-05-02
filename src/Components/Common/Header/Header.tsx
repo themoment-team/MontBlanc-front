@@ -24,7 +24,7 @@ const Header: React.FC = () => {
       </div>
       { logged === true ?
         <S.HeaderNav>
-          <Link to="/Leave_opinion">답변달기</Link>
+          <button>답변달기</button>
           <Link to="/improvment">실제 개선 사례 작성</Link>
           <button>로그아웃</button>
         </S.HeaderNav> :
