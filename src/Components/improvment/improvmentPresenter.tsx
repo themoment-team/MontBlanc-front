@@ -6,16 +6,23 @@ import { improvement, list } from "./imporvmentContainer";
 import * as S from "./styled";
 import * as I from "../../Asset/SVG";
 import * as C from "./imporvmentContainer";
+import { useRecoilValue } from "recoil";
+import { HasAdminToken } from "Atom";
+
 
 const ImprovmentPage: React.FC = () => {
   const [list, setList] = useState<list[]>([{ content: "", header: "" }]);
+
   useEffect(() => {
     improvement().then((res) => setList(res.data.list));
   }, []);
+
+  const logged = useRecoilValue(HasAdminToken);
+
   return (
     <S.ImprovmentPageBox>
       <S.LeftBox>
-        <PageExplanation heading={C.heading} explanation={C.explanation} />
+        <PageExplanation heading={logged !== true ? C.heading : C.adminHeading} explanation={C.explanation} />
         <S.Btn>
           학교가 불편한 순간을
           <br /> 자유롭게 남겨주세요.
