@@ -31,4 +31,13 @@ export const HeaderNav = styled.nav`
   list-style: none;
   display: flex;
   justify-content: space-between;
+  & > button {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    text-decoration: none;
+    color: #434C9C;
+    font-size: 1rem;
+  }
 `;
