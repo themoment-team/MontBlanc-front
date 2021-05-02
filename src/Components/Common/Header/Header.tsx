@@ -1,12 +1,19 @@
 import * as S from "./styled";
 import * as I from "../../../Asset/SVG/index";
 import { Link } from "react-router-dom";
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { HasAdminToken } from "../../../Atom";
+import { useEffect } from "react";
 
 const Header: React.FC = () => {
-  const logged = useRecoilValue(HasAdminToken);
-  
+  const [logged, setHasToken] = useRecoilState(HasAdminToken);
+
+  useEffect(() => {
+    if (localStorage.getItem("themoment_token")) {
+      setHasToken(true);
+    }
+  })
+
   return (
     <S.Header>
       <div>
