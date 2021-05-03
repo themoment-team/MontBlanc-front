@@ -35,7 +35,7 @@ const StartPage: React.FC = () => {
         </S.StartHeader>
         <S.ButtonBox>
           {
-            hasToken ?
+            !hasToken ?
             <Link to="/Leave_opinion">
               <button>Student</button>
             </Link>
