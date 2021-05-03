@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import * as I from "../../Asset/SVG/index";
 import * as S from "./styles";
 import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
+import { useTable, list } from "./LeaveCommentContainer";
 
 const LeaveCommentsPage: React.FC = () => {
+  const list = useTable();
   return (
     <S.LeaveCommentsBox>
       <S.LeftBox>
@@ -29,24 +31,13 @@ const LeaveCommentsPage: React.FC = () => {
         </S.Top10Btn>
       </S.LeftBox>
       <S.RightBox>
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
+        {list.map((table: list, _) => (
+          <IssueBoxPresenter
+            idx={table.boardIdx}
+            content={table.content}
+            goods={table.goods}
+          />
+        ))}
       </S.RightBox>
     </S.LeaveCommentsBox>
   );
