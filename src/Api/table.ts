@@ -2,6 +2,16 @@ import { TableController } from "./../Utils/Libs/requestUrls";
 import RequestApi from "Utils/Libs/requestApi";
 
 class Table {
+  viewTop10Table() {
+    try {
+      return RequestApi({
+        url: TableController.viewTop10Uncomfortable(),
+      });
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
   viewTable() {
     try {
       return RequestApi({
