@@ -34,11 +34,16 @@ const StartPage: React.FC = () => {
           </S.H2>
         </S.StartHeader>
         <S.ButtonBox>
-          <Link to="/Leave_opinion">
-            <button>Student</button>
-          </Link>
           {
-            hasToken === true ?
+            hasToken ?
+            <Link to="/Leave_opinion">
+              <button>Student</button>
+            </Link>
+            :
+            <button>Student</button>
+          }
+          {
+            hasToken ?
             <Link to="/topten">
               <button>Admin</button>
             </Link>
