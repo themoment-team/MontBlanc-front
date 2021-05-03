@@ -8,26 +8,28 @@ import * as I from "../../Asset/SVG";
 import * as C from "./imporvmentContainer";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
+import { useModal } from "Context/Modal";
 
 
 const ImprovmentPage: React.FC = () => {
   const [list, setList] = useState<list[]>([{ content: "", header: "" }]);
-
+  const modal = useModal();
+  const logged = useRecoilValue(HasAdminToken);
+  
   useEffect(() => {
     improvement().then((res) => setList(res.data.list));
   }, []);
 
-  const logged = useRecoilValue(HasAdminToken);
 
   return (
     <S.ImprovmentPageBox>
       <S.LeftBox>
         <PageExplanation heading={!logged ? C.heading : C.adminHeading} explanation={C.explanation} />
         {logged ?
-          <S.Btn>
+          <S.Btn onClick={() => modal.open("EditModal", 1, "실제 개선 사례 작성")}>
             실제 개선 사례 작성하기
             <span>
-              <I.RightArrow />  
+              <I.RightArrow />
             </span>
           </S.Btn> :
           <S.Btn>
@@ -48,9 +50,6 @@ const ImprovmentPage: React.FC = () => {
             content={improvement.content}
           /> // 여기 물어봐야 합니다.
         ))}
-        {/* <ImprovmentItemPresenter color="#C3D7DE" />
-        <ImprovmentItemPresenter color="#C0C9D6" />
-        <ImprovmentItemPresenter color="#A7C5EB" /> */}
       </div>
     </S.ImprovmentPageBox>
   );
