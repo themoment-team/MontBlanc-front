@@ -22,9 +22,9 @@ const Header: React.FC = () => {
         </S.Logo>
         <S.LogoText>학교가 불편한 순간</S.LogoText>
       </div>
-      { logged === true ?
+      { logged ?
         <S.HeaderNav>
-          <Link to="/Leave_opinion">답변달기</Link>
+          <Link to="/topten">답변달기</Link>
           <Link to="/improvment">실제 개선 사례 작성</Link>
           <button>로그아웃</button>
         </S.HeaderNav> :
