@@ -32,7 +32,7 @@ const Top10Page = () => {
               <article>{top10.content}</article>
             </span>
             <span>
-              <button onClick={() => modal.open("EditModal", 1, "답변달기")}>
+              <button onClick={() => modal.open("EditModal", 1, "답변 달기")}>
                 {logged ? "답변달기" : commentState }
               </button>
               <GoodBtn
