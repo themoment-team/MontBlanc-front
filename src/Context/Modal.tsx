@@ -3,12 +3,16 @@ import * as modals from "../Components/Modals";
 
 export type ModalProps = {
   close: () => void;
+  idx?: number;
   state?: number;
   heading?: string;
 };
 
 type Modal = {
   name: keyof typeof modals;
+  idx?: {
+    [key in number]: any;
+  };
   state?: {
     [key in number]: any;
   };
@@ -20,6 +24,10 @@ type Modal = {
 type ModalContextValues = {
   open: <T extends Modal["name"]>(
     name: T,
+    idx: Omit<
+      React.ComponentProps<typeof modals[T]>,
+      keyof ModalProps | "children"
+    >,
     state?: Omit<
       React.ComponentProps<typeof modals[T]>,
       keyof ModalProps | "children"
@@ -37,8 +45,8 @@ export const ModalContextProvider: React.FC = ({ children }) => {
   const [openedModal, setOpenedModal] = useState<Modal | null>(null);
 
   const open: ModalContextValues["open"] = useCallback(
-    (name, state, heading) => {
-      setOpenedModal({ name, state, heading });
+    (name, idx, state, heading) => {
+      setOpenedModal({ name, idx, state, heading });
     },
     []
   );
@@ -63,6 +71,7 @@ const ModalRenderer: React.FC<ModalProps & { modal: Modal }> = ({
   return (
     <Modal
       close={close}
+      idx={modal.idx}
       heading={modal.heading}
       state={modal.state}
       {...(modal.heading as any)}
