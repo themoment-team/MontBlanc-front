@@ -5,7 +5,7 @@ export const HasAdminToken = atom<boolean>({
     default: false,
 })
 
-export const StudentState = atom<boolean>({
-    key: "StudentState",
+export const StudentMode = atom<boolean>({
+    key: "StudentMode",
     default: false,
 })
