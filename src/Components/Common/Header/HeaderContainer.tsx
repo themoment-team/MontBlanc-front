@@ -1,24 +1,9 @@
 import { useRecoilState } from "recoil";
 import { HasAdminToken } from "Atom";
-import { useEffect } from "react";
 import admin from "Api/admin";
 
-export const useCheckLogged = () => {
-  const [logged, setHasToken] = useRecoilState(HasAdminToken);
-
-  useEffect(() => {
-    if (localStorage.getItem("themoment_token")) {
-      setHasToken(true);
-    } else {
-      setHasToken(false);
-    }
-  }, []);
-
-  return [logged];
-};
-
 export const useLogout = () => {
-  const [logged, setHasToken] = useRecoilState(HasAdminToken);
+  const [_, setHasToken] = useRecoilState(HasAdminToken);
   const tryLogout = async () => {
     try {
       await admin.logout();
