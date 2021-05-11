@@ -50,4 +50,7 @@ export const TableController = {
   cancelGoods: (boardIdx: number) => {
     return `/uncomfortable/cancel/${boardIdx}`;
   },
+  amountUncomfortable: () => {
+    return `/uncomfortable/amount`;
+  },
 };

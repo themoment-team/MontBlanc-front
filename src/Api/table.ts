@@ -58,6 +58,16 @@ class Table {
       throw new Error(e);
     }
   }
+
+  amountUncomfortable() {
+    try {
+      return RequestApi({
+        url: TableController.amountUncomfortable(),
+      });
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
 }
 
 export default new Table();
