@@ -3,16 +3,22 @@ import * as S from "./styled";
 import * as I from "../../Asset/SVG/index";
 import { Link } from "react-router-dom";
 import { useModal } from "../../Context/Modal";
-import { useRecoilState } from "recoil";
-import { HasAdminToken } from "../../Atom";
+import { useRecoilState, useSetRecoilState, useResetRecoilState } from "recoil";
+import { HasAdminToken, StudentMode } from "../../Atom";
 
 const StartPage: React.FC = () => {
   const modal = useModal();
   const [hasToken, setHasToken] = useRecoilState(HasAdminToken);
+  const resetStudent = useResetRecoilState(StudentMode);
+  const resetAdmin = useResetRecoilState(HasAdminToken)
+  const setStudentMode = useSetRecoilState(StudentMode);
 
   useEffect(() => {
+    resetStudent();
     if (localStorage.getItem("themoment_token")) {
       setHasToken(true);
+    } else {
+      resetAdmin();
     }
   })
 
@@ -34,16 +40,23 @@ const StartPage: React.FC = () => {
           </S.H2>
         </S.StartHeader>
         <S.ButtonBox>
-          <Link to="/Leave_opinion">
-            <button>Student</button>
-          </Link>
           {
-            hasToken === true ?
-            <Link to="/topten">
-              <button>Admin</button>
-            </Link>
+            hasToken ?
+            <>
+              <Link to="/Leave_opinion">
+                <button onClick={() => setStudentMode(true)}>Student</button>
+              </Link>
+              <Link to="/topten">
+                <button>Admin</button>
+              </Link>
+            </>
             :
-            <button onClick={() => modal.open("LoginModal", 1)}>Admin</button>
+            <>
+              <Link to="/Leave_opinion">
+                <button>Student</button>
+              </Link>
+              <button onClick={() => modal.open("LoginModal", 1)}>Admin</button>
+            </>
           }
         </S.ButtonBox>
       </S.LeftBox>
