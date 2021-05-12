@@ -8,7 +8,7 @@ import * as I from "../../Asset/SVG";
 import * as C from "./imporvmentContainer";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
-
+import { useModal } from "Context/Modal";
 
 const ImprovmentPage: React.FC = () => {
   const [list, setList] = useState<list[]>([{ content: "", header: "" }]);
@@ -19,17 +19,23 @@ const ImprovmentPage: React.FC = () => {
 
   const logged = useRecoilValue(HasAdminToken);
 
+  const modal = useModal();
+
   return (
     <S.ImprovmentPageBox>
       <S.LeftBox>
-        <PageExplanation heading={!logged ? C.heading : C.adminHeading} explanation={C.explanation} />
-        {logged ?
-          <S.Btn>
+        <PageExplanation
+          heading={!logged ? C.heading : C.adminHeading}
+          explanation={C.explanation}
+        />
+        {logged ? (
+          <S.Btn onClick={() => modal.open("EditModal", 0)}>
             실제 개선 사례 작성하기
             <span>
-              <I.RightArrow />  
+              <I.RightArrow />
             </span>
-          </S.Btn> :
+          </S.Btn>
+        ) : (
           <S.Btn>
             학교가 불편한 순간을
             <br /> 자유롭게 남겨주세요.
@@ -38,7 +44,7 @@ const ImprovmentPage: React.FC = () => {
               <I.RightArrow />
             </Link>
           </S.Btn>
-        }
+        )}
       </S.LeftBox>
       <div>
         {list.map((improvement: list) => (
