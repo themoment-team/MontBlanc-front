@@ -1,5 +1,5 @@
 import Answer from "Api/answer";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export interface list {
   boardIdx: number;
