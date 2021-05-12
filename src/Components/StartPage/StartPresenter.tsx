@@ -3,18 +3,15 @@ import * as S from "./styled";
 import * as I from "../../Asset/SVG/index";
 import { Link } from "react-router-dom";
 import { useModal } from "../../Context/Modal";
-import { useRecoilState, useSetRecoilState, useResetRecoilState } from "recoil";
-import { HasAdminToken, StudentMode } from "../../Atom";
+import { useRecoilState, useResetRecoilState } from "recoil";
+import { HasAdminToken } from "../../Atom";
 
 const StartPage: React.FC = () => {
   const modal = useModal();
   const [hasToken, setHasToken] = useRecoilState(HasAdminToken);
-  const resetStudent = useResetRecoilState(StudentMode);
   const resetAdmin = useResetRecoilState(HasAdminToken)
-  const setStudentMode = useSetRecoilState(StudentMode);
 
   useEffect(() => {
-    resetStudent();
     if (localStorage.getItem("themoment_token")) {
       setHasToken(true);
     } else {
@@ -43,9 +40,7 @@ const StartPage: React.FC = () => {
           {
             hasToken ?
             <>
-              <Link to="/Leave_opinion">
-                <button onClick={() => setStudentMode(true)}>Student</button>
-              </Link>
+              <button onClick={() => alert("관리자는 학생페이지를 볼 수 없습니다.")}>Student</button>
               <Link to="/topten">
                 <button>Admin</button>
               </Link>
