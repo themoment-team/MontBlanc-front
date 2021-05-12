@@ -4,21 +4,23 @@
   "private": true,
   "dependencies": {
     "@emotion/core": "11.0.0",
-    "@emotion/react": "11.1.4",
+    "@emotion/react": "11.1.5",
     "@emotion/styled": "11.3.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^13.1.2",
     "@types/jest": "^26.0.20",
-    "@types/node": "^12.20.4",
+    "@types/node": "^15.0.1",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.3",
-    "@types/styled-components": "^5.1.7",
+    "@types/styled-components": "^5.1.9",
     "axios": "^0.21.1",
-    "react": "^17.0.2",
+    "body-scroll-lock": "^3.1.5",
+    "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "recoil": "^0.2.0",
     "styled-components": "^5.2.1",
     "typescript": "^4.2.4",
     "web-vitals": "^1.1.0"
@@ -48,7 +50,8 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^14.14.16",
+    "@types/body-scroll-lock": "^2.6.1",
+    "@types/node": "^15.0.1",
     "@types/react": "^17.0.3",
     "@types/react-router-dom": "^5.1.7",
     "typescript": "^4.2.4"
