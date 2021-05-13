@@ -14,14 +14,12 @@ const ImprovmentPage: React.FC = () => {
   const [list, setList] = useState<list[]>([
     { improveContent: "", improveHeader: "" },
   ]);
+  const modal = useModal();
+  const logged = useRecoilValue(HasAdminToken);
 
   useEffect(() => {
     improvement().then((res) => setList(res.data.list));
   }, []);
-
-  const logged = useRecoilValue(HasAdminToken);
-
-  const modal = useModal();
 
   return (
     <S.ImprovmentPageBox>
@@ -31,7 +29,9 @@ const ImprovmentPage: React.FC = () => {
           explanation={C.explanation}
         />
         {logged ? (
-          <S.Btn onClick={() => modal.open("EditModal", 0)}>
+          <S.Btn
+            onClick={() => modal.open("EditModal", 1, "실제 개선 사례 작성")}
+          >
             실제 개선 사례 작성하기
             <span>
               <I.RightArrow />
