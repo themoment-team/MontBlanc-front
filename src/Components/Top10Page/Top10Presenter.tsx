@@ -40,7 +40,7 @@ const Top10Page = () => {
               <article>{top10.content}</article>
             </span>
             <span>
-              <button onClick={() => modal.open("EditModal", 1, "답변 달기")}>
+              <button onClick={() => (top10.answer && modal.open("EditModal", 1, "답변 달기"))}>
                 { top10.answer ? (logged ? "답변달기" : "답변보기") : "답변없음"}
               </button>
               <GoodBtn
