@@ -28,19 +28,6 @@ export const ModalImg = styled.button`
   top: 30px;
 `;
 
-export const Input = styled.input`
-  background-color: #f4f4f4;
-  color: #a6a6a6;
-  font-size: 18px;
-  font-weight: 400;
-  padding: 17px;
-  border: none;
-  outline: none;
-  width: 900px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-`;
-
 export const TextArea = styled.textarea`
   background-color: #f4f4f4;
   color: #a6a6a6;
@@ -53,6 +40,7 @@ export const TextArea = styled.textarea`
   height: 323px;
   border-radius: 10px;
   resize: none;
+  margin-top: 30px;
 `;
 
 export const SaveBtn = styled.button`

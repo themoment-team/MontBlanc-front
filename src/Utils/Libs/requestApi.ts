@@ -19,8 +19,8 @@ const RequestApi = async (
     let header = Object.assign(BASE_HEADER, p.headers);
     if (accessToken) {
       header = Object.assign(header, {
-        access_token: accessToken,
-        refresh_token: refreshToken,
+        Authorization: accessToken,
+        RefreshToken: refreshToken,
       });
     }
     const res = await axios({

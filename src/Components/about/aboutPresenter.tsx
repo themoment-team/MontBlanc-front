@@ -1,11 +1,13 @@
 import { PageExplanation } from "../PageExplanation";
 import * as S from "./styled";
-import * as C from "./aboutContainer";
+import { useHeading } from "./aboutContainer";
 
 const AboutPage: React.FC = () => {
+  const [heading, explanation] = useHeading();
+
   return (
     <S.AboutBox>
-      <PageExplanation heading={C.heading} explanation={C.explanation} />
+      <PageExplanation heading={heading} explanation={explanation} />
     </S.AboutBox>
   );
 };

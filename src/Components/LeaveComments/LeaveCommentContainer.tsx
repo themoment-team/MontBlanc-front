@@ -1,23 +1,35 @@
-export const LeaveCommentList = [
-    {id: 120, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 121, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 122, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 123, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 124, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 125, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 126, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 127, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 128, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 129, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 130, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 131, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 132, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 133, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 134, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 135, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 136, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 137, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 138, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 139, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-    {id: 140, content: "차기 기숙사 자치위원장이 너무 이상하고 거시기해요"},
-];
+import Table from "Api/table";
+import { useEffect, useState } from "react";
+
+export interface list {
+  boardIdx: number;
+  content: string;
+  goods: number;
+  idx: number;
+}
+
+export const useViewTable = () => {
+  const [list, setList] = useState<list[]>([]);
+
+  const tryViewTable = async () => {
+    return await Table.viewTable();
+  };
+
+  useEffect(() => {
+    tryViewTable().then((res) => setList(res.data.list));
+  }, []);
+  return list;
+};
+
+export const useWriteTable = () => {
+  const tryWriteTable = async (
+    content: string,
+    setContent: React.Dispatch<React.SetStateAction<string>>
+  ) => {
+    setContent("");
+    window.location.reload();
+    return await Table.writeTable(content);
+  };
+
+  return tryWriteTable;
+};

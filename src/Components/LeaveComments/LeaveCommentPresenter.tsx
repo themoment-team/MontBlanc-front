@@ -3,8 +3,15 @@ import { Link } from "react-router-dom";
 import * as I from "../../Asset/SVG/index";
 import * as S from "./styles";
 import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
+import { useViewTable, useWriteTable, list } from "./LeaveCommentContainer";
+import { useState } from "react";
 
 const LeaveCommentsPage: React.FC = () => {
+  const list = useViewTable();
+  const [content, setContent] = useState("");
+
+  const tryWriteTable = useWriteTable();
+
   return (
     <S.LeaveCommentsBox>
       <S.LeftBox>
@@ -14,8 +21,18 @@ const LeaveCommentsPage: React.FC = () => {
           언제였나요?
         </S.H1>
         <S.Form>
-          <textarea placeholder="자유롭게 의견을 남겨주세요." />
-          <S.Btn>등 록</S.Btn>
+          <textarea
+            placeholder="자유롭게 의견을 남겨주세요."
+            onChange={({ target: { value } }) => setContent(value)}
+            value={content}
+          />
+          <S.Btn
+            onClick={() => {
+              tryWriteTable(content, setContent);
+            }}
+          >
+            등 록
+          </S.Btn>
         </S.Form>
         <S.Top10Btn>
           <span>
@@ -29,24 +46,13 @@ const LeaveCommentsPage: React.FC = () => {
         </S.Top10Btn>
       </S.LeftBox>
       <S.RightBox>
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
-        <IssueBoxPresenter />
+        {list.map((table: list, _) => (
+          <IssueBoxPresenter
+            idx={table.boardIdx}
+            content={table.content}
+            goods={table.goods}
+          />
+        ))}
       </S.RightBox>
     </S.LeaveCommentsBox>
   );

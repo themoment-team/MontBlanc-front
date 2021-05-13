@@ -1,4 +1,4 @@
-export { default as Header } from "./Common/Header/Header";
+export { default as Header } from "./Common/Header/HeaderPresenter";
 export { default as Footer } from "./Common/Footer/Footer";
 export { default as StartPage } from "./StartPage/StartPresenter";
 export { default as LeaveCommentsPage } from "./LeaveComments/LeaveCommentPresenter";

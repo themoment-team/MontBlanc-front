@@ -1,3 +1,9 @@
+export interface issueBoxProps {
+  idx: number;
+  content: string;
+  goods: number;
+}
+
 export const randomColorPicker = () => {
   const color: string[] = [
     "#CBD9E266",
@@ -10,9 +16,4 @@ export const randomColorPicker = () => {
   const randomNumber: number = Math.floor(Math.random() * 5);
 
   return color[randomNumber];
-};
-
-export const issue = {
-  number: "294",
-  text: "학교가 너무너무 심심해요 심심해요심심",
 };
