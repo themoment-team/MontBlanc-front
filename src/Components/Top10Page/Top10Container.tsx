@@ -14,7 +14,7 @@ export const useTop10 = () => {
   ]);
 
   const tryTop10 = async () => {
-    return await Table.viewTable();
+    return await Table.viewTop10Table();
   };
 
   useEffect(() => {

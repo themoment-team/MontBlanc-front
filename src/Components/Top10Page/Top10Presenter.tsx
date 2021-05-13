@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import { LeftBox } from "../../Constants/GlobalStyle/Detail";
 import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
-import { heading, explanation, useTop10, list, adminHeading} from "./Top10Container";
+import {
+  heading,
+  explanation,
+  useTop10,
+  list,
+  adminHeading,
+} from "./Top10Container";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
 import { useModal } from "Context/Modal";
@@ -16,12 +22,15 @@ const Top10Page = () => {
   return (
     <S.TopTenWrapper>
       <LeftBox>
-        <PageExplanation heading={!logged ? heading : adminHeading} explanation={explanation} />
-        {!logged &&
+        <PageExplanation
+          heading={!logged ? heading : adminHeading}
+          explanation={explanation}
+        />
+        {!logged && (
           <S.Btn>
             <Link to="/Leave_opinion">의견 남기기</Link>
           </S.Btn>
-        }
+        )}
       </LeftBox>
       <S.RightBox>
         {list.map((top10: list, index) => (
