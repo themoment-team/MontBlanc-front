@@ -6,7 +6,6 @@ import * as modals from "../Components/Modals";
 export type ModalProps = {
   close: () => void;
   idx?: number;
-  state?: number;
   heading?: string;
 };
 
