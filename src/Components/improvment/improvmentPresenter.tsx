@@ -11,7 +11,9 @@ import { HasAdminToken } from "Atom";
 import { useModal } from "Context/Modal";
 
 const ImprovmentPage: React.FC = () => {
-  const [list, setList] = useState<list[]>([{ content: "", header: "" }]);
+  const [list, setList] = useState<list[]>([
+    { improveContent: "", improveHeader: "" },
+  ]);
 
   useEffect(() => {
     improvement().then((res) => setList(res.data.list));
@@ -49,8 +51,8 @@ const ImprovmentPage: React.FC = () => {
       <div>
         {list.map((improvement: list) => (
           <ImprovmentItemPresenter
-            header={improvement.header}
-            content={improvement.content}
+            header={improvement.improveHeader}
+            content={improvement.improveContent}
           />
         ))}
       </div>

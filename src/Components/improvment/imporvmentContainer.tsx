@@ -2,8 +2,8 @@ import Improvement from "Api/improvement";
 import { useEffect } from "react";
 
 export interface list {
-  content: string;
-  header: string;
+  improveContent: string;
+  improveHeader: string;
 }
 
 export const improvement = () => {

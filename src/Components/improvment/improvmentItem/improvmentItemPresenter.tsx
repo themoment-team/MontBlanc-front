@@ -13,7 +13,6 @@ const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
 ) => {
   const modal = useModal();
   const randomColor = randomColorPicker();
-  console.log(p.header);
 
   return (
     <S.ImprovmentBox color={randomColor}>
