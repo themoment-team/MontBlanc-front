@@ -11,7 +11,6 @@ import { useModal } from "Context/Modal";
 const Top10Page = () => {
   const list = useTop10();
   const modal = useModal();
-  const commentState = "답변없음" // 답변이 달려있는지 또는 안 달려있는지의 대한 상태
   const logged = useRecoilValue(HasAdminToken);
 
   return (
@@ -33,7 +32,7 @@ const Top10Page = () => {
             </span>
             <span>
               <button onClick={() => modal.open("EditModal", 1, "답변 달기")}>
-                {logged ? "답변달기" : commentState }
+                { top10.answer ? (logged ? "답변달기" : "답변보기") : "답변없음"}
               </button>
               <GoodBtn
                 Background={false}
