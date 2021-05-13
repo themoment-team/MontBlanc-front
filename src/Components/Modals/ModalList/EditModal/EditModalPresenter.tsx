@@ -20,9 +20,11 @@ const EditModal: React.FC<ModalProps> = ({ close, idx, heading }) => {
           onChange={({ target: { value } }) => setContent(value)}
         />
         <S.BtnWrapper>
+          (heading === "수정하기" &&
           <S.DeleteBtn>
             삭 제
           </S.DeleteBtn>
+          )
           <S.SaveBtn
             onClick={() => {
               TrySave("");
