@@ -10,6 +10,10 @@ const LeaveCommentsPage: React.FC = () => {
   const list = useViewTable();
   const [content, setContent] = useState("");
 
+  const list3 = list.slice(0, list.length * (1 / 3));
+  const list2 = list.slice(list.length * ( 1 / 3 ), list.length * (2 / 3));
+  const list1 = list.slice(list.length * ( 2 / 3 ), list.length);
+
   const tryWriteTable = useWriteTable();
 
   return (
@@ -46,12 +50,30 @@ const LeaveCommentsPage: React.FC = () => {
         </S.Top10Btn>
       </S.LeftBox>
       <S.RightBox>
-        {list.map((table: list, _) => (
+        <S.IssueBoxWrapper>
+        {list1.map((table: list, _) => (
           <IssueBoxPresenter
             idx={table.boardIdx}
             content={table.content}
           />
         ))}
+        </S.IssueBoxWrapper>
+        <S.IssueBoxWrapper>
+        {list2.map((table: list, _) => (
+          <IssueBoxPresenter
+            idx={table.boardIdx}
+            content={table.content}
+          />
+        ))}
+        </S.IssueBoxWrapper>
+        <S.IssueBoxWrapper>
+        {list3.map((table: list, _) => (
+          <IssueBoxPresenter
+            idx={table.boardIdx}
+            content={table.content}
+          />
+        ))}
+        </S.IssueBoxWrapper>
       </S.RightBox>
     </S.LeaveCommentsBox>
   );
