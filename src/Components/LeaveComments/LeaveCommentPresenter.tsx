@@ -50,7 +50,6 @@ const LeaveCommentsPage: React.FC = () => {
           <IssueBoxPresenter
             idx={table.boardIdx}
             content={table.content}
-            goods={table.goods}
           />
         ))}
       </S.RightBox>
