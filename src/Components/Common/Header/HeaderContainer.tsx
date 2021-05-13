@@ -1,9 +1,9 @@
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { HasAdminToken } from "Atom";
 import admin from "Api/admin";
 
 export const useLogout = () => {
-  const [_, setHasToken] = useRecoilState(HasAdminToken);
+  const setHasToken = useSetRecoilState(HasAdminToken);
   const tryLogout = async () => {
     try {
       await admin.logout();
