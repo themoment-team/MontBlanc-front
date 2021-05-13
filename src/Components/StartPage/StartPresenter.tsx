@@ -1,21 +1,19 @@
 import { useEffect } from "react";
 import * as S from "./styled";
 import * as I from "../../Asset/SVG/index";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useModal } from "../../Context/Modal";
-import { useRecoilState, useResetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { HasAdminToken } from "../../Atom";
 
 const StartPage: React.FC = () => {
   const modal = useModal();
-  const [hasToken, setHasToken] = useRecoilState(HasAdminToken);
-  const resetAdmin = useResetRecoilState(HasAdminToken)
+  const history = useHistory();
+  const [logged, setHasToken] = useRecoilState(HasAdminToken);
 
   useEffect(() => {
     if (localStorage.getItem("themoment_token")) {
       setHasToken(true);
-    } else {
-      resetAdmin();
     }
   })
 
@@ -38,18 +36,14 @@ const StartPage: React.FC = () => {
         </S.StartHeader>
         <S.ButtonBox>
           {
-            hasToken ?
+            logged ?
             <>
               <button onClick={() => alert("관리자는 학생페이지를 볼 수 없습니다.")}>Student</button>
-              <Link to="/topten">
-                <button>Admin</button>
-              </Link>
+              <button onClick={() => history.push("/topten")}>Admin</button>
             </>
             :
             <>
-              <Link to="/Leave_opinion">
-                <button>Student</button>
-              </Link>
+              <button onClick={() => history.push("/Leave_opinion")}>Student</button>
               <button onClick={() => modal.open("LoginModal", 1)}>Admin</button>
             </>
           }
