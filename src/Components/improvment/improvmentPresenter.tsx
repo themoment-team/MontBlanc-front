@@ -49,14 +49,10 @@ const ImprovmentPage: React.FC = () => {
       <div>
         {list.map((improvement: list) => (
           <ImprovmentItemPresenter
-            color="#C3D7DE"
             header={improvement.header}
             content={improvement.content}
-          /> // 여기 물어봐야 합니다.
+          />
         ))}
-        {/* <ImprovmentItemPresenter color="#C3D7DE" />
-        <ImprovmentItemPresenter color="#C0C9D6" />
-        <ImprovmentItemPresenter color="#A7C5EB" /> */}
       </div>
     </S.ImprovmentPageBox>
   );
