@@ -6,6 +6,7 @@ import * as I from "../../../../Asset/SVG";
 
 const ViewModalPresenter: React.FC<ModalProps> = ({ close }) => {
   const modal = useModal();
+  const randomNumber: number = Math.floor(Math.random() * 3) + 1;
 
   return (
     <ModalContainer close={close} width={1000} height={600}>
@@ -21,7 +22,13 @@ const ViewModalPresenter: React.FC<ModalProps> = ({ close }) => {
               asdfsdafsdfsdafsdafasdfasdfdfa
             </S.Text>
             <S.ViewImg>
-              <I.ImprovmentSvg1 />
+            {
+              { 
+                1 : <I.ImprovmentSvg1/>,
+                2 : <I.ImprovmentSvg2/>,
+                3 : <I.ImprovmentSvg3/>
+              }[randomNumber]
+            }
             </S.ViewImg>
           </S.GridDivider>
       </S.ModalWrapper>
