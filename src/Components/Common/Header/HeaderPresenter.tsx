@@ -12,6 +12,8 @@ const Header: React.FC = () => {
   useEffect(() => {
     if (localStorage.getItem("themoment_token")) {
       setHasToken(true);
+    } else {
+      setHasToken(false);
     }
   });
 
