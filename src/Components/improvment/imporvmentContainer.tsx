@@ -1,5 +1,4 @@
 import Improvement from "Api/improvement";
-import { useEffect } from "react";
 
 export interface list {
   improveContent: string;
