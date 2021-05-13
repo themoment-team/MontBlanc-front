@@ -9,9 +9,7 @@ export interface list {
 }
 
 export const useViewTable = () => {
-  const [list, setList] = useState<list[]>([
-    { boardIdx: 0, content: "", goods: 0, idx: 0 },
-  ]);
+  const [list, setList] = useState<list[]>([]);
 
   const tryViewTable = async () => {
     return await Table.viewTable();
