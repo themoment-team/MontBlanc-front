@@ -1,6 +1,7 @@
 import * as I from "../../Asset/SVG";
 import * as S from "./styled";
 import * as C from "./IssueBoxContainer";
+import React from "react";
 
 const issueBox: React.FC<C.issueBoxProps> = (p: C.issueBoxProps) => {
   const randomColor = C.randomColorPicker();
@@ -16,4 +17,4 @@ const issueBox: React.FC<C.issueBoxProps> = (p: C.issueBoxProps) => {
   );
 };
 
-export default issueBox;
+export default React.memo(issueBox);
