@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-
+import { isLiked } from "./GoodBtnContainer";
 interface GoodBtnStyleElemProps {
-  Liked: boolean;
+  Liked: isLiked;
   hasBackground: boolean;
 }
 
