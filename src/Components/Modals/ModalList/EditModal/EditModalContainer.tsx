@@ -6,11 +6,11 @@ export interface list {
   content: string;
 }
 
-export const useSaveAnswer = (idx: number, reqMethod: string) => {
+export const useUpdateAndSaveAnswer = (idx: number, reqMethod: string) => {
   const [content, setContent] = useState("");
 
   const TrySave = async () => {
-    const method = reqMethod === "PUT" ? "PUT" : "POST";
+    const method = reqMethod === "Update" ? "PUT" : "POST";
     try {
       await Answer.updateAndSaveAnswer(content, idx, method);
     } catch (e) {
@@ -19,4 +19,16 @@ export const useSaveAnswer = (idx: number, reqMethod: string) => {
   };
 
   return [setContent, TrySave];
+};
+
+export const useDeleteAnswer = (idx: number) => {
+  const TryDelete = async () => {
+    try {
+      await Answer.delete(idx);
+    } catch (e) {
+      alert(e);
+    }
+  };
+
+  return TryDelete;
 };
