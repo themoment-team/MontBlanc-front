@@ -6,6 +6,7 @@ import { randomColorPicker } from "./improvmentItemContainer";
 interface ImprovmentProps {
   header: string;
   content: string;
+  idx: number;
 }
 
 const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
@@ -19,7 +20,11 @@ const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
       <I.DoubleQuotes />
       <S.ImprovmentContent>
         <S.ImprovmentHeading>{p.header}</S.ImprovmentHeading>
-        <S.AboutBtn onClick={() => modal.open("ViewModal", 0)}>
+        <S.AboutBtn
+          onClick={() =>
+            modal.open("ViewModal", p.idx, "improvment", "작성하기")
+          }
+        >
           자세히 보기
         </S.AboutBtn>
       </S.ImprovmentContent>
