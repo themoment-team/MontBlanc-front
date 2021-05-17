@@ -11,9 +11,7 @@ import { HasAdminToken } from "Atom";
 import { useModal } from "Context/Modal";
 
 const ImprovmentPage: React.FC = () => {
-  const [list, setList] = useState<list[]>([
-    { improveContent: "", improveHeader: "" },
-  ]);
+  const [list, setList] = useState<list[]>([]);
   const modal = useModal();
   const logged = useRecoilValue(HasAdminToken);
 
@@ -30,7 +28,7 @@ const ImprovmentPage: React.FC = () => {
         />
         {logged ? (
           <S.Btn
-            onClick={() => modal.open("EditModal", 1, "실제 개선 사례 작성")}
+            onClick={() => modal.open("EditModal", 1, "improvment", "작성하기")}
           >
             실제 개선 사례 작성하기
             <span>
@@ -53,6 +51,7 @@ const ImprovmentPage: React.FC = () => {
           <ImprovmentItemPresenter
             header={improvement.improveHeader}
             content={improvement.improveContent}
+            idx={improvement.improveIdx}
           />
         ))}
       </div>

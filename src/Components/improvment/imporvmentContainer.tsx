@@ -3,6 +3,7 @@ import Improvement from "Api/improvement";
 export interface list {
   improveContent: string;
   improveHeader: string;
+  improveIdx: number;
 }
 
 export const improvement = () => {
