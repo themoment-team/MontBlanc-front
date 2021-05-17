@@ -40,13 +40,8 @@ const Top10Page = () => {
               <article>{top10.content}</article>
             </span>
             <span>
-              <button
-                onClick={() =>
-                  top10.answer &&
-                  modal.open("ViewModal", top10.boardIdx, "answer", "작성하기")
-                }
-              >
-                {top10.answer ? "답변보기" : logged ? "답변달기" : "답변없음"}
+              <button onClick={() => (top10.answer ? modal.open("ViewModal", top10.boardIdx, "answer", "답변보기") : (logged && modal.open("EditModal", top10.boardIdx, "answer", "답변달기")))}>
+                { top10.answer ? "답변보기" : (logged ? "답변달기" : "답변없음")}
               </button>
               <GoodBtn
                 Background={false}
