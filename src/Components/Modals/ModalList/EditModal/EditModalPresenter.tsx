@@ -2,11 +2,16 @@ import { ModalContainer } from "../../ModalContainer";
 import { ModalProps } from "../../../../Context/Modal";
 import * as S from "./style";
 import { CancleBtn } from "../../../../Asset/SVG";
-import { useUpdateAndSaveAnswer, useDeleteAnswer } from "./EditModalContainer";
+import { useStateDistinction } from "./EditModalContainer";
 
-const EditModal: React.FC<ModalProps> = ({ close, idx, heading }) => {
-  const [setContent, TrySave] = useUpdateAndSaveAnswer(idx || 0, "Update");
-  const TryDelete = useDeleteAnswer(idx || 0);
+const EditModal: React.FC<ModalProps> = ({ close, idx, state, heading }) => {
+  const [
+    setContent,
+    setHeading,
+    TryUpdate,
+    TrySave,
+    TryDelete,
+  ] = useStateDistinction(idx || 0, state || "");
 
   return (
     <ModalContainer close={close} width={1000} height={600} idx={idx}>
@@ -15,28 +20,42 @@ const EditModal: React.FC<ModalProps> = ({ close, idx, heading }) => {
         <S.ModalImg onClick={close}>
           <CancleBtn />
         </S.ModalImg>
-        <S.InputBox placeholder="제목을 입력해주세요." />
+        <S.InputBox
+          placeholder="제목을 입력해주세요."
+          onChange={({ target: { value } }) => setHeading(value)}
+        />
         <S.TextArea
           placeholder="내용을 입력해주세요."
           onChange={({ target: { value } }) => setContent(value)}
         />
-        <S.BtnWrapper>
+        <S.BtnWrapper onClick={close}>
           {heading === "수정하기" && (
             <S.DeleteBtn
               onClick={() => {
-                TryDelete();
+                TryDelete("");
               }}
             >
               삭 제
             </S.DeleteBtn>
           )}
-          <S.SaveBtn
-            onClick={() => {
-              TrySave("");
-            }}
-          >
-            저 장
-          </S.SaveBtn>
+          {heading === "수정하기" && (
+            <S.SaveBtn
+              onClick={() => {
+                TryUpdate("");
+              }}
+            >
+              저 장
+            </S.SaveBtn>
+          )}
+          {heading !== "수정하기" && (
+            <S.SaveBtn
+              onClick={() => {
+                TrySave("");
+              }}
+            >
+              저 장
+            </S.SaveBtn>
+          )}
         </S.BtnWrapper>
       </S.ModalWrapper>
     </ModalContainer>
