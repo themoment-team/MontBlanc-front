@@ -27,7 +27,7 @@ export const AnswerController = {
 export const ImprovementController = {
   //get 개선사례보기, post 개선사례작성
   detailSolved: (improveIdx: number) => {
-    return `/admin/solved/${improveIdx}`;
+    return `/solved/${improveIdx}`;
   },
   //put 개선사례수정, delete 개선사례삭제
   detail2Solved: () => {
