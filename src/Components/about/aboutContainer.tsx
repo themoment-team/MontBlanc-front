@@ -9,7 +9,7 @@ const useAmount = (): { data: number } => {
 
   useEffect(() => {
     getAmount().then((res) => setAmount(res.data));
-  });
+  }, []);
   return amount;
 };
 
