@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { useModal } from "../../Context/Modal";
 import { useRecoilState } from "recoil";
 import { HasAdminToken } from "../../Atom";
+import Config from "Constants/Config.json";
 
 const StartPage: React.FC = () => {
   const modal = useModal();
@@ -15,7 +16,7 @@ const StartPage: React.FC = () => {
     if (localStorage.getItem("themoment_token")) {
       setHasToken(true);
     }
-  })
+  });
 
   return (
     <S.StartPage>
@@ -35,18 +36,25 @@ const StartPage: React.FC = () => {
           </S.H2>
         </S.StartHeader>
         <S.ButtonBox>
-          {
-            logged ?
+          {logged ? (
             <>
-              <button onClick={() => alert("관리자는 학생페이지를 볼 수 없습니다.")}>Student</button>
-              <button onClick={() => history.push("/topten")}>Admin</button>
+              <button
+                onClick={() => alert("관리자는 학생페이지를 볼 수 없습니다.")}
+              >
+                Student
+              </button>
+              <button onClick={() => history.push(Config.LINK.TOP10)}>
+                Admin
+              </button>
             </>
-            :
+          ) : (
             <>
-              <button onClick={() => history.push("/Leave_opinion")}>Student</button>
+              <button onClick={() => history.push(Config.LINK.COMMENT)}>
+                Student
+              </button>
               <button onClick={() => modal.open("LoginModal", 1)}>Admin</button>
             </>
-          }
+          )}
         </S.ButtonBox>
       </S.LeftBox>
       <S.RightBox>

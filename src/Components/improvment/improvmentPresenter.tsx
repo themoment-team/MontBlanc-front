@@ -9,6 +9,7 @@ import * as C from "./imporvmentContainer";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
 import { useModal } from "Context/Modal";
+import Config from "Constants/Config.json";
 
 const ImprovmentPage: React.FC = () => {
   const [list, setList] = useState<list[]>([]);
@@ -39,7 +40,7 @@ const ImprovmentPage: React.FC = () => {
           <S.Btn>
             학교가 불편한 순간을
             <br /> 자유롭게 남겨주세요.
-            <Link to="/Leave_opinion">
+            <Link to={Config.LINK.COMMENT}>
               의견 남기기
               <I.RightArrow />
             </Link>

@@ -30,20 +30,22 @@ const EditModal: React.FC<ModalProps> = ({ close, idx, state, heading }) => {
         />
         <S.BtnWrapper onClick={close}>
           {heading === "수정하기" && (
-            <S.SaveBtn
-              onClick={() => {
-                TryUpdate("");
-              }}
-            >
-              저 장
-            </S.SaveBtn>
-            <S.DeleteBtn
-              onClick={() => {
-                TryDelete("");
-              }}
-            >
-              삭 제
-            </S.DeleteBtn>
+            <>
+              <S.SaveBtn
+                onClick={() => {
+                  TryUpdate("");
+                }}
+              >
+                저 장
+              </S.SaveBtn>
+              <S.DeleteBtn
+                onClick={() => {
+                  TryDelete("");
+                }}
+              >
+                삭 제
+              </S.DeleteBtn>
+            </>
           )}
           {heading !== "수정하기" && (
             <S.SaveBtn

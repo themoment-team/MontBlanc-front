@@ -13,6 +13,7 @@ import {
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
 import { useModal } from "Context/Modal";
+import Config from "Constants/Config.json";
 
 const Top10Page = () => {
   const list = useTop10();
@@ -28,7 +29,7 @@ const Top10Page = () => {
         />
         {!logged && (
           <S.Btn>
-            <Link to="/Leave_opinion">의견 남기기</Link>
+            <Link to={Config.LINK.COMMENT}>의견 남기기</Link>
           </S.Btn>
         )}
       </LeftBox>
@@ -40,8 +41,25 @@ const Top10Page = () => {
               <article>{top10.content}</article>
             </span>
             <span>
-              <button onClick={() => (top10.answer ? modal.open("ViewModal", top10.boardIdx, "answer", "답변보기") : (logged && modal.open("EditModal", top10.boardIdx, "answer", "답변달기")))}>
-                { top10.answer ? "답변보기" : (logged ? "답변달기" : "답변없음")}
+              <button
+                onClick={() =>
+                  top10.answer
+                    ? modal.open(
+                        "ViewModal",
+                        top10.boardIdx,
+                        "answer",
+                        "답변보기"
+                      )
+                    : logged &&
+                      modal.open(
+                        "EditModal",
+                        top10.boardIdx,
+                        "answer",
+                        "답변달기"
+                      )
+                }
+              >
+                {top10.answer ? "답변보기" : logged ? "답변달기" : "답변없음"}
               </button>
               <GoodBtn
                 Background={false}

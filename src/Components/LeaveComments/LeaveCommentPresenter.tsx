@@ -5,14 +5,15 @@ import * as S from "./styles";
 import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
 import { useViewTable, useWriteTable, list } from "./LeaveCommentContainer";
 import { useState } from "react";
+import Config from "Constants/Config.json";
 
 const LeaveCommentsPage: React.FC = () => {
   const list = useViewTable();
   const [content, setContent] = useState("");
 
   const list3 = list.slice(0, list.length * (1 / 3));
-  const list2 = list.slice(list.length * ( 1 / 3 ), list.length * (2 / 3));
-  const list1 = list.slice(list.length * ( 2 / 3 ), list.length);
+  const list2 = list.slice(list.length * (1 / 3), list.length * (2 / 3));
+  const list1 = list.slice(list.length * (2 / 3), list.length);
 
   const tryWriteTable = useWriteTable();
 
@@ -43,7 +44,7 @@ const LeaveCommentsPage: React.FC = () => {
             많은 학생들이 공감한
             <br /> 불편함은 무엇일까요?
           </span>
-          <Link to="/topten">
+          <Link to={Config.LINK.TOP10}>
             <span>Top 10 보러가기</span>
             <I.RightArrow />
           </Link>
@@ -51,28 +52,19 @@ const LeaveCommentsPage: React.FC = () => {
       </S.LeftBox>
       <S.RightBox>
         <S.IssueBoxWrapper>
-        {list1.map((table: list, _) => (
-          <IssueBoxPresenter
-            idx={table.boardIdx}
-            content={table.content}
-          />
-        ))}
+          {list1.map((table: list, _) => (
+            <IssueBoxPresenter idx={table.boardIdx} content={table.content} />
+          ))}
         </S.IssueBoxWrapper>
         <S.IssueBoxWrapper>
-        {list2.map((table: list, _) => (
-          <IssueBoxPresenter
-            idx={table.boardIdx}
-            content={table.content}
-          />
-        ))}
+          {list2.map((table: list, _) => (
+            <IssueBoxPresenter idx={table.boardIdx} content={table.content} />
+          ))}
         </S.IssueBoxWrapper>
         <S.IssueBoxWrapper>
-        {list3.map((table: list, _) => (
-          <IssueBoxPresenter
-            idx={table.boardIdx}
-            content={table.content}
-          />
-        ))}
+          {list3.map((table: list, _) => (
+            <IssueBoxPresenter idx={table.boardIdx} content={table.content} />
+          ))}
         </S.IssueBoxWrapper>
       </S.RightBox>
     </S.LeaveCommentsBox>

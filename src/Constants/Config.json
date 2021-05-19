@@ -6,5 +6,12 @@
     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,OPTIONS",
     "Access-Control-Allow-Credentials": "true",
     "Content-Type": "application/json"
+  },
+  "LINK": {
+    "ABOUT": "/about",
+    "IMPROVMENT": "/improvment",
+    "TOP10": "/rank",
+    "COMMENT": "/the_moment",
+    "START": "/"
   }
 }
