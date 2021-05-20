@@ -1,7 +1,6 @@
 import admin from "Api/admin";
 import { HasAdminToken } from "Atom";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 
 export const useLogin = () => {
