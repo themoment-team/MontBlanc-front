@@ -48,11 +48,12 @@ const ImprovmentPage: React.FC = () => {
         )}
       </S.LeftBox>
       <div>
-        {list.map((improvement: list) => (
+        {list.map((improvement: list, index) => (
           <ImprovmentItemPresenter
             header={improvement.improveHeader}
             content={improvement.improveContent}
             idx={improvement.improveIdx}
+            key={index}
           />
         ))}
       </div>
