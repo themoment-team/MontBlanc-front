@@ -5,29 +5,32 @@ import { EditBtn } from "../../../../Asset/SVG";
 import * as I from "../../../../Asset/SVG";
 import { HasAdminToken } from "Atom";
 import { useRecoilValue } from "recoil";
-import { useGetModalValue } from "./ViewModalContainer";
+import useGetModalValue from "./ViewModalContainer";
 
-const ViewModalPresenter: React.FC<ModalProps> = ({ close, idx, state }) => {
+const ViewModalPresenter: React.FC<ModalProps> = ({
+  close,
+  idx,
+  state,
+  key,
+}) => {
   const modal = useModal();
   const randomNumber: number = Math.floor(Math.random() * 3) + 1;
   const logged = useRecoilValue(HasAdminToken);
-  const res = useGetModalValue(idx || 0);
+  const [Idx, title, content] = useGetModalValue(idx || key || 0, state || "");
 
   return (
     <ModalContainer close={close} width={1000} height={600}>
       <S.ModalWrapper>
-        <S.H1>{res.title}</S.H1>
+        <S.H1>{title}</S.H1>
         {logged && (
           <S.ModalImg
-            onClick={() =>
-              modal.open("EditModal", res.answerIdx || 0, state, "수정하기")
-            }
+            onClick={() => modal.open("EditModal", Idx || 0, state, "수정하기")}
           >
             <EditBtn />
           </S.ModalImg>
         )}
         <S.GridDivider>
-          <S.Text>{res.answerContent}</S.Text>
+          <S.Text>{content}</S.Text>
           <S.ViewImg>
             {
               {
