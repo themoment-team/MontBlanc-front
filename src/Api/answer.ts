@@ -32,7 +32,11 @@ class Answer {
       return RequestApi({
         method: "DELETE",
         url: AnswerController.detailAnswer(answerIdx),
-      });
+      },
+      {
+        hasToken: true,
+      }
+      );
     } catch (e) {
       throw new Error(e);
     }
