@@ -1,7 +1,7 @@
 import admin from "Api/admin";
 import { HasAdminToken } from "Atom";
 import { useState } from "react";
-import { useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil"
 
 export const useLogin = () => {
   const [id, setId] = useState("");
@@ -18,7 +18,6 @@ export const useLogin = () => {
       );
       setLogged(true);
     } catch (e) {
-      console.log(e);
       alert("로그인에 실패하셨습니다.");
     }
   };

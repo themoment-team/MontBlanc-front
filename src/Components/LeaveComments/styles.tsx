@@ -83,9 +83,3 @@ export const RightBox = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 29px
 `;
-
-export const IssueBoxWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 29px;
-`;

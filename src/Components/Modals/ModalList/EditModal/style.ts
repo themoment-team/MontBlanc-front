@@ -28,18 +28,6 @@ export const ModalImg = styled.button`
   top: 30px;
 `;
 
-export const InputBox = styled.input`
-  background-color: #f4f4f4;
-  color: #a6a6a6;
-  font-size: 18px;
-  padding: 17px;
-  font-weight: 400;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  width: 900px;
-`
-
 export const TextArea = styled.textarea`
   background-color: #f4f4f4;
   color: #a6a6a6;
@@ -49,34 +37,17 @@ export const TextArea = styled.textarea`
   border: none;
   outline: none;
   width: 900px;
-  height: 280px;
+  height: 323px;
   border-radius: 10px;
   resize: none;
-  margin-top: 13px;
-  &::placeholder {
-    font-size: 18px;
-  }
+  margin-top: 30px;
 `;
-
-export const BtnWrapper = styled.div`
-  width: 934px;
-  height: 75px;
-  margin: 0;
-  display: flex;
-  justify-content: flex-end;
-`
 
 export const SaveBtn = styled.button`
   background-color: #434c9c;
   color: #fff;
   font-size: 18px;
   font-weight: 600;
-  margin-left: 17px;
-`;
-
-export const DeleteBtn = styled.button`
-  background-color: #C6C6C6;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
+  justify-self: flex-end;
+  margin: 11px 0;
 `;
