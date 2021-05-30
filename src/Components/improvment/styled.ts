@@ -10,7 +10,7 @@ export const ImprovmentPageBox = styled.div`
 export const LeftBox = styled.div`
   height: fit-content;
   position: sticky;
-  top: 215px;
+  top: 180px;
   margin-right: 30px;
 `;
 

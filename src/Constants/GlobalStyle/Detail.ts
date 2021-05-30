@@ -8,7 +8,7 @@ export const ApiResult = styled.h1`
 
 export const LeftBox = styled.div`
   position: sticky;
-  top: 215px;
+  top: 180px;
   left: 0;
   height: 380px;
   width: 45%;

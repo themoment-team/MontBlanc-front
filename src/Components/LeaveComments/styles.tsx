@@ -9,7 +9,7 @@ export const LeaveCommentsBox = styled.main`
 
 export const LeftBox = styled.div`
   position: sticky;
-  top: 215px;
+  top: 180px;
   left: 0;
   height: 380px;
   margin-right: 30px;
@@ -83,11 +83,11 @@ export const Top10Btn = styled.button`
 export const RightBox = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 29px;
+  gap: 23px;
 `;
 
 export const IssueBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 29px;
+  gap: 23px;
 `;
