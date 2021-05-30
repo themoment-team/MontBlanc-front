@@ -52,18 +52,30 @@ const LeaveCommentsPage: React.FC = () => {
       </S.LeftBox>
       <S.RightBox>
         <S.IssueBoxWrapper>
-          {list1.map((table: list, _) => (
-            <IssueBoxPresenter idx={table.boardIdx} content={table.content} />
+          {list1.map((table: list, index) => (
+            <IssueBoxPresenter
+              idx={table.boardIdx}
+              content={table.content}
+              key={index}
+            />
           ))}
         </S.IssueBoxWrapper>
         <S.IssueBoxWrapper>
-          {list2.map((table: list, _) => (
-            <IssueBoxPresenter idx={table.boardIdx} content={table.content} />
+          {list2.map((table: list, index) => (
+            <IssueBoxPresenter
+              idx={table.boardIdx}
+              content={table.content}
+              key={index}
+            />
           ))}
         </S.IssueBoxWrapper>
         <S.IssueBoxWrapper>
-          {list3.map((table: list, _) => (
-            <IssueBoxPresenter idx={table.boardIdx} content={table.content} />
+          {list3.map((table: list, index) => (
+            <IssueBoxPresenter
+              idx={table.boardIdx}
+              content={table.content}
+              key={index}
+            />
           ))}
         </S.IssueBoxWrapper>
       </S.RightBox>

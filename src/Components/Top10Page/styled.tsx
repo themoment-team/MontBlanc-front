@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const TopTenWrapper = styled.section`
   display: flex;
-  width: 81%;
-  margin: 0 auto;
-  margin-top: 215px;
+  width: 70vw;
+  margin: 180px auto;
   height: fit-content;
 `; // left박스와 right박스 전체를 감싸는 wrapper입니다.
 

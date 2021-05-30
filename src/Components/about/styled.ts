@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const AboutBox = styled.div`
-  margin: 0 auto;
-  margin-top: 215px;
-  width: 81%;
+  margin: 180px auto;
+  width: 70vw;
   color: #434c9c;
   li {
     cursor: text;
@@ -23,6 +22,7 @@ export const AboutContent = styled.div`
 
 export const Hr = styled.hr`
   margin: 70px 55% 70px 0;
+  width: 692px;
   border: 1px solid #434c9c;
   transform: scaleY(0.5);
 `;

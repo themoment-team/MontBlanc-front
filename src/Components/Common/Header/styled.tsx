@@ -5,8 +5,8 @@ export const Header = styled.header`
   top: 0;
   display: flex;
   justify-content: space-between;
-  padding: 23px 9.5%;
-  width: 80vw;
+  padding: 23px 14%;
+  width: 70vw;
   background: white;
 `;
 
@@ -31,13 +31,4 @@ export const HeaderNav = styled.nav`
   list-style: none;
   display: flex;
   justify-content: space-between;
-  & > button {
-    display: inline;
-    margin: 0;
-    padding: 0;
-    height: 0;
-    text-decoration: none;
-    color: #434C9C;
-    font-size: 1rem;
-  }
 `;
