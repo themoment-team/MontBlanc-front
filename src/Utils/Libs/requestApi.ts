@@ -5,7 +5,7 @@ export interface hasToken {
   hasToken?: boolean;
 }
 
-const RequestApi = (
+const RequestApi = async (
   p: AxiosRequestConfig,
   condition: hasToken = { hasToken: false }
 ) => {
@@ -23,7 +23,7 @@ const RequestApi = (
         RefreshToken: refreshToken,
       });
     }
-    const res = axios({
+    const res = await axios({
       method: p.method,
       baseURL: BASE_URL,
       url: p.url,
