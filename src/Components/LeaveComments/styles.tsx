@@ -1,10 +1,16 @@
 import styled from "styled-components";
+import device from "Constants/reactive";
 
 export const LeaveCommentsBox = styled.main`
   display: flex;
   justify-content: space-between;
   margin: 180px auto;
   width: 70vw;
+  @media ${device.mobile} {
+    flex-direction: column;
+    margin-top: 180px;
+    align-items: center;
+  }
 `;
 
 export const LeftBox = styled.div`
@@ -13,6 +19,14 @@ export const LeftBox = styled.div`
   left: 0;
   height: 380px;
   margin-right: 30px;
+  @media ${device.mobile} {
+    position: relative;
+    top: 0px;
+    height: auto;
+    margin-bottom: 30px;
+    margin-right: 0;
+    width: 100%;
+  }
 `;
 
 export const H1 = styled.div`
@@ -42,6 +56,13 @@ export const Form = styled.div`
   textarea::placeholder {
     color: #a8a8a8;
     font-size: 16px;
+  }
+
+  @media ${device.tablet} {
+    width: 280px;
+  }
+  @media ${device.mobile} {
+    width: 100%;
   }
 `;
 
@@ -78,12 +99,29 @@ export const Top10Btn = styled.button`
   span {
     padding-right: 9px;
   }
+
+  @media ${device.tablet} {
+    width: 280px;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+  }
+  @media ${device.mobile} {
+    width: 100%;
+    flex-direction: row;
+  }
 `;
 
 export const RightBox = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 23px;
+  @media ${device.laptop} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media ${device.tablet} {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const IssueBoxWrapper = styled.div`
