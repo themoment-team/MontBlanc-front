@@ -7,6 +7,7 @@ interface ImprovmentProps {
   header: string;
   content: string;
   idx: number;
+  key: number;
 }
 
 const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
@@ -22,7 +23,7 @@ const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
         <S.ImprovmentHeading>{p.header}</S.ImprovmentHeading>
         <S.AboutBtn
           onClick={() =>
-            modal.open("ViewModal", p.idx, "improvment", "작성하기")
+            modal.open("ViewModal", p.idx, "improvment", "작성하기", p.key)
           }
         >
           자세히 보기
