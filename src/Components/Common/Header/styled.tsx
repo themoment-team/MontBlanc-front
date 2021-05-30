@@ -8,6 +8,7 @@ export const Header = styled.header`
   padding: 23px 14%;
   width: 70vw;
   background: white;
+  z-index: 99;
 `;
 
 export const LogoText = styled.span`
