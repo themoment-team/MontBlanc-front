@@ -5,11 +5,12 @@ export interface list {
   boardIdx: number;
   content: string;
   goods: number;
+  answer: boolean;
 }
 
 export const useTop10 = () => {
   const [list, setList] = useState<list[]>([
-    { boardIdx: 0, content: "", goods: 0 },
+    { boardIdx: 0, content: "", goods: 0, answer: false },
   ]);
 
   const tryTop10 = async () => {

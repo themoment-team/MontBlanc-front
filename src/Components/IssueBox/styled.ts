@@ -26,4 +26,5 @@ export const IssueNumber = styled.div`
 export const Issue = styled.div`
   font-size: 15px;
   margin-bottom: 22px;
+  text-align: left;
 `;

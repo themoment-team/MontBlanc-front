@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-
+import { isLiked } from "./GoodBtnContainer";
 interface GoodBtnStyleElemProps {
-  Liked: boolean;
+  Liked: isLiked;
   hasBackground: boolean;
 }
 
@@ -24,6 +24,10 @@ export const GoodBtnStyle = styled.button<GoodBtnStyleElemProps>`
       : props.hasBackground
       ? "#fff"
       : "none"}; // 좋아요 제어후에 배경을 가졌는지 추가로 제어
+  span {
+    color: ${(props) =>
+      props.Liked && !props.hasBackground ? "#475AFF" : "#6B7187"};
+  }
 `;
 
 export const LikeCnt = styled.span<GoodBtnStyleElemProps>`

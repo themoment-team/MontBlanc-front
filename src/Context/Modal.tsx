@@ -1,14 +1,17 @@
-import React, { createContext, useState, useCallback, useContext } from "react";
+import { OpenedModal } from "Atom/AtomContainer";
+import React, { createContext, useCallback, useContext } from "react";
+import { useRecoilState } from "recoil";
 import * as modals from "../Components/Modals";
 
 export type ModalProps = {
   close: () => void;
   idx?: number;
-  state?: number;
+  state?: string;
   heading?: string;
+  key?: number;
 };
 
-type Modal = {
+export type Modal = {
   name: keyof typeof modals;
   idx?: {
     [key in number]: any;
@@ -18,6 +21,9 @@ type Modal = {
   };
   heading?: {
     [key in string]: any;
+  };
+  key?: {
+    [key in number]: any;
   };
 };
 
@@ -35,6 +41,10 @@ type ModalContextValues = {
     heading?: Omit<
       React.ComponentProps<typeof modals[T]>,
       keyof ModalProps | "children"
+    >,
+    key?: Omit<
+      React.ComponentProps<typeof modals[T]>,
+      keyof ModalProps | "children"
     >
   ) => void;
 };
@@ -42,18 +52,18 @@ type ModalContextValues = {
 export const ModalContext = createContext<ModalContextValues | null>(null);
 
 export const ModalContextProvider: React.FC = ({ children }) => {
-  const [openedModal, setOpenedModal] = useState<Modal | null>(null);
+  const [openedModal, setOpenedModal] = useRecoilState(OpenedModal);
 
   const open: ModalContextValues["open"] = useCallback(
-    (name, idx, state, heading) => {
-      setOpenedModal({ name, idx, state, heading });
+    (name, idx, state, heading, key) => {
+      setOpenedModal({ name, idx, state, heading, key });
     },
     []
   );
 
   const close = useCallback(() => {
     setOpenedModal(null);
-  }, []);
+  }, [setOpenedModal]);
 
   return (
     <ModalContext.Provider value={{ open }}>
@@ -74,6 +84,7 @@ const ModalRenderer: React.FC<ModalProps & { modal: Modal }> = ({
       idx={modal.idx}
       heading={modal.heading}
       state={modal.state}
+      key={modal.key}
       {...(modal.heading as any)}
     />
   );

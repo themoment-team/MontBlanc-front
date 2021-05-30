@@ -20,7 +20,15 @@ const GoodBtn: React.FC<GoodBtnProps> = ({
       onClick={onClickBtn}
       hasBackground={Background}
     >
-      <I.GoodBtnSvg color={isLiked && Background ? "#fff" : "#6B7187"} />
+      <I.GoodBtnSvg
+        color={
+          isLiked && Background
+            ? "#fff"
+            : !Background && isLiked
+            ? "#475AFF"
+            : "#6B7187"
+        }
+      />
       <S.LikeCnt Liked={isLiked} hasBackground={Background}>
         {likeCnt}
       </S.LikeCnt>

@@ -13,11 +13,11 @@ import {
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
 import { useModal } from "Context/Modal";
+import Config from "Constants/Config.json";
 
 const Top10Page = () => {
   const list = useTop10();
   const modal = useModal();
-  const commentState = "답변없음"; // 답변이 달려있는지 또는 안 달려있는지의 대한 상태
   const logged = useRecoilValue(HasAdminToken);
 
   return (
@@ -29,7 +29,7 @@ const Top10Page = () => {
         />
         {!logged && (
           <S.Btn>
-            <Link to="/Leave_opinion">의견 남기기</Link>
+            <Link to={Config.LINK.COMMENT}>의견 남기기</Link>
           </S.Btn>
         )}
       </LeftBox>
@@ -43,10 +43,23 @@ const Top10Page = () => {
             <span>
               <button
                 onClick={() =>
-                  modal.open("EditModal", top10.boardIdx, 1, "답변달기")
+                  top10.answer
+                    ? modal.open(
+                        "ViewModal",
+                        top10.boardIdx,
+                        "answer",
+                        "답변보기"
+                      )
+                    : logged &&
+                      modal.open(
+                        "EditModal",
+                        top10.boardIdx,
+                        "answer",
+                        "답변달기"
+                      )
                 }
               >
-                {logged ? "답변달기" : commentState}
+                {top10.answer ? "답변보기" : logged ? "답변달기" : "답변없음"}
               </button>
               <GoodBtn
                 Background={false}
