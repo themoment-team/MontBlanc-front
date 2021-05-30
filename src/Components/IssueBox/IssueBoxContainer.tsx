@@ -1,6 +1,7 @@
 export interface issueBoxProps {
   idx: number;
   content: string;
+  goods: number;
 }
 
 export const randomColorPicker = () => {

@@ -9,16 +9,17 @@ import * as C from "./imporvmentContainer";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
 import { useModal } from "Context/Modal";
-import Config from "Constants/Config.json";
 
 const ImprovmentPage: React.FC = () => {
-  const [list, setList] = useState<list[]>([]);
-  const modal = useModal();
-  const logged = useRecoilValue(HasAdminToken);
+  const [list, setList] = useState<list[]>([{ content: "", header: "" }]);
 
   useEffect(() => {
     improvement().then((res) => setList(res.data.list));
   }, []);
+
+  const logged = useRecoilValue(HasAdminToken);
+
+  const modal = useModal();
 
   return (
     <S.ImprovmentPageBox>
@@ -28,9 +29,7 @@ const ImprovmentPage: React.FC = () => {
           explanation={C.explanation}
         />
         {logged ? (
-          <S.Btn
-            onClick={() => modal.open("EditModal", 1, "improvment", "작성하기")}
-          >
+          <S.Btn onClick={() => modal.open("EditModal", 0)}>
             실제 개선 사례 작성하기
             <span>
               <I.RightArrow />
@@ -40,7 +39,7 @@ const ImprovmentPage: React.FC = () => {
           <S.Btn>
             학교가 불편한 순간을
             <br /> 자유롭게 남겨주세요.
-            <Link to={Config.LINK.COMMENT}>
+            <Link to="/Leave_opinion">
               의견 남기기
               <I.RightArrow />
             </Link>
@@ -48,14 +47,16 @@ const ImprovmentPage: React.FC = () => {
         )}
       </S.LeftBox>
       <div>
-        {list.map((improvement: list, index) => (
+        {list.map((improvement: list) => (
           <ImprovmentItemPresenter
-            header={improvement.improveHeader}
-            content={improvement.improveContent}
-            idx={improvement.improveIdx}
-            key={index}
-          />
+            color="#C3D7DE"
+            header={improvement.header}
+            content={improvement.content}
+          /> // 여기 물어봐야 합니다.
         ))}
+        {/* <ImprovmentItemPresenter color="#C3D7DE" />
+        <ImprovmentItemPresenter color="#C0C9D6" />
+        <ImprovmentItemPresenter color="#A7C5EB" /> */}
       </div>
     </S.ImprovmentPageBox>
   );
