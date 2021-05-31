@@ -6,7 +6,7 @@ export const ModalWrapper = styled.div`
   grid-template-rows: 1fr 4.5fr;
   padding: 89px 67px 70px 70px;
   @media ${device.mobile} {
-    grid-template-rows: 1fr 7.5fr;
+    grid-template-rows: 1fr 5.5fr;
   }
 `;
 
