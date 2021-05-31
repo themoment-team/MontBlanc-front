@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import device from "Constants/reactive";
 
 export const AboutBox = styled.div`
   margin: 180px auto;
@@ -6,6 +7,9 @@ export const AboutBox = styled.div`
   color: #434c9c;
   li {
     cursor: text;
+  }
+  @media ${device.mobile} {
+    width: 90vw;
   }
 `;
 
@@ -16,8 +20,11 @@ export const AboutHeading = styled.h2`
 export const AboutContent = styled.div`
   font-weight: 600;
   line-height: 36.4px;
-  margin-right: 10%;
   margin-bottom: 40px;
+  @media ${device.mobile} {
+    width: 90vw;
+    margin-right: 0;
+  }
 `;
 
 export const Hr = styled.hr`
@@ -25,6 +32,7 @@ export const Hr = styled.hr`
   width: 692px;
   border: 1px solid #434c9c;
   transform: scaleY(0.5);
+  @media ${device.laptop} {
+    width: 100%;
+  }
 `;
-
-export const AboutSubHeading = styled.h3``;
