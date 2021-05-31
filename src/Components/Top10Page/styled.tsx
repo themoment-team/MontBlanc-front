@@ -34,12 +34,11 @@ export const TenIssues = styled.div`
     flex-direction: column;
   }
   &:nth-child(-n + 3) {
-    // 3위까지는 특별한 색상을 가지게 됩니다!
     background: #dce8f7;
   }
   & + & {
     margin-top: 20px;
-  } // 이 컴포넌트와 이웃해있을때 margin으로 띄어주는 코드입니다.
+  }
   & > span:nth-child(1) > span {
     margin-right: 20px;
     color: #6b7187;
@@ -47,7 +46,7 @@ export const TenIssues = styled.div`
   }
   & > span:nth-child(1) > article {
     float: right;
-    width: calc(100% - 42px);
+    width: 22vw;
     height: fit-content;
     color: #3b3e57;
     font-weight: 700;
