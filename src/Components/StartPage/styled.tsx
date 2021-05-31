@@ -6,9 +6,14 @@ export const StartPage = styled.div`
 `;
 
 export const LeftBox = styled.div`
-  margin: 22vh 9vw 0 7.5vw;
+  margin: 24vh 9vw 0 7.5vw;
+  @media ${device.tablet} {
+    padding: 24px;
+    margin: 48px auto;
+  }
   @media ${device.mobile} {
-    margin: 15.5vh auto;
+    width: 100vw;
+    margin: 0;2b014afa6c25fb499f0
   }
 `;
 
@@ -21,9 +26,8 @@ export const StartHeader = styled.div`
 
 export const Logo = styled.div`
   @media ${device.mobile} {
-    display: flex;
-    justify-content: center;
-  }
+    margin: 0 auto;
+    margin-top: 100px;
   svg {
     width: 346px;
     height: 80px;
@@ -40,14 +44,8 @@ export const H1 = styled.div`
   font-weight: 700;
   font-size: 40px;
   margin: 28px 0 13px;
-  @media ${device.laptop} {
-    font-size: 2.3em;
-  }
   @media ${device.mobile} {
-    font-size: 1.5em;
-    margin: 25px 0 70px 10px;
-    text-align: center;
-  }
+    display: none;
 `;
 
 export const H2 = styled.div`
@@ -59,14 +57,24 @@ export const H2 = styled.div`
 `;
 
 export const ButtonBox = styled.div`
-  @media ${device.mobile} {
+  @media ${device.tablet} {
     display: flex;
     flex-direction: column;
   }
   button {
+    width: 190px;
+    padding: 20px 0;
+    @media ${device.tablet} {
+      width: 100%;
+      margin: 0;
+      margin-top: 12px;
+      padding: 24px 0;
+    }
+    @media ${device.mobile} {
+      padding: 12px 0;
+    }
     background-color: #434c9c;
     color: #ffffff;
-    padding: 20px 45px;
     border-radius: 12px;
     outline: 0;
     border: 0;
