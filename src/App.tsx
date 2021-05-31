@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import * as P from "./Page/index";
 import GlobalStyle from "./Constants/GlobalStyle/GlobalStyles";
 
-const App: React.FC = () => (
-  <BrowserRouter>
+const App: React.FC = () =>  (
+  <Router>
     <GlobalStyle />
     <Switch>
       <Route path="/about" component={P.about} />
@@ -14,7 +14,7 @@ const App: React.FC = () => (
       <Route path="/" component={P.Start} />
       <Redirect path="*" to="/" />
     </Switch>
-  </BrowserRouter>
+  </Router>
 );
 
 export default App;
