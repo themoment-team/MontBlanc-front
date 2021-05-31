@@ -7,6 +7,7 @@ import { HasAdminToken } from "Atom";
 import { useEffect, useState } from "react";
 import { faBars, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Header: React.FC = () => {
   const tryLogout = useLogout();
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
@@ -27,7 +28,7 @@ const Header: React.FC = () => {
         <span>학교가 불편한 순간</span>
       </div>
       {logged ? (
-        <S.HeaderNav>
+        <S.HeaderNav active={bars}>
           <Link to="/topten">답변달기</Link>
           <Link to="/improvment">실제 개선 사례 작성</Link>
           <button
@@ -39,7 +40,7 @@ const Header: React.FC = () => {
           </button>
         </S.HeaderNav>
       ) : (
-        <S.HeaderNav>
+        <S.HeaderNav active={bars}>
           <Link to="/Leave_opinion">의견 남기기</Link>
           <Link to="/topten">Top 10</Link>
           <Link to="/improvment">실제 개선 사례</Link>

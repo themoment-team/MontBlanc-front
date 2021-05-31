@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface NavBar {
+  active: boolean;
+}
+
 export const Header = styled.header`
   position: fixed;
   top: 0;
@@ -52,7 +56,7 @@ export const BarWrapper = styled.div`
   }
 `
 
-export const HeaderNav = styled.nav`
+export const HeaderNav = styled.nav<NavBar>`
   display: flex;
   justify-content: space-between;
   align-item: center;
@@ -83,4 +87,5 @@ export const HeaderNav = styled.nav`
       font-weight: bold;
     }
   }
+  display: ${props => props.active ? "none" : "flex"}
 `;
