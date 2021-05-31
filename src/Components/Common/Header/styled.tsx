@@ -5,37 +5,42 @@ export const Header = styled.header`
   top: 0;
   display: flex;
   justify-content: space-between;
+  backdrop-filter: blur(5px);
   padding: 23px 9.5%;
   width: 80vw;
+  z-index: 99;
   background: white;
-`;
-
-export const LogoText = styled.span`
-  color: #434c9c;
-  font-weight: 600;
-  font-size: 22px;
-  margin-left: 21px;
-  position: relative;
-  top: -13px;
+  & > div {
+    & > span {
+      color: #434c9c;
+      font-weight: 600;
+      font-size: 22px;
+      position: relative;
+      top: -10px;
+      margin: 21px;
+    }
+  }
 `;
 
 export const Logo = styled.h1`
   display: inline-block;
-  border-right: 1px solid #434c9c;
+  border-right: 2px solid #434c9c;
   padding-right: 21px;
 `;
 
 export const HeaderNav = styled.nav`
-  margin-top: 30px;
-  width: 50%;
-  list-style: none;
   display: flex;
   justify-content: space-between;
+  align-item: center;
+  & > a {
+    display: inline-block;
+    margin: 36px 44px;
+  }
   & > button {
-    display: inline;
-    margin: 0;
+    display: inline-block;
     padding: 0;
-    height: 0;
+    margin: 36px;
+    background: none;
     text-decoration: none;
     color: #434C9C;
     font-size: 1rem;
