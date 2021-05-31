@@ -1,14 +1,19 @@
 import styled from "styled-components";
+import device from "Constants/reactive";
 
 export const Header = styled.header`
   position: fixed;
   top: 0;
   display: flex;
   justify-content: space-between;
-  padding: 23px 14%;
+  padding: 23px 15vw;
   width: 70vw;
   background: white;
-  z-index: 99;
+  z-index: 1;
+  @media ${device.mobile} {
+    width: 90vw;
+    padding: 23px 5vw;
+  }
 `;
 
 export const LogoText = styled.span`
@@ -32,4 +37,10 @@ export const HeaderNav = styled.nav`
   list-style: none;
   display: flex;
   justify-content: space-between;
+  button {
+    padding: 0;
+    color: #434c9c;
+    background: none;
+    font-size: 16px;
+  }
 `;
