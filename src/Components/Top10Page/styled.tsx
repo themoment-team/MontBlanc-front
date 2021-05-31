@@ -8,6 +8,7 @@ export const TopTenWrapper = styled.section`
   height: fit-content;
   @media ${device.mobile} {
     flex-direction: column;
+    width: 90vw;
   }
 `; // left박스와 right박스 전체를 감싸는 wrapper입니다.
 
