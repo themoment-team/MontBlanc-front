@@ -5,6 +5,8 @@ import { useLogout } from "./HeaderContainer";
 import { useRecoilState } from "recoil";
 import { HasAdminToken } from "Atom";
 import { useEffect } from "react";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Header: React.FC = () => {
   const tryLogout = useLogout();
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
