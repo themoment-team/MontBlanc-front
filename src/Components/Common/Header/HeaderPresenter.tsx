@@ -21,7 +21,7 @@ const Header: React.FC = () => {
         <S.Logo>
           <I.Logo />
         </S.Logo>
-        <S.LogoText>학교가 불편한 순간</S.LogoText>
+        <span>학교가 불편한 순간</span>
       </div>
       {logged ? (
         <S.HeaderNav>
