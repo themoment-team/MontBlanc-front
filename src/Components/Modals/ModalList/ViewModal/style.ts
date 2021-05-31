@@ -6,7 +6,7 @@ export const ModalWrapper = styled.div`
   grid-template-rows: 1fr 4.5fr;
   padding: 89px 67px 70px 70px;
   @media ${device.mobile} {
-    grid-template-rows: 1fr 5.5fr;
+    padding: 30px 40px;
   }
 `;
 
@@ -26,6 +26,9 @@ export const Text = styled.span`
 export const GridDivider = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  @media ${device.mobile} {
+    grid-template-columns: repeat(1, 5fr);
+  }
 `;
 
 export const ViewImg = styled.div`
