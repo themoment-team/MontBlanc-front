@@ -38,7 +38,7 @@ const Top10Page = () => {
           <S.TenIssues key={top10.boardIdx}>
             <span>
               <span>{index + 1}위</span>
-              <article>{top10.content}</article>
+              <article>{top10.content.replace(/^\s+|\s+$/gm,'')}</article>
             </span>
             <span>
               <button

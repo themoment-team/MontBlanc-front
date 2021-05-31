@@ -53,6 +53,9 @@ export const H1 = styled.div`
 export const H2 = styled.div`
   font-weight: 400;
   font-size: 20px;
+  @media ${device.mobile} {
+    display: none;
+  }
 `;
 
 export const ButtonBox = styled.div`
@@ -75,7 +78,7 @@ export const ButtonBox = styled.div`
       font-weight: 600;
       font-size: 17px;
       margin-bottom: 13px;
-      width: 80vw;
+      width: 90vw;
       margin-right: 0;
     }
   }
