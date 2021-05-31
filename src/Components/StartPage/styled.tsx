@@ -1,11 +1,15 @@
 import styled, { keyframes } from "styled-components";
+import device from "Constants/reactive";
 
 export const StartPage = styled.div`
   display: flex;
 `;
 
 export const LeftBox = styled.div`
-  margin: 24vh 9vw 0 7.5vw;
+  margin: 22vh 9vw 0 7.5vw;
+  @media ${device.mobile} {
+    margin: 15.5vh auto;
+  }
 `;
 
 export const StartHeader = styled.div`
@@ -16,9 +20,19 @@ export const StartHeader = styled.div`
 `;
 
 export const Logo = styled.div`
+  @media ${device.mobile} {
+    display: flex;
+    justify-content: center;
+  }
   svg {
     width: 346px;
     height: 80px;
+    @media ${device.laptop} {
+      max-width: 300px;
+    }
+    @media ${device.mobile} {
+      width: 180px;
+    }
   }
 `;
 
@@ -26,6 +40,14 @@ export const H1 = styled.div`
   font-weight: 700;
   font-size: 40px;
   margin: 28px 0 13px;
+  @media ${device.laptop} {
+    font-size: 2.3em;
+  }
+  @media ${device.mobile} {
+    font-size: 1.5em;
+    margin: 25px 0 70px 10px;
+    text-align: center;
+  }
 `;
 
 export const H2 = styled.div`
@@ -34,6 +56,10 @@ export const H2 = styled.div`
 `;
 
 export const ButtonBox = styled.div`
+  @media ${device.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
   button {
     background-color: #434c9c;
     color: #ffffff;
@@ -44,6 +70,14 @@ export const ButtonBox = styled.div`
     font-weight: 600;
     font-size: 24px;
     margin-right: 23px;
+    @media ${device.mobile} {
+      padding: 12px 0;
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 13px;
+      width: 80vw;
+      margin-right: 0;
+    }
   }
 `;
 
@@ -77,5 +111,6 @@ export const ImgBox = styled.div`
   svg {
     display: block;
     float: right;
+    margin-right: 30px;
   }
 `;
