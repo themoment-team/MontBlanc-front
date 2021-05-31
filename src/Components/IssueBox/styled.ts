@@ -11,6 +11,7 @@ export const IssueBoxStyle = styled.div<IssueBoxProps>`
   width: 10vw;
   min-width: 130px;
   padding: 18px 23px;
+  padding-bottom: 26px;
   @media ${device.laptop} {
     width: 18vw;
   }
@@ -38,6 +39,5 @@ export const IssueNumber = styled.div`
 
 export const Issue = styled.div`
   font-size: 15px;
-  margin-bottom: 22px;
   text-align: left;
 `;
