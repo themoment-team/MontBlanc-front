@@ -78,4 +78,7 @@ export const ImgBox = styled.div`
     display: block;
     float: right;
   }
+  svg + svg {
+    margin-right: 29px;
+  }
 `;
