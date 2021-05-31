@@ -14,7 +14,7 @@ const ViewModalPresenter: React.FC<ModalProps> = ({
   key,
 }) => {
   const modal = useModal();
-  const randomNumber: number = Math.floor(Math.random() * 3) + 1;
+  const randomNumber: number = Math.floor(Math.random() * 2) + 1;
   const logged = useRecoilValue(HasAdminToken);
   const [Idx, title, content] = useGetModalValue(idx || key || 0, state || "");
 
@@ -36,7 +36,6 @@ const ViewModalPresenter: React.FC<ModalProps> = ({
               {
                 1: <I.ImprovmentSvg1 />,
                 2: <I.ImprovmentSvg2 />,
-                3: <I.ImprovmentSvg3 />,
               }[randomNumber]
             }
           </S.ViewImg>
