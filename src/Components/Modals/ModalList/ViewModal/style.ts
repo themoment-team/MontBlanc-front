@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import device from "Constants/reactive";
 
 export const ModalWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 89px 67px 70px 70px;
+  display: grid;
+  grid-template-rows: 1fr 4.5fr;
+  padding: 89px 67px 70px 70px;
+  @media ${device.mobile} {
+    grid-template-rows: 1fr 7.5fr;
+  }
 `;
 
 export const ModalContent = styled.div`
@@ -25,6 +27,11 @@ export const Text = styled.span`
   color: #8f8f8f;
   font-size: 18px;
   font-weight: 600;
+`;
+
+export const GridDivider = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 `;
 
 export const ViewImg = styled.div`

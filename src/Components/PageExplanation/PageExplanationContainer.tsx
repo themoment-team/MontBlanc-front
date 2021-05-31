@@ -1,3 +1,4 @@
+import React, { Fragment } from "react";
 import * as S from "./styled";
 
 interface PageExplanationProps {
@@ -12,20 +13,20 @@ const PageExplanation: React.FC<PageExplanationProps> = ({
   return (
     <>
       <S.heading>
-        {heading.map((heading) => {
+        {heading.map((heading, index) => {
           return (
-            <>
+            <Fragment key={index}>
               <span>{heading}</span> <br />
-            </>
+            </Fragment>
           );
         })}
       </S.heading>
       <S.explanation>
-        {explanation.map((explanation) => {
+        {explanation.map((explanation, index) => {
           return (
-            <>
+            <Fragment key={index + 1}>
               <span>{explanation}</span> <br />
-            </>
+            </Fragment>
           );
         })}
       </S.explanation>

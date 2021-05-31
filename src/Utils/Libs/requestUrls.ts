@@ -53,4 +53,7 @@ export const TableController = {
   amountUncomfortable: () => {
     return `/uncomfortable/amount`;
   },
+  dateSinceProjectStart: () => {
+    return `/uncomfortable/dateSinceProjectStart`;
+  },
 };

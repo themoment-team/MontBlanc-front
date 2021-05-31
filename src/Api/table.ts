@@ -68,6 +68,16 @@ class Table {
       throw new Error(e);
     }
   }
+
+  dateSinceProjectStart() {
+    try {
+      return RequestApi({
+        url: TableController.dateSinceProjectStart(),
+      });
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
 }
 
 export default new Table();

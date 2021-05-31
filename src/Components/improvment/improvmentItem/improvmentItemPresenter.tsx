@@ -14,17 +14,23 @@ const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
   const modal = useModal();
 
   return (
-    <S.ImprovmentBox color={p.color}>
-      <I.DoubleQuotes />
-      <S.ImprovmentContent>
-        <S.ImprovmentHeading>{p.header}</S.ImprovmentHeading>
-        <S.AboutBtn onClick={() => modal.open("ViewModal", 0)}>
-          자세히 보기
-        </S.AboutBtn>
-      </S.ImprovmentContent>
-      <S.ImprovmentImg>
-        <I.ImprovmentSvg1 />
-      </S.ImprovmentImg>
+    <S.ImprovmentBox color={randomColor}>
+      <S.ImprovmentContentBox>
+        <I.DoubleQuotes />
+        <S.ImprovmentContent>
+          <S.ImprovmentHeading>{p.header}</S.ImprovmentHeading>
+          <S.AboutBtn
+            onClick={() =>
+              modal.open("ViewModal", p.idx, "improvment", "작성하기", p.key)
+            }
+          >
+            자세히 보기
+          </S.AboutBtn>
+        </S.ImprovmentContent>
+        <S.ImprovmentImg>
+          <I.ImprovmentSvg1 />
+        </S.ImprovmentImg>
+      </S.ImprovmentContentBox>
     </S.ImprovmentBox>
   );
 };
