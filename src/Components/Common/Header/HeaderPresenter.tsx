@@ -22,7 +22,7 @@ const Header: React.FC = () => {
 
   return (
     <S.Header>
-      <Link to={Config.LINK.COMMENT}>
+      <div>
         <S.Logo>
           <I.Logo />
         </S.Logo>
@@ -46,6 +46,13 @@ const Header: React.FC = () => {
           >
             로그아웃
           </button>
+        </S.HeaderNav>
+      ) : (
+        <S.HeaderNav active={bars}>
+          <Link to="/Leave_opinion">의견 남기기</Link>
+          <Link to="/topten">Top 10</Link>
+          <Link to="/improvment">실제 개선 사례</Link>
+          <Link to="/about">캠페인 자세히 보기</Link>
         </S.HeaderNav>
       )}
       <S.BarWrapper>

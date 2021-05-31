@@ -1,9 +1,8 @@
 import Improvement from "Api/improvement";
 
 export interface list {
-  improveContent: string;
-  improveHeader: string;
-  improveIdx: number;
+  content: string;
+  header: string;
 }
 
 export const improvement = () => {

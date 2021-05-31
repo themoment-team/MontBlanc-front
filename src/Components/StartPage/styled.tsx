@@ -74,6 +74,9 @@ export const ImgBox = styled.div`
   & svg:nth-child(3) {
     animation: ${slide} 10s infinite linear alternate;
   }
+  svg + svg {
+    margin-right: 29px;
+  }
   svg {
     display: block;
     float: right;

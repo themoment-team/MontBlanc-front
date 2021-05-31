@@ -2,15 +2,11 @@ import RequestApi from "Utils/Libs/requestApi";
 import { ImprovementController } from "Utils/Libs/requestUrls";
 
 class Improvement {
-  UpdateImprovement(
-    improveIdx: number,
-    improveContent: string,
-    improveHeader: string
-  ) {
+  async editImprovement(improveIdx: number, content: string, header: string) {
     try {
       const data = {
-        improveContent,
-        improveHeader,
+        content,
+        header,
       };
       return RequestApi(
         {
@@ -25,7 +21,7 @@ class Improvement {
     }
   }
 
-  deleteImprovement(improveIdx: number) {
+  async deleteImprovement(improveIdx: number) {
     try {
       return RequestApi(
         {
@@ -39,7 +35,7 @@ class Improvement {
     }
   }
 
-  viewImprovment() {
+  async viewImprovment() {
     try {
       return RequestApi({
         url: ImprovementController.detail2Solved(),
@@ -49,11 +45,11 @@ class Improvement {
     }
   }
 
-  saveImprovment(improveContent: string, improveHeader: string) {
+  async saveImprovment(content: string, header: string) {
     try {
       const data = {
-        improveContent,
-        improveHeader,
+        content,
+        header,
       };
       return RequestApi(
         {

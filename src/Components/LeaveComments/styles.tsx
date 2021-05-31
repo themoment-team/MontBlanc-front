@@ -124,7 +124,6 @@ export const RightBox = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 `;
-
 export const IssueBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;

@@ -10,6 +10,12 @@ export const ModalWrapper = styled.div`
   }
 `;
 
+export const ModalContent = styled.div`
+  align-self: flex-start;
+  justify-self: flex-start;
+  width: 63%;
+`;
+
 export const H1 = styled.h1`
   font-size: 28px;
   font-weight: 800;
@@ -29,15 +35,6 @@ export const GridDivider = styled.div`
 `;
 
 export const ViewImg = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-`;
-
-export const ModalImg = styled.button`
-  background: none;
-  padding: 0;
-  position: absolute;
-  top: 30px;
-  right: 30px;
+  margin-top: 55px;
+  align-self: flex-end;
 `;

@@ -32,21 +32,6 @@ class Answer {
       return RequestApi({
         method: "DELETE",
         url: AnswerController.detailAnswer(answerIdx),
-      },
-      {
-        hasToken: true,
-      }
-      );
-    } catch (e) {
-      throw new Error(e);
-    }
-  }
-
-  getAnswer(answerIdx: number) {
-    try {
-      return RequestApi({
-        method: "GET",
-        url: AnswerController.detailAnswer(answerIdx),
       });
     } catch (e) {
       throw new Error(e);
