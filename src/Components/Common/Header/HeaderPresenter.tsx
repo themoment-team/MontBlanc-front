@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import { useLogout } from "./HeaderContainer";
 import { useRecoilState } from "recoil";
 import { HasAdminToken } from "Atom";
-import { useEffect } from "react";
-import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
+import { faBars, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Header: React.FC = () => {
   const tryLogout = useLogout();
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
+  const [bars, setBars] = useState(true);
 
   useEffect(() => {
     if (localStorage.getItem("themoment_token")) {
@@ -45,6 +46,9 @@ const Header: React.FC = () => {
           <Link to="/about">캠페인 자세히 보기</Link>
         </S.HeaderNav>
       )}
+      <S.BarWrapper>
+        <FontAwesomeIcon icon={(bars ? faBars : faChevronUp)} onClick={() => (setBars((!bars)))}/>
+      </S.BarWrapper>
     </S.Header>
   );
 };
