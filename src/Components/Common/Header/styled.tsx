@@ -8,7 +8,7 @@ export const Header = styled.header`
   backdrop-filter: blur(5px);
   padding: 23px 9.5%;
   width: 80vw;
-  z-index: 99;
+  z-index: 98;
   background: white;
   @media screen and (max-width: 1200px) {
     flex-direction: column;
@@ -37,6 +37,20 @@ export const Logo = styled.h1`
     border: none;
   }
 `;
+
+export const BarWrapper = styled.div`
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+  & > svg {
+    z-index: 99;
+    font-size: 32px;
+    color: #434c9c;
+    position: absolute;
+    top: 54px;
+    right: 9.5%;
+  }
+`
 
 export const HeaderNav = styled.nav`
   display: flex;
