@@ -10,6 +10,7 @@ export const LeaveCommentsBox = styled.main`
     flex-direction: column;
     margin-top: 180px;
     align-items: center;
+    width: 90vw;
   }
 `;
 
