@@ -19,7 +19,7 @@ const AboutPage: React.FC = () => {
         들려주세요.
       </S.AboutContent>
       <S.Hr />
-      <S.AboutSubHeading>참고해주세요</S.AboutSubHeading>
+      <h3>참고해주세요</h3>
       <S.AboutContent>
         <ul>
           <li>
@@ -47,7 +47,7 @@ const AboutPage: React.FC = () => {
           </li>
         </ul>
       </S.AboutContent>
-      <S.AboutSubHeading>자주 묻는 말</S.AboutSubHeading>
+      <h3>자주 묻는 말</h3>
       <S.AboutContent>
         <ul>
           <li>
