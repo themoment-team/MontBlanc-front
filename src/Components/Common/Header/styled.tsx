@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import device from "Constants/reactive";
 
+interface NavBar {
+  active: boolean;
+}
+
 export const Header = styled.header`
   position: fixed;
   top: 0;
@@ -12,35 +16,87 @@ export const Header = styled.header`
   z-index: 1;
   @media ${device.mobile} {
     width: 90vw;
-    padding: 23px 5vw;
+    padding: 0 5vw;
   }
-`;
-
-export const LogoText = styled.span`
-  color: #434c9c;
-  font-weight: 600;
-  font-size: 22px;
-  margin-left: 21px;
-  position: relative;
-  top: -13px;
+  @media screen and (max-width: 1230px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  & > a {
+    & > span {
+      @media screen and (max-width: 1600px) {
+        display: none;
+      }
+      color: #434c9c;
+      font-weight: 600;
+      font-size: 22px;
+      position: relative;
+      top: -10px;
+      margin: 21px;
+    }
+  }
 `;
 
 export const Logo = styled.h1`
   display: inline-block;
-  border-right: 1px solid #434c9c;
+  border-right: 2px solid #434c9c;
   padding-right: 21px;
-`;
-
-export const HeaderNav = styled.nav`
-  margin-top: 30px;
-  width: 50%;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  button {
-    padding: 0;
-    color: #434c9c;
-    background: none;
-    font-size: 16px;
+  @media screen and (max-width: 1600px) {
+    border: none;
   }
 `;
+
+export const HeaderNav = styled.nav<NavBar>`
+  display: flex;
+  justify-content: space-between;
+  align-item: center;
+  @media screen and (max-width: 1230px) {
+    flex-direction: column;
+    align-items: flex-start;
+    display: ${props => props.active ? "none" : "flex"}
+  }
+  & > a {
+    display: inline-block;
+    margin: 36px 44px;
+    @media screen and (max-width: 1230px) {
+      margin: 24px 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+  & > a:last-child {
+    margin-right: 0;
+  }
+  & > button {
+    display: inline-block;
+    margin: 36px;
+    padding: 0;
+    background: none;
+    text-decoration: none;
+    color: #434C9C;
+    font-size: 1rem;
+    @media screen and (max-width: 1230px) {
+      margin: 24px 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+`;
+
+export const BarWrapper = styled.div`
+   @media screen and (min-width: 1230px) {
+     display: none;
+   }
+   & > svg {
+     z-index: 2;
+     font-size: 32px;
+     color: #434c9c;
+     position: absolute;
+     top: 52px;
+     right: 15%;
+    @media ${device.mobile} {
+      top: 29px;
+      right: 5vw;
+    }
+   }
+ `
