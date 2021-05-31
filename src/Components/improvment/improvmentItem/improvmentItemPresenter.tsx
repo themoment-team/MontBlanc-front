@@ -1,20 +1,17 @@
 import * as I from "../../../Asset/SVG";
 import * as S from "./styled";
 import { useModal } from "../../../Context/Modal";
-import { randomColorPicker } from "./improvmentItemContainer";
 
 interface ImprovmentProps {
+  color: string;
   header: string;
   content: string;
-  idx: number;
-  key: number;
 }
 
 const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
   p: ImprovmentProps
 ) => {
   const modal = useModal();
-  const randomColor = randomColorPicker();
 
   return (
     <S.ImprovmentBox color={randomColor}>

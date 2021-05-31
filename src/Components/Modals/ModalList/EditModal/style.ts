@@ -74,7 +74,8 @@ export const SaveBtn = styled.button`
   color: #fff;
   font-size: 18px;
   font-weight: 600;
-  margin-left: 17px;
+  justify-self: flex-end;
+  margin: 11px 0;
 `;
 
 export const DeleteBtn = styled.button`

@@ -1,17 +1,10 @@
 {
-  "BASE_URL": "https://server.the-moment.org/v1",
+  "BASE_URL": "http://3.36.221.244:8080/v1",
   "BASE_HEADER": {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type,Authorization",
     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,OPTIONS",
     "Access-Control-Allow-Credentials": "true",
     "Content-Type": "application/json"
-  },
-  "LINK": {
-    "ABOUT": "/about",
-    "IMPROVMENT": "/improvment",
-    "TOP10": "/rank",
-    "COMMENT": "/the_moment",
-    "START": "/"
   }
 }

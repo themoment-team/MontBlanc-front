@@ -1,7 +1,6 @@
 import { ModalContainer } from "../../ModalContainer";
-import { ModalProps, useModal } from "../../../../Context/Modal";
+import { ModalProps } from "../../../../Context/Modal";
 import * as S from "./style";
-import { EditBtn } from "../../../../Asset/SVG";
 import * as I from "../../../../Asset/SVG";
 import { HasAdminToken } from "Atom";
 import { useRecoilValue } from "recoil";
@@ -18,6 +17,7 @@ const ViewModalPresenter: React.FC<ModalProps> = ({
   const logged = useRecoilValue(HasAdminToken);
   const [Idx, title, content] = useGetModalValue(idx || key || 0, state || "");
 
+const ViewModalPresenter: React.FC<ModalProps> = ({ close, idx }) => {
   return (
     <ModalContainer close={close} width={1000} height={600}>
       <S.ModalWrapper>

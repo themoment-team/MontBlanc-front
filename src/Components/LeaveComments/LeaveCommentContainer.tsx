@@ -8,28 +8,17 @@ export interface list {
   idx: number;
 }
 
-export const useViewTable = () => {
-  const [list, setList] = useState<list[]>([]);
+export const useTable = () => {
+  const [list, setList] = useState<list[]>([
+    { boardIdx: 0, content: "", goods: 0, idx: 0 },
+  ]);
 
-  const tryViewTable = async () => {
+  const tryTable = async () => {
     return await Table.viewTable();
   };
 
   useEffect(() => {
-    tryViewTable().then((res) => setList(res.data.list));
+    tryTable().then((res) => setList(res.data.list));
   }, []);
   return list;
-};
-
-export const useWriteTable = () => {
-  const tryWriteTable = async (
-    content: string,
-    setContent: React.Dispatch<React.SetStateAction<string>>
-  ) => {
-    setContent("");
-    window.location.reload();
-    return await Table.writeTable(content);
-  };
-
-  return tryWriteTable;
 };
