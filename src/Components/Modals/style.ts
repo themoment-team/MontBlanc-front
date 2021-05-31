@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import device from "Constants/reactive";
 
 interface InnerProps {
   width: number;
@@ -31,6 +32,14 @@ export const Inner = styled.div<InnerProps>`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media ${device.laptop} {
+    width: 80vw;
+    height: 600px;
+  }
+  @media ${device.mobile} {
+    width: 95vw;
+    height: 80vh;
+  }
   button {
     align-items: flex-end;
   }

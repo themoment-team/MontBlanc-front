@@ -1,12 +1,16 @@
 import styled from "styled-components";
+import device from "Constants/reactive";
 
 export const ModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 91px 137px 81px 136px;
-  width: 350px;
+  padding: 91px 137px 81px 136px;
+  @media ${device.mobile} {
+    margin: auto;
+    padding: 0;
+  }
 `;
 
 export const H1 = styled.h1`
@@ -31,4 +35,8 @@ export const LoginBtn = styled.button`
   color: #fff;
   font-size: 14px;
   margin-top: 39px;
+  @media ${device.tablet} {
+    width: 100%;
+    padding: 14px 10%;
+  }
 `;

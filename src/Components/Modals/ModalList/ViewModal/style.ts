@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import device from "Constants/reactive";
 
 export const ModalWrapper = styled.div`
   display: grid;
-  width: 844px;
-  height: 440px;
-  grid-template-rows: 1fr 5fr;
-  margin: 89px 67px 70px 70px;
+  grid-template-rows: 1fr 4.5fr;
+  padding: 89px 67px 70px 70px;
+  @media ${device.mobile} {
+    padding: 30px 40px;
+  }
 `;
 
 export const H1 = styled.h1`
@@ -24,7 +26,10 @@ export const Text = styled.span`
 export const GridDivider = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-`
+  @media ${device.mobile} {
+    grid-template-columns: repeat(1, 5fr);
+  }
+`;
 
 export const ViewImg = styled.div`
   display: flex;

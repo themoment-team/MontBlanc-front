@@ -4,10 +4,15 @@ import { Link } from "react-router-dom";
 import { useLogout } from "./HeaderContainer";
 import { useRecoilState } from "recoil";
 import { HasAdminToken } from "Atom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { faBars, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Config from "Constants/Config.json";
+
 const Header: React.FC = () => {
   const tryLogout = useLogout();
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
+  const [bars, setBars] = useState(true);
 
   useEffect(() => {
     if (localStorage.getItem("themoment_token")) {
@@ -19,23 +24,23 @@ const Header: React.FC = () => {
 
   return (
     <S.Header>
-      <div>
+      <Link to={Config.LINK.COMMENT}>
         <S.Logo>
           <I.Logo />
         </S.Logo>
-        <S.LogoText>학교가 불편한 순간</S.LogoText>
-      </div>
+        <span>학교가 불편한 순간</span>
+      </Link>
       {!logged ? (
-        <S.HeaderNav>
-          <Link to="/Leave_opinion">의견 남기기</Link>
-          <Link to="/topten">Top 10</Link>
-          <Link to="/improvment">실제 개선 사례</Link>
-          <Link to="/about">캠페인 자세히 보기</Link>
+        <S.HeaderNav active={bars}>
+          <Link to={Config.LINK.COMMENT}>의견 남기기</Link>
+          <Link to={Config.LINK.TOP10}>Top 10</Link>
+          <Link to={Config.LINK.IMPROVMENT}>실제 개선 사례</Link>
+          <Link to={Config.LINK.ABOUT}>캠페인 자세히 보기</Link>
         </S.HeaderNav>
       ) : (
-        <S.HeaderNav>
-          <Link to="/topten">답변달기</Link>
-          <Link to="/improvment">실제 개선 사례 작성</Link>
+        <S.HeaderNav active={bars}>
+          <Link to={Config.LINK.TOP10}>답변달기</Link>
+          <Link to={Config.LINK.IMPROVMENT}>실제 개선 사례 작성</Link>
           <button
             onClick={() => {
               tryLogout();
@@ -45,6 +50,9 @@ const Header: React.FC = () => {
           </button>
         </S.HeaderNav>
       )}
+      <S.BarWrapper>
+        <FontAwesomeIcon icon={(bars ? faBars : faChevronUp)} onClick={() => (setBars((!bars)))}/>
+      </S.BarWrapper>
     </S.Header>
   );
 };

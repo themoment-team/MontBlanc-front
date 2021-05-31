@@ -1,16 +1,23 @@
 import styled from "styled-components";
+import device from "Constants/reactive";
 
 export const TopTenWrapper = styled.section`
   display: flex;
-  width: 81%;
-  margin: 0 auto;
-  margin-top: 215px;
+  width: 70vw;
+  margin: 180px auto;
   height: fit-content;
+  @media ${device.mobile} {
+    flex-direction: column;
+    width: 90vw;
+  }
 `; // left박스와 right박스 전체를 감싸는 wrapper입니다.
 
 export const RightBox = styled.section`
   width: 54.2%;
   height: fit-content;
+  @media ${device.mobile} {
+    width: 100%;
+  }
 `;
 // topten 리스트가 적히는 오른쪽 박스입니다.
 
@@ -23,13 +30,15 @@ export const TenIssues = styled.div`
   border-radius: 12px;
   background: #e7f2f1;
   padding: 20px;
+  @media ${device.laptop} {
+    flex-direction: column;
+  }
   &:nth-child(-n + 3) {
-    // 3위까지는 특별한 색상을 가지게 됩니다!
     background: #dce8f7;
   }
   & + & {
     margin-top: 20px;
-  } // 이 컴포넌트와 이웃해있을때 margin으로 띄어주는 코드입니다.
+  }
   & > span:nth-child(1) > span {
     margin-right: 20px;
     color: #6b7187;
@@ -37,7 +46,7 @@ export const TenIssues = styled.div`
   }
   & > span:nth-child(1) > article {
     float: right;
-    width: calc(100% - 42px);
+    width: 18vw;
     height: fit-content;
     color: #3b3e57;
     font-weight: 700;
@@ -46,6 +55,10 @@ export const TenIssues = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media ${device.laptop} {
+      align-self: flex-end;
+      margin-top: 10px;
+    }
   }
   & > span:nth-child(2) > button:nth-child(1) {
     padding: 0;
@@ -55,7 +68,6 @@ export const TenIssues = styled.div`
     background-color: #92929223;
     width: 81px;
     height: 30px;
-    margin-left: 22px;
     color: white;
     font-size: 14px;
     font-weight: 700;
@@ -64,6 +76,9 @@ export const TenIssues = styled.div`
     text-align: left;
     & + button {
       margin-left: 54px;
+      @media ${device.mobile} {
+        margin-left: 20%;
+      }
     }
   }
 `;

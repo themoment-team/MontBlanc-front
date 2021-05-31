@@ -7,6 +7,7 @@ interface ImprovmentProps {
   header: string;
   content: string;
   idx: number;
+  key: number;
 }
 
 const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
@@ -17,20 +18,22 @@ const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
 
   return (
     <S.ImprovmentBox color={randomColor}>
-      <I.DoubleQuotes />
-      <S.ImprovmentContent>
-        <S.ImprovmentHeading>{p.header}</S.ImprovmentHeading>
-        <S.AboutBtn
-          onClick={() =>
-            modal.open("ViewModal", p.idx, "improvment", "작성하기")
-          }
-        >
-          자세히 보기
-        </S.AboutBtn>
-      </S.ImprovmentContent>
-      <S.ImprovmentImg>
-        <I.ImprovmentSvg1 />
-      </S.ImprovmentImg>
+      <S.ImprovmentContentBox>
+        <I.DoubleQuotes />
+        <S.ImprovmentContent>
+          <S.ImprovmentHeading>{p.header}</S.ImprovmentHeading>
+          <S.AboutBtn
+            onClick={() =>
+              modal.open("ViewModal", p.idx, "improvment", "작성하기", p.key)
+            }
+          >
+            자세히 보기
+          </S.AboutBtn>
+        </S.ImprovmentContent>
+        <S.ImprovmentImg>
+          <I.ImprovmentSvg1 />
+        </S.ImprovmentImg>
+      </S.ImprovmentContentBox>
     </S.ImprovmentBox>
   );
 };

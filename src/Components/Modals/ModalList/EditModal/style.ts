@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import device from "Constants/reactive";
 
 export const ModalWrapper = styled.div`
   padding: 30px;
@@ -37,8 +38,8 @@ export const InputBox = styled.input`
   border: none;
   outline: none;
   border-radius: 10px;
-  width: 900px;
-`
+  width: 95%;
+`;
 
 export const TextArea = styled.textarea`
   background-color: #f4f4f4;
@@ -48,7 +49,7 @@ export const TextArea = styled.textarea`
   padding: 17px;
   border: none;
   outline: none;
-  width: 900px;
+  width: 95%;
   height: 280px;
   border-radius: 10px;
   resize: none;
@@ -56,17 +57,19 @@ export const TextArea = styled.textarea`
   &::placeholder {
     font-size: 18px;
   }
+  @media ${device.mobile} {
+    height: 85vw;
+  }
 `;
 
 export const BtnWrapper = styled.div`
-  width: 934px;
-  height: 75px;
-  margin: 0;
-  display: flex;
-  justify-content: flex-end;
-`
+  width: 95%;
+  float: right;
+  margin-top: 20px;
+`;
 
 export const SaveBtn = styled.button`
+  float: right;
   background-color: #434c9c;
   color: #fff;
   font-size: 18px;
@@ -75,7 +78,8 @@ export const SaveBtn = styled.button`
 `;
 
 export const DeleteBtn = styled.button`
-  background-color: #C6C6C6;
+  float: right;
+  background-color: #c6c6c6;
   color: #fff;
   font-size: 18px;
   font-weight: 600;

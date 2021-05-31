@@ -14,13 +14,13 @@ export const LoginModalPresenter: React.FC<ModalProps> = ({ close }) => {
         <S.H1>Admin</S.H1>
         <S.Input
           id="id"
-          type="email"
+          type="mail"
           placeholder="이메일을 입력해주세요"
           onChange={({ target: { value } }) => setId(value)}
         />
         <S.Input
           id="pass"
-          type="passward"
+          type="password"
           placeholder="비밀번호를 입력해주세요"
           onChange={({ target: { value } }) => setPass(value)}
         />
