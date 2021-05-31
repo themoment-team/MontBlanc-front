@@ -17,6 +17,7 @@ export const Header = styled.header`
   @media screen and (max-width: 1200px) {
     flex-direction: column;
     align-items: flex-start;
+    padding: 0 9.5%;
   }
   & > div {
     & > span {
@@ -51,7 +52,7 @@ export const BarWrapper = styled.div`
     font-size: 32px;
     color: #434c9c;
     position: absolute;
-    top: 54px;
+    top: 32px;
     right: 9.5%;
   }
 `
@@ -63,6 +64,7 @@ export const HeaderNav = styled.nav<NavBar>`
   @media screen and (max-width: 1200px) {
     flex-direction: column;
     align-items: flex-start;
+    display: ${props => props.active ? "none" : "flex"}
   }
   & > a {
     display: inline-block;
@@ -87,5 +89,4 @@ export const HeaderNav = styled.nav<NavBar>`
       font-weight: bold;
     }
   }
-  display: ${props => props.active ? "none" : "flex"}
 `;
