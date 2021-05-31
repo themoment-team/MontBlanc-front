@@ -13,7 +13,7 @@ export const LeftBox = styled.div`
   }
   @media ${device.mobile} {
     width: 100vw;
-    margin: 0;
+    margin: 0;2b014afa6c25fb499f0
   }
 `;
 
@@ -28,10 +28,15 @@ export const Logo = styled.div`
   @media ${device.mobile} {
     margin: 0 auto;
     margin-top: 100px;
-  }
   svg {
     width: 346px;
     height: 80px;
+    @media ${device.laptop} {
+      max-width: 300px;
+    }
+    @media ${device.mobile} {
+      width: 180px;
+    }
   }
 `;
 
@@ -41,7 +46,6 @@ export const H1 = styled.div`
   margin: 28px 0 13px;
   @media ${device.mobile} {
     display: none;
-  }
 `;
 
 export const H2 = styled.div`
@@ -77,6 +81,14 @@ export const ButtonBox = styled.div`
     font-weight: 600;
     font-size: 24px;
     margin-right: 23px;
+    @media ${device.mobile} {
+      padding: 12px 0;
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 13px;
+      width: 90vw;
+      margin-right: 0;
+    }
   }
 `;
 
@@ -110,5 +122,6 @@ export const ImgBox = styled.div`
   svg {
     display: block;
     float: right;
+    margin-right: 30px;
   }
 `;

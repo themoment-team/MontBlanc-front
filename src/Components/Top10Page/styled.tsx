@@ -30,6 +30,9 @@ export const TenIssues = styled.div`
   border-radius: 12px;
   background: #e7f2f1;
   padding: 20px;
+  @media ${device.laptop} {
+    flex-direction: column;
+  }
   &:nth-child(-n + 3) {
     background: #dce8f7;
   }
@@ -52,6 +55,10 @@ export const TenIssues = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media ${device.laptop} {
+      align-self: flex-end;
+      margin-top: 10px;
+    }
   }
   & > span:nth-child(2) > button:nth-child(1) {
     padding: 0;

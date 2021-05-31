@@ -26,7 +26,7 @@ const StartPage: React.FC = () => {
             <I.Logo />
           </S.Logo>
           <S.H1>
-            학교가 불편할 때는,
+            학교가 불편할 때,
             <br />
             언제였나요?
           </S.H1>
