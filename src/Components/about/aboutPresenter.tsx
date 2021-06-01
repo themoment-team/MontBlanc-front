@@ -86,7 +86,7 @@ const AboutPage: React.FC = () => {
           </li>
           <li>
             “학교가 불편한 순간” 서비스를 사용하면서 느낀 불편함이 있으시다면,
-            “themomentteam@googlegroups.com”에 의견을 남겨주세요.
+            “official.themoment.team@gmail.com”에 의견을 남겨주세요.
           </li>
         </ul>
       </S.AboutContent>

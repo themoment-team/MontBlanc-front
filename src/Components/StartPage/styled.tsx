@@ -13,7 +13,7 @@ export const LeftBox = styled.div`
   }
   @media ${device.mobile} {
     width: 100vw;
-    margin: 0;2b014afa6c25fb499f0
+    margin: 0;
   }
 `;
 
