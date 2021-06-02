@@ -32,6 +32,7 @@ export const useStateDistinction = (idx: number, state: string) => {
 const updateImprovement = (idx: number, content: string, heading: string) => {
   const tryUpdate = async () => {
     try {
+      window.location.reload();
       return await Improvement.UpdateImprovement(idx, content, heading);
     } catch (e) {
       alert("실제개선사례 업데이트 오류 : " + e);
@@ -44,6 +45,7 @@ const saveImprovement = (content: string, heading: string) => {
   const trySave = async () => {
     try {
       await Improvement.saveImprovment(content, heading);
+      window.location.reload();
     } catch (e) {
       alert("실제개선사례 작성 오류 : " + e);
     }
@@ -55,6 +57,7 @@ const deleteImprovement = (idx: number) => {
   const tryDelete = async () => {
     try {
       await Improvement.deleteImprovement(idx);
+      window.location.reload();
     } catch (e) {
       alert("실제개선사례 삭제 오류 : " + e);
     }
@@ -67,6 +70,7 @@ const updateAndSaveAnswer = (idx: number, state: string, content: string) => {
     const method = state === "Update" ? "PUT" : "POST";
     try {
       await Answer.updateAndSaveAnswer(content, idx, method);
+      window.location.reload();
     } catch (e) {
       alert("답변 수정 오류 : " + e);
     }
@@ -78,6 +82,7 @@ const updateAndSaveAnswer = (idx: number, state: string, content: string) => {
 const deleteAnswer = (idx: number) => {
   const TryDelete = async () => {
     try {
+      window.location.reload();
       await Answer.delete(idx);
     } catch (e) {
       alert("답변 삭제 오류 : " + e);
