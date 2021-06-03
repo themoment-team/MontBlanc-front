@@ -27,6 +27,8 @@ export const Input = styled.input`
   margin-bottom: 36px;
   background-color: #fff;
   outline: none;
+  font-size: 15px;
+  color: black;
 `;
 
 export const LoginBtn = styled.button`

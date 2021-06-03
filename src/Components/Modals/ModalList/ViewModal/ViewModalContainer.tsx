@@ -17,7 +17,8 @@ const GetAnswerValue = (idx: number) => {
   const [Content, setContent] = useState();
 
   const tryGet = async () => {
-    return await answer.getAnswer(idx);
+    const res = await answer.getAnswer(idx);
+    return res.data;
   };
 
   useEffect(() => {
@@ -38,8 +39,8 @@ const GetImprovmentValue = (idx: number) => {
 
   const tryGet = async () => {
     const res = await improvement.viewImprovment();
-    const resReverse = res.data.list.reverse();
-    return resReverse[idx - 2];
+    idx *= 1;
+    return res.data.list[res.data.list.length - idx];
   };
 
   useEffect(() => {

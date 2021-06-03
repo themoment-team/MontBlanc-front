@@ -9,6 +9,8 @@ export type ModalProps = {
   state?: string;
   heading?: string;
   key?: number;
+  content?: string;
+  header?: string;
 };
 
 export type Modal = {
@@ -24,6 +26,12 @@ export type Modal = {
   };
   key?: {
     [key in number]: any;
+  };
+  content?: {
+    [key in string]: any;
+  };
+  header?: {
+    [key in string]: any;
   };
 };
 
@@ -45,6 +53,14 @@ type ModalContextValues = {
     key?: Omit<
       React.ComponentProps<typeof modals[T]>,
       keyof ModalProps | "children"
+    >,
+    content?: Omit<
+      React.ComponentProps<typeof modals[T]>,
+      keyof ModalProps | "children"
+    >,
+    header?: Omit<
+      React.ComponentProps<typeof modals[T]>,
+      keyof ModalProps | "children"
     >
   ) => void;
 };
@@ -55,8 +71,8 @@ export const ModalContextProvider: React.FC = ({ children }) => {
   const [openedModal, setOpenedModal] = useRecoilState(OpenedModal);
 
   const open: ModalContextValues["open"] = useCallback(
-    (name, idx, state, heading, key) => {
-      setOpenedModal({ name, idx, state, heading, key });
+    (name, idx, state, heading, key, content, header) => {
+      setOpenedModal({ name, idx, state, heading, key, content, header });
     },
     []
   );
@@ -85,6 +101,8 @@ const ModalRenderer: React.FC<ModalProps & { modal: Modal }> = ({
       heading={modal.heading}
       state={modal.state}
       key={modal.key}
+      content={modal.content}
+      header={modal.header}
       {...(modal.heading as any)}
     />
   );
