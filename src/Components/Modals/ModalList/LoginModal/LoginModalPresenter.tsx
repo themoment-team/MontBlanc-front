@@ -5,7 +5,7 @@ import { Logo } from "../../../../Asset/SVG";
 import { useLogin } from "./LoginModalContainer";
 
 export const LoginModalPresenter: React.FC<ModalProps> = ({ close }) => {
-  const [setId, setPass, TryLogin] = useLogin();
+  const [setId, setPass, TryLogin] = useLogin(close);
 
   return (
     <ModalContainer close={close} width={623} height={628}>
@@ -26,7 +26,7 @@ export const LoginModalPresenter: React.FC<ModalProps> = ({ close }) => {
         />
         <S.LoginBtn
           onClick={() => {
-            TryLogin("null");
+            TryLogin("");
           }}
         >
           로그인하기
