@@ -24,7 +24,17 @@ const ViewModalPresenter: React.FC<ModalProps> = ({
         <S.H1>{title}</S.H1>
         {logged && (
           <S.ModalImg
-            onClick={() => modal.open("EditModal", Idx || 0, state, "수정하기")}
+            onClick={() =>
+              modal.open(
+                "EditModal",
+                Idx || 0,
+                state,
+                "수정하기",
+                -1,
+                content,
+                title
+              )
+            }
           >
             <EditBtn />
           </S.ModalImg>
