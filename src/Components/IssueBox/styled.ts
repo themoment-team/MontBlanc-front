@@ -12,7 +12,7 @@ export const IssueBoxStyle = styled.div<IssueBoxProps>`
   min-width: 130px;
   padding: 18px 23px;
   padding-bottom: 26px;
-  & + & {
+  & + div {
     margin-top: 23px;
   }
   @media ${device.laptop} {
