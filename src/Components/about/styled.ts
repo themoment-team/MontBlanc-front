@@ -19,8 +19,17 @@ export const AboutHeading = styled.h2`
 
 export const AboutContent = styled.div`
   font-weight: 600;
-  line-height: 36.4px;
   margin-bottom: 40px;
+  li {
+    margin-left: -1.3rem;
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+    b {
+      display: block;
+      font-weight: 900;
+    }
+  }
   @media ${device.mobile} {
     width: 90vw;
     margin-right: 0;
