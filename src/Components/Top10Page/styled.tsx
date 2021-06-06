@@ -51,7 +51,10 @@ export const TenIssues = styled.div`
       width: 28vw;
     }
     @media ${device.mobile} {
-      width: 76vw;
+      width: 70vw;
+    }
+    @media (max-width: 470px) {
+      width: 62vw;
     }
     height: fit-content;
     color: #3b3e57;
