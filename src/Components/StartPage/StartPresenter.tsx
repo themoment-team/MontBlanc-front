@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import moment from "moment";
 import * as S from "./styled";
 import * as I from "../../Asset/SVG/index";
 import { useHistory } from "react-router-dom";
@@ -11,12 +12,29 @@ const StartPage: React.FC = () => {
   const modal = useModal();
   const history = useHistory();
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
-
+  const [time, setTime] = useState(moment());
+  const RELEASE = "202106071530";
+  
+  let timer: any = null;
   useEffect(() => {
     if (localStorage.getItem("themoment_token")) {
       setHasToken(true);
     }
-  });
+    timer = setInterval(() => {
+      setTime(moment());
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  const ready = () => {
+    if (time.format('YYYYMMDDHHmm') >= RELEASE) {
+      history.push(Config.LINK.COMMENT);
+    } else {
+      alert(`아직 출시되지 않았습니다. 현재 시각 : ${time.format('HH-mm-ss')}`)
+    }
+  }
 
   return (
     <S.StartPage>
@@ -49,7 +67,7 @@ const StartPage: React.FC = () => {
             </>
           ) : (
             <>
-              <button onClick={() => history.push(Config.LINK.COMMENT)}>
+              <button onClick={() => ready()}>
                 Student
               </button>
               <button onClick={() => modal.open("LoginModal", 1)}>Admin</button>
