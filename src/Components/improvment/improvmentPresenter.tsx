@@ -50,7 +50,10 @@ const ImprovmentPage: React.FC = () => {
       <div>
         {list &&
           <S.AltImprovementItem>
-            현재 등록된 실제 개선사례가 없어요.
+            현재 등록된 개선사례가 없어요
+            <small>
+              There are currently no registered improvements
+            </small>
           </S.AltImprovementItem>
         }
         {list.map((improvement: list, index) => (
