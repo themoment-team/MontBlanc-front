@@ -48,6 +48,11 @@ const ImprovmentPage: React.FC = () => {
         )}
       </S.LeftBox>
       <div>
+        {list &&
+          <S.AltImprovementItem>
+            현재 등록된 실제 개선사례가 없어요.
+          </S.AltImprovementItem>
+        }
         {list.map((improvement: list, index) => (
           <ImprovmentItemPresenter
             header={improvement.improveHeader}

@@ -48,3 +48,23 @@ export const Btn = styled.button`
     padding-left: 5px;
   }
 `;
+
+export const AltImprovementItem = styled.div`
+  width: 33.4vw;
+  text-align: center;
+  color: #434C9C;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto;
+  &:hover {
+    
+  }
+  @media ${device.laptop} {
+    font-size: 1.5rem;
+  }
+  @media ${device.mobile} {
+    margin-top: 10%;
+    width: 80%;
+    font-size: 1.3rem;
+  }
+`
