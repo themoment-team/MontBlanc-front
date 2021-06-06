@@ -125,7 +125,7 @@ export const RightBox = styled.div`
   @media ${device.tablet} {
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
-    & > div:nth-child(n+2) {
+    & > div {
       margin-left: 0px;
     }
   }
@@ -139,7 +139,7 @@ export const RightBox = styled.div`
 export const IssueBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media ${device.mobile} {
+  @media ${device.mobile && device.tablet} {
     & + div {
       margin-top: 23px;
     }
