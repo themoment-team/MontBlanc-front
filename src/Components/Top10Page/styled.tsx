@@ -30,6 +30,9 @@ export const TenIssues = styled.div`
   border-radius: 12px;
   background: #e7f2f1;
   padding: 20px;
+  & + div {
+    margin-top: 23px;
+  }
   @media ${device.laptop} {
     flex-direction: column;
   }
@@ -44,6 +47,12 @@ export const TenIssues = styled.div`
   & > span:nth-child(1) > article {
     float: right;
     width: 18vw;
+    @media ${device.laptop} {
+      width: 28vw;
+    }
+    @media ${device.mobile} {
+      width: 76vw;
+    }
     height: fit-content;
     color: #3b3e57;
     font-weight: 700;
