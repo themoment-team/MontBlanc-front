@@ -116,22 +116,22 @@ export const Top10Btn = styled.button`
 export const RightBox = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  @media ${device.laptop} {
+  @media (max-width: 1415px) {
     grid-template-columns: repeat(2, 1fr);
     & > div:nth-child(n+3) {
-      margin-left: -23px;
+      margin-left: 0px;
     }
   }
   @media ${device.tablet} {
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
     & > div:nth-child(n+2) {
-      margin-left: -23px;
+      margin-left: 0px;
     }
   }
   @media ${device.mobile} {
     & > div {
-      margin-left: -23px;
+      margin-left: 0px;
     }
   }
 `;
@@ -139,7 +139,10 @@ export const RightBox = styled.div`
 export const IssueBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  & + div {
-    margin-left: 23px;
+  @media ${device.mobile} {
+    & + div {
+      margin-top: 23px;
+    }
   }
+  margin-left: 23px;
 `;

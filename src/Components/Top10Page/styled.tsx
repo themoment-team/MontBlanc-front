@@ -36,9 +36,6 @@ export const TenIssues = styled.div`
   &:nth-child(-n + 3) {
     background: #dce8f7;
   }
-  & + & {
-    margin-top: 20px;
-  }
   & > span:nth-child(1) > span {
     margin-right: 20px;
     color: #6b7187;
@@ -80,6 +77,9 @@ export const TenIssues = styled.div`
         margin-left: 20%;
       }
     }
+  }
+  ${device.mobile} {
+    margin-top: 23px;
   }
 `;
 
