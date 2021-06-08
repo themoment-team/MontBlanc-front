@@ -1,5 +1,5 @@
 import { PageExplanation } from "../PageExplanation";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import ImprovmentItemPresenter from "./improvmentItem/improvmentItemPresenter";
 import { useState, useEffect } from "react";
 import { improvement, list } from "./imporvmentContainer";
@@ -15,6 +15,7 @@ const ImprovmentPage: React.FC = () => {
   const [list, setList] = useState<list[]>([]);
   const modal = useModal();
   const logged = useRecoilValue(HasAdminToken);
+  const history = useHistory();
 
   useEffect(() => {
     improvement().then((res) => setList(res.data.list));
@@ -37,13 +38,13 @@ const ImprovmentPage: React.FC = () => {
             </span>
           </S.Btn>
         ) : (
-          <S.Btn>
+          <S.Btn onClick={() => history.push(Config.LINK.COMMENT)}>
             학교가 불편한 순간을
             <br /> 자유롭게 남겨주세요.
-            <Link to={Config.LINK.COMMENT}>
-              의견 남기기
-              <I.RightArrow />
-            </Link>
+              <S.LinkTextWrapper>
+                <span>의견 남기기</span>
+                <I.RightArrow />
+              </S.LinkTextWrapper>
           </S.Btn>
         )}
       </S.LeftBox>

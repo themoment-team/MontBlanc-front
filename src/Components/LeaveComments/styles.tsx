@@ -90,17 +90,9 @@ export const Top10Btn = styled.button`
   width: 328px;
   margin-top: 24px;
   border-radius: 10px;
-  a {
-    color: white;
-    text-decoration: #fff 1px underline;
-    padding-top: 3%;
-    font-size: 12px;
-    font-weight: 600;
-  }
   span {
     padding-right: 9px;
   }
-
   @media ${device.tablet} {
     width: 280px;
     flex-direction: column;
@@ -112,6 +104,14 @@ export const Top10Btn = styled.button`
     flex-direction: row;
   }
 `;
+
+export const LinkWrapper = styled.div`
+  color: white;
+  text-decoration: #fff 1px underline;
+  padding-top: 3%;
+  font-size: 12px;
+  font-weight: 600;
+`
 
 export const RightBox = styled.div`
   display: grid;
