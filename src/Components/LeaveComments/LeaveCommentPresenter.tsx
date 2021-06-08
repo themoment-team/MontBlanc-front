@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import * as I from "../../Asset/SVG/index";
 import * as S from "./styles";
 import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
@@ -10,6 +10,7 @@ import Config from "Constants/Config.json";
 const LeaveCommentsPage: React.FC = () => {
   const list = useViewTable();
   const [content, setContent] = useState("");
+  const history = useHistory();
 
   const list3 = list.slice(0, list.length * (1 / 3));
   const list2 = list.slice(list.length * (1 / 3), list.length * (2 / 3));
@@ -39,15 +40,15 @@ const LeaveCommentsPage: React.FC = () => {
             등 록
           </S.Btn>
         </S.Form>
-        <S.Top10Btn>
+        <S.Top10Btn onClick={() => history.push(Config.LINK.TOP10)}>
           <span>
             많은 학생들이 공감한
             <br /> 불편함은 무엇일까요?
           </span>
-          <Link to={Config.LINK.TOP10}>
+          <S.LinkWrapper>
             <span>Top 10 보러가기</span>
             <I.RightArrow />
-          </Link>
+          </S.LinkWrapper>
         </S.Top10Btn>
       </S.LeftBox>
       <S.RightBox>
