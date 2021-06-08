@@ -19,6 +19,7 @@
     "@types/styled-components": "^5.1.9",
     "axios": "^0.21.1",
     "body-scroll-lock": "^3.1.5",
+    "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -33,7 +34,9 @@
     "start": "export PORT=8080 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "aws s3 sync ./build s3://deploy-themoment-client --profile=themoment-client-deploy",
+    "invalidate": "aws cloudfront create-invalidation --profile=themoment-client-deploy --distribution-id E384NV96VK2S09 --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico"
   },
   "eslintConfig": {
     "extends": [

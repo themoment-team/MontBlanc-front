@@ -30,14 +30,14 @@ export const TenIssues = styled.div`
   border-radius: 12px;
   background: #e7f2f1;
   padding: 20px;
+  & + div {
+    margin-top: 23px;
+  }
   @media ${device.laptop} {
     flex-direction: column;
   }
   &:nth-child(-n + 3) {
     background: #dce8f7;
-  }
-  & + & {
-    margin-top: 20px;
   }
   & > span:nth-child(1) > span {
     margin-right: 20px;
@@ -47,6 +47,15 @@ export const TenIssues = styled.div`
   & > span:nth-child(1) > article {
     float: right;
     width: 18vw;
+    @media ${device.laptop} {
+      width: 28vw;
+    }
+    @media ${device.mobile} {
+      width: 70vw;
+    }
+    @media (max-width: 470px) {
+      width: 62vw;
+    }
     height: fit-content;
     color: #3b3e57;
     font-weight: 700;
@@ -80,6 +89,9 @@ export const TenIssues = styled.div`
         margin-left: 20%;
       }
     }
+  }
+  ${device.mobile} {
+    margin-top: 23px;
   }
 `;
 

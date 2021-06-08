@@ -10,7 +10,7 @@ export const ImprovmentBox = styled.div<ImprovmentProps>`
   width: 35vw;
   height: 300px;
   border-radius: 12px;
-  padding: 3em 3em 3em 3em;
+  padding: 3em;
   margin-bottom: 33px;
   @media ${device.laptop} {
     width: 100%;
