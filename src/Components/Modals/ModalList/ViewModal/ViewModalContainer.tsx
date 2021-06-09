@@ -14,7 +14,7 @@ const useGetModalValue = (idx: number, state: string) => {
 const GetAnswerValue = (idx: number) => {
   const [Idx, setIdx] = useState("");
   const [title, setTitle] = useState("");
-  const [Content, setContent] = useState(" ");
+  const [Content, setContent] = useState("");
 
   const tryGet = async () => {
     const res = await answer.getAnswer(idx);
