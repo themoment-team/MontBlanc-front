@@ -43,4 +43,5 @@ export const IssueNumber = styled.div`
 export const Issue = styled.div`
   font-size: 15px;
   text-align: left;
+  word-break: break-all;
 `;
