@@ -12,7 +12,16 @@ const issueBox: React.FC<C.issueBoxProps> = (p: C.issueBoxProps) => {
         <I.IssueSvg />
         <S.IssueNumber>{p.idx}번째 불편함</S.IssueNumber>
       </S.IssueBoxHeading>
-      <S.Issue>{p.content}</S.Issue>
+      <S.Issue>
+        {p.content.split("\n").map((content: string) => {
+          return (
+            <>
+              {content}
+              <br />
+            </>
+          );
+        })}
+      </S.Issue>
     </S.IssueBoxStyle>
   );
 };

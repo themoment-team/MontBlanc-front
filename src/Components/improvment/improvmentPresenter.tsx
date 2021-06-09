@@ -49,14 +49,12 @@ const ImprovmentPage: React.FC = () => {
         )}
       </S.LeftBox>
       <div>
-        {list &&
+        {list.length < 1 && (
           <S.AltImprovementItem>
             현재 등록된 개선사례가 없어요
-            <small>
-              There are currently no registered improvements
-            </small>
+            <small>There are currently no registered improvements</small>
           </S.AltImprovementItem>
-        }
+        )}
         {list.map((improvement: list, index) => (
           <ImprovmentItemPresenter
             header={improvement.improveHeader}

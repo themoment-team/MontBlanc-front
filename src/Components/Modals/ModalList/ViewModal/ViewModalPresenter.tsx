@@ -40,7 +40,16 @@ const ViewModalPresenter: React.FC<ModalProps> = ({
           </S.ModalImg>
         )}
         <S.GridDivider>
-          <S.Text>{content}</S.Text>
+          <S.Text>
+            {content.split("\n").map((content: string) => {
+              return (
+                <>
+                  {content}
+                  <br />
+                </>
+              );
+            })}
+          </S.Text>
           <S.ViewImg>
             {
               {
