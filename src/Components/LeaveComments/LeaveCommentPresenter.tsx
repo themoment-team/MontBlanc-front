@@ -3,18 +3,22 @@ import { useHistory } from "react-router-dom";
 import * as I from "../../Asset/SVG/index";
 import * as S from "./styles";
 import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
-import { useViewTable, useWriteTable, list } from "./LeaveCommentContainer";
+import { useViewTable, useWriteTable, useShuffle, list } from "./LeaveCommentContainer";
 import { useState } from "react";
 import Config from "Constants/Config.json";
 
 const LeaveCommentsPage: React.FC = () => {
   const list = useViewTable();
-  const [content, setContent] = useState("");
   const history = useHistory();
+  const shuffle = useShuffle();
 
-  const list3 = list.slice(0, list.length * (1 / 3));
-  const list2 = list.slice(list.length * (1 / 3), list.length * (2 / 3));
-  const list1 = list.slice(list.length * (2 / 3), list.length);
+  const [content, setContent] = useState("");
+
+  const provList = shuffle(list);
+
+  const list3 = provList.slice(0, list.length * (1 / 3));
+  const list2 = provList.slice(list.length * (1 / 3), list.length * (2 / 3));
+  const list1 = provList.slice(list.length * (2 / 3), list.length);
 
   const tryWriteTable = useWriteTable();
 
