@@ -16,6 +16,11 @@ const LeaveCommentsPage: React.FC = () => {
   const list1 = list.slice(list.length * (2 / 3), list.length);
 
   const tryWriteTable = useWriteTable();
+  const checkEnterKey = (e: any) => {
+    if (e.keyCode === 13) {
+      if (!e.shiftKey) tryWriteTable(content, setContent);
+    }
+  };
 
   return (
     <S.LeaveCommentsBox>
@@ -30,6 +35,7 @@ const LeaveCommentsPage: React.FC = () => {
             placeholder="자유롭게 의견을 남겨주세요."
             onChange={({ target: { value } }) => setContent(value)}
             value={content}
+            onKeyUp={checkEnterKey}
           />
           <S.Btn
             onClick={() => {
