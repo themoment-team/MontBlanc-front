@@ -48,7 +48,7 @@ const ImprovmentPage: React.FC = () => {
         )}
       </S.LeftBox>
       <div>
-        {list[0].improveIdx && (
+        {list.length < 1 && (
           <S.AltImprovementItem>
             현재 등록된 개선사례가 없어요
             <small>There are currently no registered improvements</small>
