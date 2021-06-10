@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useHistory } from "react-router-dom";
 import * as I from "../../Asset/SVG/index";
 import * as S from "./styles";
 import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
-import { useViewTable, useWriteTable, useShuffle, list } from "./LeaveCommentContainer";
+import {
+  useViewTable,
+  useWriteTable,
+  useShuffle,
+  list,
+} from "./LeaveCommentContainer";
 import { useState } from "react";
 import Config from "Constants/Config.json";
 
@@ -14,7 +19,7 @@ const LeaveCommentsPage: React.FC = () => {
 
   const [content, setContent] = useState("");
 
-  const provList = shuffle(list);
+  const provList = useMemo(() => shuffle(list), [list]);
 
   const list3 = provList.slice(0, list.length * (1 / 3));
   const list2 = provList.slice(list.length * (1 / 3), list.length * (2 / 3));
