@@ -48,7 +48,8 @@ export const Form = styled.div`
   textarea {
     margin: 29px 31px 5px 29px;
     height: 179px;
-    font-size: 18px;
+    font-family: "Noto Sans CJK KR";
+    font-size: 16px;
     font-weight: 700;
     resize: none;
     border: none;
