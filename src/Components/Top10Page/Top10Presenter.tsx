@@ -1,6 +1,6 @@
 import { PageExplanation } from "../PageExplanation";
 import { useHistory } from "react-router-dom";
-import { LeftBox } from "../../Constants/GlobalStyle/Detail";
+import { LeftBox } from "../../Constants/Styles/Detail";
 import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
 import {

@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import * as P from "./Page/index";
 import Config from "Constants/Config.json";
-import GlobalStyle from "./Constants/GlobalStyle/GlobalStyles";
+import GlobalStyle from "./Constants/Styles/GlobalStyles";
 
 const App: React.FC = () => (
   <BrowserRouter>
