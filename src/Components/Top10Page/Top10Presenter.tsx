@@ -62,7 +62,7 @@ const Top10Page = () => {
                         "",
                         "",
                         top10.content.replace(/^\s+|\s+$/gm, "") +
-                          "번째 불편함 답변"
+                          " 불편함 답변"
                       )
                 }
               >
