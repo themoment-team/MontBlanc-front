@@ -23,7 +23,7 @@ const EditModal: React.FC<ModalProps> = ({
         <S.ModalImg onClick={close}>
           <CancleBtn />
         </S.ModalImg>
-        {content ? (
+        {header ? (
           <>
             <S.InputBox
               placeholder={header}
