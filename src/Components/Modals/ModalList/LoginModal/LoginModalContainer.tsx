@@ -19,8 +19,10 @@ export const useLogin = (close: () => void) => {
       setLogged(true);
       close();
     } catch (e) {
-      console.log(e);
-      alert("로그인에 실패하셨습니다.");
+      const message = (e.message = "Error: Request failed with status code 404"
+        ? "올바르지 않은 아이디 또는 비밀번호입니다."
+        : "예상치 못한 에러입니다. 개발자측에 문의해주세요.");
+      alert(message);
     }
   };
 
