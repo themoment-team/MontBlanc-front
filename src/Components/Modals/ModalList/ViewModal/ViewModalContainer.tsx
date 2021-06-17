@@ -17,8 +17,13 @@ const GetAnswerValue = (idx: number) => {
   const [Content, setContent] = useState("");
 
   const tryGet = async () => {
-    const res = await answer.getAnswer(idx);
-    return res.data;
+    try {
+      const res = await answer.getAnswer(idx);
+      return res.data;
+    } catch (e) {
+      alert("에러가 발생하였습니다. 개발팀에 문의해주세요.");
+      console.log(e);
+    }
   };
 
   useEffect(() => {
@@ -38,9 +43,14 @@ const GetImprovmentValue = (idx: number) => {
   const [improveContent, setImproveContent] = useState("");
 
   const tryGet = async () => {
-    const res = await improvement.viewImprovment();
-    idx *= 1;
-    return res.data.list[res.data.list.length - idx];
+    try {
+      const res = await improvement.viewImprovment();
+      idx *= 1;
+      return res.data.list[res.data.list.length - idx];
+    } catch (e) {
+      alert("에러가 발생하였습니다. 개발팀에 문의해주세요.");
+      console.log(e);
+    }
   };
 
   useEffect(() => {

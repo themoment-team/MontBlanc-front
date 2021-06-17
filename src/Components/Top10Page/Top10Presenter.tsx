@@ -29,7 +29,9 @@ const Top10Page = () => {
           explanation={explanation}
         />
         {!logged && (
-          <S.LinkCommentPageBtn onClick={() => history.push(Config.LINK.COMMENT)}>
+          <S.LinkCommentPageBtn
+            onClick={() => history.push(Config.LINK.COMMENT)}
+          >
             의견 남기기
           </S.LinkCommentPageBtn>
         )}
@@ -39,7 +41,7 @@ const Top10Page = () => {
           <S.TenIssues key={top10.boardIdx}>
             <span>
               <span>{index + 1}위</span>
-              <article>{top10.content.replace(/^\s+|\s+$/gm,'')}</article>
+              <article>{top10.content.replace(/^\s+|\s+$/gm, "")}</article>
             </span>
             <span>
               <button
@@ -56,7 +58,11 @@ const Top10Page = () => {
                         "EditModal",
                         top10.boardIdx,
                         "answer",
-                        "답변달기"
+                        "답변달기",
+                        "",
+                        "",
+                        top10.content.replace(/^\s+|\s+$/gm, "") +
+                          " 불편함 답변"
                       )
                 }
               >
