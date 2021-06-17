@@ -48,7 +48,7 @@ const GetImprovmentValue = (idx: number) => {
       idx *= 1;
       return res.data.list[res.data.list.length - idx];
     } catch (e) {
-      alert("예상치 못한 에러입니다. 개발자측에 문의해주세요.");
+      alert("에러가 발생하였습니다. 개발팀에 문의해주세요.");
       console.log(e);
     }
   };
