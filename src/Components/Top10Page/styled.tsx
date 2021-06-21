@@ -29,6 +29,7 @@ export const TenIssues = styled.div`
   border-radius: 12px;
   background: #e7f2f1;
   padding: 20px;
+  word-break: break-all;
   & + div {
     margin-top: 23px;
   }
