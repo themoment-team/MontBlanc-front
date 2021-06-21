@@ -55,7 +55,7 @@ const LeaveCommentsPage: React.FC = () => {
             등 록
           </S.Btn>
         </S.Form>
-        <S.Top10Btn onClick={() => history.push(Config.LINK.TOP10)}>
+        <S.Top10Btn onClick={() => history.push(Config.LINK.RANK)}>
           <span>
             많은 학생들이 공감한
             <br /> 불편함은 무엇일까요?
