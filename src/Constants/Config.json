@@ -9,7 +9,7 @@
   "LINK": {
     "ABOUT": "/about",
     "IMPROVMENT": "/improvment",
-    "TOP10": "/rank",
+    "RANK": "/rank",
     "COMMENT": "/the_moment",
     "START": "/"
   }
