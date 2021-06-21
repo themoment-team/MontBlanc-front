@@ -112,38 +112,29 @@ export const LinkWrapper = styled.div`
   padding-top: 3%;
   font-size: 12px;
   font-weight: 600;
-`
+`;
 
 export const RightBox = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  @media (max-width: 1415px) {
-    grid-template-columns: repeat(2, 1fr);
-    & > div:nth-child(n+3) {
-      margin-left: 0px;
-    }
-  }
-  @media ${device.tablet} {
-    grid-template-columns: repeat(1, 1fr);
+  width: 40vw;
+  @media (max-width: 1210px) {
     width: 100%;
-    & > div {
-      margin-left: 0px;
-    }
-  }
-  @media ${device.mobile} {
-    & > div {
+    grid-template-columns: repeat(1, 1fr);
+    & > div:nth-child(n + 3) {
       margin-left: 0px;
     }
   }
 `;
 
-export const IssueBoxWrapper = styled.div`
+export const IssueBoxWrapper = styled.ul`
   display: flex;
   flex-direction: column;
+  padding-left: 23px;
   @media ${device.mobile && device.tablet} {
     & + div {
       margin-top: 23px;
     }
+    padding-left: 0;
   }
-  margin-left: 23px;
 `;
