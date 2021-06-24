@@ -41,7 +41,7 @@ const ViewModalPresenter: React.FC<ModalProps> = ({
         )}
         <S.GridDivider>
           <S.Text>
-            {content.split("\n").map((content: string) => {
+            {content?.split("\n").map((content: string) => {
               return (
                 <>
                   {content}
