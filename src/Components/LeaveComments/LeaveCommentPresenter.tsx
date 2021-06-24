@@ -18,6 +18,7 @@ const LeaveCommentsPage: React.FC = () => {
   const shuffle = useShuffle();
 
   const [content, setContent] = useState("");
+  const [length, setLength] = useState(0);
 
   const provList = useMemo(() => shuffle(list), [list]);
 
@@ -31,6 +32,12 @@ const LeaveCommentsPage: React.FC = () => {
       if (!e.shiftKey) tryWriteTable(content, setContent);
     }
   };
+
+  const checkLength = (e: any) => {
+    setLength(e.target.value.length);
+  }
+
+
 
   return (
     <S.LeaveCommentsBox>
@@ -46,10 +53,11 @@ const LeaveCommentsPage: React.FC = () => {
             onChange={({ target: { value } }) => setContent(value)}
             value={content}
             onKeyUp={checkEnterKey}
+            onKeyDown={checkLength}
           />
           <S.Btn
             onClick={() => {
-              tryWriteTable(content, setContent);
+              (length >= 8 && tryWriteTable(content, setContent));
             }}
           >
             등 록
