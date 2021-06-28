@@ -1,21 +1,43 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useMemo } from "react";
+import { useHistory } from "react-router-dom";
 import * as I from "../../Asset/SVG/index";
 import * as S from "./styles";
 import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
-import { useViewTable, useWriteTable, list } from "./LeaveCommentContainer";
+import {
+  useViewTable,
+  useWriteTable,
+  useShuffle,
+  list,
+} from "./LeaveCommentContainer";
 import { useState } from "react";
 import Config from "Constants/Config.json";
 
 const LeaveCommentsPage: React.FC = () => {
   const list = useViewTable();
-  const [content, setContent] = useState("");
+  const history = useHistory();
+  const shuffle = useShuffle();
 
-  const list3 = list.slice(0, list.length * (1 / 3));
-  const list2 = list.slice(list.length * (1 / 3), list.length * (2 / 3));
-  const list1 = list.slice(list.length * (2 / 3), list.length);
+  const [content, setContent] = useState("");
+  const [length, setLength] = useState(0);
+
+  const provList = useMemo(() => shuffle(list), [list]);
+
+  const list3 = provList.slice(0, list.length * (1 / 3));
+  const list2 = provList.slice(list.length * (1 / 3), list.length * (2 / 3));
+  const list1 = provList.slice(list.length * (2 / 3), list.length);
 
   const tryWriteTable = useWriteTable();
+  const checkEnterKey = (e: any) => {
+    if (e.keyCode === 13) {
+      if (!e.shiftKey) tryWriteTable(content, setContent);
+    }
+  };
+
+  const checkLength = (e: any) => {
+    setLength(e.target.value.length);
+  }
+
+
 
   return (
     <S.LeaveCommentsBox>
@@ -30,24 +52,26 @@ const LeaveCommentsPage: React.FC = () => {
             placeholder="자유롭게 의견을 남겨주세요."
             onChange={({ target: { value } }) => setContent(value)}
             value={content}
+            onKeyUp={checkEnterKey}
+            onKeyDown={checkLength}
           />
           <S.Btn
             onClick={() => {
-              tryWriteTable(content, setContent);
+              (length >= 8 && tryWriteTable(content, setContent));
             }}
           >
             등 록
           </S.Btn>
         </S.Form>
-        <S.Top10Btn>
+        <S.Top10Btn onClick={() => history.push(Config.LINK.RANK)}>
           <span>
             많은 학생들이 공감한
             <br /> 불편함은 무엇일까요?
           </span>
-          <Link to={Config.LINK.TOP10}>
+          <S.LinkWrapper>
             <span>Top 10 보러가기</span>
             <I.RightArrow />
-          </Link>
+          </S.LinkWrapper>
         </S.Top10Btn>
       </S.LeftBox>
       <S.RightBox>

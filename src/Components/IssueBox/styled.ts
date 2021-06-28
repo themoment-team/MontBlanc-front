@@ -8,19 +8,10 @@ interface IssueBoxProps {
 export const IssueBoxStyle = styled.div<IssueBoxProps>`
   background-color: ${(props) => props.color};
   border-radius: 12px;
-  width: 10vw;
-  min-width: 130px;
-  padding: 18px 23px;
-  padding-bottom: 26px;
+  padding: 18px 23px 26px 23px;
+  width: 80%;
   & + div {
     margin-top: 23px;
-  }
-  @media ${device.laptop} {
-    width: 18vw;
-  }
-  @media ${device.tablet} {
-    width: 100%;
-    min-width: 15vw;
   }
   @media ${device.mobile} {
     width: 90%;
@@ -43,4 +34,5 @@ export const IssueNumber = styled.div`
 export const Issue = styled.div`
   font-size: 15px;
   text-align: left;
+  word-break: break-all;
 `;

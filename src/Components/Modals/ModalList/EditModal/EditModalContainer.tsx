@@ -24,6 +24,7 @@ export const useStateDistinction = (idx: number, state: string) => {
     TryDelete = deleteImprovement(idx);
   } else {
     console.log("error: 알맞지 않은 state");
+    alert("예상치 못한 에러입니다. 개발자측에 문의해주세요.");
   }
 
   return [setContent, setHeading, TryUpdate, TrySave, TryDelete];
@@ -47,7 +48,7 @@ const saveImprovement = (content: string, heading: string) => {
       await Improvement.saveImprovment(content, heading);
       window.location.reload();
     } catch (e) {
-      alert("실제개선사례 작성 오류 : " + e);
+      alert("실제개선사례 작성 또는 수정 오류 : " + e);
     }
   };
   return trySave;
@@ -72,7 +73,7 @@ const updateAndSaveAnswer = (idx: number, state: string, content: string) => {
       await Answer.updateAndSaveAnswer(content, idx, method);
       window.location.reload();
     } catch (e) {
-      alert("답변 수정 오류 : " + e);
+      alert("답변 저장 또는 수정 오류 : " + e);
     }
   };
 
