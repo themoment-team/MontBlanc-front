@@ -37,17 +37,18 @@ export const Btn = styled.button`
   @media ${device.mobile} {
     width: 100%;
   }
-  a {
-    align-self: center;
-    font-size: 12px;
-    font-weight: 500;
-    color: white;
-    text-decoration: underline;
-  }
   svg {
     padding-left: 5px;
   }
 `;
+
+export const LinkTextWrapper = styled.div`
+  color: white;
+  text-decoration: #fff 1px underline;
+  padding-top: 3%;
+  font-size: 12px;
+  font-weight: 600;
+`
 
 export const AltImprovementItem = styled.div`
   width: 33.4vw;

@@ -1,6 +1,6 @@
 import { PageExplanation } from "../PageExplanation";
-import { Link } from "react-router-dom";
-import { LeftBox } from "../../Constants/GlobalStyle/Detail";
+import { useHistory } from "react-router-dom";
+import { LeftBox } from "../../Constants/Styles/Detail";
 import GoodBtn from "../GoodBtn/GoodBtnPresenter";
 import * as S from "./styled";
 import {
@@ -19,6 +19,7 @@ const Top10Page = () => {
   const list = useTop10();
   const modal = useModal();
   const logged = useRecoilValue(HasAdminToken);
+  const history = useHistory();
 
   return (
     <S.TopTenWrapper>
@@ -28,9 +29,11 @@ const Top10Page = () => {
           explanation={explanation}
         />
         {!logged && (
-          <S.Btn>
-            <Link to={Config.LINK.COMMENT}>의견 남기기</Link>
-          </S.Btn>
+          <S.LinkCommentPageBtn
+            onClick={() => history.push(Config.LINK.COMMENT)}
+          >
+            의견 남기기
+          </S.LinkCommentPageBtn>
         )}
       </LeftBox>
       <S.RightBox>
@@ -38,7 +41,7 @@ const Top10Page = () => {
           <S.TenIssues key={top10.boardIdx}>
             <span>
               <span>{index + 1}위</span>
-              <article>{top10.content.replace(/^\s+|\s+$/gm,'')}</article>
+              <article>{top10.content.replace(/^\s+|\s+$/gm, "")}</article>
             </span>
             <span>
               <button
@@ -55,7 +58,11 @@ const Top10Page = () => {
                         "EditModal",
                         top10.boardIdx,
                         "answer",
-                        "답변달기"
+                        "답변달기",
+                        "",
+                        "",
+                        top10.content.replace(/^\s+|\s+$/gm, "") +
+                          " 불편함 답변"
                       )
                 }
               >

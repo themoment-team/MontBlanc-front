@@ -12,13 +12,18 @@ const useGetModalValue = (idx: number, state: string) => {
 };
 
 const GetAnswerValue = (idx: number) => {
-  const [Idx, setIdx] = useState();
-  const [title, setTitle] = useState();
-  const [Content, setContent] = useState();
+  const [Idx, setIdx] = useState("");
+  const [title, setTitle] = useState("");
+  const [Content, setContent] = useState("");
 
   const tryGet = async () => {
-    const res = await answer.getAnswer(idx);
-    return res.data;
+    try {
+      const res = await answer.getAnswer(idx);
+      return res.data;
+    } catch (e) {
+      alert("에러가 발생하였습니다. 개발팀에 문의해주세요.");
+      console.log(e);
+    }
   };
 
   useEffect(() => {
@@ -33,21 +38,29 @@ const GetAnswerValue = (idx: number) => {
 };
 
 const GetImprovmentValue = (idx: number) => {
-  const [Idx, setIdx] = useState();
-  const [improveHeader, setImproveHeader] = useState();
-  const [improveContent, setImproveContent] = useState();
+  const [Idx, setIdx] = useState("");
+  const [improveHeader, setImproveHeader] = useState("");
+  const [improveContent, setImproveContent] = useState("");
+  const idxCopy = idx.toString();
 
   const tryGet = async () => {
-    const res = await improvement.viewImprovment();
-    idx *= 1;
-    return res.data.list[res.data.list.length - idx];
+    try {
+      const res = await improvement.viewImprovment();
+
+      return await res.data.list.filter(
+        (data: { improveIdx: string }) => data.improveIdx === idxCopy
+      );
+    } catch (e) {
+      alert("에러가 발생하였습니다. 개발팀에 문의해주세요.");
+      console.log(e);
+    }
   };
 
   useEffect(() => {
     tryGet().then((res) => {
-      setIdx(res.improveIdx);
-      setImproveHeader(res.improveHeader);
-      setImproveContent(res.improveContent);
+      setIdx(res[0].improveIdx);
+      setImproveHeader(res[0].improveHeader);
+      setImproveContent(res[0].improveContent);
     });
   }, []);
 

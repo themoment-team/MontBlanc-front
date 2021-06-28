@@ -38,7 +38,7 @@ export const ImprovementController = {
 //게시글
 export const TableController = {
   viewTop10Uncomfortable: () => {
-    return `/uncomfortable/top10`;
+    return `/uncomfortable/top30`;
   },
   //post 게시글 작성, get 게시글 보기
   detailUncomfortable: () => {

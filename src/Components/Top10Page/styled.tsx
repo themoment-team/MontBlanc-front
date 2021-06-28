@@ -10,7 +10,7 @@ export const TopTenWrapper = styled.section`
     flex-direction: column;
     width: 90vw;
   }
-`; // left박스와 right박스 전체를 감싸는 wrapper입니다.
+`;
 
 export const RightBox = styled.section`
   width: 54.2%;
@@ -19,7 +19,6 @@ export const RightBox = styled.section`
     width: 100%;
   }
 `;
-// topten 리스트가 적히는 오른쪽 박스입니다.
 
 export const TenIssues = styled.div`
   display: flex;
@@ -30,6 +29,7 @@ export const TenIssues = styled.div`
   border-radius: 12px;
   background: #e7f2f1;
   padding: 20px;
+  word-break: break-all;
   & + div {
     margin-top: 23px;
   }
@@ -95,10 +95,8 @@ export const TenIssues = styled.div`
   }
 `;
 
-export const Btn = styled.button`
+export const LinkCommentPageBtn = styled.button`
   margin-top: 50px;
   background-color: #434c9c;
-  a {
-    color: white;
-  }
+  color: white;
 `;

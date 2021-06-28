@@ -14,7 +14,7 @@ const StartPage: React.FC = () => {
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
   const [time, setTime] = useState(moment());
   const RELEASE = "202106071530";
-  
+
   let timer: any = null;
   useEffect(() => {
     if (localStorage.getItem("themoment_token")) {
@@ -29,12 +29,12 @@ const StartPage: React.FC = () => {
   }, []);
 
   const ready = () => {
-    if (time.format('YYYYMMDDHHmm') >= RELEASE) {
+    if (time.format("YYYYMMDDHHmm") >= RELEASE) {
       history.push(Config.LINK.COMMENT);
     } else {
-      alert(`아직 출시되지 않았습니다. 현재 시각 : ${time.format('HH-mm-ss')}`)
+      alert(`아직 출시되지 않았습니다. 현재 시각 : ${time.format("HH-mm-ss")}`);
     }
-  }
+  };
 
   return (
     <S.StartPage>
@@ -61,15 +61,13 @@ const StartPage: React.FC = () => {
               >
                 Student
               </button>
-              <button onClick={() => history.push(Config.LINK.TOP10)}>
+              <button onClick={() => history.push(Config.LINK.RANK)}>
                 Admin
               </button>
             </>
           ) : (
             <>
-              <button onClick={() => ready()}>
-                Student
-              </button>
+              <button onClick={() => ready()}>Student</button>
               <button onClick={() => modal.open("LoginModal", 1)}>Admin</button>
             </>
           )}

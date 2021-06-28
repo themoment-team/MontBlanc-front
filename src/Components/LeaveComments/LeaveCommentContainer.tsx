@@ -33,3 +33,11 @@ export const useWriteTable = () => {
 
   return tryWriteTable;
 };
+
+export const useShuffle = () => {
+  const shuffle = (list: Array<list>) => {
+    return list.sort(() => Math.random() - 0.5);
+  };
+
+  return shuffle;
+};

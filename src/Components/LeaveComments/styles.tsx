@@ -48,7 +48,8 @@ export const Form = styled.div`
   textarea {
     margin: 29px 31px 5px 29px;
     height: 179px;
-    font-size: 18px;
+    font-family: "Noto Sans CJK KR";
+    font-size: 16px;
     font-weight: 700;
     resize: none;
     border: none;
@@ -90,17 +91,9 @@ export const Top10Btn = styled.button`
   width: 328px;
   margin-top: 24px;
   border-radius: 10px;
-  a {
-    color: white;
-    text-decoration: #fff 1px underline;
-    padding-top: 3%;
-    font-size: 12px;
-    font-weight: 600;
-  }
   span {
     padding-right: 9px;
   }
-
   @media ${device.tablet} {
     width: 280px;
     flex-direction: column;
@@ -113,36 +106,35 @@ export const Top10Btn = styled.button`
   }
 `;
 
+export const LinkWrapper = styled.div`
+  color: white;
+  text-decoration: #fff 1px underline;
+  padding-top: 3%;
+  font-size: 12px;
+  font-weight: 600;
+`;
+
 export const RightBox = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  @media (max-width: 1415px) {
-    grid-template-columns: repeat(2, 1fr);
-    & > div:nth-child(n+3) {
-      margin-left: 0px;
-    }
-  }
-  @media ${device.tablet} {
-    grid-template-columns: repeat(1, 1fr);
+  width: 40vw;
+  @media (max-width: 1210px) {
     width: 100%;
-    & > div {
-      margin-left: 0px;
-    }
-  }
-  @media ${device.mobile} {
-    & > div {
+    grid-template-columns: repeat(1, 1fr);
+    & > div:nth-child(n + 3) {
       margin-left: 0px;
     }
   }
 `;
 
-export const IssueBoxWrapper = styled.div`
+export const IssueBoxWrapper = styled.ul`
   display: flex;
   flex-direction: column;
+  padding-left: 23px;
   @media ${device.mobile && device.tablet} {
     & + div {
       margin-top: 23px;
     }
+    padding-left: 0;
   }
-  margin-left: 23px;
 `;

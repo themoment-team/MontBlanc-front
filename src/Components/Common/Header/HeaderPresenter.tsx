@@ -33,13 +33,13 @@ const Header: React.FC = () => {
       {!logged ? (
         <S.HeaderNav active={bars}>
           <Link to={Config.LINK.COMMENT}>의견 남기기</Link>
-          <Link to={Config.LINK.TOP10}>Top 10</Link>
+          <Link to={Config.LINK.RANK}>Top 30</Link>
           <Link to={Config.LINK.IMPROVMENT}>실제 개선 사례</Link>
           <Link to={Config.LINK.ABOUT}>캠페인 자세히 보기</Link>
         </S.HeaderNav>
       ) : (
         <S.HeaderNav active={bars}>
-          <Link to={Config.LINK.TOP10}>답변달기</Link>
+          <Link to={Config.LINK.RANK}>답변달기</Link>
           <Link to={Config.LINK.IMPROVMENT}>실제 개선 사례 작성</Link>
           <button
             onClick={() => {
@@ -51,7 +51,10 @@ const Header: React.FC = () => {
         </S.HeaderNav>
       )}
       <S.BarWrapper>
-        <FontAwesomeIcon icon={(bars ? faBars : faChevronUp)} onClick={() => (setBars((!bars)))}/>
+        <FontAwesomeIcon
+          icon={bars ? faBars : faChevronUp}
+          onClick={() => setBars(!bars)}
+        />
       </S.BarWrapper>
     </S.Header>
   );
