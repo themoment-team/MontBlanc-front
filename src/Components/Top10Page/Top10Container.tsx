@@ -23,7 +23,7 @@ export const useTop10 = () => {
   return list;
 };
 
-export const heading: string[] = ["학교가 불편한 순간", "TOP 10"];
+export const heading: string[] = ["학교가 불편한 순간", "TOP 30"];
 export const adminHeading: string[] = ["답변달기"];
 
 export const explanation: string[] = [
