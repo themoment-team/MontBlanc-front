@@ -70,7 +70,7 @@ export const ModalContext = createContext<ModalContextValues | null>(null);
 export const ModalContextProvider: React.FC = ({ children }) => {
   const [openedModal, setOpenedModal] = useRecoilState(OpenedModal);
 
-  const open: ModalContextValues["open"] = useCallback(
+  const open = useCallback(
     (name, idx, state, heading, key, content, header) => {
       setOpenedModal({ name, idx, state, heading, key, content, header });
     },
