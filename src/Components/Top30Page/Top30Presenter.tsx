@@ -9,7 +9,7 @@ import {
   useTop10,
   list,
   adminHeading,
-} from "./Top10Container";
+} from "./Top30Container";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
 import { useModal } from "Context/Modal";

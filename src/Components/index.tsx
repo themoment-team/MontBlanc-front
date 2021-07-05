@@ -2,7 +2,7 @@ export { default as Header } from "./Common/Header/HeaderPresenter";
 export { default as Footer } from "./Common/Footer/Footer";
 export { default as StartPage } from "./StartPage/StartPresenter";
 export { default as LeaveCommentsPage } from "./LeaveComments/LeaveCommentPresenter";
-export { default as Top10Page } from "./Top10Page/Top10Presenter";
+export { default as Top10Page } from "./Top30Page/Top30Presenter";
 export { default as PageExplanation } from "./PageExplanation/PageExplanationContainer";
 export { default as ImprovmentPage } from "./improvment/improvmentPresenter";
 export { default as AboutPage } from "./about/aboutPresenter";
