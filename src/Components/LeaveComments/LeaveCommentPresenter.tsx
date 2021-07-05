@@ -37,8 +37,6 @@ const LeaveCommentsPage: React.FC = () => {
     setLength(e.target.value.length);
   }
 
-
-
   return (
     <S.LeaveCommentsBox>
       <S.LeftBox>
@@ -56,6 +54,7 @@ const LeaveCommentsPage: React.FC = () => {
             onKeyDown={checkLength}
           />
           <S.Btn
+            Length={length}
             onClick={() => {
               (length >= 8 && tryWriteTable(content, setContent));
             }}
