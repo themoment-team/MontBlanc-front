@@ -68,7 +68,7 @@ const LeaveCommentsPage: React.FC = () => {
             <br /> 불편함은 무엇일까요?
           </span>
           <S.LinkWrapper>
-            <span>Top 10 보러가기</span>
+            <span>Top 30 보러가기</span>
             <I.RightArrow />
           </S.LinkWrapper>
         </S.Top10Btn>
