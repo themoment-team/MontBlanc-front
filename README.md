@@ -1,24 +1,77 @@
-# The_Moment_Team
+## <img src="meterial/imgSource/the_moment_README_logo.png"  width="300px">
 
-The_Moment_Team은 학교가 불편한 순간을 쉽고 간편하게 코멘트 남길 수 있는 웹 서비스입니다.
+["학교가 불편한 순간"](https://github.com/theMomentTeam/the_moment-Service)은 학교가 더욱 더 개선되기 위해 학생들 관점에서 느끼는 불편한 순간을 기록하는 공간입니다.
 
-## 기능들
+> "the_moment" is a space that records the uncomfortable moments felt from the perspective of students in order to improve the school even more.
 
-### **학교가 불편한 순간**
+<br>
 
-- 학교가 불편한 순간에 대해 코멘트를 남길 수 있습니다.
-- 남이 남긴 코멘트에 좋아요를 달거나 취소할 수 있습니다.
+#### GET start
 
-### **Top10**
+```
+- git clone
+$ git clone https://github.com/theMomentTeam/the_moment_client.git
 
-- 학교가 불편한 순간 코멘트 중 인기순으로 Top 10을 볼 수 있습니다.
+- setting project
+$ yarn install
 
-### **실제개선사례**
+- start project
+$ yarn start
 
-- 학교가 불편한 순간 코멘트에 대한 실제개선사례를 작성하거나 볼 수 있습니다.
-- 관리자는 실제개선사례를 수정하거나 삭제할 수 있습니다.
+- build
+$ yarn build
+```
 
-### **답변 작성**
+#### Use Skill
 
-- 학교가 불편한 순간 코멘트에 관리자가 답변을 달 수 있습니다.
-- 답변을 수정하거나 삭제할 수 있습니다.
+```
+* project dependencies
+    - ESNext
+    - Type-script
+    - Axios
+    - Context API
+    - Recoil
+    - Styled-components
+
+* dev tools
+    - Visual Studio Code
+    - Prettier
+    - ESLint
+
+* deploy
+     - AWS S3
+     - AWS CloudFront
+     ------------------
+     - AWS amplify
+     - AWS Route 53
+
+* sdk
+     - Channel Talk SDK
+```
+
+#### Our Project License
+
+```
+MIT License
+
+Copyright (c) 2021 the_moment
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+```
