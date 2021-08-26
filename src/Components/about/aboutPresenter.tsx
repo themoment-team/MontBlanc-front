@@ -1,6 +1,6 @@
 import { PageExplanation } from "../PageExplanation";
 import * as S from "./styled";
-import { useHeading } from "./aboutContainer";
+import { useHeading } from "./AboutContainer";
 
 const AboutPage: React.FC = () => {
   const [heading, explanation] = useHeading();

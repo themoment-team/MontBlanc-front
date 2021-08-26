@@ -1,7 +1,7 @@
 import * as I from "../../../Asset/SVG";
 import * as S from "./styled";
 import { useModal } from "../../../Context/Modal";
-import { randomColorPicker } from "./improvmentItemContainer";
+import { randomColorPicker } from "./ImprovmentItemContainer";
 
 interface ImprovmentProps {
   header: string;
