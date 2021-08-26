@@ -28,8 +28,9 @@ const LeaveCommentsPage: React.FC = () => {
 
   const tryWriteTable = useWriteTable();
 
-  const checkLength = (e: any) => {
+  const textAreaOnchange = (e: any) => {
     setLength(e.target.value.length);
+    setContent(e.target.value);
   };
 
   return (
@@ -43,9 +44,8 @@ const LeaveCommentsPage: React.FC = () => {
         <S.Form>
           <textarea
             placeholder="자유롭게 의견을 남겨주세요."
-            onChange={({ target: { value } }) => setContent(value)}
+            onChange={textAreaOnchange}
             value={content}
-            onKeyDown={checkLength}
           />
           <S.Btn
             Length={length}
