@@ -1,4 +1,4 @@
-## <img src="meterial/imgSource/the_moment_README_logo.png"  width="300px">
+## <img src="https://github.com/themoment-team/the_moment_server/raw/master/meterial/imgSource/the_moment_README_logo.png"  width="300px">
 
 ["학교가 불편한 순간"](https://github.com/theMomentTeam/the_moment-Service)은 학교가 더욱 더 개선되기 위해 학생들 관점에서 느끼는 불편한 순간을 기록하는 공간입니다.
 
