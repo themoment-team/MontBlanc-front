@@ -1,9 +1,12 @@
-import { Top10Page, Header, Footer } from "../Components/index";
+import { Top10Page, Header, Footer, ChannelTalkHelmet } from "../Components/index";
 
 const Top10: React.FC = () => {
   return (
     <>
-      <Header /> <Top10Page /> <Footer />
+      <ChannelTalkHelmet />
+      <Header />
+      <Top10Page />
+      <Footer />
     </>
   );
 };

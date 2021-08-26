@@ -8,3 +8,4 @@ export { default as ImprovmentPage } from "./improvment/improvmentPresenter";
 export { default as AboutPage } from "./about/aboutPresenter";
 export { default as GoodBtn } from "./GoodBtn/GoodBtnPresenter";
 export { default as IssueBox } from "./IssueBox/IssueBoxPresenter";
+export { ChannelTalkHelmet } from  "./Helmet";
