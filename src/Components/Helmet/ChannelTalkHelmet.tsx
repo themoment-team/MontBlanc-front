@@ -42,7 +42,7 @@ const ChannelTalkHelmet: React.FC = () => {
                 }
                 })();
                 ChannelIO("boot", {
-                    pluginKey: "c884c281-6704-47ef-8572-8f8632975f00",
+                    pluginKey: "${process.env.REACT_APP_CHANNEL_TALK_KEY}",
                 });`}
             </script>
         </Helmet>
