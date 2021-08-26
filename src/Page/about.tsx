@@ -1,6 +1,6 @@
 import { Header, Footer, AboutPage, ChannelTalkHelmet } from "../Components";
 
-const about: React.FC = () => {
+const About: React.FC = () => {
   return (
     <>
       <ChannelTalkHelmet />
@@ -11,4 +11,4 @@ const about: React.FC = () => {
   );
 };
 
-export default about;
+export default About;
