@@ -1,0 +1,8 @@
+// netlify.toml
+[build]
+  command = "CI=yarn build"
+  publish = "build"
+
+[context.production.environment]
+  TOML_ENV_VAR = "From netlify.toml"
+  REACT_APP_CHANNEL_TALK_KEY = "From netlify.toml (REACT_APP_)"
