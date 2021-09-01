@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { useHistory } from "react-router-dom";
-import * as I from "../../Asset/SVG/index";
+import * as I from "../../Asset/Svg";
 import * as S from "./styles";
 import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
 import {

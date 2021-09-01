@@ -1,4 +1,4 @@
-import * as I from "../../Asset/SVG";
+import * as I from "../../Asset/Svg";
 import * as S from "./styled";
 import * as C from "./IssueBoxContainer";
 import React, { Fragment } from "react";

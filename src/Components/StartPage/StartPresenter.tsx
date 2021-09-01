@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import * as S from "./styled";
-import * as I from "../../Asset/SVG/index";
+import * as I from "../../Asset/Svg";
 import { useHistory } from "react-router-dom";
 import { useModal } from "../../Context/Modal";
 import { useRecoilState } from "recoil";

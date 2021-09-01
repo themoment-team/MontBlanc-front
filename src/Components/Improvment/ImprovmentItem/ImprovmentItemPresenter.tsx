@@ -1,4 +1,4 @@
-import * as I from "../../../Asset/SVG";
+import * as I from "../../../Asset/Svg";
 import * as S from "./styled";
 import { useModal } from "../../../Context/Modal";
 import { randomColorPicker } from "./ImprovmentItemContainer";

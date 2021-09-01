@@ -1,8 +1,7 @@
 import { ModalContainer } from "../../ModalContainer";
 import { ModalProps, useModal } from "../../../../Context/Modal";
 import * as S from "./style";
-import { EditBtn } from "../../../../Asset/SVG";
-import * as I from "../../../../Asset/SVG";
+import * as I from "../../../../Asset/Svg";
 import { HasAdminToken } from "Atom";
 import { useRecoilValue } from "recoil";
 import useGetModalValue from "./ViewModalContainer";
@@ -36,7 +35,7 @@ const ViewModalPresenter: React.FC<ModalProps> = ({
               )
             }
           >
-            <EditBtn />
+            <I.EditBtn />
           </S.ModalImg>
         )}
         <S.GridDivider>
