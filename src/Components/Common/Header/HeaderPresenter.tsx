@@ -1,5 +1,5 @@
 import * as S from "./styled";
-import * as I from "../../../Asset/Svg";
+import * as I from "Asset/Svg";
 import { Link } from "react-router-dom";
 import { useLogout } from "./HeaderContainer";
 import { useRecoilState } from "recoil";

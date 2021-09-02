@@ -1,5 +1,5 @@
 import * as S from "./styled";
-import * as I from "../../../Asset/Svg/index";
+import * as I from "Asset/Svg/index";
 
 const Footer: React.FC = () => {
   return (

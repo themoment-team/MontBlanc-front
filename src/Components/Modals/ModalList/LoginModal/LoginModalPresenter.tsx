@@ -1,7 +1,7 @@
 import { ModalContainer } from "../../ModalContainer";
 import { ModalProps } from "../../../../Context/Modal";
 import * as S from "./style";
-import { Logo } from "../../../../Asset/Svg";
+import { Logo } from "Asset/Svg";
 import { useLogin } from "./LoginModalContainer";
 
 export const LoginModalPresenter: React.FC<ModalProps> = ({ close }) => {

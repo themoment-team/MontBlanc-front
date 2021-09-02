@@ -1,7 +1,7 @@
 import { ModalContainer } from "../../ModalContainer";
 import { ModalProps } from "../../../../Context/Modal";
 import * as S from "./style";
-import { CancleBtn } from "../../../../Asset/Svg";
+import { CancleBtn } from "Asset/Svg";
 import { useStateDistinction } from "./EditModalContainer";
 import useGetModalValue from "../ViewModal/ViewModalContainer";
 

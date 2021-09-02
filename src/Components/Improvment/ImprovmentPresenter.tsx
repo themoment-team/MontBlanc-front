@@ -4,7 +4,7 @@ import ImprovmentItemPresenter from "./ImprovmentItem/ImprovmentItemPresenter";
 import { useState, useEffect } from "react";
 import { improvement, list } from "./ImprovmentContainer";
 import * as S from "./styled";
-import * as I from "../../Asset/Svg";
+import * as I from "Asset/Svg";
 import * as C from "./ImprovmentContainer";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";

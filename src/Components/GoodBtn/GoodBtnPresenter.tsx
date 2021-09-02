@@ -1,4 +1,4 @@
-import * as I from "../../Asset/Svg";
+import * as I from "Asset/Svg";
 import * as S from "./styled";
 import useLikeCheck from "./GoodBtnContainer";
 

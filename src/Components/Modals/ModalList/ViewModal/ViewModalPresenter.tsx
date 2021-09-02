@@ -1,7 +1,7 @@
 import { ModalContainer } from "../../ModalContainer";
 import { ModalProps, useModal } from "../../../../Context/Modal";
 import * as S from "./style";
-import * as I from "../../../../Asset/Svg";
+import * as I from "Asset/Svg";
 import { HasAdminToken } from "Atom";
 import { useRecoilValue } from "recoil";
 import useGetModalValue from "./ViewModalContainer";
