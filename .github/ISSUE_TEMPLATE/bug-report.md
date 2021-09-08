@@ -7,4 +7,4 @@ assignees: sunwoo0706, iseolin76, ImChangGyu, Songsihyeon, hyeongrok7874
 ---
 
 ## the-moment에서 이런 문제가 발생했어요!
-> 발생한 문제에 대해서 screen샷과 함께 자세히 설명해주세요
+> 발생한 문제에 대해서 참고자료와 함께 자세히 설명해주세요
