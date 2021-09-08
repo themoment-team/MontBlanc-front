@@ -4,7 +4,6 @@ about: Feature에서 생긴 오류를 남겨주세요!
 title: ''
 labels: ''
 assignees: sunwoo0706, iseolin76, ImChangGyu, Songsihyeon, hyeongrok7874
-
 ---
 
 ## Issue 내용
