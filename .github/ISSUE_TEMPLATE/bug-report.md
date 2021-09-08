@@ -4,7 +4,6 @@ about: the-moment에서 발생한 문제를 남겨주세요
 title: ''
 labels: bug
 assignees: sunwoo0706, iseolin76, ImChangGyu, Songsihyeon, hyeongrok7874
-
 ---
 
 ## the-moment에서 이런 문제가 발생했어요!
