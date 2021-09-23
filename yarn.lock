@@ -12575,6 +12575,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"react-is@npm:^17.0.2":
+  version: 17.0.2
+  resolution: "react-is@npm:17.0.2"
+  checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
+  languageName: node
+  linkType: hard
+
 "react-refresh@npm:^0.8.3":
   version: 0.8.3
   resolution: "react-refresh@npm:0.8.3"
@@ -14671,6 +14678,7 @@ fsevents@^1.2.7:
     react: ^17.0.1
     react-dom: ^17.0.1
     react-helmet: ^6.1.0
+    react-is: ^17.0.2
     react-router: ^5.2.1
     react-router-dom: ^5.2.0
     react-scripts: 4.0.3

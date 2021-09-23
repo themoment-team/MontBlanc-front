@@ -59,6 +59,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:17.0.2"],
             ["react-helmet", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:6.1.0"],
+            ["react-is", "npm:17.0.2"],
             ["react-router", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:5.2.1"],
             ["react-router-dom", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:5.2.0"],
             ["react-scripts", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:4.0.3"],
@@ -15794,6 +15795,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-is", "npm:17.0.1"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:17.0.2", {
+          "packageLocation": "./.yarn/cache/react-is-npm-17.0.2-091bbb8db6-9d6d111d89.zip/node_modules/react-is/",
+          "packageDependencies": [
+            ["react-is", "npm:17.0.2"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["react-refresh", [
@@ -17884,7 +17892,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["hoist-non-react-statics", "npm:3.3.2"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:17.0.2"],
-            ["react-is", null],
+            ["react-is", "npm:17.0.2"],
             ["shallowequal", "npm:1.1.0"],
             ["supports-color", "npm:5.5.0"]
           ],
@@ -18211,6 +18219,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:17.0.2"],
             ["react-helmet", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:6.1.0"],
+            ["react-is", "npm:17.0.2"],
             ["react-router", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:5.2.1"],
             ["react-router-dom", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:5.2.0"],
             ["react-scripts", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:4.0.3"],
