@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <b>
             Production:
           </b>
-          Seorin Lee, Sunwoo Lee, Ji-hwan Jeon, Siwon Jeong, Yewon Jin
+          Seorin Lee, Sunwoo Lee, Sihyeon Song, ChangGyu Im, Ji-hwan Jeon, Siwon Jeong, Yewon Jin
         </S.LineText>
         <S.LineText>
           <b>
