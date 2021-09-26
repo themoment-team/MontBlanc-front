@@ -24,12 +24,20 @@ const Header: React.FC = () => {
 
   return (
     <S.Header>
-      <Link to={Config.LINK.COMMENT}>
-        <S.Logo>
-          <I.Logo />
-        </S.Logo>
-        <span>학교가 불편한 순간</span>
-      </Link>
+      <S.HeaderContainer>
+        <Link to={Config.LINK.COMMENT}>
+          <S.Logo>
+            <I.Logo />
+          </S.Logo>
+          <span>학교가 불편한 순간</span>
+        </Link>
+        <S.BarWrapper>
+          <FontAwesomeIcon
+            icon={bars ? faBars : faChevronUp}
+            onClick={() => setBars(!bars)}
+          />
+        </S.BarWrapper>
+      </S.HeaderContainer>
       {!logged ? (
         <S.HeaderNav active={bars}>
           <Link to={Config.LINK.COMMENT}>의견 남기기</Link>
@@ -41,21 +49,15 @@ const Header: React.FC = () => {
         <S.HeaderNav active={bars}>
           <Link to={Config.LINK.RANK}>답변달기</Link>
           <Link to={Config.LINK.IMPROVMENT}>실제 개선 사례 작성</Link>
-          <button
+          <S.NavButton
             onClick={() => {
               tryLogout();
             }}
           >
             로그아웃
-          </button>
+          </S.NavButton>
         </S.HeaderNav>
       )}
-      <S.BarWrapper>
-        <FontAwesomeIcon
-          icon={bars ? faBars : faChevronUp}
-          onClick={() => setBars(!bars)}
-        />
-      </S.BarWrapper>
     </S.Header>
   );
 };
