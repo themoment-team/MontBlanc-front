@@ -92,15 +92,16 @@ export const HeaderContainer = styled.div`
   & > a {
     display: flex;
     align-items: center;
-    & > span {
-      @media screen and (max-width: 1600px) {
-        display: none;
-      }
-      align-items: center;
-      color: #434c9c;
-      font-weight: 600;
-      font-size: 22px;
-      margin: 21px;
-    }
   }
+`;
+
+export const Title = styled.span`
+  @media screen and (max-width: 1600px) {
+    display: none;
+  }
+  align-items: center;
+  color: #434c9c;
+  font-weight: 600;
+  font-size: 22px;
+  margin: 21px;
 `;

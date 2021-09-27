@@ -29,7 +29,7 @@ const Header: React.FC = () => {
           <S.Logo>
             <I.Logo />
           </S.Logo>
-          <span>학교가 불편한 순간</span>
+          <S.Title>학교가 불편한 순간</S.Title>
         </Link>
         <S.BarWrapper>
           <FontAwesomeIcon
