@@ -45,10 +45,10 @@ export const TableController = {
     return `/uncomfortable`;
   },
   AddGoods: (boardIdx: number) => {
-    return `/uncomfortable/like/increase${boardIdx}`;
+    return `/uncomfortable/like/increase/${boardIdx}`;
   },
   cancelGoods: (boardIdx: number) => {
-    return `/uncomfortable/like/decrease${boardIdx}`;
+    return `/uncomfortable/like/decrease/${boardIdx}`;
   },
   amountUncomfortable: () => {
     return `/uncomfortable/amount`;
