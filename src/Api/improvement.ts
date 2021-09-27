@@ -1,5 +1,5 @@
-import RequestApi from "Utils/Libs/requestApi";
-import { ImprovementController } from "Utils/Libs/requestUrls";
+import RequestApi from 'Utils/Libs/requestApi';
+import { ImprovementController } from 'Utils/Libs/requestUrls';
 
 class Improvement {
   UpdateImprovement(
@@ -9,12 +9,12 @@ class Improvement {
   ) {
     try {
       const data = {
-        improveContent,
-        improveHeader,
+        content: improveContent,
+        title: improveHeader,
       };
       return RequestApi(
         {
-          method: "PUT",
+          method: 'PUT',
           url: ImprovementController.detailSolved(improveIdx),
           data: data,
         },
@@ -29,7 +29,7 @@ class Improvement {
     try {
       return RequestApi(
         {
-          method: "DELETE",
+          method: 'DELETE',
           url: ImprovementController.detailSolved(improveIdx),
         },
         { hasToken: true }
@@ -52,12 +52,12 @@ class Improvement {
   saveImprovment(improveContent: string, improveHeader: string) {
     try {
       const data = {
-        improveContent,
-        improveHeader,
+        content: improveContent,
+        title: improveHeader,
       };
       return RequestApi(
         {
-          method: "POST",
+          method: 'POST',
           url: ImprovementController.detail2Solved(),
           data: data,
         },

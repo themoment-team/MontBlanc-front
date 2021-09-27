@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { PageExplanation } from "../PageExplanation";
 import { useHistory } from "react-router-dom";
 import ImprovmentItemPresenter from "./ImprovmentItem/ImprovmentItemPresenter";
@@ -10,6 +11,20 @@ import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
 import Config from "Constants/Config.json";
 import { EditModal } from "Components/Modals";
+=======
+import { PageExplanation } from '../PageExplanation';
+import { useHistory } from 'react-router-dom';
+import ImprovmentItemPresenter from './ImprovmentItem/ImprovmentItemPresenter';
+import { useState, useEffect } from 'react';
+import { improvement, list } from './ImprovmentContainer';
+import * as S from './styled';
+import * as I from '../../Asset/SVG';
+import * as C from './ImprovmentContainer';
+import { useRecoilValue } from 'recoil';
+import { HasAdminToken } from 'Atom';
+import { useModal } from 'Context/Modal';
+import Config from 'Constants/Config.json';
+>>>>>>> 433b1cfad92806558a7bcca753310e07f891c9b0
 
 const ImprovmentPage: React.FC = () => {
   const [list, setList] = useState<list[]>([]);
@@ -58,8 +73,8 @@ const ImprovmentPage: React.FC = () => {
         )}
         {list.map((improvement: list, index) => (
           <ImprovmentItemPresenter
-            header={improvement.improveHeader}
-            content={improvement.improveContent}
+            header={improvement.title}
+            content={improvement.content}
             idx={improvement.improveIdx}
             key={index}
           />
