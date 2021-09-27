@@ -7,7 +7,7 @@ export const AdminController = {
     return `/logout`;
   },
   signup: () => {
-    return `/signup`;
+    return `/join`;
   },
   //회원탈퇴
   withdrawal: () => {
@@ -19,17 +19,17 @@ export const AdminController = {
 export const AnswerController = {
   //put 답변수정, delete 답변삭제, post 답변작성
   detailAnswer: (answerIdx: number) => {
-    return `/top10/answer/${answerIdx}`;
+    return `/rank/answer/${answerIdx}`;
   },
 };
 
 //실제개선사례
 export const ImprovementController = {
-  //get 개선사례보기, post 개선사례작성
+  //put 개선사례수정, delete 개선사례삭제
   detailSolved: (improveIdx: number) => {
     return `/solved/${improveIdx}`;
   },
-  //put 개선사례수정, delete 개선사례삭제
+  //get 개선사례보기, post 개선사례작성
   detail2Solved: () => {
     return `/solved`;
   },
@@ -38,17 +38,17 @@ export const ImprovementController = {
 //게시글
 export const TableController = {
   viewTop10Uncomfortable: () => {
-    return `/uncomfortable/top30`;
+    return `/uncomfortable/rank`;
   },
   //post 게시글 작성, get 게시글 보기
   detailUncomfortable: () => {
     return `/uncomfortable`;
   },
   AddGoods: (boardIdx: number) => {
-    return `/uncomfortable/${boardIdx}`;
+    return `/uncomfortable/like/increase/${boardIdx}`;
   },
   cancelGoods: (boardIdx: number) => {
-    return `/uncomfortable/cancel/${boardIdx}`;
+    return `/uncomfortable/like/decrease/${boardIdx}`;
   },
   amountUncomfortable: () => {
     return `/uncomfortable/amount`;
