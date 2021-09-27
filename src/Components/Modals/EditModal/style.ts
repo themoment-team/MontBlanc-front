@@ -84,3 +84,27 @@ export const DeleteBtn = styled.button`
   font-size: 18px;
   font-weight: 600;
 `;
+
+export const AboutBtn = styled.button`
+  color: white;
+  background-color: #92929235;
+  width: 10em;
+`;
+
+export const Btn = styled.button`
+  display: flex;
+  width: 324px;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 19px 23px;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: #434c9c;
+  @media ${device.mobile} {
+    width: 100%;
+  }
+  svg {
+    padding-left: 5px;
+  }
+`;

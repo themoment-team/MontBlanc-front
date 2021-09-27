@@ -1,6 +1,7 @@
 import admin from "Api/admin";
 import { HasAdminToken } from "Atom";
 import { useState } from "react";
+import { Styles } from "react-modal";
 import { useSetRecoilState } from "recoil";
 
 export const useLogin = (close: () => void) => {
@@ -27,4 +28,16 @@ export const useLogin = (close: () => void) => {
   };
 
   return [setId, setPass, TryLogin];
+};
+
+export const customStyles: Styles = {
+  content: {
+    width: "620px",
+    height: "630px",
+  },
+  overlay: {
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
+  },
 };
