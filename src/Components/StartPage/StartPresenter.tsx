@@ -2,13 +2,12 @@ import { useEffect } from "react";
 import * as S from "./styled";
 import * as I from "../../Asset/SVG/index";
 import { useHistory } from "react-router-dom";
-import { useModal } from "../../Context/Modal";
 import { useRecoilState } from "recoil";
 import { HasAdminToken } from "../../Atom";
 import Config from "Constants/Config.json";
+import LoginModalPresenter from "Components/Modals/LoginModal/LoginModalPresenter";
 
 const StartPage: React.FC = () => {
-  const modal = useModal();
   const history = useHistory();
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
 
@@ -49,8 +48,10 @@ const StartPage: React.FC = () => {
             </>
           ) : (
             <>
-              <button onClick={() => history.push(Config.LINK.COMMENT)}>Student</button>
-              <button onClick={() => modal.open("LoginModal", 1)}>Admin</button>
+              <button onClick={() => history.push(Config.LINK.COMMENT)}>
+                Student
+              </button>
+              <LoginModalPresenter />
             </>
           )}
         </S.ButtonBox>

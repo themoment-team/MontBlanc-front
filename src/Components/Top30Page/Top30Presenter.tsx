@@ -12,12 +12,11 @@ import {
 } from "./Top30Container";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
-import { useModal } from "Context/Modal";
 import Config from "Constants/Config.json";
+import { EditModal, ViewModal } from "Components/Modals";
 
 const Top10Page = () => {
   const list = useTop10();
-  const modal = useModal();
   const logged = useRecoilValue(HasAdminToken);
   const history = useHistory();
 
@@ -44,30 +43,21 @@ const Top10Page = () => {
               <article>{top10.content.replace(/^\s+|\s+$/gm, "")}</article>
             </span>
             <span>
-              <button
-                onClick={() =>
-                  top10.answer
-                    ? modal.open(
-                        "ViewModal",
-                        top10.boardIdx,
-                        "answer",
-                        "답변보기"
-                      )
-                    : logged &&
-                      modal.open(
-                        "EditModal",
-                        top10.boardIdx,
-                        "answer",
-                        "답변달기",
-                        "",
-                        "",
-                        top10.content.replace(/^\s+|\s+$/gm, "") +
-                          " 불편함 답변"
-                      )
-                }
-              >
-                {top10.answer ? "답변보기" : logged ? "답변달기" : "답변없음"}
-              </button>
+              {top10.answer ? (
+                <ViewModal idx={top10.boardIdx} buttonContent={"답변보기"} />
+              ) : logged ? (
+                <EditModal
+                  idx={top10.boardIdx}
+                  state={"answer"}
+                  buttonContent={"답변달기"}
+                  heading={"답변달기"}
+                  title={
+                    top10.content.replace(/^\s+|\s+$/gm, "") + "불편함 답변"
+                  }
+                />
+              ) : (
+                <button>답변없음</button>
+              )}
               <GoodBtn
                 Background={false}
                 Goods={top10.goods}
