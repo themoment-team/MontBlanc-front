@@ -22,7 +22,7 @@ export const useLogin = (close: () => void) => {
     } catch (e) {
       const message = (e.message = "Error: Request failed with status code 404"
         ? "올바르지 않은 아이디 또는 비밀번호입니다."
-        : "로그인 에러가 발생하였습니다. 개발팀에 문의해주세요.");
+        : "로그인 에러가 발생하였습니다. 개발팀에 문의해주세요. " + e);
       alert(message);
     }
   };
