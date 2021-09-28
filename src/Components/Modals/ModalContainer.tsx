@@ -1,44 +1,15 @@
-import React, { useEffect } from "react";
-import * as S from "./style";
-import { ModalProps } from "../../Context/Modal";
+const ModalContainer = (
+  setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+) => {
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
 
-interface ModalContainerProps extends ModalProps {
-  width: number;
-  height: number;
-}
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
-export const ModalContainer: React.FC<ModalContainerProps> = ({
-  children,
-  close,
-  width,
-  height,
-}) => {
-  useEffect(() => {
-    const closeModal = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        close();
-      }
-    };
-
-    window.addEventListener("keydown", closeModal);
-
-    return () => {
-      window.removeEventListener("keydown", closeModal);
-    };
-  }, [close]);
-
-  return (
-    <>
-      <S.Container
-        onTouchMove={(e) => e.stopPropagation()}
-        onClick={(e) => {
-          e.stopPropagation();
-          close();
-        }}
-      ></S.Container>
-      <S.Inner width={width} height={height}>
-        {children}
-      </S.Inner>
-    </>
-  );
+  return [openModal, closeModal];
 };
+
+export default ModalContainer;

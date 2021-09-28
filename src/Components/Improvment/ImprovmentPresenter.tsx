@@ -1,19 +1,18 @@
-import { PageExplanation } from '../PageExplanation';
-import { useHistory } from 'react-router-dom';
-import ImprovmentItemPresenter from './ImprovmentItem/ImprovmentItemPresenter';
-import { useState, useEffect } from 'react';
-import { improvement, list } from './ImprovmentContainer';
-import * as S from './styled';
-import * as I from '../../Asset/SVG';
-import * as C from './ImprovmentContainer';
-import { useRecoilValue } from 'recoil';
-import { HasAdminToken } from 'Atom';
-import { useModal } from 'Context/Modal';
-import Config from 'Constants/Config.json';
+import { PageExplanation } from "../PageExplanation";
+import { useHistory } from "react-router-dom";
+import ImprovmentItemPresenter from "./ImprovmentItem/ImprovmentItemPresenter";
+import { useState, useEffect } from "react";
+import { improvement, list } from "./ImprovmentContainer";
+import * as S from "./styled";
+import * as I from "../../Asset/SVG";
+import * as C from "./ImprovmentContainer";
+import { useRecoilValue } from "recoil";
+import { HasAdminToken } from "Atom";
+import Config from "Constants/Config.json";
+import { EditModal } from "Components/Modals";
 
 const ImprovmentPage: React.FC = () => {
   const [list, setList] = useState<list[]>([]);
-  const modal = useModal();
   const logged = useRecoilValue(HasAdminToken);
   const history = useHistory();
 
@@ -29,10 +28,13 @@ const ImprovmentPage: React.FC = () => {
           explanation={C.explanation}
         />
         {logged ? (
-          <S.Btn
-            onClick={() => modal.open('EditModal', 1, 'improvment', '작성하기')}
-          >
-            실제 개선 사례 작성하기
+          <S.Btn>
+            <EditModal
+              idx={1}
+              state="improvment"
+              heading="작성하기"
+              ButtonContent={"실제 개선 사례 작성하기"}
+            />
             <span>
               <I.RightArrow />
             </span>

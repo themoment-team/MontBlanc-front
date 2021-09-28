@@ -1,6 +1,7 @@
 import Answer from "Api/answer";
 import Improvement from "Api/improvement";
 import { useState } from "react";
+import { Styles } from "react-modal";
 
 export interface list {
   boardIdx: number;
@@ -23,8 +24,7 @@ export const useStateDistinction = (idx: number, state: string) => {
     TrySave = saveImprovement(content, heading);
     TryDelete = deleteImprovement(idx);
   } else {
-    console.log("error: 알맞지 않은 state");
-    alert("예상치 못한 에러입니다. 개발자측에 문의해주세요.");
+    alert("예상치 못한 에러입니다. 개발자측에 문의해주세요. state: " + state);
   }
 
   return [setContent, setHeading, TryUpdate, TrySave, TryDelete];
@@ -91,4 +91,11 @@ const deleteAnswer = (idx: number) => {
   };
 
   return TryDelete;
+};
+
+export const customStyle: Styles = {
+  content: {
+    width: "1000px",
+    height: "600px",
+  },
 };

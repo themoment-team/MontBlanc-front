@@ -17,6 +17,17 @@ export const H1 = styled.h1`
   margin-bottom: 30px;
 `;
 
+export const ModalHeader = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+  button {
+    position: absolute;
+    top: -20px;
+    right: 0;
+  }
+`;
+
 export const Text = styled.span`
   color: #8f8f8f;
   font-size: 18px;
