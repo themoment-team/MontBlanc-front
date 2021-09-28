@@ -1,1 +1,1 @@
-export { HasAdminToken, OpenedModal } from "./AtomContainer";
+export { HasAdminToken } from "./AtomContainer";

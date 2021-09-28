@@ -1,7 +1,7 @@
 import * as I from "../../../Asset/SVG";
 import * as S from "./styled";
-import { useModal } from "../../../Context/Modal";
 import { randomColorPicker } from "./ImprovmentItemContainer";
+import { ViewModal } from "Components/Modals";
 
 interface ImprovmentProps {
   header: string;
@@ -13,7 +13,6 @@ interface ImprovmentProps {
 const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
   p: ImprovmentProps
 ) => {
-  const modal = useModal();
   const randomColor = randomColorPicker();
 
   return (
@@ -22,12 +21,13 @@ const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
         <I.DoubleQuotes />
         <S.ImprovmentContent>
           <S.ImprovmentHeading>{p.header}</S.ImprovmentHeading>
-          <S.AboutBtn
-            onClick={() =>
-              modal.open("ViewModal", p.idx, "improvment", "작성하기", p.key)
-            }
-          >
-            자세히 보기
+          <S.AboutBtn>
+            <ViewModal
+              idx={p.idx}
+              state={"improvment"}
+              key={p.key}
+              buttonContent={"자세히 보기"}
+            />
           </S.AboutBtn>
         </S.ImprovmentContent>
         <S.ImprovmentImg>
