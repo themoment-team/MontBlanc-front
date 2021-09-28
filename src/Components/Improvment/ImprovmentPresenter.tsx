@@ -28,16 +28,17 @@ const ImprovmentPage: React.FC = () => {
           explanation={C.explanation}
         />
         {logged ? (
-          <EditModal
-            idx={1}
-            state="imporvment"
-            heading="작성하기"
-            buttonContent={"실제 개선 사례 작성하기"}
-          >
+          <S.Btn>
+            <EditModal
+              idx={1}
+              state="improvment"
+              heading="작성하기"
+              ButtonContent={"실제 개선 사례 작성하기"}
+            />
             <span>
               <I.RightArrow />
             </span>
-          </EditModal>
+          </S.Btn>
         ) : (
           <S.Btn onClick={() => history.push(Config.LINK.COMMENT)}>
             학교가 불편한 순간을

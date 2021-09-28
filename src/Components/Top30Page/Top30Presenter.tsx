@@ -44,12 +44,16 @@ const Top10Page = () => {
             </span>
             <span>
               {top10.answer ? (
-                <ViewModal idx={top10.boardIdx} buttonContent={"답변보기"} />
+                <ViewModal
+                  idx={top10.boardIdx}
+                  state={"answer"}
+                  buttonContent={"답변보기"}
+                />
               ) : logged ? (
                 <EditModal
                   idx={top10.boardIdx}
                   state={"answer"}
-                  buttonContent={"답변달기"}
+                  ButtonContent={"답변달기"}
                   heading={"답변달기"}
                   title={
                     top10.content.replace(/^\s+|\s+$/gm, "") + "불편함 답변"
