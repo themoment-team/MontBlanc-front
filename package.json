@@ -20,10 +20,13 @@
     "axios": "^0.21.1",
     "body-scroll-lock": "^3.1.5",
     "dotenv": "^10.0.0",
+    "eslint-config-react-app": "^6.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-is": "^17.0.2",
     "react-modal": "^3.14.3",
+    "react-router": "^5.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "recoil": "^0.3.1",
@@ -33,18 +36,10 @@
     "yarn": "^1.22.10"
   },
   "scripts": {
-    "start": "export PORT=8080 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "aws s3 sync ./build s3://deploy-themoment-client --profile=themoment-client-deploy",
-    "invalidate": "aws cloudfront create-invalidation --profile=themoment-client-deploy --distribution-id E384NV96VK2S09 --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [
