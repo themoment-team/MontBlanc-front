@@ -91,6 +91,13 @@ export const AboutBtn = styled.button`
   width: 10em;
 `;
 
+export const EditBtn = styled.button`
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  padding: 0px;
+`;
+
 export const Btn = styled.button`
   display: flex;
   width: 324px;
