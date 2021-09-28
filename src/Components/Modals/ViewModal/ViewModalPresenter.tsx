@@ -1,5 +1,4 @@
 import * as S from "./style";
-import { EditBtn } from "../../../Asset/SVG";
 import * as I from "../../../Asset/SVG";
 import { HasAdminToken } from "Atom";
 import { useRecoilValue } from "recoil";
@@ -11,7 +10,7 @@ import ReactModal from "react-modal";
 
 const ViewModalPresenter: React.FC<{
   idx: number;
-  state?: string;
+  state: string;
   key?: number;
   buttonContent: string;
 }> = ({ idx, state, key, buttonContent }) => {
@@ -31,20 +30,19 @@ const ViewModalPresenter: React.FC<{
         contentLabel="Modal"
       >
         <S.ModalWrapper>
-          <S.H1>{title}</S.H1>
-          {logged && (
-            <EditModal
-              idx={idx}
-              state={state ?? ""}
-              heading={"수정하기"}
-              content={content}
-              title={title}
-            >
-              <S.ModalImg onClick={openModal}>
-                <EditBtn />
-              </S.ModalImg>
-            </EditModal>
-          )}
+          <S.ModalHeader>
+            <S.H1>{title}</S.H1>
+            {logged && (
+              <EditModal
+                idx={idx}
+                state={state ?? ""}
+                heading={"수정하기"}
+                content={content}
+                title={title}
+                isComponents={true}
+              />
+            )}
+          </S.ModalHeader>
           <S.GridDivider>
             <S.Text>
               {content?.split("\n").map((content: string) => {

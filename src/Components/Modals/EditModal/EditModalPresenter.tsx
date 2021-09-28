@@ -2,8 +2,9 @@ import Modal from "react-modal";
 import ModalContainer from "../ModalContainer";
 import * as S from "./style";
 import { CancleBtn } from "../../../Asset/SVG";
-import { useStateDistinction } from "./EditModalContainer";
+import { useStateDistinction, customStyle } from "./EditModalContainer";
 import { useState } from "react";
+import { EditBtn } from "../../../Asset/SVG";
 
 interface ModalProps {
   idx: number;
@@ -11,7 +12,8 @@ interface ModalProps {
   heading: string;
   content?: string;
   title?: string;
-  buttonContent?: string;
+  ButtonContent?: string;
+  isComponents?: boolean;
 }
 
 const EditModal: React.FC<ModalProps> = ({
@@ -20,7 +22,8 @@ const EditModal: React.FC<ModalProps> = ({
   heading,
   content,
   title,
-  buttonContent,
+  ButtonContent,
+  isComponents,
 }) => {
   const [setContent, setHeading, TryUpdate, TrySave, TryDelete] =
     useStateDistinction(idx || 0, state || "");
@@ -30,11 +33,18 @@ const EditModal: React.FC<ModalProps> = ({
 
   return (
     <>
-      <S.AboutBtn onClick={openModal}>{buttonContent}</S.AboutBtn>
+      {isComponents ? (
+        <S.EditBtn onClick={openModal}>
+          <EditBtn />
+        </S.EditBtn>
+      ) : (
+        <S.AboutBtn onClick={openModal}>{ButtonContent}</S.AboutBtn>
+      )}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Modal"
+        style={customStyle}
       >
         <S.ModalWrapper>
           <S.H1>{heading}</S.H1>
