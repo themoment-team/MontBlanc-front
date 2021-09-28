@@ -1,5 +1,5 @@
-import { AdminController } from 'Utils/Libs/requestUrls';
-import RequestApi from 'Utils/Libs/requestApi';
+import { AdminController } from "Utils/Libs/requestUrls";
+import RequestApi from "Utils/Libs/requestApi";
 
 class Admin {
   async login(id: string, pass: string) {
@@ -9,7 +9,7 @@ class Admin {
         password: pass,
       };
       return await RequestApi({
-        method: 'POST',
+        method: "POST",
         url: AdminController.login(),
         data: data,
       });
@@ -26,7 +26,7 @@ class Admin {
         pass,
       };
       return await RequestApi({
-        method: 'POST',
+        method: "POST",
         url: AdminController.signup(),
         data: data,
       });
@@ -39,7 +39,7 @@ class Admin {
     try {
       return await RequestApi(
         {
-          method: 'POST',
+          method: "POST",
           url: AdminController.logout(),
         },
         { hasToken: true }
@@ -57,7 +57,7 @@ class Admin {
       };
       return await RequestApi(
         {
-          method: 'POST',
+          method: "POST",
           url: AdminController.withdrawal(),
           data: data,
         },

@@ -26,7 +26,6 @@ export const useLogin = (close: () => void) => {
       alert(message);
     }
   };
-
   return [setId, setPass, TryLogin];
 };
 

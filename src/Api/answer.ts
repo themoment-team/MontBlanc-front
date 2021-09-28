@@ -29,13 +29,14 @@ class Answer {
 
   delete(answerIdx: number) {
     try {
-      return RequestApi({
-        method: "DELETE",
-        url: AnswerController.detailAnswer(answerIdx),
-      },
-      {
-        hasToken: true,
-      }
+      return RequestApi(
+        {
+          method: "DELETE",
+          url: AnswerController.detailAnswer(answerIdx),
+        },
+        {
+          hasToken: true,
+        }
       );
     } catch (e) {
       throw new Error(e);

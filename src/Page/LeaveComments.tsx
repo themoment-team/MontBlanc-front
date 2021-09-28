@@ -1,4 +1,8 @@
-import { Header, LeaveCommentsPage, ChannelTalkHelmet } from "../Components/index";
+import {
+  Header,
+  LeaveCommentsPage,
+  ChannelTalkHelmet,
+} from "../Components/index";
 
 const LeaveComments: React.FC = () => {
   return (

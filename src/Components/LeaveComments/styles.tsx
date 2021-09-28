@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import device from "Constants/reactive";
 
-interface submitBtn{
+interface submitBtn {
   Length: number;
 }
 
@@ -76,16 +76,15 @@ export const Btn = styled.button<submitBtn>`
   align-self: flex-end;
   justify-self: flex-end;
   color: #fff;
-  ${(props) => 
-    props.Length >= 8 ?
-    css`
-      background: rgba(67, 76, 156, 0.56);
-    ` :
-    css`
-      background: rgba(169, 176, 233, 0.56);
-      cursor: not-allowed;
-    `
-  };
+  ${(props) =>
+    props.Length >= 8
+      ? css`
+          background: rgba(67, 76, 156, 0.56);
+        `
+      : css`
+          background: rgba(169, 176, 233, 0.56);
+          cursor: not-allowed;
+        `};
   padding: 5px 20px;
   font-size: 14px;
   font-weight: 600;
