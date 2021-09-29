@@ -24,7 +24,7 @@ export const useViewTable = () => {
 export const useWriteTable = () => {
   const tryWriteTable = async (
     content: string,
-    setContent: React.Dispatch<React.SetStateAction<string>>
+    setContent: React.Dispatch<React.SetStateAction<string>>,
   ) => {
     setContent("");
     window.location.reload();

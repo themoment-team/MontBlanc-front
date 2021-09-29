@@ -42,7 +42,7 @@ class Admin {
           method: "POST",
           url: AdminController.logout(),
         },
-        { hasToken: true }
+        { hasToken: true },
       );
     } catch (e) {
       throw new Error(e);
@@ -61,7 +61,7 @@ class Admin {
           url: AdminController.withdrawal(),
           data: data,
         },
-        { hasToken: true }
+        { hasToken: true },
       );
     } catch (e) {
       throw new Error(e);

@@ -15,7 +15,7 @@ export const useLogin = (close: () => void) => {
       localStorage.setItem("themoment_token", res.data.data.accessToken);
       localStorage.setItem(
         "themoment_token_refresh",
-        res.data.data.refreshToken
+        res.data.data.refreshToken,
       );
       setLogged(true);
       close();

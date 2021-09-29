@@ -11,7 +11,7 @@ interface ImprovmentProps {
 }
 
 const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
-  p: ImprovmentProps
+  p: ImprovmentProps,
 ) => {
   const randomColor = randomColorPicker();
 

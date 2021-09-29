@@ -47,7 +47,7 @@ const GetImprovmentValue = (idx: number) => {
       const res = await improvement.viewImprovment();
 
       return await res.data.list.filter(
-        (data: { improveIdx: string }) => data.improveIdx === idxCopy
+        (data: { improveIdx: string }) => data.improveIdx === idxCopy,
       );
     } catch (e) {
       alert("에러가 발생하였습니다. 개발팀에 문의해주세요. " + e);

@@ -5,7 +5,7 @@ class Improvement {
   UpdateImprovement(
     improveIdx: number,
     improveContent: string,
-    improveHeader: string
+    improveHeader: string,
   ) {
     try {
       const data = {
@@ -18,7 +18,7 @@ class Improvement {
           url: ImprovementController.detailSolved(improveIdx),
           data: data,
         },
-        { hasToken: true }
+        { hasToken: true },
       );
     } catch (e) {
       throw new Error(e);
@@ -32,7 +32,7 @@ class Improvement {
           method: "DELETE",
           url: ImprovementController.detailSolved(improveIdx),
         },
-        { hasToken: true }
+        { hasToken: true },
       );
     } catch (e) {
       throw new Error(e);
@@ -63,7 +63,7 @@ class Improvement {
         },
         {
           hasToken: true,
-        }
+        },
       );
     } catch (e) {
       throw new Error(e);
