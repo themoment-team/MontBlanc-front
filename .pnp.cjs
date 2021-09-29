@@ -57,6 +57,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["body-scroll-lock", "npm:3.1.5"],
             ["dotenv", "npm:10.0.0"],
             ["eslint-config-react-app", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:6.0.0"],
+            ["prettier", "npm:2.4.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:17.0.2"],
             ["react-helmet", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:6.1.0"],
@@ -15308,6 +15309,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["prettier", [
+        ["npm:2.4.1", {
+          "packageLocation": "./.yarn/cache/prettier-npm-2.4.1-623aac91ee-cc6830588b.zip/node_modules/prettier/",
+          "packageDependencies": [
+            ["prettier", "npm:2.4.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["pretty-bytes", [
         ["npm:5.6.0", {
           "packageLocation": "./.yarn/cache/pretty-bytes-npm-5.6.0-0061079c9f-9c082500d1.zip/node_modules/pretty-bytes/",
@@ -18277,6 +18287,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["body-scroll-lock", "npm:3.1.5"],
             ["dotenv", "npm:10.0.0"],
             ["eslint-config-react-app", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:6.0.0"],
+            ["prettier", "npm:2.4.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:17.0.2"],
             ["react-helmet", "virtual:d9b1fb245e5d9098b2796e164d3880d2c663beb3be796fd7439aea693176e5de8a30c0d9ff630b2b6e1dcc3a6f9ab0b8af14b5ce5f2bb2e2a531f21ac5e0c80c#npm:6.1.0"],

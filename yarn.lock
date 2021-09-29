@@ -12190,6 +12190,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"prettier@npm:2.4.1":
+  version: 2.4.1
+  resolution: "prettier@npm:2.4.1"
+  bin:
+    prettier: bin-prettier.js
+  checksum: cc6830588b401b0d742862fe9c46bc9118204fb307c3abe0e49e95b35ed23629573807ffdf9cdd65289c252a0bb51fc0171437f6626ee36378dea80f0ee80b91
+  languageName: node
+  linkType: hard
+
 "pretty-bytes@npm:^5.3.0":
   version: 5.6.0
   resolution: "pretty-bytes@npm:5.6.0"
@@ -14714,6 +14723,7 @@ fsevents@^1.2.7:
     body-scroll-lock: ^3.1.5
     dotenv: ^10.0.0
     eslint-config-react-app: ^6.0.0
+    prettier: 2.4.1
     react: ^17.0.1
     react-dom: ^17.0.1
     react-helmet: ^6.1.0

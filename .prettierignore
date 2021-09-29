@@ -5,4 +5,8 @@
 /node_modules
 
 # Plug N Play
-*/.pnp.cjs
+.pnp.cjs
+
+# Ignore artifacts:
+build
+coverage
