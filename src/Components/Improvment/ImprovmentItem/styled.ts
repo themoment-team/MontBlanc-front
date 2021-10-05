@@ -49,10 +49,12 @@ export const ImprovmentHeading = styled.h2`
   color: white;
 `;
 
-export const AboutBtn = styled.button`
-  color: white;
-  background-color: #92929235;
-  width: 10em;
+export const AboutBtn = styled.div`
+  & > button {
+    color: white;
+    background-color: #92929235;
+    width: 10em;
+  }
 `;
 
 export const ImprovmentImg = styled.div`

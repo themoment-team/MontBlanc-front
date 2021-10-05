@@ -3,6 +3,32 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import * as P from "./Page/index";
 import Config from "Constants/Config.json";
 import GlobalStyle from "./Constants/Styles/GlobalStyles";
+import reactModal from "react-modal";
+
+reactModal.setAppElement("#root");
+
+reactModal.defaultStyles = {
+  overlay: {
+    zIndex: 3,
+    position: "fixed",
+    inset: "0px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(54, 54, 54, 0.4)",
+  },
+  content: {
+    zIndex: 3,
+    inset: "40px",
+    overflow: "hidden",
+    borderRadius: "15px",
+    outline: "none",
+    flexDirection: "column",
+    background: "#FFFFFF",
+    border: "none",
+    boxSizing: "border-box",
+  },
+};
 
 const App: React.FC = () => (
   <BrowserRouter>

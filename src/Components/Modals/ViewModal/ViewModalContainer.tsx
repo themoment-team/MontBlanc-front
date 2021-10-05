@@ -21,8 +21,7 @@ const GetAnswerValue = (idx: number) => {
       const res = await answer.getAnswer(idx);
       return res.data;
     } catch (e) {
-      alert("에러가 발생하였습니다. 개발팀에 문의해주세요.");
-      console.log(e);
+      alert("에러가 발생하였습니다. 개발팀에 문의해주세요. " + e);
     }
   };
 
@@ -30,7 +29,7 @@ const GetAnswerValue = (idx: number) => {
     tryGet().then((res) => {
       setIdx(res.data.answerIdx);
       setTitle(res.data.title);
-      setContent(res.data.answerContent);
+      setContent(res.data.content);
     });
   }, []);
 
@@ -51,16 +50,15 @@ const GetImprovmentValue = (idx: number) => {
         (data: { improveIdx: string }) => data.improveIdx === idxCopy
       );
     } catch (e) {
-      alert("에러가 발생하였습니다. 개발팀에 문의해주세요.");
-      console.log(e);
+      alert("에러가 발생하였습니다. 개발팀에 문의해주세요. " + e);
     }
   };
 
   useEffect(() => {
     tryGet().then((res) => {
       setIdx(res[0].improveIdx);
-      setImproveHeader(res[0].improveHeader);
-      setImproveContent(res[0].improveContent);
+      setImproveHeader(res[0].title);
+      setImproveContent(res[0].content);
     });
   }, []);
 
