@@ -1,30 +1,31 @@
-import React, { useMemo } from "react";
-import { useHistory } from "react-router-dom";
-import * as I from "../../Asset/SVG/index";
-import * as S from "./styles";
-import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
+import React, { useMemo } from 'react';
+import { useHistory } from 'react-router-dom';
+import * as I from '../../Asset/SVG/index';
+import * as S from './styles';
+import IssueBoxPresenter from '../IssueBox/IssueBoxPresenter';
 import {
   useViewTable,
   useWriteTable,
   useShuffle,
   list,
-} from "./LeaveCommentContainer";
-import { useState } from "react";
-import Config from "Constants/Config.json";
+} from './LeaveCommentContainer';
+import { useState } from 'react';
+import Config from 'Constants/Config.json';
 
 const LeaveCommentsPage: React.FC = () => {
   const list = useViewTable();
   const history = useHistory();
   const shuffle = useShuffle();
 
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState('');
   const [length, setLength] = useState(0);
 
   const provList = useMemo(() => shuffle(list), [list]);
 
-  const list3 = provList.slice(0, list.length * (1 / 3));
-  const list2 = provList.slice(list.length * (1 / 3), list.length * (2 / 3));
-  const list1 = provList.slice(list.length * (2 / 3), list.length);
+  const list4 = provList.slice(0, list.length * (1 / 4));
+  const list3 = provList.slice(list.length * (1 / 4), list.length * (2 / 4));
+  const list2 = provList.slice(list.length * (2 / 4), list.length * (3 / 4));
+  const list1 = provList.slice(list.length * (3 / 4), list.length);
 
   const tryWriteTable = useWriteTable();
 
@@ -43,7 +44,7 @@ const LeaveCommentsPage: React.FC = () => {
         </S.H1>
         <S.Form>
           <textarea
-            placeholder="자유롭게 의견을 남겨주세요."
+            placeholder='자유롭게 의견을 남겨주세요.'
             onChange={textAreaOnchange}
             value={content}
           />
@@ -88,6 +89,15 @@ const LeaveCommentsPage: React.FC = () => {
         </S.IssueBoxWrapper>
         <S.IssueBoxWrapper>
           {list3.map((table: list, index) => (
+            <IssueBoxPresenter
+              idx={table.boardIdx}
+              content={table.content}
+              key={index}
+            />
+          ))}
+        </S.IssueBoxWrapper>
+        <S.IssueBoxWrapper>
+          {list4.map((table: list, index) => (
             <IssueBoxPresenter
               idx={table.boardIdx}
               content={table.content}

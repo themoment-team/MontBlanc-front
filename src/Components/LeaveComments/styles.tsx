@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
-import device from "Constants/reactive";
+import styled, { css } from 'styled-components';
+import device from 'Constants/reactive';
 
-interface submitBtn{
+interface submitBtn {
   Length: number;
 }
 
@@ -52,7 +52,7 @@ export const Form = styled.div`
   textarea {
     margin: 29px 31px 5px 29px;
     height: 179px;
-    font-family: "Noto Sans CJK KR";
+    font-family: 'Noto Sans CJK KR';
     font-size: 16px;
     font-weight: 700;
     resize: none;
@@ -76,16 +76,15 @@ export const Btn = styled.button<submitBtn>`
   align-self: flex-end;
   justify-self: flex-end;
   color: #fff;
-  ${(props) => 
-    props.Length >= 8 ?
-    css`
-      background: rgba(67, 76, 156, 0.56);
-    ` :
-    css`
-      background: rgba(169, 176, 233, 0.56);
-      cursor: not-allowed;
-    `
-  };
+  ${(props) =>
+    props.Length >= 8
+      ? css`
+          background: rgba(67, 76, 156, 0.56);
+        `
+      : css`
+          background: rgba(169, 176, 233, 0.56);
+          cursor: not-allowed;
+        `};
   padding: 5px 20px;
   font-size: 14px;
   font-weight: 600;
@@ -129,8 +128,16 @@ export const LinkWrapper = styled.div`
 
 export const RightBox = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   width: 40vw;
+  @media (max-width: 1600px) {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 1400px) {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
   @media (max-width: 1210px) {
     width: 100%;
     grid-template-columns: repeat(1, 1fr);
