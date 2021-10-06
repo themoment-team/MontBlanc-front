@@ -1,23 +1,23 @@
-import React, { useMemo } from 'react';
-import { useHistory } from 'react-router-dom';
-import * as I from '../../Asset/SVG/index';
-import * as S from './styles';
-import IssueBoxPresenter from '../IssueBox/IssueBoxPresenter';
+import React, { useMemo } from "react";
+import { useHistory } from "react-router-dom";
+import * as I from "../../Asset/SVG/index";
+import * as S from "./styles";
+import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
 import {
   useViewTable,
   useWriteTable,
   useShuffle,
   list,
-} from './LeaveCommentContainer';
-import { useState } from 'react';
-import Config from 'Constants/Config.json';
+} from "./LeaveCommentContainer";
+import { useState } from "react";
+import Config from "Constants/Config.json";
 
 const LeaveCommentsPage: React.FC = () => {
   const list = useViewTable();
   const history = useHistory();
   const shuffle = useShuffle();
 
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState("");
   const [length, setLength] = useState(0);
 
   const provList = useMemo(() => shuffle(list), [list]);
@@ -44,7 +44,7 @@ const LeaveCommentsPage: React.FC = () => {
         </S.H1>
         <S.Form>
           <textarea
-            placeholder='자유롭게 의견을 남겨주세요.'
+            placeholder="자유롭게 의견을 남겨주세요."
             onChange={textAreaOnchange}
             value={content}
           />

@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import device from 'Constants/reactive';
+import styled, { css } from "styled-components";
+import device from "Constants/reactive";
 
 interface submitBtn {
   Length: number;
@@ -52,7 +52,7 @@ export const Form = styled.div`
   textarea {
     margin: 29px 31px 5px 29px;
     height: 179px;
-    font-family: 'Noto Sans CJK KR';
+    font-family: "Noto Sans CJK KR";
     font-size: 16px;
     font-weight: 700;
     resize: none;
