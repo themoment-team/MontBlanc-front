@@ -54,11 +54,11 @@ const EditModal: React.FC<ModalProps> = ({
           {title ? (
             <>
               <S.InputBox
-                placeholder={title}
+                value={title}
                 onChange={({ target: { value } }) => setHeading(value)}
               />
               <S.TextArea
-                placeholder={content}
+                value={content}
                 onChange={({ target: { value } }) => setContent(value)}
               />
             </>
