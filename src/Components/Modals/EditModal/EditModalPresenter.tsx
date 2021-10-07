@@ -51,29 +51,16 @@ const EditModal: React.FC<ModalProps> = ({
           <S.ModalImg onClick={closeModal}>
             <CancleBtn />
           </S.ModalImg>
-          {title ? (
-            <>
-              <S.InputBox
-                placeholder={title}
-                onChange={({ target: { value } }) => setHeading(value)}
-              />
-              <S.TextArea
-                placeholder={content}
-                onChange={({ target: { value } }) => setContent(value)}
-              />
-            </>
-          ) : (
-            <>
-              <S.InputBox
-                placeholder="제목을 입력해주세요."
-                onChange={({ target: { value } }) => setHeading(value)}
-              />
-              <S.TextArea
-                placeholder="내용을 입력해주세요."
-                onChange={({ target: { value } }) => setContent(value)}
-              />
-            </>
-          )}
+            <S.InputBox
+              value={title}
+              placeholder="제목을 입력해주세요."
+              onChange={({ target: { value } }) => setHeading(value)}
+            />
+            <S.TextArea
+              value={content}
+              placeholder="내용을 입력해주세요."
+              onChange={({ target: { value } }) => setContent(value)}
+            />
           <S.BtnWrapper onClick={closeModal}>
             {heading === "수정하기" && (
               <>
