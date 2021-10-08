@@ -1,7 +1,7 @@
-import * as I from '../../Asset/SVG';
-import * as S from './styled';
+import * as I from "../../Asset/SVG";
+import * as S from "./styled";
 
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
 interface issueBoxProps {
   idx: number;
@@ -10,11 +10,11 @@ interface issueBoxProps {
 
 const randomColorPicker = () => {
   const color: string[] = [
-    '#CBD9E266',
-    '#C4DFDB',
-    '#A7C5EB66',
-    '#61799866',
-    '#699CAC66',
+    "#CBD9E266",
+    "#C4DFDB",
+    "#A7C5EB66",
+    "#61799866",
+    "#699CAC66",
   ];
 
   const randomNumber: number = Math.floor(Math.random() * 5);
@@ -32,7 +32,7 @@ const issueBox: React.FC<issueBoxProps> = (p: issueBoxProps) => {
         <S.IssueNumber>{p.idx}번째 불편함</S.IssueNumber>
       </S.IssueBoxHeading>
       <S.Issue>
-        {p.content.split('\n').map((content: string, index) => {
+        {p.content.split("\n").map((content: string, index) => {
           return (
             <Fragment key={index}>
               {content}

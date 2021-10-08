@@ -1,10 +1,10 @@
-import React, { useMemo, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import * as I from '../../Asset/SVG/index';
-import * as S from './styles';
-import IssueBoxPresenter from '../IssueBox';
-import Config from 'Constants/Config.json';
-import Table from 'Api/table';
+import React, { useMemo, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import * as I from "../../Asset/SVG/index";
+import * as S from "./styles";
+import IssueBoxPresenter from "../IssueBox";
+import Config from "Constants/Config.json";
+import Table from "Api/table";
 
 interface list {
   boardIdx: number;
@@ -31,7 +31,7 @@ const useWriteTable = () => {
     content: string,
     setContent: React.Dispatch<React.SetStateAction<string>>
   ) => {
-    setContent('');
+    setContent("");
     window.location.reload();
     return await Table.writeTable(content);
   };
@@ -52,7 +52,7 @@ const LeaveCommentsPage: React.FC = () => {
   const history = useHistory();
   const shuffle = useShuffle();
 
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState("");
   const [length, setLength] = useState(0);
 
   const provList = useMemo(() => shuffle(list), [list]);
@@ -79,7 +79,7 @@ const LeaveCommentsPage: React.FC = () => {
         </S.H1>
         <S.Form>
           <textarea
-            placeholder='자유롭게 의견을 남겨주세요.'
+            placeholder="자유롭게 의견을 남겨주세요."
             onChange={textAreaOnchange}
             value={content}
           />

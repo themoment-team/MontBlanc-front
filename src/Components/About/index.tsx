@@ -1,7 +1,7 @@
-import { PageExplanation } from '../PageExplanation';
-import * as S from './styled';
-import Table from 'Api/table';
-import { useEffect, useState } from 'react';
+import { PageExplanation } from "../PageExplanation";
+import * as S from "./styled";
+import Table from "Api/table";
+import { useEffect, useState } from "react";
 
 const useAmount = (): [amount: number, date: number] => {
   const [amount, setAmount] = useState({ data: 0 });
@@ -32,7 +32,7 @@ const useHeading = (): string[][] => {
     `${cnt_comment}개의 불편함이`,
     `모였습니다.`,
   ];
-  const explanation: string[] = [''];
+  const explanation: string[] = [""];
 
   return [heading, explanation];
 };

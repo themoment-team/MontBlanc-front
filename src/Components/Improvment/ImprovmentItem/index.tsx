@@ -1,6 +1,6 @@
-import * as I from '../../../Asset/SVG';
-import * as S from './styled';
-import { ViewModal } from 'Components/Modals';
+import * as I from "../../../Asset/SVG";
+import * as S from "./styled";
+import { ViewModal } from "Components/Modals";
 
 interface ImprovmentProps {
   header: string;
@@ -10,7 +10,7 @@ interface ImprovmentProps {
 }
 
 const randomColorPicker = () => {
-  const color: string[] = ['#C3D7DE', '#C0C9D6', '#A7C5EB'];
+  const color: string[] = ["#C3D7DE", "#C0C9D6", "#A7C5EB"];
 
   const randomNumber: number = Math.floor(Math.random() * 3);
 
@@ -31,9 +31,9 @@ const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
           <S.AboutBtn>
             <ViewModal
               idx={p.idx}
-              state={'improvment'}
+              state={"improvment"}
               key={p.key}
-              buttonContent={'자세히 보기'}
+              buttonContent={"자세히 보기"}
             />
           </S.AboutBtn>
         </S.ImprovmentContent>

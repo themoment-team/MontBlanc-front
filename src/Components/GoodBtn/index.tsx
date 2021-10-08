@@ -1,7 +1,7 @@
-import * as I from '../../Asset/SVG';
-import * as S from './styled';
-import { useState } from 'react';
-import Table from 'Api/table';
+import * as I from "../../Asset/SVG";
+import * as S from "./styled";
+import { useState } from "react";
+import Table from "Api/table";
 
 export type isLiked = String | null;
 type UseLikeResult = [number, isLiked, () => void];
@@ -12,9 +12,9 @@ const useLikeCheck = (liked: number, idx: number): UseLikeResult => {
   const [isLiked, setLiked] = useState<String | null>(TOKEN_EXIST);
   const onIncrease = () => {
     if (!TOKEN_EXIST) {
-      localStorage.setItem(`tm_goods_${idx}`, 'exist');
+      localStorage.setItem(`tm_goods_${idx}`, "exist");
       setLikeCnt((likeCnt) => likeCnt + 1);
-      setLiked('exist');
+      setLiked("exist");
       Table.addGoods(idx);
     }
   };
@@ -52,10 +52,10 @@ const GoodBtn: React.FC<GoodBtnProps> = ({
       <I.GoodBtnSvg
         color={
           isLiked && Background
-            ? '#fff'
+            ? "#fff"
             : !Background && isLiked
-            ? '#475AFF'
-            : '#6B7187'
+            ? "#475AFF"
+            : "#6B7187"
         }
       />
       <S.LikeCnt Liked={isLiked} hasBackground={Background}>
