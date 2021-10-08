@@ -1,6 +1,41 @@
-import { PageExplanation } from "../PageExplanation";
-import * as S from "./styled";
-import { useHeading } from "./AboutContainer";
+import { PageExplanation } from '../PageExplanation';
+import * as S from './styled';
+import Table from 'Api/table';
+import { useEffect, useState } from 'react';
+
+const useAmount = (): [amount: number, date: number] => {
+  const [amount, setAmount] = useState({ data: 0 });
+  const [date, setDate] = useState({ data: 0 });
+  const getAmount = async () => {
+    return await Table.amountUncomfortable();
+  };
+
+  const getDataSinceProjectStart = async () => {
+    return await Table.dateSinceProjectStart();
+  };
+
+  useEffect(() => {
+    getAmount().then((res) => setAmount(res.data));
+    getDataSinceProjectStart().then((res) => setDate(res.data));
+  }, []);
+
+  return [amount.data, date.data];
+};
+
+const useHeading = (): string[][] => {
+  const [amount, date] = useAmount();
+  const day: number = date;
+  const cnt_comment: number = amount;
+
+  const heading: string[] = [
+    `${day}일 동안`,
+    `${cnt_comment}개의 불편함이`,
+    `모였습니다.`,
+  ];
+  const explanation: string[] = [''];
+
+  return [heading, explanation];
+};
 
 const AboutPage: React.FC = () => {
   const [heading, explanation] = useHeading();
@@ -69,9 +104,10 @@ const AboutPage: React.FC = () => {
           <li>
             <b>학교가 불편한 순간은 이걸로 무엇을 하나요?</b>
             학교가 불편한 순간은 학교 생활에서 겪는 어려움과 불편함을 파악하기
-            위한 목적으로 본 프로젝트를 실시하고 있습니다.<br />취합한 의견을
-            바탕으로 학생들에게 더 나은 학교생활을 제공할 수 있도록
-            노력하겠습니다.
+            위한 목적으로 본 프로젝트를 실시하고 있습니다.
+            <br />
+            취합한 의견을 바탕으로 학생들에게 더 나은 학교생활을 제공할 수
+            있도록 노력하겠습니다.
           </li>
           <li>
             <b>등록한 의견을 수정 또는 삭제하고 싶어요.</b>
@@ -79,8 +115,12 @@ const AboutPage: React.FC = () => {
             남긴 의견은 수정 또는 삭제할 수 없으니 주의해 주시길 바랍니다.
           </li>
           <li>
-            <b>“학교가 불편한 순간” 서비스를 사용하면서 느낀 불편함, 어디에 문의 해야 하나요?</b>
-            “official.themoment.team@gmail.com”에 의견을 남겨주시면, 답변드리겠습니다.
+            <b>
+              “학교가 불편한 순간” 서비스를 사용하면서 느낀 불편함, 어디에 문의
+              해야 하나요?
+            </b>
+            “official.themoment.team@gmail.com”에 의견을 남겨주시면,
+            답변드리겠습니다.
           </li>
         </ul>
       </S.AboutContent>
