@@ -9,3 +9,4 @@ export { default as AboutPage } from "./About/AboutPresenter";
 export { default as GoodBtn } from "./GoodBtn/GoodBtnPresenter";
 export { default as IssueBox } from "./IssueBox/IssueBoxPresenter";
 export { ChannelTalkHelmet, SeoHelmet } from "./Helmet";
+export { default as SystemCheck } from "./SystemCheck";
