@@ -1,18 +1,18 @@
-import { useEffect } from "react";
-import * as S from "./styled";
-import * as I from "../../Asset/SVG/index";
-import { useHistory } from "react-router-dom";
-import { useRecoilState } from "recoil";
-import { HasAdminToken } from "../../Atom";
-import Config from "Constants/Config.json";
-import LoginModalPresenter from "Components/Modals/LoginModal/LoginModalPresenter";
+import { useEffect } from 'react';
+import * as S from './styled';
+import * as I from '../../Asset/SVG/index';
+import { useHistory } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { HasAdminToken } from '../../Atom';
+import Config from 'Constants/Config.json';
+import LoginModalPresenter from 'Components/Modals/LoginModal';
 
 const StartPage: React.FC = () => {
   const history = useHistory();
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
 
   useEffect(() => {
-    if (localStorage.getItem("themoment_token")) {
+    if (localStorage.getItem('themoment_token')) {
       setHasToken(true);
     }
   }, []);
@@ -38,7 +38,7 @@ const StartPage: React.FC = () => {
           {logged ? (
             <>
               <button
-                onClick={() => alert("관리자는 학생페이지를 볼 수 없습니다.")}
+                onClick={() => alert('관리자는 학생페이지를 볼 수 없습니다.')}
               >
                 Student
               </button>
