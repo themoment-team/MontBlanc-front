@@ -1,6 +1,5 @@
 import * as I from "../../../Asset/SVG";
 import * as S from "./styled";
-import { randomColorPicker } from "./ImprovmentItemContainer";
 import { ViewModal } from "Components/Modals";
 
 interface ImprovmentProps {
@@ -9,6 +8,14 @@ interface ImprovmentProps {
   idx: number;
   key: number;
 }
+
+const randomColorPicker = () => {
+  const color: string[] = ["#C3D7DE", "#C0C9D6", "#A7C5EB"];
+
+  const randomNumber: number = Math.floor(Math.random() * 3);
+
+  return color[randomNumber];
+};
 
 const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
   p: ImprovmentProps

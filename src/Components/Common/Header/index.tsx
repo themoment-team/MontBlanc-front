@@ -1,13 +1,33 @@
 import * as S from "./styled";
 import * as I from "../../../Asset/SVG/index";
 import { Link } from "react-router-dom";
-import { useLogout } from "./HeaderContainer";
 import { useRecoilState } from "recoil";
 import { HasAdminToken } from "Atom";
 import { useEffect, useState } from "react";
 import { faBars, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Config from "Constants/Config.json";
+import { useSetRecoilState } from "recoil";
+import admin from "Api/admin";
+import { useHistory } from "react-router";
+
+const useLogout = () => {
+  const setHasToken = useSetRecoilState(HasAdminToken);
+  const history = useHistory();
+  const tryLogout = async () => {
+    try {
+      await admin.logout();
+      localStorage.removeItem("themoment_token");
+      localStorage.removeItem("themoment_token_refresh");
+      setHasToken(false);
+    } catch (e) {
+      alert(e);
+    }
+    history.push("/");
+  };
+
+  return tryLogout;
+};
 
 const Header: React.FC = () => {
   const tryLogout = useLogout();

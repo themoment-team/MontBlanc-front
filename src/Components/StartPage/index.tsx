@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { HasAdminToken } from "../../Atom";
 import Config from "Constants/Config.json";
-import LoginModalPresenter from "Components/Modals/LoginModal/LoginModalPresenter";
+import LoginModalPresenter from "Components/Modals/LoginModal";
 
 const StartPage: React.FC = () => {
   const history = useHistory();
