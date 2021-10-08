@@ -5,7 +5,7 @@ export const SystemCheckWrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 0 8em;
+    padding: 0 30px;
 `;
 
 export const LogoWrapper = styled.div`
@@ -18,6 +18,7 @@ export const LogoWrapper = styled.div`
 export const DescWrapper = styled.span`
     color: #434C9C;
     font-size: 1rem;
+    word-break: keep-all;
 `;
 
 export const ChaseCircleWrapper = styled.div`
@@ -25,6 +26,10 @@ export const ChaseCircleWrapper = styled.div`
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
+    
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
 `;
 
 // 아래의 함수는 각각 길이가 각각 다른 <circle> 에게 서로 다른 회전시간을 부여합니다.
