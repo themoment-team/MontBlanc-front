@@ -22,9 +22,10 @@ const LeaveCommentsPage: React.FC = () => {
 
   const provList = useMemo(() => shuffle(list), [list]);
 
-  const list3 = provList.slice(0, list.length * (1 / 3));
-  const list2 = provList.slice(list.length * (1 / 3), list.length * (2 / 3));
-  const list1 = provList.slice(list.length * (2 / 3), list.length);
+  const list4 = provList.slice(0, list.length * (1 / 4));
+  const list3 = provList.slice(list.length * (1 / 4), list.length * (2 / 4));
+  const list2 = provList.slice(list.length * (2 / 4), list.length * (3 / 4));
+  const list1 = provList.slice(list.length * (3 / 4), list.length);
 
   const tryWriteTable = useWriteTable();
 
@@ -88,6 +89,15 @@ const LeaveCommentsPage: React.FC = () => {
         </S.IssueBoxWrapper>
         <S.IssueBoxWrapper>
           {list3.map((table: list, index) => (
+            <IssueBoxPresenter
+              idx={table.boardIdx}
+              content={table.content}
+              key={index}
+            />
+          ))}
+        </S.IssueBoxWrapper>
+        <S.IssueBoxWrapper>
+          {list4.map((table: list, index) => (
             <IssueBoxPresenter
               idx={table.boardIdx}
               content={table.content}

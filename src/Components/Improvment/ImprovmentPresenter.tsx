@@ -8,12 +8,11 @@ import * as I from "../../Asset/SVG";
 import * as C from "./ImprovmentContainer";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
-import { useModal } from "Context/Modal";
 import Config from "Constants/Config.json";
+import { EditModal } from "Components/Modals";
 
 const ImprovmentPage: React.FC = () => {
   const [list, setList] = useState<list[]>([]);
-  const modal = useModal();
   const logged = useRecoilValue(HasAdminToken);
   const history = useHistory();
 
@@ -29,10 +28,13 @@ const ImprovmentPage: React.FC = () => {
           explanation={C.explanation}
         />
         {logged ? (
-          <S.Btn
-            onClick={() => modal.open("EditModal", 1, "improvment", "작성하기")}
-          >
-            실제 개선 사례 작성하기
+          <S.Btn>
+            <EditModal
+              idx={1}
+              state="improvment"
+              heading="작성하기"
+              ButtonContent={"실제 개선 사례 작성하기"}
+            />
             <span>
               <I.RightArrow />
             </span>
@@ -41,10 +43,10 @@ const ImprovmentPage: React.FC = () => {
           <S.Btn onClick={() => history.push(Config.LINK.COMMENT)}>
             학교가 불편한 순간을
             <br /> 자유롭게 남겨주세요.
-              <S.LinkTextWrapper>
-                <span>의견 남기기</span>
-                <I.RightArrow />
-              </S.LinkTextWrapper>
+            <S.LinkTextWrapper>
+              <span>의견 남기기</span>
+              <I.RightArrow />
+            </S.LinkTextWrapper>
           </S.Btn>
         )}
       </S.LeftBox>
@@ -57,8 +59,8 @@ const ImprovmentPage: React.FC = () => {
         )}
         {list.map((improvement: list, index) => (
           <ImprovmentItemPresenter
-            header={improvement.improveHeader}
-            content={improvement.improveContent}
+            header={improvement.title}
+            content={improvement.content}
             idx={improvement.improveIdx}
             key={index}
           />

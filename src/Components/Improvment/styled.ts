@@ -40,6 +40,15 @@ export const Btn = styled.button`
   svg {
     padding-left: 5px;
   }
+  & > button {
+    background-color: #434c9c;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    width: 324px;
+    text-align: left;
+    padding: 0;
+  }
 `;
 
 export const LinkTextWrapper = styled.div`
@@ -48,12 +57,12 @@ export const LinkTextWrapper = styled.div`
   padding-top: 3%;
   font-size: 12px;
   font-weight: 600;
-`
+`;
 
 export const AltImprovementItem = styled.div`
   width: 33.4vw;
   text-align: center;
-  color: #434C9C;
+  color: #434c9c;
   font-size: 1.82rem;
   font-weight: 500;
   margin: 0 auto;
@@ -76,4 +85,4 @@ export const AltImprovementItem = styled.div`
       font-size: 0.65rem;
     }
   }
-`
+`;
