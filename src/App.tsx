@@ -5,7 +5,7 @@ import Config from "Constants/Config.json";
 import GlobalStyle from "./Constants/Styles/GlobalStyles";
 import reactModal from "react-modal";
 
-const CHECKSTATE: boolean = true;
+const checkState: boolean = true;
 
 reactModal.setAppElement("#root");
 
@@ -35,21 +35,22 @@ reactModal.defaultStyles = {
 const App: React.FC = () => (
   <BrowserRouter>
     <GlobalStyle />
-    <Switch>
-      {
-        CHECKSTATE ?
-        <>
-          <Route path={Config.LINK.START} component={P.Start} />
-          <Route path={Config.LINK.ABOUT} component={P.About} />
-          <Route path={Config.LINK.IMPROVMENT} component={P.Improvment} />
-          <Route path={Config.LINK.RANK} component={P.Top10} />
-          <Route path={Config.LINK.COMMENT} component={P.LeaveComments} />
-          <Redirect path="*" to={Config.LINK.COMMENT} />
-        </>
-      :
+    { 
+      checkState ?
+      <Switch>
         <Route path={Config.LINK.SYSTEMCHECK} component={P.SystemCheck} />
-      }
-    </Switch>
+        <Redirect path="*" to={Config.LINK.SYSTEMCHECK} />
+      </Switch>
+    :
+      <Switch>
+        <Route path={Config.LINK.ABOUT} component={P.About} />
+        <Route path={Config.LINK.IMPROVMENT} component={P.Improvment} />
+        <Route path={Config.LINK.RANK} component={P.Top10} />
+        <Route path={Config.LINK.COMMENT} component={P.LeaveComments} />
+        <Route path={Config.LINK.START} component={P.Start} />
+        <Redirect path="*" to={Config.LINK.COMMENT} />
+      </Switch>
+    }
   </BrowserRouter>
 );
 
