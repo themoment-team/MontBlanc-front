@@ -1,23 +1,58 @@
-import React, { useMemo } from "react";
-import { useHistory } from "react-router-dom";
-import * as I from "../../Asset/SVG/index";
-import * as S from "./styles";
-import IssueBoxPresenter from "../IssueBox/IssueBoxPresenter";
-import {
-  useViewTable,
-  useWriteTable,
-  useShuffle,
-  list,
-} from "./LeaveCommentContainer";
-import { useState } from "react";
-import Config from "Constants/Config.json";
+import React, { useMemo, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import * as I from '../../Asset/SVG/index';
+import * as S from './styles';
+import IssueBoxPresenter from '../IssueBox';
+import Config from 'Constants/Config.json';
+import Table from 'Api/table';
+
+interface list {
+  boardIdx: number;
+  content: string;
+  goods: number;
+  idx: number;
+}
+
+const useViewTable = () => {
+  const [list, setList] = useState<list[]>([]);
+
+  const tryViewTable = async () => {
+    return await Table.viewTable();
+  };
+
+  useEffect(() => {
+    tryViewTable().then((res) => setList(res.data.list));
+  }, []);
+  return list;
+};
+
+const useWriteTable = () => {
+  const tryWriteTable = async (
+    content: string,
+    setContent: React.Dispatch<React.SetStateAction<string>>
+  ) => {
+    setContent('');
+    window.location.reload();
+    return await Table.writeTable(content);
+  };
+
+  return tryWriteTable;
+};
+
+const useShuffle = () => {
+  const shuffle = (list: Array<list>) => {
+    return list.sort(() => Math.random() - 0.5);
+  };
+
+  return shuffle;
+};
 
 const LeaveCommentsPage: React.FC = () => {
   const list = useViewTable();
   const history = useHistory();
   const shuffle = useShuffle();
 
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState('');
   const [length, setLength] = useState(0);
 
   const provList = useMemo(() => shuffle(list), [list]);
@@ -44,7 +79,7 @@ const LeaveCommentsPage: React.FC = () => {
         </S.H1>
         <S.Form>
           <textarea
-            placeholder="자유롭게 의견을 남겨주세요."
+            placeholder='자유롭게 의견을 남겨주세요.'
             onChange={textAreaOnchange}
             value={content}
           />
