@@ -2,11 +2,7 @@ import * as S from "./styled";
 
 import { Logo } from "Asset/SVG"
 
-interface SystemCheckProps {
-    text?: string;
-}
-
-const SystemCheck: React.FC<SystemCheckProps> = ({text = "죄송합니다 현재 서비스가 점검 중에 있습니다"}) => {
+const SystemCheck: React.FC = () => {
     return (
         <>
             <ChaseCircle />
@@ -15,7 +11,7 @@ const SystemCheck: React.FC<SystemCheckProps> = ({text = "죄송합니다 현재
                     <Logo />
                 </S.LogoWrapper> 
                 <S.DescWrapper>
-                    {text}
+                    죄송합니다 현재 서비스가 점검 중에 있습니다.
                 </S.DescWrapper>
             </S.SystemCheckWrapper>
         </>
