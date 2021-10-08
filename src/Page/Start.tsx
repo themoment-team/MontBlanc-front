@@ -1,4 +1,4 @@
-import { StartPage } from "../Components/index";
+import { StartPage } from '../Components';
 
 const Start: React.FC = () => {
   return <StartPage />;
