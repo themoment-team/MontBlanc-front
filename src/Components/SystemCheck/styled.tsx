@@ -5,6 +5,7 @@ export const SystemCheckWrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 0 8em;
 `;
 
 export const LogoWrapper = styled.div`
@@ -49,7 +50,7 @@ export const ChaseCircleLoader = styled.svg`
 	stroke-linecap: round;
     & circle {
 	    fill: none;
-	    stroke-width: 4;
+	    stroke-width: 2.8;
 	    animation-name: preloader;
 	    animation-duration: 4s;
 	    animation-iteration-count: infinite;
