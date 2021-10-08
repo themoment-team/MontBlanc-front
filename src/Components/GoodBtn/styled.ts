@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { isLiked } from "./GoodBtnContainer";
+import styled, { css } from 'styled-components';
+import { isLiked } from '.';
 interface GoodBtnStyleElemProps {
   Liked: isLiked;
   hasBackground: boolean;
@@ -20,13 +20,13 @@ export const GoodBtnStyle = styled.button<GoodBtnStyleElemProps>`
   border-radius: 20px;
   background: ${(props) =>
     props.Liked && props.hasBackground
-      ? "#434C9C"
+      ? '#434C9C'
       : props.hasBackground
-      ? "#fff"
-      : "none"}; // 좋아요 제어후에 배경을 가졌는지 추가로 제어
+      ? '#fff'
+      : 'none'}; // 좋아요 제어후에 배경을 가졌는지 추가로 제어
   span {
     color: ${(props) =>
-      props.Liked && !props.hasBackground ? "#475AFF" : "#6B7187"};
+      props.Liked && !props.hasBackground ? '#475AFF' : '#6B7187'};
   }
 `;
 
@@ -34,6 +34,6 @@ export const LikeCnt = styled.span<GoodBtnStyleElemProps>`
   display: block;
   margin-left: 4px;
   color: ${(props) =>
-    props.Liked && props.hasBackground ? "#fff" : "#6B7187"};
+    props.Liked && props.hasBackground ? '#fff' : '#6B7187'};
   padding-left: 5px;
 `;
