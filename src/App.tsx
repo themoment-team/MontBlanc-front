@@ -34,11 +34,11 @@ const App: React.FC = () => (
   <BrowserRouter>
     <GlobalStyle />
     <Switch>
+      {/* <Route path={Config.LINK.START} component={P.Start} />
       <Route path={Config.LINK.ABOUT} component={P.About} />
       <Route path={Config.LINK.IMPROVMENT} component={P.Improvment} />
-      <Route path={Config.LINK.RANK} component={P.Top10} />
-      <Route path={Config.LINK.COMMENT} component={P.LeaveComments} />
-      <Route path={Config.LINK.START} component={P.Start} />
+      <Route path={Config.LINK.RANK} component={P.Top10} /> */}
+      <Route path={Config.LINK.COMMENT} component={P.SystemCheck} />
       <Redirect path="*" to={Config.LINK.COMMENT} />
     </Switch>
   </BrowserRouter>
