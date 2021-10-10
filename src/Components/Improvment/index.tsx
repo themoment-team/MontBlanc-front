@@ -2,7 +2,7 @@ import { PageExplanation } from "../PageExplanation";
 import { useHistory } from "react-router-dom";
 import ImprovmentItemPresenter from "./ImprovmentItem";
 import { useState, useEffect } from "react";
-import * as S from "./styled";
+import * as S from "./style";
 import * as I from "../../Asset/SVG";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";

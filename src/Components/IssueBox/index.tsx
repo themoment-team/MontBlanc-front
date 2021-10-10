@@ -1,5 +1,5 @@
 import * as I from "../../Asset/SVG";
-import * as S from "./styled";
+import * as S from "./style";
 
 import React, { Fragment } from "react";
 

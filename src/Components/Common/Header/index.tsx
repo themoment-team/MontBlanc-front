@@ -1,4 +1,4 @@
-import * as S from "./styled";
+import * as S from "./style";
 import * as I from "../../../Asset/SVG/index";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
