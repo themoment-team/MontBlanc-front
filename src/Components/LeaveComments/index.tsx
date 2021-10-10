@@ -7,7 +7,7 @@ import Config from "Constants/Config.json";
 import Table from "Api/table";
 
 interface list {
-  boardIdx: number;
+  uncomfortableIdx: number;
   content: string;
   goods: number;
   idx: number;
@@ -107,7 +107,7 @@ const LeaveCommentsPage: React.FC = () => {
         <S.IssueBoxWrapper>
           {list1.map((table: list, index) => (
             <IssueBoxPresenter
-              idx={table.boardIdx}
+              idx={table.uncomfortableIdx}
               content={table.content}
               key={index}
             />
@@ -116,7 +116,7 @@ const LeaveCommentsPage: React.FC = () => {
         <S.IssueBoxWrapper>
           {list2.map((table: list, index) => (
             <IssueBoxPresenter
-              idx={table.boardIdx}
+              idx={table.uncomfortableIdx}
               content={table.content}
               key={index}
             />
@@ -125,7 +125,7 @@ const LeaveCommentsPage: React.FC = () => {
         <S.IssueBoxWrapper>
           {list3.map((table: list, index) => (
             <IssueBoxPresenter
-              idx={table.boardIdx}
+              idx={table.uncomfortableIdx}
               content={table.content}
               key={index}
             />
@@ -134,7 +134,7 @@ const LeaveCommentsPage: React.FC = () => {
         <S.IssueBoxWrapper>
           {list4.map((table: list, index) => (
             <IssueBoxPresenter
-              idx={table.boardIdx}
+              idx={table.uncomfortableIdx}
               content={table.content}
               key={index}
             />
