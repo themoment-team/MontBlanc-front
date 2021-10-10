@@ -1,5 +1,5 @@
 import { PageExplanation } from "../PageExplanation";
-import * as S from "./styled";
+import * as S from "./style";
 import Table from "Api/table";
 import { useEffect, useState } from "react";
 

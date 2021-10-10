@@ -1,7 +1,7 @@
 import React, { useMemo, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import * as I from "../../Asset/SVG/index";
-import * as S from "./styles";
+import * as S from "./style";
 import IssueBoxPresenter from "../IssueBox";
 import Config from "Constants/Config.json";
 import Table from "Api/table";

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import * as S from "./styled";
+import * as S from "./style";
 
 interface PageExplanationProps {
   heading: string[];

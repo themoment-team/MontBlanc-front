@@ -2,7 +2,7 @@ import { PageExplanation } from "../PageExplanation";
 import { useHistory } from "react-router-dom";
 import { LeftBox } from "../../Constants/Styles/Detail";
 import GoodBtn from "../GoodBtn";
-import * as S from "./styled";
+import * as S from "./style";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
 import Config from "Constants/Config.json";

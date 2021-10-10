@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import * as S from "./styled";
+import * as S from "./style";
 import * as I from "../../Asset/SVG/index";
 import { useHistory } from "react-router-dom";
 import { useRecoilState } from "recoil";
