@@ -11,7 +11,7 @@ import Table from "Api/table";
 import { useEffect, useState } from "react";
 
 interface list {
-  boardIdx: number;
+  uncomfortableIdx: number;
   content: string;
   goods: number;
   answer: boolean;
@@ -19,7 +19,7 @@ interface list {
 
 const useTop10 = () => {
   const [list, setList] = useState<list[]>([
-    { boardIdx: 0, content: "", goods: 0, answer: false },
+    { uncomfortableIdx: 0, content: "", goods: 0, answer: false },
   ]);
 
   const tryTop10 = async () => {
@@ -62,7 +62,7 @@ const Top30Page = () => {
       </LeftBox>
       <S.RightBox>
         {list.map((top10: list, index) => (
-          <S.TenIssues key={top10.boardIdx}>
+          <S.TenIssues key={top10.uncomfortableIdx}>
             <span>
               <span>{index + 1}위</span>
               <article>{top10.content.replace(/^\s+|\s+$/gm, "")}</article>
@@ -70,13 +70,13 @@ const Top30Page = () => {
             <span>
               {top10.answer ? (
                 <ViewModal
-                  idx={top10.boardIdx}
+                  idx={top10.uncomfortableIdx}
                   state={"answer"}
                   buttonContent={"답변보기"}
                 />
               ) : logged ? (
                 <EditModal
-                  idx={top10.boardIdx}
+                  idx={top10.uncomfortableIdx}
                   state={"answer"}
                   ButtonContent={"답변달기"}
                   heading={"답변달기"}
@@ -90,7 +90,7 @@ const Top30Page = () => {
               <GoodBtn
                 Background={false}
                 Goods={top10.goods}
-                Idx={top10.boardIdx}
+                Idx={top10.uncomfortableIdx}
               />
             </span>
           </S.TenIssues>
