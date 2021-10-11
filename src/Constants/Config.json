@@ -1,5 +1,5 @@
 {
-  "BASE_URL": "http://13.124.55.247:5000/v1/",
+  "BASE_URL": "https://server.the-moment.org/v1/",
   "BASE_HEADER": {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type,Authorization",
