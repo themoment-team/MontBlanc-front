@@ -5,7 +5,7 @@ import Config from "Constants/Config.json";
 import GlobalStyle from "./Constants/Styles/GlobalStyles";
 import reactModal from "react-modal";
 
-const checkState: boolean = true;
+const checkState: boolean = false;
 
 reactModal.setAppElement("#root");
 
