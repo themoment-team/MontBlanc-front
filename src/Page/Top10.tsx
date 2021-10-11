@@ -4,7 +4,7 @@ import {
   Footer,
   ChannelTalkHelmet,
   SeoHelmet,
-} from "../Components/index";
+} from "../Components";
 
 const Top10: React.FC = () => {
   const pageTitle: string = "Rank";

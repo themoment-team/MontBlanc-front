@@ -3,7 +3,7 @@ import {
   LeaveCommentsPage,
   ChannelTalkHelmet,
   SeoHelmet,
-} from "../Components/index";
+} from "../Components";
 
 const LeaveComments: React.FC = () => {
   const pageTitle: string = "의견 남기기";

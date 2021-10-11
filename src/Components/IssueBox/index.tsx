@@ -1,10 +1,29 @@
 import * as I from "../../Asset/SVG";
-import * as S from "./styled";
-import * as C from "./IssueBoxContainer";
+import * as S from "./style";
+
 import React, { Fragment } from "react";
 
-const issueBox: React.FC<C.issueBoxProps> = (p: C.issueBoxProps) => {
-  const randomColor = C.randomColorPicker();
+interface issueBoxProps {
+  idx: number;
+  content: string;
+}
+
+const randomColorPicker = () => {
+  const color: string[] = [
+    "#CBD9E266",
+    "#C4DFDB",
+    "#A7C5EB66",
+    "#61799866",
+    "#699CAC66",
+  ];
+
+  const randomNumber: number = Math.floor(Math.random() * 5);
+
+  return color[randomNumber];
+};
+
+const issueBox: React.FC<issueBoxProps> = (p: issueBoxProps) => {
+  const randomColor = randomColorPicker();
 
   return (
     <S.IssueBoxStyle color={randomColor}>

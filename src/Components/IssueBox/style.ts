@@ -9,7 +9,7 @@ export const IssueBoxStyle = styled.div<IssueBoxProps>`
   background-color: ${(props) => props.color};
   border-radius: 12px;
   padding: 18px 23px 26px 23px;
-  width: 80%;
+  width: 74%;
   & + div {
     margin-top: 23px;
   }
