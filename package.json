@@ -67,16 +67,14 @@
     "@types/react-router-dom": "^5.1.7",
     "typescript": "^4.2.4"
   },
-  "react": {
-    "reactSnap": {
-      "include": [
-        "/",
-        "/the_moment",
-        "/rank",
-        "/improvment",
-        "/about",
-        "/system_check"
-      ]
-    }
+  "reactSnap": {
+    "include": [
+      "/",
+      "/the_moment",
+      "/rank",
+      "/improvment",
+      "/about",
+      "/system_check"
+    ]
   }
 }
