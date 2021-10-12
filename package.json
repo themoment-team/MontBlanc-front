@@ -26,6 +26,7 @@
     "react-modal": "^3.14.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-snap": "^1.23.0",
     "recoil": "^0.3.1",
     "styled-components": "^5.2.1",
     "typescript": "^4.2.4",
@@ -35,10 +36,9 @@
   "scripts": {
     "start": "export PORT=8080 && react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "react-snap",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "aws s3 sync ./build s3://deploy-themoment-client --profile=themoment-client-deploy",
-    "invalidate": "aws cloudfront create-invalidation --profile=themoment-client-deploy --distribution-id E384NV96VK2S09 --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -66,5 +66,15 @@
     "@types/react-modal": "^3.12.1",
     "@types/react-router-dom": "^5.1.7",
     "typescript": "^4.2.4"
+  },
+  "reactSnap": {
+    "include": [
+      "/",
+      "/the_moment",
+      "/rank",
+      "/improvment",
+      "/about",
+      "/system_check"
+    ]
   }
 }
