@@ -1,34 +1,17 @@
 import React from "react";
-import { hydrate, render } from "react-dom";
+import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { RecoilRoot } from "recoil";
 import reportWebVitals from "./reportWebVitals";
 
-const rootElement: HTMLElement | null = document.getElementById("root");
-
-const AppWrapper: React.FC = () => {
- return(
-   <RecoilRoot>
-     <React.StrictMode />
-   </RecoilRoot>
- );
-}
-
-if (rootElement?.hasChildNodes()) {
-  hydrate(
-    <AppWrapper>
+ReactDOM.render(
+  <RecoilRoot>
+    <React.StrictMode>
       <App />
-    </AppWrapper>,
-    rootElement
-  );
-} else {
-  render(
-    <AppWrapper>
-      <App />
-    </AppWrapper>,
-    rootElement
-  );
-}
+    </React.StrictMode>
+  </RecoilRoot>,
+  document.getElementById("root")
+);
 
 reportWebVitals();
