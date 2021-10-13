@@ -2,13 +2,22 @@ import * as S from "./style";
 import * as I from "../../../Asset/SVG/index";
 
 const Footer: React.FC = () => {
+  const tm_member = [
+    "ChangGyu",
+    "Jihwan",
+    "Seolin",
+    "Sihyeon",
+    "Siwon",
+    "Sunwoo",
+    "Yewon",
+  ];
   return (
     <S.Footer>
       <I.Logo />
       <S.LineTextWrapper>
         <S.LineText>
           <b>Production:</b>
-          ChangGyu, Jihwan, Seolin, Sihyeon, Siwon, Sunwoo, Yewon
+          {tm_member.sort().join(", ")}
         </S.LineText>
         <S.LineText>
           <b>Inquiry and email:</b>
