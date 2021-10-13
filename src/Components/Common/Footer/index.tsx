@@ -8,8 +8,7 @@ const Footer: React.FC = () => {
       <S.LineTextWrapper>
         <S.LineText>
           <b>Production:</b>
-          Seolin Lee, Sunwoo Lee, Sihyeon Song, ChangGyu Im, Jihwan Jeon, Siwon
-          Jeong, Yewon Jin
+          ChangGyu, Jihwan, Seolin, Sihyeon, Siwon, Sunwoo, Yewon
         </S.LineText>
         <S.LineText>
           <b>Inquiry and email:</b>
@@ -17,7 +16,7 @@ const Footer: React.FC = () => {
         </S.LineText>
         <S.LineText>
           <b>Github and issue:</b>
-          https://github.com/theMomentTeam
+          https://github.com/themoment-team
         </S.LineText>
       </S.LineTextWrapper>
       <S.LineText>© 2021, the_moment_team</S.LineText>
