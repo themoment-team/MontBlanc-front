@@ -6,7 +6,7 @@ class Answer {
   async updateAndSaveAnswer(
     content: string,
     answerIdx: number,
-    method: Method
+    method: Method,
   ) {
     try {
       const data = {
@@ -20,7 +20,7 @@ class Answer {
         },
         {
           hasToken: true,
-        }
+        },
       );
     } catch (e) {
       throw new Error(e);
@@ -29,13 +29,14 @@ class Answer {
 
   delete(answerIdx: number) {
     try {
-      return RequestApi({
-        method: "DELETE",
-        url: AnswerController.detailAnswer(answerIdx),
-      },
-      {
-        hasToken: true,
-      }
+      return RequestApi(
+        {
+          method: "DELETE",
+          url: AnswerController.detailAnswer(answerIdx),
+        },
+        {
+          hasToken: true,
+        },
       );
     } catch (e) {
       throw new Error(e);

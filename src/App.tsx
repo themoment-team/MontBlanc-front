@@ -35,13 +35,12 @@ reactModal.defaultStyles = {
 const App: React.FC = () => (
   <BrowserRouter>
     <GlobalStyle />
-    { 
-      checkState ?
+    {checkState ? (
       <Switch>
         <Route path={Config.LINK.SYSTEMCHECK} component={P.SystemCheck} />
         <Redirect path="*" to={Config.LINK.SYSTEMCHECK} />
       </Switch>
-    :
+    ) : (
       <Switch>
         <Route path={Config.LINK.ABOUT} component={P.About} />
         <Route path={Config.LINK.IMPROVMENT} component={P.Improvment} />
@@ -50,7 +49,7 @@ const App: React.FC = () => (
         <Route path={Config.LINK.START} component={P.Start} />
         <Redirect path="*" to={Config.LINK.COMMENT} />
       </Switch>
-    }
+    )}
   </BrowserRouter>
 );
 

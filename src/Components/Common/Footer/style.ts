@@ -16,7 +16,7 @@ export const Footer = styled.div`
 export const LineTextWrapper = styled.div`
   margin-top: 27px;
   margin-bottom: 30px;
-`
+`;
 
 export const LineText = styled.div`
   color: #434c9c;
@@ -25,4 +25,4 @@ export const LineText = styled.div`
     font-weight: 700;
     margin-right: 0.2rem;
   }
-`
+`;

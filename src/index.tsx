@@ -11,7 +11,7 @@ ReactDOM.render(
       <App />
     </React.StrictMode>
   </RecoilRoot>,
-  document.getElementById("root")
+  document.getElementById("root"),
 );
 
 reportWebVitals();
