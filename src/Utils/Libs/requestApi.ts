@@ -7,7 +7,7 @@ export interface hasToken {
 
 const RequestApi = (
   p: AxiosRequestConfig,
-  condition: hasToken = { hasToken: false }
+  condition: hasToken = { hasToken: false },
 ) => {
   let accessToken: string | null = null;
   let refreshToken: string | null = null;

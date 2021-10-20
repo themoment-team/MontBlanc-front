@@ -1,10 +1,10 @@
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet";
 
 const ChannelTalkHelmet: React.FC = () => {
-    return (
-        <Helmet>
-            <script type="text/javascript">
-            {`(function () {
+  return (
+    <Helmet>
+      <script type="text/javascript">
+        {`(function () {
                 var w = window;
                 if (w.ChannelIO) {
                     return (window.console.error || window.console.log || function () {})(
@@ -44,8 +44,8 @@ const ChannelTalkHelmet: React.FC = () => {
                 ChannelIO("boot", {
                     pluginKey: "${process.env.REACT_APP_CHANNEL_TALK_KEY}",
                 });`}
-            </script>
-        </Helmet>
-    );
-}
+      </script>
+    </Helmet>
+  );
+};
 export default ChannelTalkHelmet;

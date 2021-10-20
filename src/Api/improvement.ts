@@ -1,11 +1,11 @@
-import RequestApi from 'Utils/Libs/requestApi';
-import { ImprovementController } from 'Utils/Libs/requestUrls';
+import RequestApi from "Utils/Libs/requestApi";
+import { ImprovementController } from "Utils/Libs/requestUrls";
 
 class Improvement {
   UpdateImprovement(
     improveIdx: number,
     improveContent: string,
-    improveHeader: string
+    improveHeader: string,
   ) {
     try {
       const data = {
@@ -14,11 +14,11 @@ class Improvement {
       };
       return RequestApi(
         {
-          method: 'PUT',
+          method: "PUT",
           url: ImprovementController.detailSolved(improveIdx),
           data: data,
         },
-        { hasToken: true }
+        { hasToken: true },
       );
     } catch (e) {
       throw new Error(e);
@@ -29,10 +29,10 @@ class Improvement {
     try {
       return RequestApi(
         {
-          method: 'DELETE',
+          method: "DELETE",
           url: ImprovementController.detailSolved(improveIdx),
         },
-        { hasToken: true }
+        { hasToken: true },
       );
     } catch (e) {
       throw new Error(e);
@@ -57,13 +57,13 @@ class Improvement {
       };
       return RequestApi(
         {
-          method: 'POST',
+          method: "POST",
           url: ImprovementController.detail2Solved(),
           data: data,
         },
         {
           hasToken: true,
-        }
+        },
       );
     } catch (e) {
       throw new Error(e);
