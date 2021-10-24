@@ -2,26 +2,28 @@ import styled from "styled-components";
 import device from "Constants/reactive";
 
 export const ErrorWrapper = styled.div`
-  margin: 180px 0 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #676767;
-  padding: 0 30px 30px;
-
+  margin-top:180px;
+  gap: 50px;
+  
   svg {
     width: 100%;
     max-width: 680px;
   }
   h1 {
-    margin: 30px 0 0;
+    margin: 0;
   }
   p {
     margin: 0;
-    font-size: 20px;
-    padding: 20px 0 100px;
-
+    margin-bottom: 50px;
+      font-size: 20px;
+      text-align: center;
     @media ${device.mobile} {
-      padding: 20px 0 50px;
       font-size: 16px;
+      margin-bottom: 0;
     }
   }
 
@@ -33,6 +35,6 @@ export const ErrorWrapper = styled.div`
   }
 
   @media ${device.mobile} {
-    margin: 100px 0 0;
+    padding: 100px 0 0;
   }
 `;
