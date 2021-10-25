@@ -78,6 +78,7 @@ const Header: React.FC = () => {
           </S.NavButton>
         </S.HeaderNav>
       )}
+      <S.BlurWrapper></S.BlurWrapper>
     </S.Header>
   );
 };

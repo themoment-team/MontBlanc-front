@@ -5,16 +5,15 @@ interface NavBar {
   active: boolean;
 }
 
-export const Header = styled.header`
+export const Header = styled.header `
   position: fixed;
   top: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 15vw;
-  width: 70vw;
+  width: 100vw;
   height:100px;
   background: white;
   z-index: 1;
+  display: flex;
+
   @media ${device.mobile} {
     width: 90vw;
     padding: 0 5vw;
@@ -25,19 +24,30 @@ export const Header = styled.header`
   }
 `;
 
-export const Logo = styled.h1`
+export const BlurWrapper = styled.div `
+  width : 100vw;
+  background: #FFFFFF;
+  filter: blur(100px);
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+`;
+
+export const Logo = styled.h1 `
   display: inline-block;
   border-right: 2px solid #6A76E9;
   padding-right: 21px;
+  padding-left: 5vw;
   @media screen and (max-width: 1600px) {
     border: none;
   }
 `;
 
-export const HeaderNav = styled.nav<NavBar>`
+export const HeaderNav = styled.nav < NavBar > `
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 35vw;
   @media screen and (max-width: 1230px) {
     flex-direction: column;
     align-items: flex-start;
@@ -57,7 +67,7 @@ export const HeaderNav = styled.nav<NavBar>`
   }
 `;
 
-export const NavButton = styled.button`
+export const NavButton = styled.button `
   display: inline-block;
   margin: 36px;
   padding: 0;
@@ -72,7 +82,7 @@ export const NavButton = styled.button`
   }
 `;
 
-export const BarWrapper = styled.div`
+export const BarWrapper = styled.div `
   @media screen and (min-width: 1230px) {
     display: none;
   }
@@ -83,7 +93,7 @@ export const BarWrapper = styled.div`
   }
 `;
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div `
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,7 +106,7 @@ export const HeaderContainer = styled.div`
   }
 `;
 
-export const Title = styled.span`
+export const Title = styled.span `
   @media screen and (max-width: 1600px) {
     display: none;
   }
