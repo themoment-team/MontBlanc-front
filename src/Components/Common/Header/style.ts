@@ -10,8 +10,9 @@ export const Header = styled.header`
   top: 0;
   display: flex;
   justify-content: space-between;
-  padding: 23px 15vw;
+  padding: 0px 15vw;
   width: 70vw;
+  height:100px;
   background: white;
   z-index: 1;
   @media ${device.mobile} {
@@ -26,7 +27,7 @@ export const Header = styled.header`
 
 export const Logo = styled.h1`
   display: inline-block;
-  border-right: 2px solid #434c9c;
+  border-right: 2px solid #6A76E9;
   padding-right: 21px;
   @media screen and (max-width: 1600px) {
     border: none;
@@ -62,7 +63,7 @@ export const NavButton = styled.button`
   padding: 0;
   background: none;
   text-decoration: none;
-  color: #434c9c;
+  color: #6A76E9;
   font-size: 1rem;
   @media screen and (max-width: 1230px) {
     margin: 24px 0;
@@ -78,7 +79,7 @@ export const BarWrapper = styled.div`
   & > svg {
     z-index: 2;
     font-size: 32px;
-    color: #434c9c;
+    color: #6A76E9;
   }
 `;
 
@@ -100,7 +101,7 @@ export const Title = styled.span`
     display: none;
   }
   align-items: center;
-  color: #434c9c;
+  color: #6A76E9;
   font-weight: 600;
   font-size: 22px;
   margin: 21px;
