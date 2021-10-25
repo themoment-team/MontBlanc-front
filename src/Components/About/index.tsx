@@ -39,19 +39,20 @@ const useHeading = (): string[][] => {
 
 const AboutPage: React.FC = () => {
   const [heading, explanation] = useHeading();
-
   return (
     <S.AboutBox>
       <PageExplanation heading={heading} explanation={explanation} />
       <S.AboutHeading>학교가 불편한 순간</S.AboutHeading>
       <S.AboutContent>
-        학교생활이 저희 덕분에 조금이라도 편해졌다면 우리의 노력이 빛을 발한
-        거겠죠.
-        <br />
-        우리는 더 적극적으로 들어보고 싶습니다.
-        <br />
-        재학 여부, 나이, 성별에 상관없이 학교가 불편했던 순간이 있다면
-        들려주세요.
+        <p>
+          학교생활이 저희 덕분에 조금이라도 편해졌다면 우리의 노력이 빛을
+          발한거겠죠.
+        </p>
+        <p>우리는 더 적극적으로 들어보고 싶습니다.</p>
+        <p>
+          재학 여부, 나이, 성별에 상관없이 학교가 불편했던 순간이 있다면
+          들려주세요.
+        </p>
       </S.AboutContent>
       <S.Hr />
       <h3>참고해주세요</h3>

@@ -20,6 +20,9 @@ export const AboutHeading = styled.h2`
 export const AboutContent = styled.div`
   font-weight: 600;
   margin-bottom: 40px;
+  p{
+    margin-top: 20px;
+  }
   li {
     margin-left: -1.3rem;
     &:not(:last-child) {
