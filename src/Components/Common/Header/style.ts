@@ -43,8 +43,7 @@ export const HeaderNav = styled.nav < NavBar > `
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 40vw;
-  /* border: 1px solid red; */
+  padding-left: 38vw;
   background-color: white;
   @media screen and (max-width: 1800px) {
     padding-left: 30vw;
@@ -91,7 +90,7 @@ export const BarWrapper = styled.div `
   }
   & > svg {
     z-index: 2;
-    font-size: 32px;
+    font-size: 28px;
     color: #6A76E9;
     cursor: pointer;
   }
