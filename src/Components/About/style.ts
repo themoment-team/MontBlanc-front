@@ -4,7 +4,7 @@ import device from "Constants/reactive";
 export const AboutBox = styled.div`
   margin: 180px auto;
   width: 70vw;
-  color: #434c9c;
+  color: #6A76E9;
   li {
     cursor: text;
   }
@@ -39,7 +39,7 @@ export const AboutContent = styled.div`
 export const Hr = styled.hr`
   margin: 70px 55% 70px 0;
   width: 692px;
-  border: 1px solid #434c9c;
+  border: 1px solid #6A76E9;
   transform: scaleY(0.5);
   @media ${device.laptop} {
     width: 100%;
