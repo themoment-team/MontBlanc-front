@@ -13,6 +13,7 @@ export const Header = styled.header `
   background: white;
   z-index: 1;
   display: flex;
+  justify-content: space-between;
 
   @media screen and (max-width: 1230px) {
     flex-direction: column;
@@ -21,20 +22,23 @@ export const Header = styled.header `
 `;
 
 export const BlurWrapper = styled.div `
-  width : 100vw;
-  background: #FFFFFF;
+  background: red;
   filter: blur(30px);
   position: absolute;
+  width : 100vw;
+  top: 0;
+  left : 0;
   z-index: -1;
   height: 100px;
+
 `;
 
 export const Logo = styled.h1 `
   display: inline-block;
   border-right: 2px solid #6A76E9;
   padding-right: 21px;
-  padding-left: 5vw;
-  @media screen and (max-width: 1500px) {
+  margin-left: 5vw;
+  @media screen and (max-width: 640px) {
     border: none;
   }
 `;
@@ -43,14 +47,11 @@ export const HeaderNav = styled.nav < NavBar > `
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 38vw;
   background-color: white;
-  @media screen and (max-width: 1800px) {
-    padding-left: 30vw;
-  }
+  padding-right: 5vw;
   @media screen and (max-width: 1230px) {
-    width : 100vw;
     padding-left: 5vw;
+    width : 100vw;
     flex-direction: column;
     align-items: flex-start;
     display: ${(props) => (props.active ? "none" : "flex")};
@@ -64,8 +65,10 @@ export const HeaderNav = styled.nav < NavBar > `
       font-weight: bold;
     }
   }
-  & > a:last-child {
+
+  button {
     margin-right: 0;
+    font-family: "Noto Sans CJK KR", sans-serif;
   }
 `;
 
@@ -101,7 +104,7 @@ export const HeaderContainer = styled.div `
   justify-content: space-between;
   align-items: center;
   @media screen and (max-width: 1230px) {
-    width: 90vw;
+    width: 93vw;
   }
   & > a {
     display: flex;
@@ -110,7 +113,7 @@ export const HeaderContainer = styled.div `
 `;
 
 export const Title = styled.span `
-  @media screen and (max-width: 1500px) {
+  @media screen and (max-width: 640px) {
     display: none;
   }
   align-items: center;
