@@ -14,10 +14,6 @@ export const Header = styled.header `
   z-index: 1;
   display: flex;
 
-  @media ${device.mobile} {
-    width: 90vw;
-    padding: 0 5vw;
-  }
   @media screen and (max-width: 1230px) {
     flex-direction: column;
     align-items: flex-start;
@@ -27,10 +23,10 @@ export const Header = styled.header `
 export const BlurWrapper = styled.div `
   width : 100vw;
   background: #FFFFFF;
-  filter: blur(100px);
+  filter: blur(30px);
   position: absolute;
   z-index: -1;
-  height: 100%;
+  height: 100px;
 `;
 
 export const Logo = styled.h1 `
@@ -38,7 +34,7 @@ export const Logo = styled.h1 `
   border-right: 2px solid #6A76E9;
   padding-right: 21px;
   padding-left: 5vw;
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 1500px) {
     border: none;
   }
 `;
@@ -47,15 +43,22 @@ export const HeaderNav = styled.nav < NavBar > `
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 35vw;
+  padding-left: 40vw;
+  /* border: 1px solid red; */
+  background-color: white;
+  @media screen and (max-width: 1800px) {
+    padding-left: 30vw;
+  }
   @media screen and (max-width: 1230px) {
+    width : 100vw;
+    padding-left: 5vw;
     flex-direction: column;
     align-items: flex-start;
     display: ${(props) => (props.active ? "none" : "flex")};
   }
   & > a {
     display: inline-block;
-    margin: 36px 44px;
+    margin: 0px 30px;
     @media screen and (max-width: 1230px) {
       margin: 24px 0;
       font-size: 1.2rem;
@@ -90,6 +93,7 @@ export const BarWrapper = styled.div `
     z-index: 2;
     font-size: 32px;
     color: #6A76E9;
+    cursor: pointer;
   }
 `;
 
@@ -98,7 +102,7 @@ export const HeaderContainer = styled.div `
   justify-content: space-between;
   align-items: center;
   @media screen and (max-width: 1230px) {
-    width: 100%;
+    width: 90vw;
   }
   & > a {
     display: flex;
@@ -107,7 +111,7 @@ export const HeaderContainer = styled.div `
 `;
 
 export const Title = styled.span `
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 1500px) {
     display: none;
   }
   align-items: center;
