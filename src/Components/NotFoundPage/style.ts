@@ -6,9 +6,10 @@ export const ErrorWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   color: #676767;
-  margin-top:180px;
+  margin-top: 17vh;
+  text-align: center;
   gap: 50px;
-  
+
   svg {
     width: 100%;
     max-width: 680px;
@@ -19,8 +20,8 @@ export const ErrorWrapper = styled.div`
   p {
     margin: 0;
     margin-bottom: 50px;
-      font-size: 20px;
-      text-align: center;
+    font-size: 20px;
+    text-align: center;
     @media ${device.mobile} {
       font-size: 16px;
       margin-bottom: 0;
@@ -35,6 +36,7 @@ export const ErrorWrapper = styled.div`
   }
 
   @media ${device.mobile} {
-    padding: 100px 0 0;
+    padding: 0 20px;
+    gap: 20px;
   }
 `;
