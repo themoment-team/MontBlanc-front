@@ -3,7 +3,7 @@ import device from "Constants/reactive";
 
 export const Footer = styled.div`
   margin: 70px 5vw;
-  border-top: 1px solid #6A76E9;
+  border-top: 1px solid #6a76e9;
   svg {
     margin-top: 40px;
   }
@@ -19,7 +19,7 @@ export const LineTextWrapper = styled.div`
 `;
 
 export const LineText = styled.div`
-  color: #6A76E9;
+  color: #6a76e9;
   font-size: 12px;
   b {
     font-weight: 700;

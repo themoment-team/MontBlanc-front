@@ -42,7 +42,6 @@ const Header: React.FC = () => {
     }
   });
 
-
   return (
     <S.Header>
       <S.HeaderContainer>
@@ -79,7 +78,7 @@ const Header: React.FC = () => {
           </S.NavButton>
         </S.HeaderNav>
       )}
-    <S.Blur active={bars}></S.Blur>
+      <S.Blur active={bars}></S.Blur>
     </S.Header>
   );
 };
