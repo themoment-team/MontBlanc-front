@@ -11,3 +11,4 @@ export { default as ImprovmentSvg2 } from "./ImprovmentSvg2";
 export { default as ImprovmentSvg3 } from "./ImprovmentSvg3";
 export { default as CancleBtn } from "./CancleBtn";
 export { default as EditBtn } from "./editBtn";
+export { default as NotFoundSvg } from "./NotFoundSvg";
