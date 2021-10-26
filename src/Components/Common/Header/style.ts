@@ -27,12 +27,12 @@ export const Blur = styled.div < NavBar >`
   filter: blur(30px);
   position: absolute;
   width : 100vw;
-  top: 0;
+  top: -50px;
   left : 0;
   z-index: -1;
-  height: 100px;
+  height: 150px;
   @media screen and (max-width : 1230px){
-    height: ${(props) => (props.active ? "100px" : "400px")};
+    height: ${(props) => (props.active ? "150px" : "450px")};
   }
 `;
 
@@ -68,10 +68,6 @@ export const HeaderNav = styled.nav < NavBar > `
     }
   }
 
-  button {
-    margin-right: 0;
-    font-family: "Noto Sans CJK KR", sans-serif;
-  }
 `;
 
 export const NavButton = styled.button `
@@ -82,6 +78,7 @@ export const NavButton = styled.button `
   text-decoration: none;
   color: #6A76E9;
   font-size: 1rem;
+  font-family: "Noto Sans CJK KR", sans-serif;
   @media screen and (max-width: 1230px) {
     margin: 24px 0;
     font-size: 1.2rem;
