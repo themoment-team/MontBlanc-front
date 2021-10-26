@@ -8,24 +8,21 @@ export const ErrorWrapper = styled.div`
   color: #676767;
   margin-top: 17vh;
   text-align: center;
-  gap: 50px;
+  justify-content: space-between;
 
   svg {
     width: 100%;
     max-width: 680px;
   }
   h1 {
-    margin: 0;
+    margin: 50px 0 0;
   }
   p {
     margin: 0;
     margin-bottom: 50px;
     font-size: 20px;
     text-align: center;
-    @media ${device.mobile} {
-      font-size: 16px;
-      margin-bottom: 0;
-    }
+    margin: 30px 0 60px;
   }
 
   a {
@@ -37,6 +34,9 @@ export const ErrorWrapper = styled.div`
 
   @media ${device.mobile} {
     padding: 0 20px;
-    gap: 20px;
+    p {
+      margin: 20px 0;
+      font-size: 16px;
+    }
   }
 `;
