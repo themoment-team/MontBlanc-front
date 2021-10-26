@@ -5,12 +5,13 @@ interface NavBar {
   active: boolean;
 }
 
+
+
 export const Header = styled.header `
   position: fixed;
   top: 0;
   width: 100vw;
   height:100px;
-  background: white;
   z-index: 1;
   display: flex;
   justify-content: space-between;
@@ -21,8 +22,8 @@ export const Header = styled.header `
   }
 `;
 
-export const BlurWrapper = styled.div `
-  background: red;
+export const Blur = styled.div < NavBar >`
+  background: #FFFFFF;
   filter: blur(30px);
   position: absolute;
   width : 100vw;
@@ -30,7 +31,9 @@ export const BlurWrapper = styled.div `
   left : 0;
   z-index: -1;
   height: 100px;
-
+  @media screen and (max-width : 1230px){
+    height: ${(props) => (props.active ? "100px" : "400px")};
+  }
 `;
 
 export const Logo = styled.h1 `
@@ -38,7 +41,7 @@ export const Logo = styled.h1 `
   border-right: 2px solid #6A76E9;
   padding-right: 21px;
   margin-left: 5vw;
-  @media screen and (max-width: 640px) {
+  @media ${device.mobile} {
     border: none;
   }
 `;
@@ -47,7 +50,6 @@ export const HeaderNav = styled.nav < NavBar > `
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
   padding-right: 5vw;
   @media screen and (max-width: 1230px) {
     padding-left: 5vw;
