@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
   
   a {
     text-decoration: none;
-    color: #434C9C;
+    color: #6A76E9;
   }
 `;
 
