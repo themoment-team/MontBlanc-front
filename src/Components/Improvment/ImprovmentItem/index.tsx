@@ -10,7 +10,7 @@ interface ImprovmentProps {
 }
 
 const randomColorPicker = () => {
-  const color: string[] = ["#C3D7DE", "#C0C9D6", "#A7C5EB"];
+  const color: string[] = ["#CCD1FF", "#FFDEDE", "#C3E2FF"];
 
   const randomNumber: number = Math.floor(Math.random() * 3);
 
