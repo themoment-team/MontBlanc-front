@@ -33,7 +33,8 @@ export const Btn = styled.button`
   color: white;
   font-weight: 700;
   font-size: 14px;
-  background-color: #434c9c;
+  background-color: #6a76e9;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   @media ${device.mobile} {
     width: 100%;
   }
@@ -41,7 +42,7 @@ export const Btn = styled.button`
     padding-left: 5px;
   }
   & > button {
-    background-color: #434c9c;
+    background-color: #6a76e9;
     color: white;
     font-weight: 700;
     font-size: 14px;
@@ -62,7 +63,7 @@ export const LinkTextWrapper = styled.div`
 export const AltImprovementItem = styled.div`
   width: 33.4vw;
   text-align: center;
-  color: #434c9c;
+  color: #6a76e9;
   font-size: 1.82rem;
   font-weight: 500;
   margin: 0 auto;
