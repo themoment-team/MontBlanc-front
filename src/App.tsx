@@ -42,12 +42,12 @@ const App: React.FC = () => (
       </Switch>
     ) : (
       <Switch>
-        <Route path={Config.LINK.ABOUT} component={P.About} />
-        <Route path={Config.LINK.IMPROVMENT} component={P.Improvment} />
-        <Route path={Config.LINK.RANK} component={P.Top10} />
-        <Route path={Config.LINK.COMMENT} component={P.LeaveComments} />
-        <Route path={Config.LINK.START} component={P.Start} />
-        <Redirect path="*" to={Config.LINK.COMMENT} />
+        <Route path={Config.LINK.ABOUT} exact component={P.About} />
+        <Route path={Config.LINK.IMPROVMENT} exact component={P.Improvment} />
+        <Route path={Config.LINK.RANK} exact component={P.Top10} />
+        <Route path={Config.LINK.COMMENT} exact component={P.LeaveComments} />
+        <Route path={Config.LINK.START} exact component={P.Start} />
+        <Route component={P.NotFound} />
       </Switch>
     )}
   </BrowserRouter>
