@@ -14,6 +14,7 @@ export const AboutBox = styled.div`
 `;
 
 export const AboutHeading = styled.h2`
+  margin-top: 30px;
   margin-bottom: 30px;
 `;
 
