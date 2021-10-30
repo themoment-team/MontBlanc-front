@@ -1,5 +1,5 @@
 import {
-  Top10Page,
+  RankPage,
   Header,
   Footer,
   ChannelTalkHelmet,
@@ -16,7 +16,7 @@ const Top10: React.FC = () => {
       <SeoHelmet pageTitle={pageTitle} desc={desc} />
       <ChannelTalkHelmet />
       <Header />
-      <Top10Page />
+      <RankPage />
       <Footer />
     </>
   );

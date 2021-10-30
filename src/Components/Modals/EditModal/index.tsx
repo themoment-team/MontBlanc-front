@@ -9,7 +9,7 @@ import Improvement from "Api/improvement";
 import { Styles } from "react-modal";
 
 interface list {
-  boardIdx: number;
+  uncomfortableIdx: number;
   content: string;
 }
 
@@ -24,7 +24,7 @@ const useStateDistinction = (idx: number, state: string) => {
     TryUpdate = updateAndSaveAnswer(idx, "Update", content);
     TrySave = updateAndSaveAnswer(idx, "Save", content);
     TryDelete = deleteAnswer(idx);
-  } else if (state === "improvment") {
+  } else if (state === "improvement") {
     TryUpdate = updateImprovement(idx, content, heading);
     TrySave = saveImprovement(content, heading);
     TryDelete = deleteImprovement(idx);
@@ -50,7 +50,7 @@ const updateImprovement = (idx: number, content: string, heading: string) => {
 const saveImprovement = (content: string, heading: string) => {
   const trySave = async () => {
     try {
-      await Improvement.saveImprovment(content, heading);
+      await Improvement.saveImprovement(content, heading);
       window.location.reload();
     } catch (e) {
       alert("실제개선사례 작성 또는 수정 오류 : " + e);
@@ -89,7 +89,7 @@ const deleteAnswer = (idx: number) => {
   const TryDelete = async () => {
     try {
       window.location.reload();
-      await Answer.delete(idx);
+      await Answer.deleteAnswer(idx);
     } catch (e) {
       alert("답변 삭제 오류 : " + e);
     }

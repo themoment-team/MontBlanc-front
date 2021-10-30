@@ -2,13 +2,13 @@ import { AdminController } from "Utils/Libs/requestUrls";
 import RequestApi from "Utils/Libs/requestApi";
 
 class Admin {
-  async login(id: string, pass: string) {
+  login(id: string, pass: string) {
     try {
       const data = {
         email: id,
         password: pass,
       };
-      return await RequestApi({
+      return RequestApi({
         method: "POST",
         url: AdminController.login(),
         data: data,
@@ -18,14 +18,14 @@ class Admin {
     }
   }
 
-  async signup(id: string, name: string, pass: string) {
+  signup(id: string, name: string, pass: string) {
     try {
       const data = {
         id,
         name,
         pass,
       };
-      return await RequestApi({
+      return RequestApi({
         method: "POST",
         url: AdminController.signup(),
         data: data,
@@ -35,9 +35,9 @@ class Admin {
     }
   }
 
-  async logout() {
+  logout() {
     try {
-      return await RequestApi(
+      return RequestApi(
         {
           method: "POST",
           url: AdminController.logout(),
@@ -49,13 +49,13 @@ class Admin {
     }
   }
 
-  async withdrawal(id: string, pass: string) {
+  withdrawal(id: string, pass: string) {
     try {
       const data = {
         id,
         pass,
       };
-      return await RequestApi(
+      return RequestApi(
         {
           method: "POST",
           url: AdminController.withdrawal(),

@@ -13,21 +13,21 @@ interface list {
   idx: number;
 }
 
-const useViewTable = () => {
+const useGetTable = () => {
   const [list, setList] = useState<list[]>([]);
 
-  const tryViewTable = async () => {
-    return await Table.viewTable();
+  const getTable = async () => {
+    return await Table.getTable();
   };
 
   useEffect(() => {
-    tryViewTable().then((res) => setList(res.data.list));
+    getTable().then((res) => setList(res.data.list));
   }, []);
   return list;
 };
 
 const useWriteTable = () => {
-  const tryWriteTable = async (
+  const writeTable = async (
     content: string,
     setContent: React.Dispatch<React.SetStateAction<string>>,
   ) => {
@@ -36,7 +36,7 @@ const useWriteTable = () => {
     return await Table.writeTable(content);
   };
 
-  return tryWriteTable;
+  return writeTable;
 };
 
 const useShuffle = () => {
@@ -48,7 +48,7 @@ const useShuffle = () => {
 };
 
 const LeaveCommentsPage: React.FC = () => {
-  const list = useViewTable();
+  const list = useGetTable();
   const history = useHistory();
   const shuffle = useShuffle();
 

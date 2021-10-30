@@ -3,7 +3,7 @@ import RequestApi from "Utils/Libs/requestApi";
 import { Method } from "axios";
 
 class Answer {
-  async updateAndSaveAnswer(
+  updateAndSaveAnswer(
     content: string,
     answerIdx: number,
     method: Method,
@@ -27,7 +27,7 @@ class Answer {
     }
   }
 
-  delete(answerIdx: number) {
+  deleteAnswer(answerIdx: number) {
     try {
       return RequestApi(
         {

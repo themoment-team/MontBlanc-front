@@ -39,7 +39,7 @@ class Improvement {
     }
   }
 
-  viewImprovment() {
+  getImprovement() {
     try {
       return RequestApi({
         url: ImprovementController.detail2Solved(),
@@ -49,7 +49,7 @@ class Improvement {
     }
   }
 
-  saveImprovment(improveContent: string, improveHeader: string) {
+  saveImprovement(improveContent: string, improveHeader: string) {
     try {
       const data = {
         content: improveContent,

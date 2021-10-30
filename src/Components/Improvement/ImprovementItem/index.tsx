@@ -2,7 +2,7 @@ import * as I from "../../../Asset/SVG";
 import * as S from "./style";
 import { ViewModal } from "Components/Modals";
 
-interface ImprovmentProps {
+interface ImprovementProps {
   header: string;
   content: string;
   idx: number;
@@ -17,32 +17,32 @@ const randomColorPicker = () => {
   return color[randomNumber];
 };
 
-const ImprovmentItemPresenter: React.FC<ImprovmentProps> = (
-  p: ImprovmentProps,
+const ImprovementItemPresenter: React.FC<ImprovementProps> = (
+  p: ImprovementProps,
 ) => {
   const randomColor = randomColorPicker();
 
   return (
-    <S.ImprovmentBox color={randomColor}>
-      <S.ImprovmentContentBox>
+    <S.ImprovementBox color={randomColor}>
+      <S.ImprovementContentBox>
         <I.DoubleQuotes />
-        <S.ImprovmentContent>
-          <S.ImprovmentHeading>{p.header}</S.ImprovmentHeading>
+        <S.ImprovementContent>
+          <S.ImprovementHeading>{p.header}</S.ImprovementHeading>
           <S.AboutBtn>
             <ViewModal
               idx={p.idx}
-              state={"improvment"}
+              state={"improvement"}
               key={p.key}
               buttonContent={"자세히 보기"}
             />
           </S.AboutBtn>
-        </S.ImprovmentContent>
-        <S.ImprovmentImg>
-          <I.ImprovmentSvg1 />
-        </S.ImprovmentImg>
-      </S.ImprovmentContentBox>
-    </S.ImprovmentBox>
+        </S.ImprovementContent>
+        <S.ImprovementImg>
+          <I.ImprovementSvg1 />
+        </S.ImprovementImg>
+      </S.ImprovementContentBox>
+    </S.ImprovementBox>
   );
 };
 
-export default ImprovmentItemPresenter;
+export default ImprovementItemPresenter;
