@@ -21,8 +21,8 @@ const useStateDistinction = (idx: number, state: string) => {
   let TryDelete = () => {};
 
   if (state === "answer") {
-    TryUpdate = updateAndSaveAnswer(idx, "Update", content);
-    TrySave = updateAndSaveAnswer(idx, "Save", content);
+    TryUpdate = updateAnswer(idx, content);
+    TrySave = saveAnswer(idx, content);
     TryDelete = deleteAnswer(idx);
   } else if (state === "improvement") {
     TryUpdate = updateImprovement(idx, content, heading);
@@ -71,14 +71,26 @@ const deleteImprovement = (idx: number) => {
   return tryDelete;
 };
 
-const updateAndSaveAnswer = (idx: number, state: string, content: string) => {
+const updateAnswer = (idx: number, content: string) => {
   const TryUpdateAndSave = async () => {
-    const method = state === "Update" ? "PUT" : "POST";
     try {
-      await Answer.updateAndSaveAnswer(content, idx, method);
+      await Answer.updateAnswer(content, idx);
       window.location.reload();
     } catch (e) {
-      alert("답변 저장 또는 수정 오류 : " + e);
+      alert("답변 수정 오류 : " + e);
+    }
+  };
+
+  return TryUpdateAndSave;
+};
+
+const saveAnswer = (idx: number, content: string) => {
+  const TryUpdateAndSave = async () => {
+    try {
+      await Answer.saveAnswer(content, idx);
+      window.location.reload();
+    } catch (e) {
+      alert("답변 저장 오류 : " + e);
     }
   };
 

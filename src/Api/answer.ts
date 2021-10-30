@@ -3,10 +3,9 @@ import RequestApi from "Utils/Libs/requestApi";
 import { Method } from "axios";
 
 class Answer {
-  updateAndSaveAnswer(
+  updateAnswer(
     content: string,
     answerIdx: number,
-    method: Method,
   ) {
     try {
       const data = {
@@ -14,8 +13,31 @@ class Answer {
       };
       return RequestApi(
         {
-          method: method,
+          method: "PUT",
           url: AnswerController.detailAnswer(answerIdx),
+          data: data,
+        },
+        {
+          hasToken: true,
+        },
+      );
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
+  saveAnswer(
+    content: string,
+    uncomfortableIdx: number,
+  ) {
+    try {
+      const data = {
+        content,
+      };
+      return RequestApi(
+        {
+          method: "POST",
+          url: AnswerController.detail2Answer(uncomfortableIdx),
           data: data,
         },
         {
