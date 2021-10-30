@@ -83,8 +83,11 @@ export const TenIssues = styled.div`
     letter-spacing: -1px;
     text-align: left;
     & + button {
+      justify-content: initial;
       margin-left: 54px;
+      width: 48px;
       @media ${device.mobile} {
+      width: 60px;
         margin-left: 20%;
       }
     }
