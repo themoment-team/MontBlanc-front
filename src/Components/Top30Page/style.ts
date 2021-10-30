@@ -3,7 +3,7 @@ import device from "Constants/reactive";
 
 export const TopTenWrapper = styled.section`
   display: flex;
-  width: 70vw;
+  width: 90vw;
   margin: 180px auto;
   height: fit-content;
   @media ${device.mobile} {
@@ -27,7 +27,7 @@ export const TenIssues = styled.div`
   width: calc(100% - 40px);
   height: fit-content;
   border-radius: 12px;
-  background: #e7f2f1;
+  background: #E8E8FF;
   padding: 20px;
   word-break: break-all;
   & + div {
@@ -37,7 +37,7 @@ export const TenIssues = styled.div`
     flex-direction: column;
   }
   &:nth-child(-n + 3) {
-    background: #dce8f7;
+    background: #C3E2FF;
   }
   & > span:nth-child(1) > span {
     margin-right: 20px;
@@ -69,12 +69,11 @@ export const TenIssues = styled.div`
       margin-top: 10px;
     }
   }
-  & > span:nth-child(2) > button:nth-child(1) {
+  & > span:nth-child(2) button:nth-child(1) {
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #92929223;
     width: 81px;
     height: 30px;
     color: white;
@@ -95,8 +94,45 @@ export const TenIssues = styled.div`
   }
 `;
 
+export const NoAnswerBtn = styled.button`
+  background-color: #92929223;
+`;
+
+export const HasAnswerBtn = styled.button`
+  button {
+    background-color: #6A76E9;
+}`;
+
 export const LinkCommentPageBtn = styled.button`
-  margin-top: 50px;
-  background-color: #434c9c;
+  background-color: #6A76E9;
+  color: #fff;
+  padding: 26px 31px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  width: 328px;
+  margin-top: 24px;
+  border-radius: 10px;
+  span {
+    padding-right: 9px;
+  }
+  @media ${device.tablet} {
+    width: 280px;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+  }
+  @media ${device.mobile} {
+    width: 100%;
+    flex-direction: row;
+  }
+`;
+
+export const LinkWrapper = styled.div`
   color: white;
+  text-decoration: #fff 1px underline;
+  padding-top: 3%;
+  font-size: 12px;
+  font-weight: 600;
 `;
