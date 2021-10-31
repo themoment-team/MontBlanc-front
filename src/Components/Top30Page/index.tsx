@@ -2,6 +2,7 @@ import { PageExplanation } from "../PageExplanation";
 import { useHistory } from "react-router-dom";
 import { LeftBox } from "../../Constants/Styles/Detail";
 import GoodBtn from "../GoodBtn";
+import * as I from "../../Asset/SVG/index";
 import * as S from "./style";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
@@ -56,7 +57,14 @@ const Top30Page = () => {
           <S.LinkCommentPageBtn
             onClick={() => history.push(Config.LINK.COMMENT)}
           >
-            의견 남기기
+          <span>
+            많은 학생들이 공감한
+            <br /> 불편함은 무엇일까요?
+          </span>
+          <S.LinkWrapper>
+            <span>Top 30 보러가기</span>
+            <I.RightArrow />
+          </S.LinkWrapper>
           </S.LinkCommentPageBtn>
         )}
       </LeftBox>
@@ -69,11 +77,13 @@ const Top30Page = () => {
             </span>
             <span>
               {top10.answer ? (
+                <S.HasAnswerBtn>
                 <ViewModal
                   idx={top10.uncomfortableIdx}
                   state={"answer"}
                   buttonContent={"답변보기"}
                 />
+                </S.HasAnswerBtn>
               ) : logged ? (
                 <EditModal
                   idx={top10.uncomfortableIdx}
@@ -85,7 +95,7 @@ const Top30Page = () => {
                   }
                 />
               ) : (
-                <button>답변없음</button>
+                <S.NoAnswerBtn>답변없음</S.NoAnswerBtn>
               )}
               <GoodBtn
                 Background={false}
