@@ -98,7 +98,7 @@ const ViewModalPresenter: React.FC<{
             <S.H1>{title}</S.H1>
             {logged && (
               <EditModal
-                idx={idx}
+                idx={Number(Idx)}
                 state={state ?? ""}
                 heading={"수정하기"}
                 content={content}
