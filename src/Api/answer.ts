@@ -3,10 +3,7 @@ import RequestApi from "Utils/Libs/requestApi";
 import { Method } from "axios";
 
 class Answer {
-  updateAnswer(
-    content: string,
-    answerIdx: number,
-  ) {
+  updateAnswer(content: string, answerIdx: number) {
     try {
       const data = {
         content,
@@ -26,10 +23,7 @@ class Answer {
     }
   }
 
-  saveAnswer(
-    content: string,
-    uncomfortableIdx: number,
-  ) {
+  saveAnswer(uncomfortableIdx: number, content: string) {
     try {
       const data = {
         content,

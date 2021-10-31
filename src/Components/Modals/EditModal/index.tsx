@@ -87,7 +87,7 @@ const updateAnswer = (idx: number, content: string) => {
 const saveAnswer = (idx: number, content: string) => {
   const TryUpdateAndSave = async () => {
     try {
-      await Answer.saveAnswer(content, idx);
+      await Answer.saveAnswer(idx, content);
       window.location.reload();
     } catch (e) {
       alert("답변 저장 오류 : " + e);
@@ -100,8 +100,8 @@ const saveAnswer = (idx: number, content: string) => {
 const deleteAnswer = (idx: number) => {
   const TryDelete = async () => {
     try {
-      window.location.reload();
       await Answer.deleteAnswer(idx);
+      window.location.reload();
     } catch (e) {
       alert("답변 삭제 오류 : " + e);
     }
