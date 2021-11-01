@@ -27,8 +27,8 @@ const AboutCounting = () => {
 
   return (
     <S.Counting>
-      <p><span><CountUp end={day} duration={0.8}></CountUp></span>일 동안</p>
-      <p><span><CountUp end={cnt_comment} duration={0.8}></CountUp></span>개의 불편함이</p>
+      <p><CountUp end={day} duration={0.8}></CountUp>일 동안</p>
+      <p><CountUp end={cnt_comment} duration={0.8}></CountUp>개의 불편함이</p>
       <p>모였습니다.</p>
     </S.Counting>
   )
