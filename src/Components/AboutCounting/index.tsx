@@ -1,6 +1,7 @@
 import Table from "Api/table";
 import { useEffect, useState } from "react";
 import * as S from "./style"
+import CountUp from "react-countup";
 
 const useAmount = (): [amount: number, date: number] => {
   const [amount, setAmount] = useState({ data: 0 });
@@ -22,12 +23,12 @@ const useAmount = (): [amount: number, date: number] => {
 };
 
 const AboutCounting = () => {
-  const [day,  cnt_comment]= useAmount();
+  const [day, cnt_comment] = useAmount();
 
   return (
     <S.Counting>
-      <p><span>{day}</span>일 동안</p>
-      <p><span>{cnt_comment}</span>개의 불편함이</p>
+      <p><span><CountUp end={day} duration={0.8}></CountUp></span>일 동안</p>
+      <p><span><CountUp end={cnt_comment} duration={0.8}></CountUp></span>개의 불편함이</p>
       <p>모였습니다.</p>
     </S.Counting>
   )
