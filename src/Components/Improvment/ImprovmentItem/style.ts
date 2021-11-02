@@ -8,7 +8,7 @@ interface ImprovmentProps {
 export const ImprovmentBox = styled.div<ImprovmentProps>`
   background-color: ${(props) => props.color};
   width: 35vw;
-  height: 300px;
+  height: 350px;
   border-radius: 12px;
   padding: 3em;
   margin-bottom: 33px;
@@ -59,6 +59,7 @@ export const AboutBtn = styled.div`
 
 export const ImprovmentImg = styled.div`
   float: right;
+  margin-top: 50px;
   @media ${device.laptop} {
     margin-top: 50px;
     svg {
