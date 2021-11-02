@@ -3,7 +3,7 @@ import device from "Constants/reactive";
 
 export const AboutBox = styled.div`
   margin: 180px auto;
-  width: 70vw;
+  width: 90vw;
   color: #6A76E9;
   li {
     cursor: text;
@@ -16,12 +16,15 @@ export const AboutBox = styled.div`
 export const AboutHeading = styled.h2`
   margin-top: 30px;
   margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 30px;
 `;
 
 export const AboutContent = styled.div`
   font-weight: 600;
   margin-bottom: 40px;
   p{
+    font-size: 22px;
     margin-top: 20px;
   }
   li {
