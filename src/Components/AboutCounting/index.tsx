@@ -19,7 +19,7 @@ const useAmount = (): [amount: number, date: number] => {
     getDataSinceProjectStart().then((res) => setDate(res.data));
   }, []);
 
-  return [amount.data, Number(date.data)];
+  return [date.data, amount.data];
 };
 
 const AboutCounting = () => {
