@@ -27,7 +27,7 @@ export const TenIssues = styled.div`
   width: calc(100% - 40px);
   height: fit-content;
   border-radius: 12px;
-  background: #E8E8FF;
+  background: #e8e8ff;
   padding: 20px;
   word-break: break-all;
   & + div {
@@ -37,7 +37,7 @@ export const TenIssues = styled.div`
     flex-direction: column;
   }
   &:nth-child(-n + 3) {
-    background: #C3E2FF;
+    background: #c3e2ff;
   }
   & > span:nth-child(1) > span {
     margin-right: 20px;
@@ -87,7 +87,7 @@ export const TenIssues = styled.div`
       margin-left: 54px;
       width: 48px;
       @media ${device.mobile} {
-      width: 60px;
+        width: 60px;
         margin-left: 20%;
       }
     }
@@ -103,22 +103,24 @@ export const NoAnswerBtn = styled.button`
 
 export const HasAnswerBtn = styled.button`
   button {
-    background-color: #6A76E9;
-}`;
+    background-color: #6a76e9;
+  }
+`;
 
 export const LinkCommentPageBtn = styled.button`
-  background-color: #6A76E9;
+  background-color: #6a76e9;
   color: #fff;
   padding: 26px 31px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 20px;
   display: flex;
   justify-content: space-between;
-  width: 328px;
+  width: 440px;
   margin-top: 24px;
   border-radius: 10px;
   span {
     padding-right: 9px;
+    font-size: 16px;
   }
   @media ${device.tablet} {
     width: 280px;

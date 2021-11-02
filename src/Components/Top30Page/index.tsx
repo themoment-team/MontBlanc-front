@@ -57,14 +57,15 @@ const Top30Page = () => {
           <S.LinkCommentPageBtn
             onClick={() => history.push(Config.LINK.COMMENT)}
           >
-          <span>
-            많은 학생들이 공감한
-            <br /> 불편함은 무엇일까요?
-          </span>
-          <S.LinkWrapper>
-            <span>Top 30 보러가기</span>
-            <I.RightArrow />
-          </S.LinkWrapper>
+            <span>
+              학교가 불편한 순간을
+              <br />
+              자유롭게 남겨주세요.
+            </span>
+            <S.LinkWrapper>
+              <span>의견 남기기</span>
+              <I.RightArrow />
+            </S.LinkWrapper>
           </S.LinkCommentPageBtn>
         )}
       </LeftBox>
@@ -78,11 +79,11 @@ const Top30Page = () => {
             <span>
               {top10.answer ? (
                 <S.HasAnswerBtn>
-                <ViewModal
-                  idx={top10.uncomfortableIdx}
-                  state={"answer"}
-                  buttonContent={"답변보기"}
-                />
+                  <ViewModal
+                    idx={top10.uncomfortableIdx}
+                    state={"answer"}
+                    buttonContent={"답변보기"}
+                  />
                 </S.HasAnswerBtn>
               ) : logged ? (
                 <EditModal
