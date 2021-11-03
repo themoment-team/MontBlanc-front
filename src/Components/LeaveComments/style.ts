@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import device from "Constants/reactive";
+import device from "Constants/constants";
 
 interface submitBtn {
   Length: number;
