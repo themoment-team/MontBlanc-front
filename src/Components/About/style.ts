@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import device from "Constants/reactive";
+import device from "Constants/constants";
 
 export const AboutBox = styled.div`
   margin: 180px auto;

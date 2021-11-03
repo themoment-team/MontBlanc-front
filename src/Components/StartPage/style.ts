@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import device from "Constants/reactive";
+import device from "Constants/constants";
 
 export const StartPage = styled.div`
   display: flex;
