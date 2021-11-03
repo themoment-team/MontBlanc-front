@@ -2,79 +2,9 @@ import React from "react";
 
 class Start_img1 extends React.Component {
   render() {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="270"
-        height="2000"
-        fill="none"
-        viewBox="0 0 270 2000"
-      >
-        <rect
-          width="270"
-          height="190"
-          y="219"
-          fill="#A7C5EB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="355"
-          y="438"
-          fill="#C4DFDB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="190"
-          fill="#699CAC"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="212"
-          y="822"
-          fill="#CBD9E2"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="212"
-          y="1065"
-          fill="#C4DFDB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="190"
-          y="1525"
-          fill="#A7C5EB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="355"
-          y="1744"
-          fill="#C4DFDB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="190"
-          y="1306"
-          fill="#699CAC"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-      </svg>
-    );
+    return ( 
+      <svg width="252" height="2038" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1872" width="252" height="166" rx="12" fill="#C3E2FF"/><rect y="1316" width="252" height="527" rx="12" fill="#CCD1FF"/><rect x=".388" y="292" width="251.613" height="212" rx="12" fill="#CCD1FF"/><rect x=".388" y="533" width="251.613" height="184" rx="12" fill="#C3E2FF"/><rect x=".388" width="251.613" height="263" rx="12" fill="#FFDEDE"/><rect x=".388" y="746" width="251.613" height="256" rx="12" fill="#E8E8FF"/><rect x=".388" y="1031" width="251.613" height="256" rx="12" fill="#AFC2F2"/></svg>    
+      );
   }
 }
 
