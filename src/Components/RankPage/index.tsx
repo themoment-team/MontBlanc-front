@@ -2,6 +2,7 @@ import { PageExplanation } from "../PageExplanation";
 import { useHistory } from "react-router-dom";
 import { LeftBox } from "../../Constants/Styles/Detail";
 import GoodBtn from "../GoodBtn";
+import * as I from "../../Asset/SVG/index";
 import * as S from "./style";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
@@ -57,7 +58,15 @@ const RankPage = () => {
           <S.LinkCommentPageBtn
             onClick={() => history.push(Config.LINK.COMMENT)}
           >
-            의견 남기기
+            <span>
+              학교가 불편한 순간을
+              <br />
+              자유롭게 남겨주세요.
+            </span>
+            <S.LinkWrapper>
+              <span>의견 남기기</span>
+              <I.RightArrow />
+            </S.LinkWrapper>
           </S.LinkCommentPageBtn>
         )}
       </LeftBox>
@@ -70,11 +79,13 @@ const RankPage = () => {
             </span>
             <span>
               {rank.answer ? (
-                <ViewModal
-                  idx={rank.boardIdx}
-                  state={"answer"}
-                  buttonContent={"답변보기"}
-                />
+                <S.HasAnswerBtn>
+                  <ViewModal
+                    idx={rank.boardIdx}
+                    state={"answer"}
+                    buttonContent={"답변보기"}
+                  />
+                </S.HasAnswerBtn>
               ) : logged ? (
                 <EditModal
                   idx={rank.boardIdx}
@@ -86,7 +97,7 @@ const RankPage = () => {
                   }
                 />
               ) : (
-                <button>답변없음</button>
+                <S.NoAnswerBtn>답변없음</S.NoAnswerBtn>
               )}
               <GoodBtn
                 Background={false}

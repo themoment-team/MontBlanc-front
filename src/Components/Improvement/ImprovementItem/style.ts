@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import device from "Constants/reactive";
+import device from "Constants/constants";
 
 interface ImprovementProps {
   color: string;
@@ -8,7 +8,7 @@ interface ImprovementProps {
 export const ImprovementBox = styled.div<ImprovementProps>`
   background-color: ${(props) => props.color};
   width: 35vw;
-  height: 300px;
+  height: 350px;
   border-radius: 12px;
   padding: 3em;
   margin-bottom: 33px;
@@ -59,6 +59,7 @@ export const AboutBtn = styled.div`
 
 export const ImprovementImg = styled.div`
   float: right;
+  margin-top: 50px;
   @media ${device.laptop} {
     margin-top: 50px;
     svg {

@@ -8,11 +8,6 @@ import Answer from "Api/answer";
 import Improvement from "Api/improvement";
 import { Styles } from "react-modal";
 
-interface list {
-  uncomfortableIdx: number;
-  content: string;
-}
-
 const useStateDistinction = (heading: string, content: string, idx: number, state: string) => {
   let TryUpdate = () => {};
   let TrySave = () => {};

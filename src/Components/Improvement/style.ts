@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import device from "Constants/reactive";
+import device from "Constants/constants";
 
 export const ImprovementPageBox = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 180px auto;
-  width: 70vw;
+  width: 90vw;
   @media ${device.mobile} {
     flex-direction: column;
     width: 90vw;
+    margin-left: 5vw;
   }
 `;
 
@@ -26,13 +27,13 @@ export const LeftBox = styled.div`
 
 export const Btn = styled.button`
   display: flex;
-  width: 324px;
+  width: 435px;
   justify-content: space-between;
   margin-top: 50px;
   padding: 19px 23px;
   color: white;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   background-color: #6a76e9;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   @media ${device.mobile} {
@@ -45,7 +46,7 @@ export const Btn = styled.button`
     background-color: #6a76e9;
     color: white;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
     width: 324px;
     text-align: left;
     padding: 0;
@@ -61,7 +62,7 @@ export const LinkTextWrapper = styled.div`
 `;
 
 export const AltImprovementItem = styled.div`
-  width: 33.4vw;
+  width: 40vw;
   text-align: center;
   color: #6a76e9;
   font-size: 1.82rem;
