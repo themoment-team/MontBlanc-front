@@ -21,6 +21,9 @@ export const AnswerController = {
   detailAnswer: (answerIdx: number) => {
     return `/rank/answer/${answerIdx}`;
   },
+  detail2Answer: (uncomfortableIdx: number) => {
+    return `/rank/answer/${uncomfortableIdx}`;
+  }
 };
 
 //실제개선사례
@@ -37,18 +40,18 @@ export const ImprovementController = {
 
 //게시글
 export const TableController = {
-  viewTop10Uncomfortable: () => {
+  getRankUncomfortable: () => {
     return `/uncomfortable/rank`;
   },
   //post 게시글 작성, get 게시글 보기
   detailUncomfortable: () => {
     return `/uncomfortable`;
   },
-  AddGoods: (boardIdx: number) => {
-    return `/uncomfortable/like/increase/${boardIdx}`;
+  increaseGoods: (uncomfortableIdx: number) => {
+    return `/uncomfortable/like/increase/${uncomfortableIdx}`;
   },
-  cancelGoods: (boardIdx: number) => {
-    return `/uncomfortable/like/decrease/${boardIdx}`;
+  decreaseGoods: (uncomfortableIdx: number) => {
+    return `/uncomfortable/like/decrease/${uncomfortableIdx}`;
   },
   amountUncomfortable: () => {
     return `/uncomfortable/amount`;

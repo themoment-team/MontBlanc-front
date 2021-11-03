@@ -1,6 +1,6 @@
 import React from "react";
 
-class ImprovmentSvg1 extends React.Component {
+class ImprovementSvg1 extends React.Component {
   render() {
     return (
       <svg
@@ -131,4 +131,4 @@ class ImprovmentSvg1 extends React.Component {
   }
 }
 
-export default ImprovmentSvg1;
+export default ImprovementSvg1;

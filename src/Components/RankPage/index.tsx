@@ -12,24 +12,25 @@ import Table from "Api/table";
 import { useEffect, useState } from "react";
 
 interface list {
-  uncomfortableIdx: number;
+  boardIdx: number;
   content: string;
   goods: number;
   answer: boolean;
 }
 
-const useTop10 = () => {
+const useRank = () => {
   const [list, setList] = useState<list[]>([
-    { uncomfortableIdx: 0, content: "", goods: 0, answer: false },
+    { boardIdx: 0, content: "", goods: 0, answer: false },
   ]);
 
-  const tryTop10 = async () => {
-    return await Table.viewTop10Table();
+  const getRank = async () => {
+    return await Table.GetRankTable();
   };
 
   useEffect(() => {
-    tryTop10().then((res) => setList(res.data.list));
+    getRank().then((res) => setList(res.data.list));
   }, []);
+
   return list;
 };
 
@@ -41,8 +42,8 @@ const explanation: string[] = [
   "좀 더 적극적으로 개선할 수 있도록 노력하겠습니다.",
 ];
 
-const Top30Page = () => {
-  const list = useTop10();
+const RankPage = () => {
+  const list = useRank();
   const logged = useRecoilValue(HasAdminToken);
   const history = useHistory();
 
@@ -70,29 +71,29 @@ const Top30Page = () => {
         )}
       </LeftBox>
       <S.RightBox>
-        {list.map((top10: list, index) => (
-          <S.TenIssues key={top10.uncomfortableIdx}>
+        {list.map((rank: list, index) => (
+          <S.TenIssues key={rank.boardIdx}>
             <span>
               <span>{index + 1}위</span>
-              <article>{top10.content.replace(/^\s+|\s+$/gm, "")}</article>
+              <article>{rank.content.replace(/^\s+|\s+$/gm, "")}</article>
             </span>
             <span>
-              {top10.answer ? (
+              {rank.answer ? (
                 <S.HasAnswerBtn>
                   <ViewModal
-                    idx={top10.uncomfortableIdx}
+                    idx={rank.boardIdx}
                     state={"answer"}
                     buttonContent={"답변보기"}
                   />
                 </S.HasAnswerBtn>
               ) : logged ? (
                 <EditModal
-                  idx={top10.uncomfortableIdx}
+                  idx={rank.boardIdx}
                   state={"answer"}
                   ButtonContent={"답변달기"}
                   heading={"답변달기"}
                   title={
-                    top10.content.replace(/^\s+|\s+$/gm, "") + "불편함 답변"
+                    rank.content.replace(/^\s+|\s+$/gm, "") + "불편함 답변"
                   }
                 />
               ) : (
@@ -100,8 +101,8 @@ const Top30Page = () => {
               )}
               <GoodBtn
                 Background={false}
-                Goods={top10.goods}
-                Idx={top10.uncomfortableIdx}
+                Goods={rank.goods}
+                Idx={rank.boardIdx}
               />
             </span>
           </S.TenIssues>
@@ -111,4 +112,4 @@ const Top30Page = () => {
   );
 };
 
-export default Top30Page;
+export default RankPage;

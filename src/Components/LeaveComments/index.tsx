@@ -7,27 +7,27 @@ import Config from "Constants/Config.json";
 import Table from "Api/table";
 
 interface list {
-  uncomfortableIdx: number;
+  boardIdx: number;
   content: string;
   goods: number;
   idx: number;
 }
 
-const useViewTable = () => {
+const useGetTable = () => {
   const [list, setList] = useState<list[]>([]);
 
-  const tryViewTable = async () => {
-    return await Table.viewTable();
+  const getTable = async () => {
+    return await Table.getTable();
   };
 
   useEffect(() => {
-    tryViewTable().then((res) => setList(res.data.list));
+    getTable().then((res) => setList(res.data.list));
   }, []);
   return list;
 };
 
 const useWriteTable = () => {
-  const tryWriteTable = async (
+  const writeTable = async (
     content: string,
     setContent: React.Dispatch<React.SetStateAction<string>>,
   ) => {
@@ -36,7 +36,7 @@ const useWriteTable = () => {
     return await Table.writeTable(content);
   };
 
-  return tryWriteTable;
+  return writeTable;
 };
 
 const useShuffle = () => {
@@ -48,7 +48,7 @@ const useShuffle = () => {
 };
 
 const LeaveCommentsPage: React.FC = () => {
-  const list = useViewTable();
+  const list = useGetTable();
   const history = useHistory();
   const shuffle = useShuffle();
 
@@ -107,7 +107,7 @@ const LeaveCommentsPage: React.FC = () => {
         <S.IssueBoxWrapper>
           {list1.map((table: list, index) => (
             <IssueBoxPresenter
-              idx={table.uncomfortableIdx}
+              idx={table.boardIdx}
               content={table.content}
               key={index}
             />
@@ -116,7 +116,7 @@ const LeaveCommentsPage: React.FC = () => {
         <S.IssueBoxWrapper>
           {list2.map((table: list, index) => (
             <IssueBoxPresenter
-              idx={table.uncomfortableIdx}
+              idx={table.boardIdx}
               content={table.content}
               key={index}
             />
@@ -125,7 +125,7 @@ const LeaveCommentsPage: React.FC = () => {
         <S.IssueBoxWrapper>
           {list3.map((table: list, index) => (
             <IssueBoxPresenter
-              idx={table.uncomfortableIdx}
+              idx={table.boardIdx}
               content={table.content}
               key={index}
             />
@@ -134,7 +134,7 @@ const LeaveCommentsPage: React.FC = () => {
         <S.IssueBoxWrapper>
           {list4.map((table: list, index) => (
             <IssueBoxPresenter
-              idx={table.uncomfortableIdx}
+              idx={table.boardIdx}
               content={table.content}
               key={index}
             />

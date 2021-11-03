@@ -1,6 +1,6 @@
 import { PageExplanation } from "../PageExplanation";
 import { useHistory } from "react-router-dom";
-import ImprovmentItemPresenter from "./ImprovmentItem";
+import ImprovementItemPresenter from "./ImprovementItem";
 import { useState, useEffect } from "react";
 import * as S from "./style";
 import * as I from "../../Asset/SVG";
@@ -16,9 +16,8 @@ export interface list {
   improveIdx: number;
 }
 
-const improvement = () => {
-  const res = Improvement.viewImprovment();
-  return res;
+const improvement = async () => {
+  return await Improvement.getImprovement();
 };
 
 const heading: string[] = ["실제 개선 사례"];
@@ -30,7 +29,7 @@ const explanation: string[] = [
   "앞으로도 학교가 불편한 순간이 있다면 자유롭게 의견을 남겨주세요.",
 ];
 
-const ImprovmentPage: React.FC = () => {
+const ImprovementPage: React.FC = () => {
   const [list, setList] = useState<list[]>([]);
   const logged = useRecoilValue(HasAdminToken);
   const history = useHistory();
@@ -40,7 +39,7 @@ const ImprovmentPage: React.FC = () => {
   }, []);
 
   return (
-    <S.ImprovmentPageBox>
+    <S.ImprovementPageBox>
       <S.LeftBox>
         <PageExplanation
           heading={!logged ? heading : adminHeading}
@@ -50,7 +49,7 @@ const ImprovmentPage: React.FC = () => {
           <S.Btn>
             <EditModal
               idx={1}
-              state="improvment"
+              state="improvement"
               heading="작성하기"
               ButtonContent={"실제 개선 사례 작성하기"}
             />
@@ -77,7 +76,7 @@ const ImprovmentPage: React.FC = () => {
           </S.AltImprovementItem>
         )}
         {list.map((improvement: list, index) => (
-          <ImprovmentItemPresenter
+          <ImprovementItemPresenter
             header={improvement.title}
             content={improvement.content}
             idx={improvement.improveIdx}
@@ -85,8 +84,8 @@ const ImprovmentPage: React.FC = () => {
           />
         ))}
       </div>
-    </S.ImprovmentPageBox>
+    </S.ImprovementPageBox>
   );
 };
 
-export default ImprovmentPage;
+export default ImprovementPage;

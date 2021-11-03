@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import device from "Constants/constants";
 
-export const ImprovmentPageBox = styled.div`
+export const ImprovementPageBox = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 180px auto;
