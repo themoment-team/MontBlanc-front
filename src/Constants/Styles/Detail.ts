@@ -6,18 +6,3 @@ export const ApiResult = styled.h1`
   text-align: center;
   color: #434c9c;
 `;
-
-export const LeftBox = styled.div`
-  position: sticky;
-  top: 180px;
-  left: 0;
-  height: 380px;
-  width: 45%;
-  margin-right: 30px;
-  @media ${device.mobile} {
-    width: 100%;
-    height: auto;
-    margin-bottom: 30px;
-    position: initial;
-  }
-`;

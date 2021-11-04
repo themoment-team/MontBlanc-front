@@ -11,3 +11,4 @@ export { default as IssueBox } from "./IssueBox";
 export { ChannelTalkHelmet, SeoHelmet } from "./Helmet";
 export { default as SystemCheck } from "./SystemCheck";
 export { default as NotFoundPage } from "./NotFoundPage";
+export { default as LeftBox } from "./LeftBox";
