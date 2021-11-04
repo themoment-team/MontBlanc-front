@@ -6,7 +6,7 @@ export const StartPage = styled.div`
 `;
 
 export const LeftBox = styled.div`
-  margin: 24vh 9vw 0 7.5vw;
+  margin: 261px 56px 0 5vw;
   @media ${device.tablet} {
     padding: 24px;
     margin: 48px auto;
@@ -21,7 +21,7 @@ export const StartHeader = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 25.5vh;
-  color: #434c9c;
+  color: #6A76E9;
 `;
 
 export const Logo = styled.div`
@@ -32,11 +32,12 @@ export const Logo = styled.div`
   svg {
     width: 346px;
     height: 80px;
-    @media ${device.laptop} {
-      max-width: 300px;
-    }
+    /* @media ${device.laptop} {
+
+        max-width: 300px;
+    } */
     @media ${device.mobile} {
-      width: 180px;
+      width: 250px;
       margin: 0 auto;
     }
   }
@@ -60,21 +61,26 @@ export const H2 = styled.div`
 `;
 
 export const ButtonBox = styled.div`
+  display: flex;
+  flex-direction: row;
+
   @media ${device.tablet} {
-    display: flex;
     flex-direction: column;
+
   }
+
   button {
     width: 190px;
-    padding: 20px 0;
-    background-color: #434c9c;
+    padding: 21px 0;
+    background-color: #6A76E9;
     color: #ffffff;
     border-radius: 12px;
     outline: 0;
     border: 0;
     font-weight: 600;
     font-size: 24px;
-    margin-right: 23px;
+    margin-right: 30px;
+    
     @media ${device.tablet} {
       width: 100%;
       margin: 0;
@@ -107,7 +113,7 @@ const slide = keyframes`
 `;
 
 export const ImgBox = styled.div`
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1300px) {
     display: none;
   }
   & svg:nth-child(1) {
@@ -119,9 +125,12 @@ export const ImgBox = styled.div`
   & svg:nth-child(3) {
     animation: ${slide} 10s infinite linear alternate;
   }
+  & svg:nth-child(4) {
+    animation: ${slide} 10s infinite linear alternate-reverse;
+  }
   svg {
     display: block;
-    float: right;
-    margin-right: 30px;
+    float: left;
+    margin-right: 24px;
   }
 `;

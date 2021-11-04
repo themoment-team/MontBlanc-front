@@ -4,75 +4,18 @@ class Start_img1 extends React.Component {
   render() {
     return (
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="270"
-        height="2000"
+        width="252"
+        height="1889"
         fill="none"
-        viewBox="0 0 270 2000"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <rect
-          width="270"
-          height="190"
-          y="219"
-          fill="#A7C5EB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="355"
-          y="438"
-          fill="#C4DFDB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="190"
-          fill="#699CAC"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="212"
-          y="822"
-          fill="#CBD9E2"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="212"
-          y="1065"
-          fill="#C4DFDB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="190"
-          y="1525"
-          fill="#A7C5EB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="355"
-          y="1744"
-          fill="#C4DFDB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="190"
-          y="1306"
-          fill="#699CAC"
-          opacity="0.4"
-          rx="12"
-        ></rect>
+        <rect y="129" width="251.613" height="187" rx="12" fill="#FFDEDE" />
+        <rect width="251.613" height="100" rx="12" fill="#CCD1FF" />
+        <rect y="345" width="251.613" height="256" rx="12" fill="#E8E8FF" />
+        <rect y="630" width="251.613" height="256" rx="12" fill="#AFC2F2" />
+        <rect y="915" width="251.613" height="256" rx="12" fill="#C3E2FF" />
+        <rect y="1593" width="252" height="296" rx="12" fill="#E8E8FF" />
+        <rect y="1200" width="252" height="364" rx="12" fill="#FFDEDE" />
       </svg>
     );
   }
