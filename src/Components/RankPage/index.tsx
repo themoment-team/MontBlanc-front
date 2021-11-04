@@ -19,9 +19,7 @@ interface list {
 }
 
 const useRank = () => {
-  const [list, setList] = useState<list[]>([
-    { uncomfortableIdx: 0, content: "", goods: 0, answer: false },
-  ]);
+  const [list, setList] = useState<list[]>([]);
 
   const getRank = async () => {
     return await Table.GetRankTable();
