@@ -1,4 +1,3 @@
-// import { Modal } from 'react-modal';
 import styled from "styled-components";
 import device from "Constants/constants";
 
@@ -26,7 +25,6 @@ export const Input = styled.input`
   outline: none;
   font-size: 15px;
   color: black;
-
 `;
 
 export const LoginBtn = styled.button`
@@ -37,7 +35,6 @@ export const LoginBtn = styled.button`
   font-size: 14px;
   margin-top: 39px;
   @media ${device.tablet} {
-    /* width: 100%; */
     padding: 14px 10%;
   }
 `;
