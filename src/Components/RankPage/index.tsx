@@ -12,7 +12,7 @@ import Table from "Api/table";
 import { useEffect, useState } from "react";
 
 interface list {
-  boardIdx: number;
+  uncomfortableIdx: number;
   content: string;
   goods: number;
   answer: boolean;
@@ -20,7 +20,7 @@ interface list {
 
 const useRank = () => {
   const [list, setList] = useState<list[]>([
-    { boardIdx: 0, content: "", goods: 0, answer: false },
+    { uncomfortableIdx: 0, content: "", goods: 0, answer: false },
   ]);
 
   const getRank = async () => {
@@ -72,7 +72,7 @@ const RankPage = () => {
       </LeftBox>
       <S.RightBox>
         {list.map((rank: list, index) => (
-          <S.TenIssues key={rank.boardIdx}>
+          <S.TenIssues key={rank.uncomfortableIdx}>
             <span>
               <span>{index + 1}위</span>
               <article>{rank.content.replace(/^\s+|\s+$/gm, "")}</article>
@@ -81,14 +81,14 @@ const RankPage = () => {
               {rank.answer ? (
                 <S.HasAnswerBtn>
                   <ViewModal
-                    idx={rank.boardIdx}
+                    idx={rank.uncomfortableIdx}
                     state={"answer"}
                     buttonContent={"답변보기"}
                   />
                 </S.HasAnswerBtn>
               ) : logged ? (
                 <EditModal
-                  idx={rank.boardIdx}
+                  idx={rank.uncomfortableIdx}
                   state={"answer"}
                   ButtonContent={"답변달기"}
                   heading={"답변달기"}
@@ -102,7 +102,7 @@ const RankPage = () => {
               <GoodBtn
                 Background={false}
                 Goods={rank.goods}
-                Idx={rank.boardIdx}
+                Idx={rank.uncomfortableIdx}
               />
             </span>
           </S.TenIssues>
