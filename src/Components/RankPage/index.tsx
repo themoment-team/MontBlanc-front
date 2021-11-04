@@ -1,12 +1,8 @@
-import { PageExplanation } from "../PageExplanation";
-import { useHistory } from "react-router-dom";
-import { LeftBox } from "../../Constants/Styles/Detail";
+import { LeftBox } from "Components";
 import GoodBtn from "../GoodBtn";
-import * as I from "../../Asset/SVG/index";
 import * as S from "./style";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
-import Config from "Constants/Config.json";
 import { EditModal, ViewModal } from "Components/Modals";
 import Table from "Api/table";
 import { useEffect, useState } from "react";
@@ -45,31 +41,13 @@ const explanation: string[] = [
 const RankPage = () => {
   const list = useRank();
   const logged = useRecoilValue(HasAdminToken);
-  const history = useHistory();
 
   return (
     <S.TopTenWrapper>
-      <LeftBox>
-        <PageExplanation
-          heading={!logged ? heading : adminHeading}
-          explanation={explanation}
-        />
-        {!logged && (
-          <S.LinkCommentPageBtn
-            onClick={() => history.push(Config.LINK.COMMENT)}
-          >
-            <span>
-              학교가 불편한 순간을
-              <br />
-              자유롭게 남겨주세요.
-            </span>
-            <S.LinkWrapper>
-              <span>의견 남기기</span>
-              <I.RightArrow />
-            </S.LinkWrapper>
-          </S.LinkCommentPageBtn>
-        )}
-      </LeftBox>
+      <LeftBox
+        heading={!logged ? heading : adminHeading}
+        explanation={explanation}
+      />
       <S.RightBox>
         {list.map((rank: list, index) => (
           <S.TenIssues key={rank.boardIdx}>

@@ -6,9 +6,11 @@ export const TopTenWrapper = styled.section`
   width: 90vw;
   margin: 180px auto;
   height: fit-content;
+  justify-content: space-between;
   @media ${device.mobile} {
     flex-direction: column;
     width: 90vw;
+    margin-left: 5vw;
   }
 `;
 
