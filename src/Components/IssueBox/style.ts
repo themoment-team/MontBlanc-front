@@ -8,8 +8,8 @@ interface IssueBoxProps {
 export const IssueBoxStyle = styled.div<IssueBoxProps>`
   background-color: ${(props) => props.color};
   border-radius: 12px;
-  padding: 18px 23px 26px 23px;
-  width: 74%;
+  padding: 14px 23px 20px 23px;
+  width: 200px;
   & + div {
     margin-top: 23px;
   }
