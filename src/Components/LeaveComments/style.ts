@@ -92,7 +92,7 @@ export const Btn = styled.button<submitBtn>`
   margin-bottom: 17px;
 `;
 
-export const Top10Btn = styled.button`
+export const RankBtn = styled.button`
   background-color: #434c9c;
   color: #fff;
   padding: 26px 31px;

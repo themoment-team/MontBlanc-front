@@ -44,7 +44,7 @@ const App: React.FC = () => (
       <Switch>
         <Route path={Config.LINK.ABOUT} exact component={P.About} />
         <Route path={Config.LINK.IMPROVEMENT} exact component={P.Improvement} />
-        <Route path={Config.LINK.RANK} exact component={P.Top10} />
+        <Route path={Config.LINK.RANK} exact component={P.Rank} />
         <Route path={Config.LINK.COMMENT} exact component={P.LeaveComments} />
         <Route path={Config.LINK.START} exact component={P.Start} />
         <Route component={P.NotFound} />

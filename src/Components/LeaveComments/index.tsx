@@ -92,7 +92,7 @@ const LeaveCommentsPage: React.FC = () => {
             등 록
           </S.Btn>
         </S.Form>
-        <S.Top10Btn onClick={() => history.push(Config.LINK.RANK)}>
+        <S.RankBtn onClick={() => history.push(Config.LINK.RANK)}>
           <span>
             많은 학생들이 공감한
             <br /> 불편함은 무엇일까요?
@@ -101,7 +101,7 @@ const LeaveCommentsPage: React.FC = () => {
             <span>Top 30 보러가기</span>
             <I.RightArrow />
           </S.LinkWrapper>
-        </S.Top10Btn>
+        </S.RankBtn>
       </S.LeftBox>
       <S.RightBox>
         <S.IssueBoxWrapper>
