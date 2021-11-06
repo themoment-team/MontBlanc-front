@@ -15,7 +15,6 @@ export const IssueBoxStyle = styled.div<IssueBoxProps>`
   }
   @media ${device.mobile} {
     width: 90%;
-    padding: 18px 5%;
   }
 `;
 

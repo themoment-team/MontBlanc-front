@@ -40,10 +40,6 @@ export const Form = styled.div`
     color: #a8a8a8;
     font-size: 18px;
   }
-
-  @media ${device.tablet} {
-    width: 280px;
-  }
   @media ${device.mobile} {
     width: 100%;
   }
@@ -67,27 +63,6 @@ export const FormBtn = styled.button<submitBtn>`
   font-weight: 600;
   margin-right: 27px;
   margin-bottom: 24px;
-`;
-
-export const RightBox = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  width: 44vw;
-  @media screen and (max-width: 1300px) {
-    width: 100%;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media screen and (max-width: 1200px) {
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media screen and (max-width: 1100px) {
-    width: 100%;
-    grid-template-columns: repeat(1, 1fr);
-    & > div:nth-child(n + 3) {
-      margin-left: 0px;
-    }
-  }
 `;
 
 export const Btn = styled.button`

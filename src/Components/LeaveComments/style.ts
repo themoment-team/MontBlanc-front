@@ -4,45 +4,36 @@ import device from "Constants/constants";
 export const LeaveCommentsBox = styled.main`
   display: flex;
   justify-content: space-between;
-  margin: 180px auto;
   width: 90vw;
+  margin: 180px auto;
   @media ${device.mobile} {
     flex-direction: column;
     margin-top: 180px;
-    align-items: center;
-    width: 90vw;
   }
 `;
 
 export const RightBox = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 44vw;
-  @media screen and (max-width: 1300px) {
-    width: 100%;
+  @media screen and (max-width: 1680px) {
     grid-template-columns: repeat(3, 1fr);
   }
-  @media screen and (max-width: 1200px) {
-    width: 100%;
+  @media screen and (max-width: 1355px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media screen and (max-width: 1100px) {
-    width: 100%;
+  @media screen and (max-width: 1090px) {
     grid-template-columns: repeat(1, 1fr);
-    & > div:nth-child(n + 3) {
-      margin-left: 0px;
-    }
   }
 `;
 
-export const IssueBoxWrapper = styled.ul`
+export const IssueBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding-left: 23px;
-  @media ${device.mobile && device.tablet} {
-    & + div {
-      margin-top: 23px;
-    }
-    padding-left: 0;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  @media ${device.mobile} {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
   }
 `;
