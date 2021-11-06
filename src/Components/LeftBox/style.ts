@@ -17,18 +17,20 @@ export const Positioner = styled.div`
 `;
 
 export const Form = styled.div`
-  width: 328px;
-  height: 179px;
+  width: 440px;
+  height: 240px;
+  margin-top: 65px;
   background-color: #ffffff;
-  box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 60px rgba(106, 118, 233, 0.2);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   textarea {
-    margin: 29px 31px 5px 29px;
+    margin: 40px 42px;
+    margin-bottom: 27px;
     height: 179px;
     font-family: "Noto Sans CJK KR";
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     resize: none;
     border: none;
@@ -36,7 +38,7 @@ export const Form = styled.div`
   }
   textarea::placeholder {
     color: #a8a8a8;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   @media ${device.tablet} {
@@ -54,17 +56,17 @@ export const FormBtn = styled.button<submitBtn>`
   ${(props) =>
     props.Length >= 8
       ? css`
-          background: rgba(67, 76, 156, 0.56);
+          background: rgba(106, 118, 233, 0.4);
         `
       : css`
-          background: rgba(169, 176, 233, 0.56);
+          background: rgba(106, 118, 233, 0.2);
           cursor: not-allowed;
         `};
-  padding: 5px 20px;
-  font-size: 14px;
+  padding: 10px 30px;
+  font-size: 16px;
   font-weight: 600;
-  margin-right: 20px;
-  margin-bottom: 17px;
+  margin-right: 27px;
+  margin-bottom: 24px;
 `;
 
 export const RightBox = styled.div`
@@ -90,7 +92,7 @@ export const RightBox = styled.div`
 
 export const Btn = styled.button`
   display: flex;
-  width: 435px;
+  width: 440px;
   justify-content: space-between;
   margin-top: 50px;
   padding: 19px 23px;
