@@ -10,11 +10,11 @@ interface issueBoxProps {
 
 const randomColorPicker = () => {
   const color: string[] = [
-    "#CBD9E266",
-    "#C4DFDB",
-    "#A7C5EB66",
-    "#61799866",
-    "#699CAC66",
+    "#CCD1FF",
+    "#FFDEDE",
+    "#C4E2FF",
+    "#E8E8FF",
+    "#AFC2F2",
   ];
 
   const randomNumber: number = Math.floor(Math.random() * 5);

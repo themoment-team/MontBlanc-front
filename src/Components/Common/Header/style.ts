@@ -65,6 +65,9 @@ export const HeaderNav = styled.nav<NavBar>`
       font-weight: bold;
     }
   }
+  & > a:last-child {
+    margin-right: 0;
+  }
 `;
 
 export const NavButton = styled.button`

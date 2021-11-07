@@ -6,7 +6,7 @@ import {
   SeoHelmet,
 } from "../Components";
 
-const Top10: React.FC = () => {
+const Rank: React.FC = () => {
   const pageTitle: string = "Rank";
   const desc: string =
     "학교가 불편한 순간 Rank 페이지에서 가장 공감을 많이 받은 불편함을 확인해보세요.";
@@ -22,4 +22,4 @@ const Top10: React.FC = () => {
   );
 };
 
-export default Top10;
+export default Rank;
