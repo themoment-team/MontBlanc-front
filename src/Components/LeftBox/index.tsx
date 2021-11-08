@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import * as S from "./style";
 import * as I from "../../Asset/SVG";
 import { PageExplanation } from "Components";
@@ -12,7 +12,7 @@ import { EditModal } from "Components/Modals";
 interface LeftBoxProps {
   heading: string[];
   explanation: string[];
-};
+}
 
 const useWriteTable = () => {
   const writeTable = async (
@@ -45,7 +45,7 @@ const LeftBox: React.FC<LeftBoxProps> = ({ heading, explanation }) => {
     <S.Positioner>
       <PageExplanation heading={heading} explanation={explanation} />
       {logged ? (
-         path === Config.LINK.IMPROVEMENT && (
+        path === Config.LINK.IMPROVEMENT && (
           <S.Btn>
             <EditModal
               idx={1}
@@ -58,9 +58,8 @@ const LeftBox: React.FC<LeftBoxProps> = ({ heading, explanation }) => {
             </span>
           </S.Btn>
         )
-      ) : (
-         path === Config.LINK.COMMENT ?
-         <>
+      ) : path === Config.LINK.COMMENT ? (
+        <>
           <S.Form>
             <textarea
               placeholder="자유롭게 의견을 남겨주세요."
@@ -77,23 +76,24 @@ const LeftBox: React.FC<LeftBoxProps> = ({ heading, explanation }) => {
             </S.FormBtn>
           </S.Form>
           <S.Btn onClick={() => history.push(Config.LINK.RANK)}>
-              많은 학생들이 공감한<br />
-              불편함은 무엇일까요?
-              <S.LinkTextWrapper>
-                <span>Top 30 보러가기</span>
-                <I.RightArrow />
-              </S.LinkTextWrapper>
-          </S.Btn>
-          </>
-          :
-          <S.Btn onClick={() => history.push(Config.LINK.COMMENT)}>
-            학교가 불편한 순간을
-            <br /> 자유롭게 남겨주세요.
+            많은 학생들이 공감한
+            <br />
+            불편함은 무엇일까요?
             <S.LinkTextWrapper>
-              <span>의견 남기기</span>
+              <span>Top 30 보러가기</span>
               <I.RightArrow />
             </S.LinkTextWrapper>
           </S.Btn>
+        </>
+      ) : (
+        <S.Btn onClick={() => history.push(Config.LINK.COMMENT)}>
+          학교가 불편한 순간을
+          <br /> 자유롭게 남겨주세요.
+          <S.LinkTextWrapper>
+            <span>의견 남기기</span>
+            <I.RightArrow />
+          </S.LinkTextWrapper>
+        </S.Btn>
       )}
     </S.Positioner>
   );

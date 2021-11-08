@@ -6,6 +6,9 @@ export const ImprovementPageBox = styled.div`
   justify-content: space-between;
   margin: 180px auto;
   width: 90vw;
+  @media ${device.laptop} {
+    margin: 180px 10px;
+  }
   @media ${device.mobile} {
     flex-direction: column;
     width: 90vw;
