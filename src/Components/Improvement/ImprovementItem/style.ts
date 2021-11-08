@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import device from "Constants/reactive";
+import device from "Constants/constants";
 
-interface ImprovmentProps {
+interface ImprovementProps {
   color: string;
 }
 
-export const ImprovmentBox = styled.div<ImprovmentProps>`
+export const ImprovementBox = styled.div<ImprovementProps>`
   background-color: ${(props) => props.color};
   width: 35vw;
-  height: 300px;
+  height: 350px;
   border-radius: 12px;
   padding: 3em;
   margin-bottom: 33px;
@@ -25,13 +25,13 @@ export const ImprovmentBox = styled.div<ImprovmentProps>`
   }
 `;
 
-export const ImprovmentContentBox = styled.div`
+export const ImprovementContentBox = styled.div`
   @media ${device.laptop} {
     padding: 3em 7% 2em 7%;
   }
 `;
 
-export const ImprovmentContent = styled.div`
+export const ImprovementContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -45,7 +45,7 @@ export const ImprovmentContent = styled.div`
   }
 `;
 
-export const ImprovmentHeading = styled.h2`
+export const ImprovementHeading = styled.h2`
   color: white;
 `;
 
@@ -57,8 +57,9 @@ export const AboutBtn = styled.div`
   }
 `;
 
-export const ImprovmentImg = styled.div`
+export const ImprovementImg = styled.div`
   float: right;
+  margin-top: 50px;
   @media ${device.laptop} {
     margin-top: 50px;
     svg {

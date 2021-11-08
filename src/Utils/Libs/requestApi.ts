@@ -1,4 +1,5 @@
-import { BASE_HEADER, BASE_URL } from "Constants/Config.json";
+import { BASE_HEADER } from "Constants/Config.json";
+import { BASE_URL } from "Constants/constants";
 import axios, { AxiosRequestConfig } from "axios";
 
 export interface hasToken {
@@ -7,7 +8,7 @@ export interface hasToken {
 
 const RequestApi = (
   p: AxiosRequestConfig,
-  condition: hasToken = { hasToken: false }
+  condition: hasToken = { hasToken: false },
 ) => {
   let accessToken: string | null = null;
   let refreshToken: string | null = null;

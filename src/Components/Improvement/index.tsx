@@ -1,14 +1,10 @@
-import { PageExplanation } from "../PageExplanation";
-import { useHistory } from "react-router-dom";
-import ImprovmentItemPresenter from "./ImprovmentItem";
+import ImprovementItemPresenter from "./ImprovementItem";
 import { useState, useEffect } from "react";
 import * as S from "./style";
-import * as I from "../../Asset/SVG";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
-import Config from "Constants/Config.json";
-import { EditModal } from "Components/Modals";
 import Improvement from "Api/improvement";
+import { LeftBox } from "Components";
 
 export interface list {
   content: string;
@@ -16,9 +12,8 @@ export interface list {
   improveIdx: number;
 }
 
-const improvement = () => {
-  const res = Improvement.viewImprovment();
-  return res;
+const improvement = async () => {
+  return await Improvement.getImprovement();
 };
 
 const heading: string[] = ["실제 개선 사례"];
@@ -30,45 +25,20 @@ const explanation: string[] = [
   "앞으로도 학교가 불편한 순간이 있다면 자유롭게 의견을 남겨주세요.",
 ];
 
-const ImprovmentPage: React.FC = () => {
+const ImprovementPage: React.FC = () => {
   const [list, setList] = useState<list[]>([]);
   const logged = useRecoilValue(HasAdminToken);
-  const history = useHistory();
 
   useEffect(() => {
     improvement().then((res) => setList(res.data.list));
   }, []);
 
   return (
-    <S.ImprovmentPageBox>
-      <S.LeftBox>
-        <PageExplanation
-          heading={!logged ? heading : adminHeading}
-          explanation={explanation}
-        />
-        {logged ? (
-          <S.Btn>
-            <EditModal
-              idx={1}
-              state="improvment"
-              heading="작성하기"
-              ButtonContent={"실제 개선 사례 작성하기"}
-            />
-            <span>
-              <I.RightArrow />
-            </span>
-          </S.Btn>
-        ) : (
-          <S.Btn onClick={() => history.push(Config.LINK.COMMENT)}>
-            학교가 불편한 순간을
-            <br /> 자유롭게 남겨주세요.
-            <S.LinkTextWrapper>
-              <span>의견 남기기</span>
-              <I.RightArrow />
-            </S.LinkTextWrapper>
-          </S.Btn>
-        )}
-      </S.LeftBox>
+    <S.ImprovementPageBox>
+      <LeftBox
+        heading={!logged ? heading : adminHeading}
+        explanation={explanation}
+      />
       <div>
         {list.length < 1 && (
           <S.AltImprovementItem>
@@ -77,7 +47,7 @@ const ImprovmentPage: React.FC = () => {
           </S.AltImprovementItem>
         )}
         {list.map((improvement: list, index) => (
-          <ImprovmentItemPresenter
+          <ImprovementItemPresenter
             header={improvement.title}
             content={improvement.content}
             idx={improvement.improveIdx}
@@ -85,8 +55,8 @@ const ImprovmentPage: React.FC = () => {
           />
         ))}
       </div>
-    </S.ImprovmentPageBox>
+    </S.ImprovementPageBox>
   );
 };
 
-export default ImprovmentPage;
+export default ImprovementPage;

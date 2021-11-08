@@ -1,5 +1,4 @@
 {
-  "BASE_URL": "https://server.the-moment.org/v1/",
   "BASE_HEADER": {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type,Authorization",
@@ -9,7 +8,7 @@
   },
   "LINK": {
     "ABOUT": "/about",
-    "IMPROVMENT": "/improvment",
+    "IMPROVEMENT": "/improvement",
     "RANK": "/rank",
     "COMMENT": "/the_moment",
     "SYSTEMCHECK": "/system_check",

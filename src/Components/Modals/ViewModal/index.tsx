@@ -11,8 +11,8 @@ import { useState, useEffect } from "react";
 
 const useGetModalValue = (idx: number, state: string) => {
   const [Idx, title, content] =
-    state === "improvment"
-      ? GetImprovmentValue(idx || 0)
+    state === "improvement"
+      ? GetImprovementValue(idx || 0)
       : GetAnswerValue(idx || 0);
 
   return [Idx, title, content];
@@ -23,7 +23,7 @@ const GetAnswerValue = (idx: number) => {
   const [title, setTitle] = useState("");
   const [Content, setContent] = useState("");
 
-  const tryGet = async () => {
+  const getAnswer = async () => {
     try {
       const res = await answer.getAnswer(idx);
       return res.data;
@@ -33,7 +33,7 @@ const GetAnswerValue = (idx: number) => {
   };
 
   useEffect(() => {
-    tryGet().then((res) => {
+    getAnswer().then((res) => {
       setIdx(res.data.answerIdx);
       setTitle(res.data.title);
       setContent(res.data.content);
@@ -43,18 +43,18 @@ const GetAnswerValue = (idx: number) => {
   return [Idx, title, Content];
 };
 
-const GetImprovmentValue = (idx: number) => {
+const GetImprovementValue = (idx: number) => {
   const [Idx, setIdx] = useState("");
   const [improveHeader, setImproveHeader] = useState("");
   const [improveContent, setImproveContent] = useState("");
   const idxCopy = idx.toString();
 
-  const tryGet = async () => {
+  const getImprovement = async () => {
     try {
-      const res = await improvement.viewImprovment();
+      const res = await improvement.getImprovement();
 
       return await res.data.list.filter(
-        (data: { improveIdx: string }) => data.improveIdx === idxCopy
+        (data: { improveIdx: string }) => data.improveIdx === idxCopy,
       );
     } catch (e) {
       alert("에러가 발생하였습니다. 개발팀에 문의해주세요. " + e);
@@ -62,7 +62,7 @@ const GetImprovmentValue = (idx: number) => {
   };
 
   useEffect(() => {
-    tryGet().then((res) => {
+    getImprovement().then((res) => {
       setIdx(res[0].improveIdx);
       setImproveHeader(res[0].title);
       setImproveContent(res[0].content);
@@ -98,7 +98,7 @@ const ViewModalPresenter: React.FC<{
             <S.H1>{title}</S.H1>
             {logged && (
               <EditModal
-                idx={idx}
+                idx={Number(Idx)}
                 state={state ?? ""}
                 heading={"수정하기"}
                 content={content}
@@ -121,8 +121,8 @@ const ViewModalPresenter: React.FC<{
             <S.ViewImg>
               {
                 {
-                  1: <I.ImprovmentSvg1 />,
-                  2: <I.ImprovmentSvg2 />,
+                  1: <I.ImprovementSvg1 />,
+                  2: <I.ImprovementSvg2 />,
                 }[randomNumber]
               }
             </S.ViewImg>

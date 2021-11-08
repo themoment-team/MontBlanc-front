@@ -14,7 +14,7 @@ import { useHistory } from "react-router";
 const useLogout = () => {
   const setHasToken = useSetRecoilState(HasAdminToken);
   const history = useHistory();
-  const tryLogout = async () => {
+  const logout = async () => {
     try {
       await admin.logout();
       localStorage.removeItem("themoment_token");
@@ -26,7 +26,7 @@ const useLogout = () => {
     history.push("/");
   };
 
-  return tryLogout;
+  return logout;
 };
 
 const Header: React.FC = () => {
@@ -62,13 +62,13 @@ const Header: React.FC = () => {
         <S.HeaderNav active={bars}>
           <Link to={Config.LINK.COMMENT}>의견 남기기</Link>
           <Link to={Config.LINK.RANK}>Top 30</Link>
-          <Link to={Config.LINK.IMPROVMENT}>실제 개선 사례</Link>
+          <Link to={Config.LINK.IMPROVEMENT}>실제 개선 사례</Link>
           <Link to={Config.LINK.ABOUT}>캠페인 자세히 보기</Link>
         </S.HeaderNav>
       ) : (
         <S.HeaderNav active={bars}>
           <Link to={Config.LINK.RANK}>답변달기</Link>
-          <Link to={Config.LINK.IMPROVMENT}>실제 개선 사례 작성</Link>
+          <Link to={Config.LINK.IMPROVEMENT}>실제 개선 사례 작성</Link>
           <S.NavButton
             onClick={() => {
               tryLogout();
@@ -78,6 +78,7 @@ const Header: React.FC = () => {
           </S.NavButton>
         </S.HeaderNav>
       )}
+      <S.Blur active={bars}></S.Blur>
     </S.Header>
   );
 };

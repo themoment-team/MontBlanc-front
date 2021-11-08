@@ -61,6 +61,7 @@ const StartPage: React.FC = () => {
           <I.Start_img1 />
           <I.Start_img2 />
           <I.Start_img3 />
+          <I.Start_img4 />
         </S.ImgBox>
       </S.RightBox>
     </S.StartPage>

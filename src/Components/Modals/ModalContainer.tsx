@@ -1,5 +1,5 @@
 const ModalContainer = (
-  setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
 ) => {
   const openModal = () => {
     setModalIsOpen(true);

@@ -4,84 +4,46 @@ class Start_img3 extends React.Component {
   render() {
     return (
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="270"
-        height="2000"
+        width="252"
+        height="2001"
         fill="none"
-        viewBox="0 0 270 2000"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <rect
-          width="270"
-          height="287"
-          y="30"
-          fill="#C4DFDB"
-          opacity="0.4"
+          x=".36"
+          y="219"
+          width="251.613"
+          height="190"
           rx="12"
-        ></rect>
+          fill="#E8E8FF"
+        />
         <rect
-          width="270"
-          height="256"
-          y="345"
-          fill="#A7C5EB"
-          opacity="0.4"
+          x=".36"
+          y="438"
+          width="251.613"
+          height="355"
           rx="12"
-        ></rect>
+          fill="#FFDEDE"
+        />
+        <rect x=".36" width="251.613" height="190" rx="12" fill="#C3E2FF" />
+        <rect y="1674" width="252" height="327" rx="12" fill="#E8E8FF" />
         <rect
-          width="270"
-          height="256"
-          y="630"
-          fill="#617998"
-          opacity="0.4"
+          x=".36"
+          y="822"
+          width="251.613"
+          height="212"
           rx="12"
-        ></rect>
+          fill="#CCD1FF"
+        />
+        <rect y="1308" width="252" height="335" rx="12" fill="#AFC2F2" />
         <rect
-          width="270"
-          height="256"
-          y="915"
-          fill="#699CAC"
-          opacity="0.4"
+          x=".36"
+          y="1065"
+          width="251.613"
+          height="212"
           rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="100"
-          y="1200"
-          fill="#CBD9E2"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="187"
-          y="1329"
-          fill="#C4DFDB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="256"
-          y="1545"
-          fill="#A7C5EB"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="256"
-          y="1830"
-          fill="#617998"
-          opacity="0.4"
-          rx="12"
-        ></rect>
-        <rect
-          width="270"
-          height="256"
-          y="2115"
-          fill="#699CAC"
-          opacity="0.4"
-          rx="12"
-        ></rect>
+          fill="#FFDEDE"
+        />
       </svg>
     );
   }

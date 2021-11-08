@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import device from "Constants/reactive";
+import device from "Constants/constants";
 
 interface NavBar {
   active: boolean;
@@ -8,27 +8,38 @@ interface NavBar {
 export const Header = styled.header`
   position: fixed;
   top: 0;
+  width: 100vw;
+  height: 100px;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
-  padding: 23px 15vw;
-  width: 70vw;
-  background: white;
-  z-index: 1;
-  @media ${device.mobile} {
-    width: 90vw;
-    padding: 0 5vw;
-  }
+
   @media screen and (max-width: 1230px) {
     flex-direction: column;
     align-items: flex-start;
   }
 `;
 
+export const Blur = styled.div<NavBar>`
+  background: #ffffff;
+  filter: blur(30px);
+  position: absolute;
+  width: 100vw;
+  top: -50px;
+  left: 0;
+  z-index: -1;
+  height: 150px;
+  @media screen and (max-width: 1230px) {
+    height: ${(props) => (props.active ? "150px" : "450px")};
+  }
+`;
+
 export const Logo = styled.h1`
   display: inline-block;
-  border-right: 2px solid #434c9c;
+  border-right: 2px solid #6a76e9;
   padding-right: 21px;
-  @media screen and (max-width: 1600px) {
+  margin-left: 5vw;
+  @media ${device.mobile} {
     border: none;
   }
 `;
@@ -37,14 +48,17 @@ export const HeaderNav = styled.nav<NavBar>`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 5vw;
   @media screen and (max-width: 1230px) {
+    padding-left: 5vw;
+    width: 100vw;
     flex-direction: column;
     align-items: flex-start;
     display: ${(props) => (props.active ? "none" : "flex")};
   }
   & > a {
     display: inline-block;
-    margin: 36px 44px;
+    margin: 0px 30px;
     @media screen and (max-width: 1230px) {
       margin: 24px 0;
       font-size: 1.2rem;
@@ -62,8 +76,9 @@ export const NavButton = styled.button`
   padding: 0;
   background: none;
   text-decoration: none;
-  color: #434c9c;
+  color: #6a76e9;
   font-size: 1rem;
+  font-family: "Noto Sans CJK KR", sans-serif;
   @media screen and (max-width: 1230px) {
     margin: 24px 0;
     font-size: 1.2rem;
@@ -77,8 +92,9 @@ export const BarWrapper = styled.div`
   }
   & > svg {
     z-index: 2;
-    font-size: 32px;
-    color: #434c9c;
+    font-size: 28px;
+    color: #6a76e9;
+    cursor: pointer;
   }
 `;
 
@@ -87,7 +103,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   @media screen and (max-width: 1230px) {
-    width: 100%;
+    width: 93vw;
   }
   & > a {
     display: flex;
@@ -96,11 +112,11 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Title = styled.span`
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 640px) {
     display: none;
   }
   align-items: center;
-  color: #434c9c;
+  color: #6a76e9;
   font-weight: 600;
   font-size: 22px;
   margin: 21px;

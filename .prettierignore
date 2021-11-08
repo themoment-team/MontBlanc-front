@@ -1,0 +1,9 @@
+# 디렉토리
+/.github
+/.vscode
+/.yarn
+/node_modules
+
+# Ignore artifacts:
+build
+coverage

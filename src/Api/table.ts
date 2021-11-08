@@ -2,17 +2,17 @@ import { TableController } from "./../Utils/Libs/requestUrls";
 import RequestApi from "Utils/Libs/requestApi";
 
 class Table {
-  viewTop10Table() {
+  GetRankTable() {
     try {
       return RequestApi({
-        url: TableController.viewTop10Uncomfortable(),
+        url: TableController.getRankUncomfortable(),
       });
     } catch (e) {
       throw new Error(e);
     }
   }
 
-  viewTable() {
+  getTable() {
     try {
       return RequestApi({
         url: TableController.detailUncomfortable(),
@@ -37,22 +37,22 @@ class Table {
     }
   }
 
-  addGoods(boardIdx: number) {
+  increaseGoods(uncomfortableIdx: number) {
     try {
       return RequestApi({
         method: "PUT",
-        url: TableController.AddGoods(boardIdx),
+        url: TableController.increaseGoods(uncomfortableIdx),
       });
     } catch (e) {
       throw new Error(e);
     }
   }
 
-  cancleGoods(boardIdx: number) {
+  decreaseGoods(uncomfortableIdx: number) {
     try {
       return RequestApi({
         method: "PUT",
-        url: TableController.cancelGoods(boardIdx),
+        url: TableController.decreaseGoods(uncomfortableIdx),
       });
     } catch (e) {
       throw new Error(e);
