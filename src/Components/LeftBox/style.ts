@@ -9,6 +9,7 @@ export const Positioner = styled.div`
   height: fit-content;
   position: sticky;
   top: 180px;
+
   @media ${device.mobile} {
     position: initial;
     margin-bottom: 30px;
@@ -39,6 +40,12 @@ export const Form = styled.div`
   textarea::placeholder {
     color: #a8a8a8;
     font-size: 18px;
+  }
+  @media ${device.laptop} {
+    width: 400px;
+  }
+  @media screen and (max-width: 700px) {
+    width: 325px;
   }
   @media ${device.mobile} {
     width: 100%;
@@ -76,6 +83,12 @@ export const Btn = styled.button`
   font-size: 16px;
   background-color: #6a76e9;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  @media ${device.laptop} {
+    width: 400px;
+  }
+  @media screen and (max-width: 700px) {
+    width: 325px;
+  }
   @media ${device.mobile} {
     width: 100%;
   }
