@@ -8,7 +8,13 @@ import Answer from "Api/answer";
 import Improvement from "Api/improvement";
 import { Styles } from "react-modal";
 
-const useStateDistinction = (heading: string, content: string, idx: number, state: string) => {
+const useStateDistinction = (
+  heading: string,
+  title: string,
+  content: string,
+  idx: number,
+  state: string,
+) => {
   let TryUpdate = () => {};
   let TrySave = () => {};
   let TryDelete = () => {};
@@ -18,8 +24,8 @@ const useStateDistinction = (heading: string, content: string, idx: number, stat
     TrySave = saveAnswer(idx, content);
     TryDelete = deleteAnswer(idx);
   } else if (state === "improvement") {
-    TryUpdate = updateImprovement(idx, content, heading);
-    TrySave = saveImprovement(content, heading);
+    TryUpdate = updateImprovement(idx, content, title);
+    TrySave = saveImprovement(content, title);
     TryDelete = deleteImprovement(idx);
   } else {
     alert("예상치 못한 에러입니다. 개발자측에 문의해주세요. state: " + state);
@@ -28,11 +34,11 @@ const useStateDistinction = (heading: string, content: string, idx: number, stat
   return [TryUpdate, TrySave, TryDelete];
 };
 
-const updateImprovement = (idx: number, content: string, heading: string) => {
+const updateImprovement = (idx: number, content: string, title: string) => {
   const tryUpdate = async () => {
     try {
       window.location.reload();
-      return await Improvement.UpdateImprovement(idx, content, heading);
+      return await Improvement.UpdateImprovement(idx, content, title);
     } catch (e) {
       alert("실제개선사례 업데이트 오류 : " + e);
     }
@@ -40,10 +46,10 @@ const updateImprovement = (idx: number, content: string, heading: string) => {
   return tryUpdate;
 };
 
-const saveImprovement = (content: string, heading: string) => {
+const saveImprovement = (content: string, title: string) => {
   const trySave = async () => {
     try {
-      await Improvement.saveImprovement(content, heading);
+      await Improvement.saveImprovement(content, title);
       window.location.reload();
     } catch (e) {
       alert("실제개선사례 작성 또는 수정 오류 : " + e);
@@ -130,9 +136,15 @@ const EditModal: React.FC<ModalProps> = ({
   isComponents,
 }) => {
   const [modalHeading, setHeading] = useState(heading || "");
+  const [modalTitle, setTitle] = useState(title || "");
   const [modalContent, setContent] = useState(content || "");
-  const [TryUpdate, TrySave, TryDelete] =
-    useStateDistinction(modalHeading, modalContent, idx || 0, state || "");
+  const [TryUpdate, TrySave, TryDelete] = useStateDistinction(
+    modalHeading,
+    modalTitle,
+    modalContent,
+    idx || 0,
+    state || "",
+  );
 
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [openModal, closeModal] = ModalContainer(setModalIsOpen);
@@ -158,9 +170,9 @@ const EditModal: React.FC<ModalProps> = ({
             <CancleBtn />
           </S.ModalImg>
           <S.InputBox
-            value={modalHeading}
+            value={title}
             placeholder="제목을 입력해주세요."
-            onChange={({ target: { value } }) => setHeading(value)}
+            onChange={({ target: { value } }) => setTitle(value)}
           />
           <S.TextArea
             value={modalContent}
