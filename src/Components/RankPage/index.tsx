@@ -39,8 +39,7 @@ const explanation: string[] = [
 const RankPage = () => {
   const list = useRank();
   const logged = useRecoilValue(HasAdminToken);
-  console.log(list[0]);
-
+  
   return (
     <S.TopTenWrapper>
       <LeftBox
