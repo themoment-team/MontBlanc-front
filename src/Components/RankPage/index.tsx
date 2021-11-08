@@ -11,7 +11,7 @@ interface list {
   uncomfortableIdx: number;
   content: string;
   goods: number;
-  answer: boolean;
+  isAnswer: boolean;
 }
 
 const useRank = () => {
@@ -39,7 +39,7 @@ const explanation: string[] = [
 const RankPage = () => {
   const list = useRank();
   const logged = useRecoilValue(HasAdminToken);
-
+  
   return (
     <S.TopTenWrapper>
       <LeftBox
@@ -54,7 +54,7 @@ const RankPage = () => {
               <article>{rank.content.replace(/^\s+|\s+$/gm, "")}</article>
             </span>
             <span>
-              {rank.answer ? (
+              {rank.isAnswer ? (
                 <S.HasAnswerBtn>
                   <ViewModal
                     idx={rank.uncomfortableIdx}
