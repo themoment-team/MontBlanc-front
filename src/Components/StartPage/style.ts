@@ -3,6 +3,7 @@ import device from "Constants/constants";
 
 export const StartPage = styled.div`
   display: flex;
+  justify-content: space-between;
 `;
 
 export const LeftBox = styled.div`
@@ -101,6 +102,7 @@ export const ButtonBox = styled.div`
 export const RightBox = styled.div`
   overflow: hidden;
   height: 100vh;
+  margin-right: 5vw;
 `;
 
 const slide = keyframes`
