@@ -7,7 +7,10 @@ export const StartPage = styled.div`
 `;
 
 export const LeftBox = styled.div`
-  margin: 261px 56px 0 5vw;
+  margin: 27vh 0 0 5vw;
+  @media only screen and (max-width: 1700px) {
+    margin: 20vh 56px 0 5vw;
+  }
   @media ${device.tablet} {
     padding: 24px;
     margin: 48px auto;
@@ -22,7 +25,7 @@ export const StartHeader = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 25.5vh;
-  color: #6A76E9;
+  color: #6a76e9;
 `;
 
 export const Logo = styled.div`
@@ -33,10 +36,6 @@ export const Logo = styled.div`
   svg {
     width: 346px;
     height: 80px;
-    /* @media ${device.laptop} {
-
-        max-width: 300px;
-    } */
     @media ${device.mobile} {
       width: 250px;
       margin: 0 auto;
@@ -67,13 +66,12 @@ export const ButtonBox = styled.div`
 
   @media ${device.tablet} {
     flex-direction: column;
-
   }
 
   button {
     width: 190px;
     padding: 21px 0;
-    background-color: #6A76E9;
+    background-color: #6a76e9;
     color: #ffffff;
     border-radius: 12px;
     outline: 0;
@@ -81,7 +79,7 @@ export const ButtonBox = styled.div`
     font-weight: 600;
     font-size: 24px;
     margin-right: 30px;
-    
+
     @media ${device.tablet} {
       width: 100%;
       margin: 0;
@@ -129,10 +127,11 @@ export const ImgBox = styled.div`
   }
   & svg:nth-child(4) {
     animation: ${slide} 10s infinite linear alternate-reverse;
+    margin: 0;
   }
   svg {
     display: block;
     float: left;
-    margin-right: 24px;
+    margin-right: 1.25vw;
   }
 `;
