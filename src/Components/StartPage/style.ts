@@ -7,10 +7,7 @@ export const StartPage = styled.div`
 `;
 
 export const LeftBox = styled.div`
-  margin: 27vh 0 0 5vw;
-  @media only screen and (max-width: 1700px) {
-    margin: 20vh 56px 0 5vw;
-  }
+  margin: 20vh 0 0 5vw;
   @media ${device.tablet} {
     padding: 24px;
     margin: 48px auto;
@@ -36,6 +33,13 @@ export const Logo = styled.div`
   svg {
     width: 346px;
     height: 80px;
+    @media screen and (max-width: 1300px) {
+      width: 300px;
+    }
+    @media ${device.tablet} {
+      width: 270px;
+      margin: 0 auto;
+    }
     @media ${device.mobile} {
       width: 250px;
       margin: 0 auto;
@@ -118,6 +122,7 @@ export const ImgBox = styled.div`
   }
   & svg:nth-child(1) {
     animation: ${slide} 10s infinite linear alternate;
+    margin: 0;
   }
   & svg:nth-child(2) {
     animation: ${slide} 10s infinite linear alternate-reverse;
@@ -127,11 +132,10 @@ export const ImgBox = styled.div`
   }
   & svg:nth-child(4) {
     animation: ${slide} 10s infinite linear alternate-reverse;
-    margin: 0;
   }
   svg {
     display: block;
-    float: left;
+    float: right;
     margin-right: 1.25vw;
   }
 `;
