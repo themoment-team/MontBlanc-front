@@ -29,7 +29,6 @@ $ yarn build
     - ESNext
     - Type-script
     - Axios
-    - Context API
     - Recoil
     - Styled-components
 
@@ -39,11 +38,8 @@ $ yarn build
     - ESLint
 
 * deploy
-     - AWS S3
-     - AWS CloudFront
-     ------------------
-     - AWS amplify
-     - AWS Route 53
+     - Netlify
+     - Cloud Flare
 
 * sdk
      - Channel Talk SDK
@@ -73,5 +69,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
