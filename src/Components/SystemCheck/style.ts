@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { color } from "Shared/Config";
 
 export const SystemCheckWrapper = styled.div`
   position: absolute;
@@ -16,7 +17,7 @@ export const LogoWrapper = styled.div`
 `;
 
 export const DescWrapper = styled.span`
-  color: #434c9c;
+  color: ${color.systemBlue};
   font-size: 1rem;
   word-break: keep-all;
 `;

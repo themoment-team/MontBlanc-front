@@ -1,5 +1,6 @@
 import * as S from "./style";
 
+import { color } from "Shared/Config";
 import { Logo } from "Asset/SVG";
 
 const SystemCheck: React.FC = () => {
@@ -25,10 +26,10 @@ const ChaseCircle: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 340 340"
       >
-        <circle cx="170" cy="170" r="160" stroke="#E7F2F1" />
-        <circle cx="170" cy="170" r="135" stroke="#434C9C" />
-        <circle cx="170" cy="170" r="110" stroke="#E7F2F1" />
-        <circle cx="170" cy="170" r="85" stroke="#434C9C" />
+        <circle cx="170" cy="170" r="160" stroke={color.systemLightGreen} />
+        <circle cx="170" cy="170" r="135" stroke={color.systemBlue} />
+        <circle cx="170" cy="170" r="110" stroke={color.systemLightGreen} />
+        <circle cx="170" cy="170" r="85" stroke={color.systemBlue} />
       </S.ChaseCircleLoader>
     </S.ChaseCircleWrapper>
   );
