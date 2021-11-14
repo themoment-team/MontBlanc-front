@@ -5,7 +5,7 @@ import { PageExplanation } from "Components";
 import { HasAdminToken } from "Atom";
 import { useRecoilValue } from "recoil";
 import { useHistory } from "react-router-dom";
-import Config from "Constants/Config.json";
+import Config from "Shared/Config.json";
 import Table from "Api/table";
 import { EditModal } from "Components/Modals";
 

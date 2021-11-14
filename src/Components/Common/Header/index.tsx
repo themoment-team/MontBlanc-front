@@ -6,7 +6,7 @@ import { HasAdminToken } from "Atom";
 import { useEffect, useState } from "react";
 import { faBars, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Config from "Constants/Config.json";
+import Config from "Shared/Config.json";
 import { useSetRecoilState } from "recoil";
 import admin from "Api/admin";
 import { useHistory } from "react-router";
