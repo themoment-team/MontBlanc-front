@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import * as P from "./Page/index";
-import Config from "Constants/Config.json";
-import GlobalStyle from "./Constants/Styles/GlobalStyles";
+import Config from "Shared/Config.json";
+import GlobalStyle from "Shared/Styles/GlobalStyles";
 import reactModal from "react-modal";
 
 const checkState: boolean = false;
