@@ -1,4 +1,4 @@
-import device from "Constants/constants";
+import device from "Shared/Config";
 import styled, { css } from "styled-components";
 
 interface submitBtn {

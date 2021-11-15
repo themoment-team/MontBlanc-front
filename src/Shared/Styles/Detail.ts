@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import device from "Constants/constants";
+import device from "Shared/Config";
 
 export const ApiResult = styled.h1`
   margin-top: 150px;

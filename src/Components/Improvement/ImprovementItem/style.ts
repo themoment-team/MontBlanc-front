@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import device from "Constants/constants";
+import device from "Shared/Config";
 
 interface ImprovementProps {
   color: string;

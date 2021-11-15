@@ -1,5 +1,5 @@
-import { BASE_HEADER } from "Constants/Config.json";
-import { BASE_URL } from "Constants/constants";
+import { BASE_HEADER } from "Shared/Config.json";
+import { BASE_URL } from "Shared/Config";
 import axios, { AxiosRequestConfig } from "axios";
 
 export interface hasToken {

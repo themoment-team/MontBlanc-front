@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import device from "Constants/constants";
+import device from "Shared/Config";
 
 export const Footer = styled.div`
   margin: 70px 5vw;
