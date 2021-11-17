@@ -69,7 +69,7 @@ const RankPage = () => {
                   ButtonContent={"답변달기"}
                   heading={"답변달기"}
                   title={
-                    rank.content.replace(/^\s+|\s+$/gm, "") + "불편함 답변"
+                    rank.content.replace(/^\s+|\s+$/gm, "") + " 불편함 답변"
                   }
                 />
               ) : (
