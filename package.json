@@ -25,7 +25,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-modal": "^3.14.3",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "react-snap": "^1.23.0",
     "recoil": "^0.3.1",
@@ -35,7 +35,7 @@
     "yarn": "^1.22.10"
   },
   "scripts": {
-    "start": "export PORT=8080 && react-scripts start",
+    "start": "set PORT=8080 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

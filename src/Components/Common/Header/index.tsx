@@ -1,6 +1,6 @@
 import * as S from "./style";
 import * as I from "../../../Asset/SVG/index";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { HasAdminToken } from "Atom";
 import { useEffect, useState } from "react";
@@ -9,11 +9,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Config from "Shared/Config.json";
 import { useSetRecoilState } from "recoil";
 import admin from "Api/admin";
-import { useHistory } from "react-router";
 
 const useLogout = () => {
   const setHasToken = useSetRecoilState(HasAdminToken);
-  const history = useHistory();
+  const navigate = useNavigate();
   const logout = async () => {
     try {
       await admin.logout();
@@ -23,7 +22,7 @@ const useLogout = () => {
     } catch (e) {
       alert(e);
     }
-    history.push("/");
+    navigate("/");
   };
 
   return logout;
