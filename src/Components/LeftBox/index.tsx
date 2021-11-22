@@ -4,7 +4,7 @@ import * as I from "../../Asset/SVG";
 import { PageExplanation } from "Components";
 import { HasAdminToken } from "Atom";
 import { useRecoilValue } from "recoil";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Config from "Shared/Config.json";
 import Table from "Api/table";
 import { EditModal } from "Components/Modals";
@@ -31,7 +31,7 @@ const LeftBox: React.FC<LeftBoxProps> = ({ heading, explanation }) => {
   const [content, setContent] = useState("");
   const [length, setLength] = useState(0);
   const logged = useRecoilValue(HasAdminToken);
-  const history = useHistory();
+  const navigate = useNavigate();
   const path = window.location.pathname;
 
   const tryWriteTable = useWriteTable();
@@ -75,7 +75,7 @@ const LeftBox: React.FC<LeftBoxProps> = ({ heading, explanation }) => {
               등 록
             </S.FormBtn>
           </S.Form>
-          <S.Btn onClick={() => history.push(Config.LINK.RANK)}>
+          <S.Btn onClick={() => navigate(Config.LINK.RANK)}>
             많은 학생들이 공감한
             <br />
             불편함은 무엇일까요?
@@ -86,7 +86,7 @@ const LeftBox: React.FC<LeftBoxProps> = ({ heading, explanation }) => {
           </S.Btn>
         </>
       ) : (
-        <S.Btn onClick={() => history.push(Config.LINK.COMMENT)}>
+        <S.Btn onClick={() => navigate(Config.LINK.COMMENT)}>
           학교가 불편한 순간을
           <br /> 자유롭게 남겨주세요.
           <S.LinkTextWrapper>

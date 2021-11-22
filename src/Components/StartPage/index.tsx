@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import * as S from "./style";
 import * as I from "../../Asset/SVG/index";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { HasAdminToken } from "../../Atom";
 import Config from "Shared/Config.json";
 import LoginModalPresenter from "Components/Modals/LoginModal";
 
 const StartPage: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
 
   useEffect(() => {
@@ -42,13 +42,11 @@ const StartPage: React.FC = () => {
               >
                 Student
               </button>
-              <button onClick={() => history.push(Config.LINK.RANK)}>
-                Admin
-              </button>
+              <button onClick={() => navigate(Config.LINK.RANK)}>Admin</button>
             </>
           ) : (
             <>
-              <button onClick={() => history.push(Config.LINK.COMMENT)}>
+              <button onClick={() => navigate(Config.LINK.COMMENT)}>
                 Student
               </button>
               <LoginModalPresenter />
