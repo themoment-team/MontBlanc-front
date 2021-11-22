@@ -61,6 +61,7 @@ const Header: React.FC = () => {
         <S.HeaderNav active={bars}>
           <Link to={Config.LINK.COMMENT}>의견 남기기</Link>
           <Link to={Config.LINK.RANK}>Top 30</Link>
+          <Link to={Config.LINK.BEFORERANK}>지난 TOP3 모아보기</Link>
           <Link to={Config.LINK.IMPROVEMENT}>실제 개선 사례</Link>
           <Link to={Config.LINK.ABOUT}>캠페인 자세히 보기</Link>
         </S.HeaderNav>

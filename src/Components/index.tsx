@@ -12,3 +12,4 @@ export { ChannelTalkHelmet, SeoHelmet } from "./Helmet";
 export { default as SystemCheck } from "./SystemCheck";
 export { default as NotFoundPage } from "./NotFoundPage";
 export { default as LeftBox } from "./LeftBox";
+export { default as BeforeRankPage } from "./BeforeRank";
