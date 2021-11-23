@@ -2,24 +2,26 @@ import React from "react";
 import * as S from "./style";
 
 export const BeforeRankItem: React.FC = () => {
+  const color: string[] = ["#A4ADFF", "#6C91EF"];
+
   return (
     <S.BoxWrapper>
-      <S.SeasonBox>
-        <S.Title>
+      <S.SeasonBox color={color[0]}>
+        <p>
           2021년 8월 <br /> 학교가 불편한 순간 <br /> SEASON 1
-        </S.Title>
-        <S.ContentBox></S.ContentBox>
-        <S.ContentBox></S.ContentBox>
-        <S.ContentBox></S.ContentBox>
+        </p>
+        <S.ContentBox color={color[0]}></S.ContentBox>
+        <S.ContentBox color={color[0]}></S.ContentBox>
+        <S.ContentBox color={color[0]}></S.ContentBox>
       </S.SeasonBox>
-      <S.SeasonBox2>
-        <S.Title2>
+      <S.SeasonBox color={color[1]}>
+        <p>
           2021년 8월 <br /> 학교가 불편한 순간 <br /> SEASON 2
-        </S.Title2>
-        <S.ContentBox2></S.ContentBox2>
-        <S.ContentBox2></S.ContentBox2>
-        <S.ContentBox2></S.ContentBox2>
-      </S.SeasonBox2>
+        </p>
+        <S.ContentBox color={color[1]}></S.ContentBox>
+        <S.ContentBox color={color[1]}></S.ContentBox>
+        <S.ContentBox color={color[1]}></S.ContentBox>
+      </S.SeasonBox>
     </S.BoxWrapper>
   );
 };
