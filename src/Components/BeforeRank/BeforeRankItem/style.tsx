@@ -1,53 +1,6 @@
 import styled from "styled-components";
 import device from "Shared/Config";
 
-export const BeforeRankPage = styled.div`
-  height: 100vh;
-  margin: 180px 5vw;
-  display: flex;
-  justify-content: space-between;
-  width: 90vw;
-
-  @media ${device.mobile} {
-    flex-direction: column;
-    height: 180vh;
-    justify-content: flex-start;
-  }
-`;
-
-export const RightBox = styled.div`
-  width: 51vw;
-  @media ${device.mobile} {
-    margin-top: 30px;
-    width: 100%;
-  }
-`;
-
-export const SeasonSelect = styled.div`
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 0.5px solid #8b8b8b;
-  align-items: flex-end;
-  height: 57px;
-  padding-bottom: 15px;
-  color: #6a76e9;
-  span {
-    font-size: 40px;
-    line-height: 57px;
-    font-weight: bold;
-    margin: 0;
-  }
-  svg {
-    margin-left: 36px;
-    cursor: pointer;
-  }
-  @media ${device.mobile} {
-    p {
-      display: none;
-    }
-  }
-`;
-
 export const BoxWrapper = styled.div`
   display: flex;
   justify-content: space-between;
