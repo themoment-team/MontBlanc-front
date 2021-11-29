@@ -20,7 +20,6 @@ const useWriteTable = () => {
     setContent: React.Dispatch<React.SetStateAction<string>>,
   ) => {
     setContent("");
-    window.location.reload();
     return await Table.writeTable(content);
   };
 
