@@ -66,6 +66,7 @@ const Header: React.FC = () => {
         </S.HeaderNav>
       ) : (
         <S.HeaderNav active={bars}>
+          <Link to={Config.LINK.COMMENT}>의견 보러가기</Link>
           <Link to={Config.LINK.RANK}>답변달기</Link>
           <Link to={Config.LINK.IMPROVEMENT}>실제 개선 사례 작성</Link>
           <S.NavButton

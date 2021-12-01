@@ -22,6 +22,7 @@ const useLogin = (close: () => void) => {
         res.data.data.refreshToken,
       );
       setLogged(true);
+      alert("로그인에 성공하였습니다.");
       close();
     } catch (e) {
       const message = (e.message = "Error: Request failed with status code 404"
