@@ -40,7 +40,7 @@ class Table {
   increaseGoods(uncomfortableIdx: number) {
     try {
       return RequestApi({
-        method: "PUT",
+        method: "PATCH",
         url: TableController.increaseGoods(uncomfortableIdx),
       });
     } catch (e) {
@@ -51,7 +51,7 @@ class Table {
   decreaseGoods(uncomfortableIdx: number) {
     try {
       return RequestApi({
-        method: "PUT",
+        method: "PATCH",
         url: TableController.decreaseGoods(uncomfortableIdx),
       });
     } catch (e) {

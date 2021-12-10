@@ -23,7 +23,7 @@ export const AnswerController = {
   },
   detail2Answer: (uncomfortableIdx: number) => {
     return `/rank/answer/${uncomfortableIdx}`;
-  }
+  },
 };
 
 //실제개선사례
@@ -48,10 +48,10 @@ export const TableController = {
     return `/uncomfortable`;
   },
   increaseGoods: (uncomfortableIdx: number) => {
-    return `/uncomfortable/like/increase/${uncomfortableIdx}`;
+    return `/uncomfortable/${uncomfortableIdx}/like-increase`;
   },
   decreaseGoods: (uncomfortableIdx: number) => {
-    return `/uncomfortable/like/decrease/${uncomfortableIdx}`;
+    return `/uncomfortable/${uncomfortableIdx}/like-decrease`;
   },
   amountUncomfortable: () => {
     return `/uncomfortable/amount`;
