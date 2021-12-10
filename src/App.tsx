@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import * as P from "./Page/index";
 import Config from "Shared/Config.json";
 import GlobalStyle from "Shared/Styles/GlobalStyles";
@@ -45,6 +45,7 @@ const App: React.FC = () => (
         <Route path={Config.LINK.IMPROVEMENT} element={<P.Improvement />} />
         <Route path={Config.LINK.RANK} element={<P.Rank />} />
         <Route path={Config.LINK.COMMENT} element={<P.LeaveComments />} />
+        <Route path="/the_moment" element={<Navigate to={Config.LINK.COMMENT}/>} />
         <Route path={Config.LINK.START} element={<P.Start />} />
         <Route element={<P.NotFound />} />
       </Routes>
