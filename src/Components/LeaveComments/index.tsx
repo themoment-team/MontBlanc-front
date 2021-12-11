@@ -48,7 +48,7 @@ const LeaveCommentsPage: React.FC = () => {
 
   return (
     <S.LeaveCommentsBox>
-      <LeftBox heading={heading} explanation={explanation}/>
+      <LeftBox heading={heading} explanation={explanation} />
       <S.RightBox>
         <S.IssueBoxWrapper>
           {list1.map((table: list, index) => (

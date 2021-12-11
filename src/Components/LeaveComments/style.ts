@@ -5,7 +5,7 @@ export const LeaveCommentsBox = styled.main`
   display: flex;
   justify-content: space-between;
   width: 90vw;
-  margin: 180px auto;
+  margin: 110px auto 10px;
   @media ${device.mobile} {
     flex-direction: column;
     margin-top: 180px;

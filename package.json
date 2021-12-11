@@ -27,6 +27,7 @@
     "react-modal": "^3.14.3",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
+    "react-slideshow-image": "^3.6.0",
     "react-snap": "^1.23.0",
     "recoil": "^0.3.1",
     "styled-components": "^5.2.1",
