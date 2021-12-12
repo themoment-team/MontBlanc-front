@@ -18,8 +18,10 @@ const StartPage: React.FC = () => {
   }, []);
 
   return (
-    logged ? (<Navigate to={Config.LINK.RANK} />) :
-      (<S.StartPage>
+    logged ? (
+      <Navigate to={Config.LINK.RANK} />
+      ):(
+      <S.StartPage>
         <S.LeftBox>
           <S.StartHeader>
             <S.Logo>
