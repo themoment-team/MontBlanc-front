@@ -2,21 +2,25 @@ import styled from "styled-components";
 import device from "Shared/Config";
 
 export const BeforeRankPage = styled.div`
-  height: 100vh;
-  margin: 180px 5vw;
   display: flex;
   justify-content: space-between;
+  margin: 170px 5vw 0 5vw;
   width: 90vw;
 
+  @media ${device.laptop} {
+    margin: 180px 10px;
+  }
   @media ${device.mobile} {
     flex-direction: column;
+    width: 90vw;
+    margin-left: 5vw;
     height: 180vh;
     justify-content: flex-start;
   }
 `;
 
 export const RightBox = styled.div`
-  width: 51vw;
+  width: 990px;
   @media ${device.mobile} {
     margin-top: 30px;
     width: 100%;
@@ -31,104 +35,49 @@ export const SeasonSelect = styled.div`
   height: 57px;
   padding-bottom: 15px;
   color: #6a76e9;
-  span {
+  p {
     font-size: 40px;
     line-height: 57px;
     font-weight: bold;
     margin: 0;
   }
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
   svg {
     margin-left: 36px;
     cursor: pointer;
   }
-  @media ${device.mobile} {
-    p {
-      display: none;
-    }
-  }
 `;
 
-export const BoxWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  @media ${device.mobile} {
-    flex-direction: column;
-  }
-`;
-
-export const SeasonBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 24vw;
-  height: 67vh;
-  border: 3px solid #a4adff;
-  border-radius: 30px;
-  margin-top: 55px;
-  @media ${device.mobile} {
-    width: 100%;
-  }
-`;
-
-export const Title = styled.div`
-  font-size: 30px;
-  line-height: 43px;
-  color: #a4adff;
-  width: 20vw;
-  height: 129px;
-  @media ${device.mobile} {
-    width: 400px;
-  }
-`;
-
-export const ContentBox = styled.div`
-  width: 20.052083333333332vw;
-  height: 12.8068303094984vh;
-  background: #a4adff;
+export const DropMenu = styled.div`
+  position: absolute;
+  z-index: 5;
+  width: 200px;
+  height: 310px;
+  margin-top: -10px;
+  overflow: scroll;
   border-radius: 10px;
-  color: #ffffff;
-  margin-top: 14px;
-  @media ${device.mobile} {
-    width: 400px;
+  background-color: #fff;
+  box-shadow: 0 0 7px 1px gray;
+  &::-webkit-scrollbar {
+    display: none;
   }
 `;
 
-export const SeasonBox2 = styled.div`
+export const DropItem = styled.div`
+  background-color: #fff;
+  width: 200px;
+  height: 40px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding-left: 20px;
+  justify-content: flex-start;
   align-items: center;
-  width: 24vw;
-  height: 67.2358591248666vh;
-  border: 3px solid #6c91ef;
-  border-radius: 30px;
-  margin-top: 55px;
-
-  @media ${device.mobile} {
-    width: 100%;
-  }
-`;
-
-export const ContentBox2 = styled.div`
-  width: 20.052083333333332vw;
-  height: 12.8068303094984vh;
-  background: #6c91ef;
-  border-radius: 10px;
-  color: #ffffff;
-  margin-top: 14px;
-  @media ${device.mobile} {
-    width: 400px;
-  }
-`;
-
-export const Title2 = styled.div`
-  width: 20vw;
-  font-size: 30px;
-  line-height: 43px;
-  color: #6c91ef;
-  height: 129px;
-  @media ${device.mobile} {
-    width: 400px;
+  color: #676767;
+  cursor: pointer;
+  &:hover {
+    background-color: #f1f3f5;
   }
 `;

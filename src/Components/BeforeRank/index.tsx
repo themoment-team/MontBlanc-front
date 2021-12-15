@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { LeftBox } from "Components";
-import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { HasAdminToken } from "Atom";
 import * as I from "../../Asset/SVG/index";
@@ -18,10 +17,12 @@ const student: string[] = ["자세한 내용을 보려면 클릭해주세요!"];
 const admin: string[] = ["답변 달고싶은 게시물을 클릭해주세요!"];
 const BeforeRankPage: React.FC = () => {
   const logged = useRecoilValue(HasAdminToken);
-  const history = useNavigate();
-  const range = {
-    min: { year: 2020, month: 3 },
-    max: { year: 2025, month: 2 },
+
+  const [dropView, setDropView] = useState<boolean>(false);
+
+  const onClickDrop = async () => {
+    await setDropView(!dropView);
+    console.log(dropView);
   };
 
   return (
@@ -33,12 +34,32 @@ const BeforeRankPage: React.FC = () => {
       <S.RightBox>
         <S.SeasonSelect>
           <div>
-            <span>2021년 8월</span>
-            <I.DropDownBtn></I.DropDownBtn>
+            <p>2021년 8월</p>
+            <span onClick={onClickDrop}>
+              <I.DropDownBtn />
+            </span>
           </div>
           {!logged ? student : admin}
         </S.SeasonSelect>
-        {!logged ? <BeforeRankItem></BeforeRankItem> : null}
+        {dropView ? (
+          <S.DropMenu>
+            <S.DropItem>2021년 1월</S.DropItem>
+            <S.DropItem>2021년 2월</S.DropItem>
+            <S.DropItem>2021년 3월</S.DropItem>
+            <S.DropItem>2021년 4월</S.DropItem>
+            <S.DropItem>2021년 5월</S.DropItem>
+            <S.DropItem>2021년 6월</S.DropItem>
+            <S.DropItem>2021년 7월</S.DropItem>
+            <S.DropItem>2021년 8월</S.DropItem>
+            <S.DropItem>2021년 9월</S.DropItem>
+            <S.DropItem>2021년 10월</S.DropItem>
+            <S.DropItem>2021년 11월</S.DropItem>
+            <S.DropItem>2021년 12월</S.DropItem>
+          </S.DropMenu>
+        ) : (
+          <></>
+        )}
+        {!logged ? <BeforeRankItem></BeforeRankItem> : <></>}
       </S.RightBox>
     </S.BeforeRankPage>
   );

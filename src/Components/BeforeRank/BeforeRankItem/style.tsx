@@ -7,20 +7,12 @@ interface ImprovementProps {
 
 export const BoxWrapper = styled.div`
   display: flex;
+  border: 1px solid;
+  width: 990px;
   justify-content: space-between;
+  margin-top: 55px;
   @media ${device.mobile} {
     flex-direction: column;
-  }
-`;
-export const ContentBox = styled.div<ImprovementProps>`
-  width: 20.052083333333332vw;
-  height: 12.8068303094984vh;
-  background-color: ${(props) => props.color};
-  border-radius: 10px;
-  color: #ffffff;
-  margin-top: 14px;
-  @media ${device.mobile} {
-    width: 400px;
   }
 `;
 
@@ -28,19 +20,17 @@ export const SeasonBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 24vw;
-  height: 67vh;
+  align-items: flex-start;
+  width: 470px;
+  height: 630px;
   border: 3px solid ${(props) => props.color};
   border-radius: 30px;
-  margin-top: 55px;
   color: ${(props) => props.color};
   p {
     font-size: 30px;
     line-height: 43px;
-    width: 20vw;
-    height: 129px;
-    margin: 0;
+    font-weight: 700;
+    margin-left: 45px;
     @media ${device.mobile} {
       width: 400px;
     }
@@ -50,11 +40,14 @@ export const SeasonBox = styled.div`
   }
 `;
 
-export const Title = styled.div`
-  font-size: 30px;
-  line-height: 43px;
+export const ContentBox = styled.div<ImprovementProps>`
   width: 20vw;
-  height: 129px;
+  height: 12.8vh;
+  margin-left: 45px;
+  background-color: ${(props) => props.color};
+  border-radius: 10px;
+  color: #ffffff;
+  margin-top: 14px;
   @media ${device.mobile} {
     width: 400px;
   }
