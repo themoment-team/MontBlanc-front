@@ -20,9 +20,8 @@ const BeforeRankPage: React.FC = () => {
 
   const [dropView, setDropView] = useState<boolean>(false);
 
-  const onClickDrop = async () => {
-    await setDropView(!dropView);
-    console.log(dropView);
+  const onClickDrop = () => {
+    setDropView(!dropView);
   };
 
   return (
