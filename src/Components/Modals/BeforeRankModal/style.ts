@@ -50,12 +50,17 @@ export const BtnWrapper = styled.div`
   position: absolute;
   bottom: 0;
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
   width: 100%;
-  height: 50px;
-  border: 1px solid red;
 `;
 
 export const Btn = styled.button`
-  background-color: #929292;
+  background: rgba(146, 146, 146, 0.35);
+  width: 120px;
+  height: 45px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 45px;
+  margin-right: 55px;
 `;

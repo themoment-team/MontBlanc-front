@@ -36,7 +36,9 @@ const BeforeRankModal: React.FC<{}> = () => {
             전공동아리전공동아리전공동아리전공동아리전공동아리전공동아리
             전공동아리전공동아리전공동아리
           </S.Content>
-          <S.BtnWrapper></S.BtnWrapper>
+          <S.BtnWrapper>
+            <S.Btn>답변달기</S.Btn>
+          </S.BtnWrapper>
         </S.ModalWrapper>
       </ReactModal>
     </>
