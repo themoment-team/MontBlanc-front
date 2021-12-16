@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import device from "Shared/Config";
 
 export const BeforeRankPage = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 170px 5vw 0 5vw;
+  margin: 115px 5vw 0 5vw;
   width: 90vw;
 
   @media ${device.laptop} {
@@ -21,13 +21,18 @@ export const BeforeRankPage = styled.div`
 
 export const RightBox = styled.div`
   width: 990px;
+  margin-top: 90px;
   @media ${device.mobile} {
     margin-top: 30px;
     width: 100%;
   }
 `;
 
-export const SeasonSelect = styled.div`
+interface SvgProps {
+  dropView: boolean;
+}
+
+export const SeasonSelect = styled.div<SvgProps>`
   display: flex;
   justify-content: space-between;
   border-bottom: 0.5px solid #8b8b8b;
@@ -40,6 +45,7 @@ export const SeasonSelect = styled.div`
     line-height: 57px;
     font-weight: bold;
     margin: 0;
+    cursor: pointer;
   }
   div {
     display: flex;
@@ -49,6 +55,13 @@ export const SeasonSelect = styled.div`
   svg {
     margin-left: 36px;
     cursor: pointer;
+    transition: 0.15s;
+    ${(props) =>
+      props.dropView &&
+      css`
+        transform: rotate(180deg);
+        transition: 0.25s;
+      `}
   }
 `;
 
@@ -61,7 +74,7 @@ export const DropMenu = styled.div`
   overflow: scroll;
   border-radius: 10px;
   background-color: #fff;
-  box-shadow: 0 0 7px 1px gray;
+  box-shadow: 0 0 7px 0 gray;
   &::-webkit-scrollbar {
     display: none;
   }
