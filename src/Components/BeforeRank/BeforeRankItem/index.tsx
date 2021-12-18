@@ -21,12 +21,15 @@ export const BeforeRankItem: React.FC = () => {
           2021년 8월 <br /> 학교가 불편한 순간 <br /> SEASON 1
         </p>
         <S.ContentBox color={color1[0]}>
+          <S.ContentRank color={color1[0]}>1</S.ContentRank>
           <BeforeRankModal />
         </S.ContentBox>
         <S.ContentBox color={color1[1]}>
+          <S.ContentRank color={color1[1]}>2</S.ContentRank>
           <BeforeRankModal />
         </S.ContentBox>
         <S.ContentBox color={color1[2]}>
+          <S.ContentRank color={color1[2]}>3</S.ContentRank>
           <BeforeRankModal />
         </S.ContentBox>
       </S.SeasonBox>
@@ -35,12 +38,15 @@ export const BeforeRankItem: React.FC = () => {
           2021년 8월 <br /> 학교가 불편한 순간 <br /> SEASON 2
         </p>
         <S.ContentBox color={color2[0]}>
+          <S.ContentRank color={color2[0]}>1</S.ContentRank>
           <BeforeRankModal />
         </S.ContentBox>
         <S.ContentBox color={color2[1]}>
+          <S.ContentRank color={color2[1]}>2</S.ContentRank>
           <BeforeRankModal />
         </S.ContentBox>
         <S.ContentBox color={color2[2]}>
+          <S.ContentRank color={color2[2]}>3</S.ContentRank>
           <BeforeRankModal />
         </S.ContentBox>
       </S.SeasonBox>

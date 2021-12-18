@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import device from "Shared/Config";
 
-interface ImprovementProps {
+interface ContentProps {
   color: string;
 }
 
@@ -29,7 +29,7 @@ export const SeasonBox = styled.div`
   }
 `;
 
-export const ContentBox = styled.div<ImprovementProps>`
+export const ContentBox = styled.div<ContentProps>`
   width: 385px;
   height: 120px;
   margin-top: 15px;
@@ -43,4 +43,19 @@ export const ContentBox = styled.div<ImprovementProps>`
     height: 100%;
     background: transparent;
   }
+`;
+
+export const ContentRank = styled.div<ContentProps>`
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50px;
+  margin-top: 25px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: ${(props) => props.color};
 `;
