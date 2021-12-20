@@ -12,6 +12,7 @@
     "RANK": "/rank",
     "COMMENT": "/every-moment",
     "SYSTEMCHECK": "/system_check",
+    "BEFORERANK": "/before_rank",
     "START": "/"
   }
 }

@@ -47,6 +47,7 @@ const App: React.FC = () => (
         <Route path={Config.LINK.COMMENT} element={<P.LeaveComments />} />
         <Route path="/the_moment" element={<Navigate to={Config.LINK.COMMENT}/>} />
         <Route path={Config.LINK.START} element={<P.Start />} />
+        <Route path={Config.LINK.BEFORERANK} element={<P.BeforeRank />} />
         <Route element={<P.NotFound />} />
       </Routes>
     )}

@@ -44,7 +44,7 @@ const LeftBox: React.FC<LeftBoxProps> = ({ heading, explanation }) => {
     <S.Positioner>
       <PageExplanation heading={heading} explanation={explanation} />
       {logged ? (
-        path === Config.LINK.IMPROVEMENT && (
+        path === Config.LINK.IMPROVEMENT ? (
           <S.Btn>
             <EditModal
               idx={1}
@@ -56,6 +56,20 @@ const LeftBox: React.FC<LeftBoxProps> = ({ heading, explanation }) => {
               <I.RightArrow />
             </span>
           </S.Btn>
+        ) : (
+          path === Config.LINK.BEFORERANK && (
+            <S.Btn>
+              <EditModal
+                idx={1}
+                state="improvement"
+                heading="작성하기"
+                ButtonContent={"지난 TOP3 작성하기"}
+              />
+              <span>
+                <I.RightArrow />
+              </span>
+            </S.Btn>
+          )
         )
       ) : path === Config.LINK.COMMENT ? (
         <>
