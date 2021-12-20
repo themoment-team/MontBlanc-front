@@ -27,7 +27,7 @@ const BeforeRankPage: React.FC = () => {
   return (
     <S.BeforeRankPage>
       <LeftBox
-        heading={!logged ? heading : adminHeading}
+        heading={logged ? adminHeading : heading}
         explanation={explanation}
       ></LeftBox>
       <S.RightBox>
