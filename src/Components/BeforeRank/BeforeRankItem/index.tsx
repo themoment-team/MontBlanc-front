@@ -4,27 +4,19 @@ import * as I from "Asset/SVG";
 import { BeforeRankModal } from "Components/Modals";
 
 export const BeforeRankItem: React.FC = () => {
-  const color1: string[] = [
-    "#A4ADFF",
-    "rgba(164, 173, 255, 0.8)",
-    "rgba(164, 173, 255, 0.6)",
-  ];
-  const color2: string[] = [
-    "#6C91EF",
-    "rgba(108, 145, 239, 0.8)",
-    "rgba(108, 145, 239, 0.6)",
-  ];
+  const season1Color: string[] = ["#A4ADFF", "#A4ADFFCC", "#A4ADFF99"];
+  const season2Color: string[] = ["#6C91EF", "#6C91EFCC", "#6C91EF99"];
 
   return (
     <S.BoxWrapper>
-      <S.SeasonBox color={color1[0]}>
+      <S.SeasonBox color={season1Color[0]}>
         <p>
           2021년 8월 <br /> 학교가 불편한 순간 <br /> SEASON 1
         </p>
-        <S.ContentBox color={color1[0]}>
+        <S.ContentBox color={season1Color[0]}>
           <BeforeRankModal />
           <S.RankContentWrapper>
-            <S.ContentRank color={color1[0]}>1</S.ContentRank>
+            <S.ContentRank color={season1Color[0]}>1</S.ContentRank>
             <S.BoxContentWrapper>
               <S.Title>전공동아리 시간이 너무 부족해요 ㅠㅠ</S.Title>
               <S.Answer>학교에서 전공동아리 시간이 너무 부...</S.Answer>
@@ -35,10 +27,10 @@ export const BeforeRankItem: React.FC = () => {
             385
           </S.Likes>
         </S.ContentBox>
-        <S.ContentBox color={color1[1]}>
+        <S.ContentBox color={season1Color[1]}>
           <BeforeRankModal />
           <S.RankContentWrapper>
-            <S.ContentRank color={color1[1]}>2</S.ContentRank>
+            <S.ContentRank color={season1Color[1]}>2</S.ContentRank>
             <S.BoxContentWrapper>
               <S.Title>전공동아리 시간이 너무 부족해요 ㅠㅠ</S.Title>
               <S.Answer>학교에서 전공동아리 시간이 너무 부...</S.Answer>
@@ -49,10 +41,10 @@ export const BeforeRankItem: React.FC = () => {
             385
           </S.Likes>
         </S.ContentBox>
-        <S.ContentBox color={color1[2]}>
+        <S.ContentBox color={season1Color[2]}>
           <BeforeRankModal />
           <S.RankContentWrapper>
-            <S.ContentRank color={color1[2]}>3</S.ContentRank>
+            <S.ContentRank color={season1Color[2]}>3</S.ContentRank>
             <S.BoxContentWrapper>
               <S.Title>전공동아리 시간이 너무 부족해요 ㅠㅠ</S.Title>
               <S.Answer>학교에서 전공동아리 시간이 너무 부...</S.Answer>
@@ -64,14 +56,14 @@ export const BeforeRankItem: React.FC = () => {
           </S.Likes>
         </S.ContentBox>
       </S.SeasonBox>
-      <S.SeasonBox color={color2[0]}>
+      <S.SeasonBox color={season2Color[0]}>
         <p>
           2021년 8월 <br /> 학교가 불편한 순간 <br /> SEASON 2
         </p>
-        <S.ContentBox color={color2[0]}>
+        <S.ContentBox color={season2Color[0]}>
           <BeforeRankModal />
           <S.RankContentWrapper>
-            <S.ContentRank color={color2[0]}>1</S.ContentRank>
+            <S.ContentRank color={season2Color[0]}>1</S.ContentRank>
             <S.BoxContentWrapper>
               <S.Title>전공동아리 시간이 너무 부족해요 ㅠㅠ</S.Title>
               <S.Answer>학교에서 전공동아리 시간이 너무 부...</S.Answer>
@@ -82,10 +74,10 @@ export const BeforeRankItem: React.FC = () => {
             385
           </S.Likes>
         </S.ContentBox>
-        <S.ContentBox color={color2[1]}>
+        <S.ContentBox color={season2Color[1]}>
           <BeforeRankModal />
           <S.RankContentWrapper>
-            <S.ContentRank color={color2[1]}>2</S.ContentRank>
+            <S.ContentRank color={season2Color[1]}>2</S.ContentRank>
             <S.BoxContentWrapper>
               <S.Title>전공동아리 시간이 너무 부족해요 ㅠㅠ</S.Title>
               <S.Answer>학교에서 전공동아리 시간이 너무 부...</S.Answer>
@@ -96,10 +88,10 @@ export const BeforeRankItem: React.FC = () => {
             385
           </S.Likes>
         </S.ContentBox>
-        <S.ContentBox color={color2[2]}>
+        <S.ContentBox color={season2Color[2]}>
           <BeforeRankModal />
           <S.RankContentWrapper>
-            <S.ContentRank color={color2[2]}>3</S.ContentRank>
+            <S.ContentRank color={season2Color[2]}>3</S.ContentRank>
             <S.BoxContentWrapper>
               <S.Title>전공동아리 시간이 너무 부족해요 ㅠㅠ</S.Title>
               <S.Answer>학교에서 전공동아리 시간이 너무 부...</S.Answer>
