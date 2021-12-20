@@ -56,7 +56,8 @@ const BeforeRankPage: React.FC = () => {
         ) : (
           <></>
         )}
-        {!logged ? <BeforeRankItem></BeforeRankItem> : <></>}
+
+        {!logged ? <BeforeRankItem /> : <></>}
       </S.RightBox>
     </S.BeforeRankPage>
   );
