@@ -38,7 +38,7 @@ const BeforeRankPage: React.FC = () => {
           </div>
           {!logged ? student : admin}
         </S.SeasonSelect>
-        {dropView ? (
+        {dropView && (
           <S.DropMenu>
             <S.DropItem>2021년 1월</S.DropItem>
             <S.DropItem>2021년 2월</S.DropItem>
@@ -53,11 +53,9 @@ const BeforeRankPage: React.FC = () => {
             <S.DropItem>2021년 11월</S.DropItem>
             <S.DropItem>2021년 12월</S.DropItem>
           </S.DropMenu>
-        ) : (
-          <></>
         )}
 
-        {!logged ? <BeforeRankItem /> : <></>}
+        {!logged && <BeforeRankItem />}
       </S.RightBox>
     </S.BeforeRankPage>
   );
