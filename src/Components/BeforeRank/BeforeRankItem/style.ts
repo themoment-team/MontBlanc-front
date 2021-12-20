@@ -38,11 +38,15 @@ export const ContentBox = styled.div<ContentProps>`
   color: #ffffff;
   cursor: pointer;
   padding: 25px 22px 20px 22px;
+  position: relative;
   button {
     // 모달을 위한 button style 입니다.
     width: 100%;
     height: 100%;
+    margin: -25px -22px -20px -22px;
     background: transparent;
+    position: absolute;
+    z-index: 5;
   }
 `;
 
