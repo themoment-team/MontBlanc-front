@@ -2,9 +2,12 @@ import * as S from "./style";
 import * as I from "../../../Asset/SVG/index";
 import { Link, useNavigate } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { HasAdminToken, ShowBanner } from "Atom";
+import { HasAdminToken, VisibleBannerState } from "Atom";
 import { useEffect, useState } from "react";
-import { faBars, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars as Bar,
+  faChevronUp as ArrowTop,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Config from "Shared/Config.json";
 import { useSetRecoilState } from "recoil";
@@ -32,10 +35,8 @@ const useLogout = () => {
 const Header: React.FC = () => {
   const tryLogout = useLogout();
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
-  const showBanner = useRecoilValue(ShowBanner);
+  const visibleBannerState = useRecoilValue(VisibleBannerState);
   const [bars, setBars] = useState(true);
-
-  console.log(showBanner);
 
   useEffect(() => {
     if (localStorage.getItem("themoment_token")) {
@@ -57,7 +58,7 @@ const Header: React.FC = () => {
           </Link>
           <S.BarWrapper>
             <FontAwesomeIcon
-              icon={bars ? faBars : faChevronUp}
+              icon={bars ? Bar : ArrowTop}
               onClick={() => setBars(!bars)}
             />
           </S.BarWrapper>
@@ -85,7 +86,7 @@ const Header: React.FC = () => {
         )}
         <S.Blur active={bars}></S.Blur>
       </S.Header>
-      {showBanner && <Banner />}
+      {visibleBannerState && <Banner />}
     </>
   );
 };

@@ -1,22 +1,37 @@
-import React from "react";
-import { useRecoilState } from "recoil";
-import { ShowBanner } from "Atom";
+import { useSetRecoilState } from "recoil";
+import { VisibleBannerState } from "Atom";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSquare } from "@fortawesome/free-regular-svg-icons";
+import { faSquare as Square } from "@fortawesome/free-regular-svg-icons";
 import * as S from "./style";
+import { useEffect } from "react";
 
-const slideImages = ["/banner.png", "/banner.png", "/banner.png"];
+const slideImages = ["banner.png", "banner.png", "banner.png"];
 
-const Banner = () => {
-  const [_, setShowBanner] = useRecoilState(ShowBanner);
+const useVisibleState = () => {
+  const setVisibleBanner = useSetRecoilState(VisibleBannerState);
+
   const onClick = () => {
     const date = new Date();
     date.setDate(date.getDate() + 1);
-    localStorage.setItem("the-moment-banner", `${date}`);
-    setShowBanner(false);
+    localStorage.setItem("invisible-banner", `${date}`);
+    setVisibleBanner(false);
   };
+
+  useEffect(() => {
+    const storage = localStorage.getItem("the-moment-banner");
+    if (!storage) return;
+    const bannerDate = new Date(`${storage}`);
+    const date = new Date();
+    setVisibleBanner(bannerDate < date);
+  }, []);
+
+  return [onClick];
+};
+
+const Banner = () => {
+  const [onClick] = useVisibleState();
 
   return (
     <S.BannerWrapper>
@@ -25,7 +40,7 @@ const Banner = () => {
           <div className="each-slide">
             <div
               className="slideImage"
-              style={{ backgroundImage: `url(/slideImg${slide})` }}
+              style={{ backgroundImage: `url(/slideImg/${slide})` }}
             >
               <span>배너 IMAGE</span>
             </div>
@@ -35,7 +50,7 @@ const Banner = () => {
       <div className="close">
         <div onClick={onClick}>
           <span>오늘 하루 보지 않기</span>
-          <FontAwesomeIcon icon={faSquare} />
+          <FontAwesomeIcon icon={Square} />
         </div>
       </div>
     </S.BannerWrapper>
