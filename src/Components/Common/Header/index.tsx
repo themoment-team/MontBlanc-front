@@ -1,8 +1,8 @@
 import * as S from "./style";
 import * as I from "../../../Asset/SVG/index";
 import { Link, useNavigate } from "react-router-dom";
-import { useRecoilState } from "recoil";
-import { HasAdminToken } from "Atom";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { HasAdminToken, ShowBanner } from "Atom";
 import { useEffect, useState } from "react";
 import { faBars, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -32,7 +32,10 @@ const useLogout = () => {
 const Header: React.FC = () => {
   const tryLogout = useLogout();
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
+  const showBanner = useRecoilValue(ShowBanner);
   const [bars, setBars] = useState(true);
+
+  console.log(showBanner);
 
   useEffect(() => {
     if (localStorage.getItem("themoment_token")) {
@@ -82,7 +85,7 @@ const Header: React.FC = () => {
         )}
         <S.Blur active={bars}></S.Blur>
       </S.Header>
-      <Banner />
+      {showBanner && <Banner />}
     </>
   );
 };
