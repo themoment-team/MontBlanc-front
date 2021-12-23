@@ -20,7 +20,7 @@ const useVisibleState = () => {
   };
 
   useEffect(() => {
-    const storage = localStorage.getItem("the-moment-banner");
+    const storage = localStorage.getItem("invisible-banner");
     if (!storage) return;
     const bannerDate = new Date(`${storage}`);
     const date = new Date();

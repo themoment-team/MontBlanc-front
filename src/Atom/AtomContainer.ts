@@ -6,6 +6,6 @@ export const HasAdminToken = atom<boolean>({
 });
 
 export const VisibleBannerState = atom<boolean>({
-  key: "ShowBanner",
+  key: "VisibleBannerState",
   default: true,
 });
