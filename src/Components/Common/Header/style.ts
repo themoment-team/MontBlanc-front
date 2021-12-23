@@ -30,7 +30,7 @@ export const Blur = styled.div<NavBar>`
   z-index: -1;
   height: 150px;
   @media screen and (max-width: 1230px) {
-    height: ${(props) => (props.active ? "150px" : "450px")};
+    height: ${(props) => (props.active ? "150px" : "540px")};
   }
 `;
 
