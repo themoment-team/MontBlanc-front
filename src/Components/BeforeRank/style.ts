@@ -4,7 +4,7 @@ import device from "Shared/Config";
 export const BeforeRankPage = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 115px 5vw 0 5vw;
+  margin: 180px 5vw 0 5vw;
   width: 90vw;
 
   @media ${device.laptop} {
@@ -21,7 +21,7 @@ export const BeforeRankPage = styled.div`
 
 export const RightBox = styled.div`
   width: 990px;
-  margin-top: 90px;
+  margin-top: 32px;
   @media ${device.mobile} {
     margin-top: 30px;
     width: 100%;
