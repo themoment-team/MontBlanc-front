@@ -14,9 +14,9 @@ export const BannerBox = styled.div`
 `;
 
 export const InvisibleCheck = styled.div`
-  height: 20px;
+  height: 22px;
   background: #6a76e9;
-  padding: 5px 0px;
+  padding: 4px 0px;
 `;
 
 export const CheckButton = styled.div`
