@@ -33,7 +33,8 @@ const Banner = () => {
       <BannerContent Img={`banner1.jpeg`} />
       <S.InvisibleCheck>
         <S.CheckButton onClick={onClick}>
-          오늘 하루 보지 않기 
+          <S.Explain>오늘 하루 보지 않기</S.Explain>
+          <S.CheckBox />
         </S.CheckButton>
       </S.InvisibleCheck>
     </S.BannerBox>

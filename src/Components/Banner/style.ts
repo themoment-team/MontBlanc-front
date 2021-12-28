@@ -14,19 +14,34 @@ export const BannerBox = styled.div`
 `;
 
 export const InvisibleCheck = styled.div`
-  height: 16px;
+  height: 20px;
   background: #6a76e9;
-  padding: 7px 0px;
+  padding: 5px 0px;
 `;
 
 export const CheckButton = styled.div`
   width: 150px;
   position: absolute;
   right: 20px;
-  color: white;
-  font-size: 14px;
-  font-weight: 600;
   :hover{
     cursor: pointer;
   }
+`;
+
+export const Explain = styled.span`
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+`;
+
+export const CheckBox = styled.div`
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: #6a76e9;
+  border: 1px white solid;
+  border-radius: 3px;
+  position: relative;
+  top: 3px;
+  left: 5px;
 `;
