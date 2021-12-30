@@ -6,11 +6,8 @@ interface ImgProp {
 }
 
 const BannerContent = ({ Img }: ImgProp) => {
-  const imgURL = "/Images/Banners/" + Img
   return (
-    <S.BannerContent>
-      <S.BannerImg src={imgURL} alt="banner" />
-    </S.BannerContent>
+    <S.BannerImg src={"/Images/Banners/" + Img} alt="banner" />
   );
 }
 
