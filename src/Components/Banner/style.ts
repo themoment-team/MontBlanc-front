@@ -2,15 +2,21 @@ import styled from "styled-components";
 import device from "Shared/Config";
 
 export const BannerBox = styled.div`
-  width: 100%;
-  height: 120px;
+  width: 100vw;
+  height: 150px;
   position: relative;
   top: 100px;
-  margin: 0;
+  overflow: hidden;
 
   @media ${device.tablet} {
     display: none;
   }
+`;
+
+export const Banner = styled.div`
+  width: fit-content;
+  height: 120px;
+  display: flex;
 `;
 
 export const InvisibleCheck = styled.div`
