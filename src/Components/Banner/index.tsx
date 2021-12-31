@@ -44,12 +44,12 @@ const banners:bannersT[] = [
   },
 ];
 
-const Banner = () => {
+const Banner:React.FC = () => {
   const [onClick] = useVisibleState();
 
-  const totalBanners = banners.length - 1;
+  const totalBanners: number = banners.length - 1;
 
-  const [currentBanner, setCurrentBanner] = useState(0);
+  const [currentBanner, setCurrentBanner] = useState<number>(0);
   const bannerRef = useRef<any>(null);
 
   useSetInterval(() => {
