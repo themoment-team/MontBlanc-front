@@ -5,17 +5,19 @@ import BannerContent from "./BannerContent";
 import useSetInterval from "Hooks/useSetInterval";
 import * as S from "./style";
 
-const useVisibleState = () => {
+type useVisibleStateT = [onclick: () => void];
+
+const useVisibleState = (): useVisibleStateT => {
   const setVisibleBanner = useSetRecoilState(VisibleBannerState);
 
-  const onClick = () => {
+  const onClick = (): void => {
     const date = new Date();
     date.setDate(date.getDate() + 1);
     localStorage.setItem("invisible-banner", `${date}`);
     setVisibleBanner(false);
   };
 
-  useEffect(() => {
+  useEffect((): void => {
     const storage = localStorage.getItem("invisible-banner");
     if (!storage) return;
     const bannerDate = new Date(`${storage}`);
@@ -29,13 +31,13 @@ const useVisibleState = () => {
 const banners = [
   {
     id: 1,
-    URL: 'banner1.jpg'
+    URL: "banner1.jpg",
   },
   {
     id: 2,
-    URL: 'banner2.jpg'
-  }
-]
+    URL: "banner2.jpg",
+  },
+];
 
 const Banner = () => {
   const [onClick] = useVisibleState();
@@ -48,8 +50,7 @@ const Banner = () => {
   useSetInterval(() => {
     if (currentBanner >= totalBanners) {
       setCurrentBanner(0);
-    }
-    else {
+    } else {
       setCurrentBanner(currentBanner + 1);
     }
   }, 3000);
@@ -62,7 +63,7 @@ const Banner = () => {
   return (
     <S.BannerBox>
       <S.Banner ref={bannerRef}>
-        {banners.map(banner => (
+        {banners.map((banner) => (
           <BannerContent Img={banner.URL} key={banner.id} />
         ))}
       </S.Banner>
@@ -74,6 +75,6 @@ const Banner = () => {
       </S.InvisibleCheck>
     </S.BannerBox>
   );
-}
+};
 
 export default Banner;
