@@ -52,12 +52,12 @@ const Banner = () => {
     else {
       setCurrentBanner(currentBanner + 1);
     }
-  }, 3000)
+  }, 3000);
 
   useEffect(() => {
     bannerRef.current.style.transition = "all 1s ease-in-out";
     bannerRef.current.style.transform = `translateX(-${currentBanner}00vw)`;
-  }, [currentBanner])
+  }, [currentBanner]);
 
   return (
     <S.BannerBox>
