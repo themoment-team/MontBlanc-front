@@ -28,7 +28,12 @@ const useVisibleState = (): useVisibleStateT => {
   return [onClick];
 };
 
-const banners = [
+type bannersT ={
+  id: number;
+  URL: string;
+};
+
+const banners:bannersT[] = [
   {
     id: 1,
     URL: "banner1.jpg",
