@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useSetRecoilState } from "recoil";
 import { VisibleBannerState } from "Atom";
 import BannerContent from "./BannerContent";
+import useSetInterval from "Hooks/useSetInterval";
 import * as S from "./style";
 
 const useVisibleState = () => {
@@ -44,18 +45,18 @@ const Banner = () => {
   const [currentBanner, setCurrentBanner] = useState(0);
   const bannerRef = useRef<any>(null);
 
-  const nextSlide = () => {
+  useSetInterval(() => {
     if (currentBanner >= totalBanners) {
       setCurrentBanner(0);
     }
     else {
       setCurrentBanner(currentBanner + 1);
     }
-  }
+  }, 3000)
 
   useEffect(() => {
-    bannerRef.current.style.transition = "all 0.5s ease-in-out";
-    bannerRef.current.style.transform = `translateX(-${currentBanner}00%)`;
+    bannerRef.current.style.transition = "all 1s ease-in-out";
+    bannerRef.current.style.transform = `translateX(-${currentBanner}00vw)`;
   }, [currentBanner])
 
   return (
