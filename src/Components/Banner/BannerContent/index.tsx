@@ -1,11 +1,11 @@
 import React from "react";
 import * as S from "./style"
 
-type ImgProp = {
+type ImgProps = {
   Img: string
 }
 
-const BannerContent: React.FC<ImgProp> = ({ Img }) => {
+const BannerContent: React.FC<ImgProps> = ({ Img }) => {
   return (
     <S.BannerImg src={"/Images/Banners/" + Img} alt="banner" />
   );
