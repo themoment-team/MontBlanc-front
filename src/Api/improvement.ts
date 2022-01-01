@@ -39,6 +39,16 @@ class Improvement {
     }
   }
 
+  getSingleImprovement(improveIdx:number) {
+    try {
+      return RequestApi({
+        url: ImprovementController.detailSolved(improveIdx),
+      });
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
   getImprovement() {
     try {
       return RequestApi({
