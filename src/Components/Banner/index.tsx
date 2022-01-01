@@ -4,6 +4,7 @@ import { VisibleBannerState } from "Atom";
 import BannerContent from "./BannerContent";
 import useSetInterval from "Hooks/useSetInterval";
 import * as S from "./style";
+import { Style } from "util";
 
 type useVisibleStateT = [onclick: () => void];
 
@@ -50,7 +51,7 @@ const Banner:React.FC = () => {
   const totalBanners: number = banners.length - 1;
 
   const [currentBanner, setCurrentBanner] = useState<number>(0);
-  const bannerRef = useRef<any>(null);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   useSetInterval(() => {
     if (currentBanner >= totalBanners) {
@@ -61,8 +62,11 @@ const Banner:React.FC = () => {
   }, 3000);
 
   useEffect(() => {
-    bannerRef.current.style.transition = "all 1s ease-in-out";
-    bannerRef.current.style.transform = `translateX(-${currentBanner}00vw)`;
+    const { current } = bannerRef;
+    if (current !== null) {
+      current.style.transition = "all 1s ease-in-out";
+      current.style.transform = `translateX(-${currentBanner}00vw)`;
+    }
   }, [currentBanner]);
 
   return (
