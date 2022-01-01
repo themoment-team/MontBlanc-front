@@ -1,7 +1,6 @@
 import Table from "Api/table";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState} from "react";
 import * as S from "./style"
-import CountUp from "react-countup";
 import useSetInterval from "Hooks/useSetInterval";
 
 const useAmount = (): [amount: number, date: number] => {
@@ -24,21 +23,22 @@ const useAmount = (): [amount: number, date: number] => {
 };
 
 const AboutCounting = () => {
-  const [day, cnt_comment] = useAmount();
+  const [days, comments] = useAmount();
 
   const [currentDay, setCurrentDay] = useState(0)
   const [currentComments, setCurrentComments] = useState(0);
-  
-  // useSetInterval(() => {
 
-  // })
-
-  // const dayRef = useRef<HTMLSpanElement>(0);
-  // const commentsRef = useRef<HTMLSpanElement>(0);
+  useSetInterval(() => {
+    if (currentDay !== days) {
+      setCurrentDay(currentDay + 1);
+    }
+  }, 800 / days);
   
-  // useSetInterval(() => {
-  //   dayRef.current =;
-  // }, 3)
+  useSetInterval(() => {
+    if (currentComments !== comments) {
+      setCurrentComments(currentComments + 1);
+    }
+  }, 800 / comments);
 
   return (
     <S.Counting>
