@@ -1,7 +1,8 @@
 import Table from "Api/table";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import * as S from "./style"
 import CountUp from "react-countup";
+import useSetInterval from "Hooks/useSetInterval";
 
 const useAmount = (): [amount: number, date: number] => {
   const [amount, setAmount] = useState({ data: 0 });
@@ -25,10 +26,24 @@ const useAmount = (): [amount: number, date: number] => {
 const AboutCounting = () => {
   const [day, cnt_comment] = useAmount();
 
+  const [currentDay, setCurrentDay] = useState(0)
+  const [currentComments, setCurrentComments] = useState(0);
+  
+  // useSetInterval(() => {
+
+  // })
+
+  // const dayRef = useRef<HTMLSpanElement>(0);
+  // const commentsRef = useRef<HTMLSpanElement>(0);
+  
+  // useSetInterval(() => {
+  //   dayRef.current =;
+  // }, 3)
+
   return (
     <S.Counting>
-      <p><CountUp end={day} duration={0.8}></CountUp>일 동안</p>
-      <p><CountUp end={cnt_comment} duration={0.8}></CountUp>개의 불편함이</p>
+      <p><span>{currentDay}</span>일 동안</p>
+      <p><span>{currentComments}</span>개의 불편함이</p>
       <p>모였습니다.</p>
     </S.Counting>
   )
