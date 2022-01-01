@@ -1,51 +1,53 @@
 import styled from "styled-components";
 import device from "Shared/Config";
 
-export const BannerWrapper = styled.div`
+export const BannerBox = styled.div`
+  width: 100vw;
+  height: 150px;
   position: relative;
-  top: 110px;
-  left: 0;
-  height: 120px;
+  top: 100px;
+  overflow: hidden;
 
   @media ${device.tablet} {
     display: none;
   }
+`;
 
-  .slideImage {
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+export const Banner = styled.div`
+  width: fit-content;
+  height: 120px;
+  display: flex;
+`;
 
-    /* span tag 가운데 정렬 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+export const InvisibleCheck = styled.div`
+  height: 22px;
+  background: #6a76e9;
+  padding: 4px 0px;
+`;
+
+export const CheckButton = styled.div`
+  width: 150px;
+  position: absolute;
+  right: 20px;
+  :hover{
+    cursor: pointer;
   }
+`;
 
-  .each-slide {
-    height: 100px;
-  }
-  .nav.default-nav {
-    display: none;
-  }
-  .close {
-    background: #6a76e9;
-    height: 30px;
-    width: 100%;
-    color: #fff;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 0 20px;
+export const Explain = styled.span`
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+`;
 
-    div {
-      cursor: pointer;
-
-      span {
-        margin-right: 7px;
-      }
-    }
-  }
+export const CheckBox = styled.div`
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: #6a76e9;
+  border: 1px white solid;
+  border-radius: 3px;
+  position: relative;
+  top: 3px;
+  left: 5px;
 `;

@@ -86,7 +86,7 @@ const Header: React.FC = () => {
             </S.NavButton>
           </S.HeaderNav>
         )}
-        <S.Blur active={bars}></S.Blur>
+        {!visibleBannerState && <S.Blur active={bars}></S.Blur>}
       </S.Header>
       {visibleBannerState && <Banner />}
     </>
