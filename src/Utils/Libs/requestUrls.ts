@@ -28,11 +28,11 @@ export const AnswerController = {
 
 //실제개선사례
 export const ImprovementController = {
-  //put 개선사례수정, delete 개선사례삭제
+  //put 개선사례수정, delete 개선사례삭제, get 단건개선사례보기
   detailSolved: (improveIdx: number) => {
     return `/solved/${improveIdx}`;
   },
-  //get 개선사례보기, post 개선사례작성
+  //get 전체개선사례보기, post 개선사례작성
   detail2Solved: () => {
     return `/solved`;
   },
