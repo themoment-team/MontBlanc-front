@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import device from "Shared/Config";
-
 interface NavBar {
   active: boolean;
 }
 
-export const Header = styled.header`
-  position: fixed;
+interface header {
+  visible: boolean;
+}
+
+export const Header = styled.header<header>`
+  position: ${(props) => (props.visible ? "absolute" : "fixed")};
   top: 0;
   width: 100vw;
   height: 100px;

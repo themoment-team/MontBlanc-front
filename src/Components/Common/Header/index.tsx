@@ -3,7 +3,7 @@ import * as I from "../../../Asset/SVG/index";
 import { Link, useNavigate } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { HasAdminToken, VisibleBannerState } from "Atom";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import {
   faBars as Bar,
   faChevronUp as ArrowTop,
@@ -37,7 +37,6 @@ const Header: React.FC = () => {
   const [logged, setHasToken] = useRecoilState(HasAdminToken);
   const visibleBannerState = useRecoilValue(VisibleBannerState);
   const [bars, setBars] = useState(true);
-  const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (localStorage.getItem("themoment_token")) {
@@ -47,16 +46,9 @@ const Header: React.FC = () => {
     }
   });
 
-  useEffect(() => {
-    const { current } = headerRef;
-    if (current !== null) {
-      current.style.position = `absolute`;
-    }
-  }, []);
-
   return (
     <>
-      <S.Header ref={headerRef}>
+      <S.Header visible={visibleBannerState}>
         <S.HeaderContainer>
           <Link to={Config.LINK.COMMENT}>
             <S.Logo>
