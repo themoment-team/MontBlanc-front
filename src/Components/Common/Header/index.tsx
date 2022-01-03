@@ -48,7 +48,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <S.Header>
+      <S.Header visible={visibleBannerState}>
         <S.HeaderContainer>
           <Link to={Config.LINK.COMMENT}>
             <S.Logo>
