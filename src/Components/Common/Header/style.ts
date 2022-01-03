@@ -9,7 +9,7 @@ interface header {
 }
 
 export const Header = styled.header<header>`
-  position: ${(props) => (props.visible ? "absolute" : "fixed")};
+  position: ${({visible}) => (visible ? "absolute" : "fixed")};
   top: 0;
   width: 100vw;
   height: 100px;
